@@ -161,31 +161,6 @@ antlrcpp::Any SlovenCLanguageParser::LiteralStringContext::accept(tree::ParseTre
   else
     return visitor->visitChildren(this);
 }
-//----------------- LiteralNullContext ------------------------------------------------------------------
-
-tree::TerminalNode* SlovenCLanguageParser::LiteralNullContext::NULL() {
-  return getToken(SlovenCLanguageParser::NULL, 0);
-}
-
-SlovenCLanguageParser::LiteralNullContext::LiteralNullContext(LiteralContext *ctx) { copyFrom(ctx); }
-
-void SlovenCLanguageParser::LiteralNullContext::enterRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<SlovenCLanguageParserListener *>(listener);
-  if (parserListener != nullptr)
-    parserListener->enterLiteralNull(this);
-}
-void SlovenCLanguageParser::LiteralNullContext::exitRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<SlovenCLanguageParserListener *>(listener);
-  if (parserListener != nullptr)
-    parserListener->exitLiteralNull(this);
-}
-
-antlrcpp::Any SlovenCLanguageParser::LiteralNullContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (auto parserVisitor = dynamic_cast<SlovenCLanguageParserVisitor*>(visitor))
-    return parserVisitor->visitLiteralNull(this);
-  else
-    return visitor->visitChildren(this);
-}
 //----------------- LiteralFloatingPointContext ------------------------------------------------------------------
 
 tree::TerminalNode* SlovenCLanguageParser::LiteralFloatingPointContext::FloatingPointLiteral() {
@@ -240,6 +215,31 @@ antlrcpp::Any SlovenCLanguageParser::LiteralBooleanContext::accept(tree::ParseTr
   else
     return visitor->visitChildren(this);
 }
+//----------------- LiteralNULLLITERALContext ------------------------------------------------------------------
+
+tree::TerminalNode* SlovenCLanguageParser::LiteralNULLLITERALContext::NULLLITERAL() {
+  return getToken(SlovenCLanguageParser::NULLLITERAL, 0);
+}
+
+SlovenCLanguageParser::LiteralNULLLITERALContext::LiteralNULLLITERALContext(LiteralContext *ctx) { copyFrom(ctx); }
+
+void SlovenCLanguageParser::LiteralNULLLITERALContext::enterRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<SlovenCLanguageParserListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->enterLiteralNULLLITERAL(this);
+}
+void SlovenCLanguageParser::LiteralNULLLITERALContext::exitRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<SlovenCLanguageParserListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->exitLiteralNULLLITERAL(this);
+}
+
+antlrcpp::Any SlovenCLanguageParser::LiteralNULLLITERALContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<SlovenCLanguageParserVisitor*>(visitor))
+    return parserVisitor->visitLiteralNULLLITERAL(this);
+  else
+    return visitor->visitChildren(this);
+}
 SlovenCLanguageParser::LiteralContext* SlovenCLanguageParser::literal() {
   LiteralContext *_localctx = _tracker.createInstance<LiteralContext>(_ctx, getState());
   enterRule(_localctx, 2, SlovenCLanguageParser::RuleLiteral);
@@ -291,11 +291,11 @@ SlovenCLanguageParser::LiteralContext* SlovenCLanguageParser::literal() {
         break;
       }
 
-      case SlovenCLanguageParser::NULL: {
-        _localctx = dynamic_cast<LiteralContext *>(_tracker.createInstance<SlovenCLanguageParser::LiteralNullContext>(_localctx));
+      case SlovenCLanguageParser::NULLLITERAL: {
+        _localctx = dynamic_cast<LiteralContext *>(_tracker.createInstance<SlovenCLanguageParser::LiteralNULLLITERALContext>(_localctx));
         enterOuterAlt(_localctx, 6);
         setState(138);
-        match(SlovenCLanguageParser::NULL);
+        match(SlovenCLanguageParser::NULLLITERAL);
         break;
       }
 
@@ -2047,7 +2047,7 @@ SlovenCLanguageParser::FieldDeclarationContext* SlovenCLanguageParser::fieldDecl
     }
 
     }
-     if (dynamic_cast<FieldDeclarationContext *>(_localctx)->semiToken == null) notifyErrorListeners("Missing ';'"); 
+     if (dynamic_cast<FieldDeclarationContext *>(_localctx)->semiToken == NULLLITERAL) notifyErrorListeners("Missing ';'"); 
    
   }
   catch (RecognitionException &e) {
@@ -2530,7 +2530,7 @@ SlovenCLanguageParser::MethodDeclaratorContext* SlovenCLanguageParser::methodDec
       setState(303);
       match(SlovenCLanguageParser::RPAREN);
     }
-     if (dynamic_cast<MethodDeclaratorContext *>(_localctx)->lparenToken == null) notifyErrorListeners("Missing '('"); 
+     if (dynamic_cast<MethodDeclaratorContext *>(_localctx)->lparenToken == NULLLITERAL) notifyErrorListeners("Missing '('"); 
    
   }
   catch (RecognitionException &e) {
@@ -2804,7 +2804,7 @@ SlovenCLanguageParser::MethodBodyContext* SlovenCLanguageParser::methodBody() {
           | (1ULL << SlovenCLanguageParser::TRUE)
           | (1ULL << SlovenCLanguageParser::FALSE)
           | (1ULL << SlovenCLanguageParser::StringLiteral)
-          | (1ULL << SlovenCLanguageParser::NULL)
+          | (1ULL << SlovenCLanguageParser::NULLLITERAL)
           | (1ULL << SlovenCLanguageParser::LPAREN)
           | (1ULL << SlovenCLanguageParser::LBRACE)
           | (1ULL << SlovenCLanguageParser::SEMI)
@@ -3014,7 +3014,7 @@ SlovenCLanguageParser::ConstructorDeclaratorContext* SlovenCLanguageParser::cons
       setState(350);
       match(SlovenCLanguageParser::RPAREN);
     }
-     if (dynamic_cast<ConstructorDeclaratorContext *>(_localctx)->lparenToken == null) notifyErrorListeners("Missing '('"); 
+     if (dynamic_cast<ConstructorDeclaratorContext *>(_localctx)->lparenToken == NULLLITERAL) notifyErrorListeners("Missing '('"); 
    
   }
   catch (RecognitionException &e) {
@@ -3112,7 +3112,7 @@ SlovenCLanguageParser::ConstructorBodyContext* SlovenCLanguageParser::constructo
       | (1ULL << SlovenCLanguageParser::TRUE)
       | (1ULL << SlovenCLanguageParser::FALSE)
       | (1ULL << SlovenCLanguageParser::StringLiteral)
-      | (1ULL << SlovenCLanguageParser::NULL)
+      | (1ULL << SlovenCLanguageParser::NULLLITERAL)
       | (1ULL << SlovenCLanguageParser::LPAREN)
       | (1ULL << SlovenCLanguageParser::LBRACE)
       | (1ULL << SlovenCLanguageParser::SEMI)
@@ -3309,7 +3309,7 @@ SlovenCLanguageParser::DestructorDeclaratorContext* SlovenCLanguageParser::destr
       setState(378);
       match(SlovenCLanguageParser::RPAREN);
     }
-     if (dynamic_cast<DestructorDeclaratorContext *>(_localctx)->lparenToken == null) notifyErrorListeners("Missing '('"); 
+     if (dynamic_cast<DestructorDeclaratorContext *>(_localctx)->lparenToken == NULLLITERAL) notifyErrorListeners("Missing '('"); 
    
   }
   catch (RecognitionException &e) {
@@ -3407,7 +3407,7 @@ SlovenCLanguageParser::DestructorBodyContext* SlovenCLanguageParser::destructorB
       | (1ULL << SlovenCLanguageParser::TRUE)
       | (1ULL << SlovenCLanguageParser::FALSE)
       | (1ULL << SlovenCLanguageParser::StringLiteral)
-      | (1ULL << SlovenCLanguageParser::NULL)
+      | (1ULL << SlovenCLanguageParser::NULLLITERAL)
       | (1ULL << SlovenCLanguageParser::LPAREN)
       | (1ULL << SlovenCLanguageParser::LBRACE)
       | (1ULL << SlovenCLanguageParser::SEMI)
@@ -3521,7 +3521,7 @@ SlovenCLanguageParser::BlockContext* SlovenCLanguageParser::block() {
       | (1ULL << SlovenCLanguageParser::TRUE)
       | (1ULL << SlovenCLanguageParser::FALSE)
       | (1ULL << SlovenCLanguageParser::StringLiteral)
-      | (1ULL << SlovenCLanguageParser::NULL)
+      | (1ULL << SlovenCLanguageParser::NULLLITERAL)
       | (1ULL << SlovenCLanguageParser::LPAREN)
       | (1ULL << SlovenCLanguageParser::LBRACE)
       | (1ULL << SlovenCLanguageParser::SEMI)
@@ -3957,7 +3957,7 @@ SlovenCLanguageParser::StatementContext* SlovenCLanguageParser::statement() {
       case SlovenCLanguageParser::TRUE:
       case SlovenCLanguageParser::FALSE:
       case SlovenCLanguageParser::StringLiteral:
-      case SlovenCLanguageParser::NULL:
+      case SlovenCLanguageParser::NULLLITERAL:
       case SlovenCLanguageParser::LPAREN:
       case SlovenCLanguageParser::BANG:
       case SlovenCLanguageParser::INC:
@@ -4239,7 +4239,7 @@ SlovenCLanguageParser::BasicForStatementContext* SlovenCLanguageParser::basicFor
       | (1ULL << SlovenCLanguageParser::TRUE)
       | (1ULL << SlovenCLanguageParser::FALSE)
       | (1ULL << SlovenCLanguageParser::StringLiteral)
-      | (1ULL << SlovenCLanguageParser::NULL)
+      | (1ULL << SlovenCLanguageParser::NULLLITERAL)
       | (1ULL << SlovenCLanguageParser::LPAREN)
       | (1ULL << SlovenCLanguageParser::BANG)
       | (1ULL << SlovenCLanguageParser::INC)
@@ -4268,7 +4268,7 @@ SlovenCLanguageParser::BasicForStatementContext* SlovenCLanguageParser::basicFor
       | (1ULL << SlovenCLanguageParser::TRUE)
       | (1ULL << SlovenCLanguageParser::FALSE)
       | (1ULL << SlovenCLanguageParser::StringLiteral)
-      | (1ULL << SlovenCLanguageParser::NULL)
+      | (1ULL << SlovenCLanguageParser::NULLLITERAL)
       | (1ULL << SlovenCLanguageParser::LPAREN)
       | (1ULL << SlovenCLanguageParser::BANG)
       | (1ULL << SlovenCLanguageParser::INC)
@@ -4297,7 +4297,7 @@ SlovenCLanguageParser::BasicForStatementContext* SlovenCLanguageParser::basicFor
       | (1ULL << SlovenCLanguageParser::TRUE)
       | (1ULL << SlovenCLanguageParser::FALSE)
       | (1ULL << SlovenCLanguageParser::StringLiteral)
-      | (1ULL << SlovenCLanguageParser::NULL)
+      | (1ULL << SlovenCLanguageParser::NULLLITERAL)
       | (1ULL << SlovenCLanguageParser::LPAREN)
       | (1ULL << SlovenCLanguageParser::BANG)
       | (1ULL << SlovenCLanguageParser::INC)
@@ -4642,7 +4642,7 @@ SlovenCLanguageParser::ReturnStatementContext* SlovenCLanguageParser::returnStat
       | (1ULL << SlovenCLanguageParser::TRUE)
       | (1ULL << SlovenCLanguageParser::FALSE)
       | (1ULL << SlovenCLanguageParser::StringLiteral)
-      | (1ULL << SlovenCLanguageParser::NULL)
+      | (1ULL << SlovenCLanguageParser::NULLLITERAL)
       | (1ULL << SlovenCLanguageParser::LPAREN)
       | (1ULL << SlovenCLanguageParser::BANG)
       | (1ULL << SlovenCLanguageParser::INC)
@@ -6523,7 +6523,7 @@ SlovenCLanguageParser::ExpressionContext* SlovenCLanguageParser::expression(int 
         | (1ULL << SlovenCLanguageParser::TRUE)
         | (1ULL << SlovenCLanguageParser::FALSE)
         | (1ULL << SlovenCLanguageParser::StringLiteral)
-        | (1ULL << SlovenCLanguageParser::NULL)
+        | (1ULL << SlovenCLanguageParser::NULLLITERAL)
         | (1ULL << SlovenCLanguageParser::LPAREN)
         | (1ULL << SlovenCLanguageParser::BANG)
         | (1ULL << SlovenCLanguageParser::INC)
@@ -6563,7 +6563,7 @@ SlovenCLanguageParser::ExpressionContext* SlovenCLanguageParser::expression(int 
         | (1ULL << SlovenCLanguageParser::TRUE)
         | (1ULL << SlovenCLanguageParser::FALSE)
         | (1ULL << SlovenCLanguageParser::StringLiteral)
-        | (1ULL << SlovenCLanguageParser::NULL)
+        | (1ULL << SlovenCLanguageParser::NULLLITERAL)
         | (1ULL << SlovenCLanguageParser::LPAREN)
         | (1ULL << SlovenCLanguageParser::BANG)
         | (1ULL << SlovenCLanguageParser::INC)
@@ -6603,7 +6603,7 @@ SlovenCLanguageParser::ExpressionContext* SlovenCLanguageParser::expression(int 
         | (1ULL << SlovenCLanguageParser::TRUE)
         | (1ULL << SlovenCLanguageParser::FALSE)
         | (1ULL << SlovenCLanguageParser::StringLiteral)
-        | (1ULL << SlovenCLanguageParser::NULL)
+        | (1ULL << SlovenCLanguageParser::NULLLITERAL)
         | (1ULL << SlovenCLanguageParser::LPAREN)
         | (1ULL << SlovenCLanguageParser::BANG)
         | (1ULL << SlovenCLanguageParser::INC)
@@ -6902,7 +6902,7 @@ SlovenCLanguageParser::ExpressionContext* SlovenCLanguageParser::expression(int 
             | (1ULL << SlovenCLanguageParser::TRUE)
             | (1ULL << SlovenCLanguageParser::FALSE)
             | (1ULL << SlovenCLanguageParser::StringLiteral)
-            | (1ULL << SlovenCLanguageParser::NULL)
+            | (1ULL << SlovenCLanguageParser::NULLLITERAL)
             | (1ULL << SlovenCLanguageParser::LPAREN)
             | (1ULL << SlovenCLanguageParser::BANG)
             | (1ULL << SlovenCLanguageParser::INC)
@@ -6947,7 +6947,7 @@ SlovenCLanguageParser::ExpressionContext* SlovenCLanguageParser::expression(int 
             | (1ULL << SlovenCLanguageParser::TRUE)
             | (1ULL << SlovenCLanguageParser::FALSE)
             | (1ULL << SlovenCLanguageParser::StringLiteral)
-            | (1ULL << SlovenCLanguageParser::NULL)
+            | (1ULL << SlovenCLanguageParser::NULLLITERAL)
             | (1ULL << SlovenCLanguageParser::LPAREN)
             | (1ULL << SlovenCLanguageParser::BANG)
             | (1ULL << SlovenCLanguageParser::INC)
@@ -6992,7 +6992,7 @@ SlovenCLanguageParser::ExpressionContext* SlovenCLanguageParser::expression(int 
             | (1ULL << SlovenCLanguageParser::TRUE)
             | (1ULL << SlovenCLanguageParser::FALSE)
             | (1ULL << SlovenCLanguageParser::StringLiteral)
-            | (1ULL << SlovenCLanguageParser::NULL)
+            | (1ULL << SlovenCLanguageParser::NULLLITERAL)
             | (1ULL << SlovenCLanguageParser::LPAREN)
             | (1ULL << SlovenCLanguageParser::BANG)
             | (1ULL << SlovenCLanguageParser::INC)
@@ -7125,7 +7125,7 @@ SlovenCLanguageParser::ExpressionContext* SlovenCLanguageParser::expression(int 
             | (1ULL << SlovenCLanguageParser::TRUE)
             | (1ULL << SlovenCLanguageParser::FALSE)
             | (1ULL << SlovenCLanguageParser::StringLiteral)
-            | (1ULL << SlovenCLanguageParser::NULL)
+            | (1ULL << SlovenCLanguageParser::NULLLITERAL)
             | (1ULL << SlovenCLanguageParser::LPAREN)
             | (1ULL << SlovenCLanguageParser::BANG)
             | (1ULL << SlovenCLanguageParser::INC)
@@ -7148,7 +7148,7 @@ SlovenCLanguageParser::ExpressionContext* SlovenCLanguageParser::expression(int 
           }
 
           }
-           if (dynamic_cast<ConditionalExpressionContext *>(_localctx)->expressionContext == null) notifyErrorListeners("Missing expression."); 
+           if (dynamic_cast<ConditionalExpressionContext *>(_localctx)->expressionContext == NULLLITERAL) notifyErrorListeners("Missing expression."); 
           break;
         }
 
@@ -7272,7 +7272,7 @@ SlovenCLanguageParser::CreatorExpressionContext* SlovenCLanguageParser::creatorE
         | (1ULL << SlovenCLanguageParser::TRUE)
         | (1ULL << SlovenCLanguageParser::FALSE)
         | (1ULL << SlovenCLanguageParser::StringLiteral)
-        | (1ULL << SlovenCLanguageParser::NULL)
+        | (1ULL << SlovenCLanguageParser::NULLLITERAL)
         | (1ULL << SlovenCLanguageParser::LPAREN)
         | (1ULL << SlovenCLanguageParser::BANG)
         | (1ULL << SlovenCLanguageParser::INC)
@@ -7914,12 +7914,12 @@ std::vector<std::string> SlovenCLanguageParser::_symbolicNames = {
   "THROW", "IMPORT", "PACKAGE", "NEW", "INSTANCEOF", "SUPER", "THIS", "VOID", 
   "PRIVATE", "PUBLIC", "STATIC", "RETURN", "CONSTRUCTOR", "DESTRUCTOR", 
   "IntegerLiteral", "FloatingPointLiteral", "TRUE", "FALSE", "CharacterLiteral", 
-  "StringLiteral", "NULL", "LPAREN", "RPAREN", "LBRACE", "RBRACE", "LBRACK", 
-  "RBRACK", "SEMI", "COMMA", "DOT", "ASSIGN", "GT", "LT", "BANG", "TILDE", 
-  "QUESTION", "COLON", "EQUAL", "LE", "GE", "NOTEQUAL", "AND", "OR", "INC", 
-  "DEC", "ADD", "SUB", "MUL", "DIV", "BITAND", "BITOR", "CARET", "MOD", 
-  "ARROW", "COLONCOLON", "ADD_ASSIGN", "SUB_ASSIGN", "MUL_ASSIGN", "DIV_ASSIGN", 
-  "AND_ASSIGN", "OR_ASSIGN", "XOR_ASSIGN", "MOD_ASSIGN", "LSHIFT_ASSIGN", 
+  "StringLiteral", "NULLLITERAL", "LPAREN", "RPAREN", "LBRACE", "RBRACE", 
+  "LBRACK", "RBRACK", "SEMI", "COMMA", "DOT", "ASSIGN", "GT", "LT", "BANG", 
+  "TILDE", "QUESTION", "COLON", "EQUAL", "LE", "GE", "NOTEQUAL", "AND", 
+  "OR", "INC", "DEC", "ADD", "SUB", "MUL", "DIV", "BITAND", "BITOR", "CARET", 
+  "MOD", "ARROW", "COLONCOLON", "ADD_ASSIGN", "SUB_ASSIGN", "MUL_ASSIGN", 
+  "DIV_ASSIGN", "AND_ASSIGN", "OR_ASSIGN", "XOR_ASSIGN", "MOD_ASSIGN", "LSHIFT_ASSIGN", 
   "RSHIFT_ASSIGN", "URSHIFT_ASSIGN", "AT", "ELLIPSIS", "WS", "COMMENT", 
   "LINE_COMMENT", "Identifier", "ILLEGAL_TOKEN"
 };

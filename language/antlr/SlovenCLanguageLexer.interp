@@ -128,7 +128,7 @@ TRUE
 FALSE
 CharacterLiteral
 StringLiteral
-NULL
+NULLLITERAL
 LPAREN
 RPAREN
 LBRACE
@@ -264,7 +264,7 @@ OctalEscape
 ZeroToThree
 UnicodeEscape
 UnknownEscape
-NULL
+NULLLITERAL
 LPAREN
 RPAREN
 LBRACE

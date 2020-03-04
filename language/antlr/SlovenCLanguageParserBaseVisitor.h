@@ -37,7 +37,7 @@ public:
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitLiteralNull(SlovenCLanguageParser::LiteralNullContext *ctx) override {
+  virtual antlrcpp::Any visitLiteralNULLLITERAL(SlovenCLanguageParser::LiteralNULLLITERALContext *ctx) override {
     return visitChildren(ctx);
   }
 

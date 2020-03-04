@@ -128,7 +128,7 @@ TRUE
 FALSE
 CharacterLiteral
 StringLiteral
-NULL
+NULLLITERAL
 LPAREN
 RPAREN
 LBRACE

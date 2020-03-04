@@ -11,6 +11,7 @@
 //
 
 #include <iostream>
+#include <string>
 
 #include "antlr4-runtime.h"
 #include "antlr/SlovenCLanguageLexer.h"
@@ -33,9 +34,9 @@ int main(int, const char **) {
     }
 
     SlovenCLanguageParser parser(&tokens);
-    tree::ParseTree *tree = parser.compilationUnit;
-
-    std::cout << tree->toStringTree(&parser) << std::endl << std::endl;
+    SlovenCLanguageParser::ParseWholeContext* context = parser.parseWhole();
+    
+    std::cout << context->toStringTree(&parser) << std::endl << std::endl;
 
     return 0;
 }

@@ -19,16 +19,17 @@ public:
     NEW = 20, INSTANCEOF = 21, SUPER = 22, THIS = 23, VOID = 24, PRIVATE = 25, 
     PUBLIC = 26, STATIC = 27, RETURN = 28, CONSTRUCTOR = 29, DESTRUCTOR = 30, 
     IntegerLiteral = 31, FloatingPointLiteral = 32, TRUE = 33, FALSE = 34, 
-    CharacterLiteral = 35, StringLiteral = 36, NULL = 37, LPAREN = 38, RPAREN = 39, 
-    LBRACE = 40, RBRACE = 41, LBRACK = 42, RBRACK = 43, SEMI = 44, COMMA = 45, 
-    DOT = 46, ASSIGN = 47, GT = 48, LT = 49, BANG = 50, TILDE = 51, QUESTION = 52, 
-    COLON = 53, EQUAL = 54, LE = 55, GE = 56, NOTEQUAL = 57, AND = 58, OR = 59, 
-    INC = 60, DEC = 61, ADD = 62, SUB = 63, MUL = 64, DIV = 65, BITAND = 66, 
-    BITOR = 67, CARET = 68, MOD = 69, ARROW = 70, COLONCOLON = 71, ADD_ASSIGN = 72, 
-    SUB_ASSIGN = 73, MUL_ASSIGN = 74, DIV_ASSIGN = 75, AND_ASSIGN = 76, 
-    OR_ASSIGN = 77, XOR_ASSIGN = 78, MOD_ASSIGN = 79, LSHIFT_ASSIGN = 80, 
-    RSHIFT_ASSIGN = 81, URSHIFT_ASSIGN = 82, AT = 83, ELLIPSIS = 84, WS = 85, 
-    COMMENT = 86, LINE_COMMENT = 87, Identifier = 88, ILLEGAL_TOKEN = 89
+    CharacterLiteral = 35, StringLiteral = 36, NULLLITERAL = 37, LPAREN = 38, 
+    RPAREN = 39, LBRACE = 40, RBRACE = 41, LBRACK = 42, RBRACK = 43, SEMI = 44, 
+    COMMA = 45, DOT = 46, ASSIGN = 47, GT = 48, LT = 49, BANG = 50, TILDE = 51, 
+    QUESTION = 52, COLON = 53, EQUAL = 54, LE = 55, GE = 56, NOTEQUAL = 57, 
+    AND = 58, OR = 59, INC = 60, DEC = 61, ADD = 62, SUB = 63, MUL = 64, 
+    DIV = 65, BITAND = 66, BITOR = 67, CARET = 68, MOD = 69, ARROW = 70, 
+    COLONCOLON = 71, ADD_ASSIGN = 72, SUB_ASSIGN = 73, MUL_ASSIGN = 74, 
+    DIV_ASSIGN = 75, AND_ASSIGN = 76, OR_ASSIGN = 77, XOR_ASSIGN = 78, MOD_ASSIGN = 79, 
+    LSHIFT_ASSIGN = 80, RSHIFT_ASSIGN = 81, URSHIFT_ASSIGN = 82, AT = 83, 
+    ELLIPSIS = 84, WS = 85, COMMENT = 86, LINE_COMMENT = 87, Identifier = 88, 
+    ILLEGAL_TOKEN = 89
   };
 
   enum {
@@ -132,9 +133,6 @@ public:
 
   class  ParseWholeContext : public antlr4::ParserRuleContext {
   public:
-    long revision;
-    org.antlr.v4.runtime.CommonTokenStream tokenStream;
-    java.util.List<de.justiz.bktext.textsystem.lang.diagnostic.message.IMessage> errors = new java.util.LinkedList<>();
     ParseWholeContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     CompilationUnitContext *compilationUnit();
@@ -184,17 +182,6 @@ public:
     virtual antlrcpp::Any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
   };
 
-  class  LiteralNullContext : public LiteralContext {
-  public:
-    LiteralNullContext(LiteralContext *ctx);
-
-    antlr4::tree::TerminalNode *NULL();
-    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
-    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
-
-    virtual antlrcpp::Any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
-  };
-
   class  LiteralFloatingPointContext : public LiteralContext {
   public:
     LiteralFloatingPointContext(LiteralContext *ctx);
@@ -212,6 +199,17 @@ public:
 
     antlr4::tree::TerminalNode *TRUE();
     antlr4::tree::TerminalNode *FALSE();
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+
+    virtual antlrcpp::Any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+  };
+
+  class  LiteralNULLLITERALContext : public LiteralContext {
+  public:
+    LiteralNULLLITERALContext(LiteralContext *ctx);
+
+    antlr4::tree::TerminalNode *NULLLITERAL();
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
 

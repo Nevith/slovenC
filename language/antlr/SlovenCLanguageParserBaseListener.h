@@ -33,8 +33,8 @@ public:
   virtual void enterLiteralString(SlovenCLanguageParser::LiteralStringContext * /*ctx*/) override { }
   virtual void exitLiteralString(SlovenCLanguageParser::LiteralStringContext * /*ctx*/) override { }
 
-  virtual void enterLiteralNull(SlovenCLanguageParser::LiteralNullContext * /*ctx*/) override { }
-  virtual void exitLiteralNull(SlovenCLanguageParser::LiteralNullContext * /*ctx*/) override { }
+  virtual void enterLiteralNULLLITERAL(SlovenCLanguageParser::LiteralNULLLITERALContext * /*ctx*/) override { }
+  virtual void exitLiteralNULLLITERAL(SlovenCLanguageParser::LiteralNULLLITERALContext * /*ctx*/) override { }
 
   virtual void enterPrimitiveType(SlovenCLanguageParser::PrimitiveTypeContext * /*ctx*/) override { }
   virtual void exitPrimitiveType(SlovenCLanguageParser::PrimitiveTypeContext * /*ctx*/) override { }

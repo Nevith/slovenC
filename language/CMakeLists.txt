@@ -1,11 +1,11 @@
 cmake_minimum_required(VERSION 3.15)
-project(antlr_test3)
+project(slovenC)
 
 set(CMAKE_CXX_STANDARD 17)
 
 # Include source files
 include_directories(${CMAKE_SOURCE_DIR}/src)
-file(GLOB_RECURSE SOURCES "${CMAKE_SOURCE_DIR}/src/*.cpp")
+file(GLOB SOURCES "${CMAKE_SOURCE_DIR}/src/*.cpp")
 
 # Include antlr4 runtime
 include_directories(${CMAKE_SOURCE_DIR}/lib/antlr4-runtime/src/)

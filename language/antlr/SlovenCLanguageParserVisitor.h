@@ -30,7 +30,7 @@ public:
 
     virtual antlrcpp::Any visitLiteralString(SlovenCLanguageParser::LiteralStringContext *context) = 0;
 
-    virtual antlrcpp::Any visitLiteralNull(SlovenCLanguageParser::LiteralNullContext *context) = 0;
+    virtual antlrcpp::Any visitLiteralNULLLITERAL(SlovenCLanguageParser::LiteralNULLLITERALContext *context) = 0;
 
     virtual antlrcpp::Any visitPrimitiveType(SlovenCLanguageParser::PrimitiveTypeContext *context) = 0;
 

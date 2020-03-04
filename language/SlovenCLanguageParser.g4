@@ -48,7 +48,7 @@ options {
 // expression.cup allowed - need this to ignore the EOF token when
 // doing partial parsing, more can be added.
 
-parseWhole returns [long revision, org.antlr.v4.runtime.CommonTokenStream tokenStream, java.util.List<de.justiz.bktext.textsystem.lang.diagnostic.message.IMessage> errors = new java.util.LinkedList<>()]
+parseWhole
     : compilationUnit EOF
     ;
 

@@ -31,8 +31,8 @@ public:
   virtual void enterLiteralString(SlovenCLanguageParser::LiteralStringContext *ctx) = 0;
   virtual void exitLiteralString(SlovenCLanguageParser::LiteralStringContext *ctx) = 0;
 
-  virtual void enterLiteralNull(SlovenCLanguageParser::LiteralNullContext *ctx) = 0;
-  virtual void exitLiteralNull(SlovenCLanguageParser::LiteralNullContext *ctx) = 0;
+  virtual void enterLiteralNULLLITERAL(SlovenCLanguageParser::LiteralNULLLITERALContext *ctx) = 0;
+  virtual void exitLiteralNULLLITERAL(SlovenCLanguageParser::LiteralNULLLITERALContext *ctx) = 0;
 
   virtual void enterPrimitiveType(SlovenCLanguageParser::PrimitiveTypeContext *ctx) = 0;
   virtual void exitPrimitiveType(SlovenCLanguageParser::PrimitiveTypeContext *ctx) = 0;

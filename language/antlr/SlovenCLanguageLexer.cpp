@@ -111,16 +111,16 @@ std::vector<std::string> SlovenCLanguageLexer::_ruleNames = {
   u8"HexSignificand", u8"BinaryExponent", u8"BinaryExponentIndicator", u8"TRUE", 
   u8"FALSE", u8"CharacterLiteral", u8"SingleCharacter", u8"StringLiteral", 
   u8"StringCharacters", u8"StringCharacter", u8"EscapeSequence", u8"OctalEscape", 
-  u8"ZeroToThree", u8"UnicodeEscape", u8"UnknownEscape", u8"NULL", u8"LPAREN", 
-  u8"RPAREN", u8"LBRACE", u8"RBRACE", u8"LBRACK", u8"RBRACK", u8"SEMI", 
-  u8"COMMA", u8"DOT", u8"ASSIGN", u8"GT", u8"LT", u8"BANG", u8"TILDE", u8"QUESTION", 
-  u8"COLON", u8"EQUAL", u8"LE", u8"GE", u8"NOTEQUAL", u8"AND", u8"OR", u8"INC", 
-  u8"DEC", u8"ADD", u8"SUB", u8"MUL", u8"DIV", u8"BITAND", u8"BITOR", u8"CARET", 
-  u8"MOD", u8"ARROW", u8"COLONCOLON", u8"ADD_ASSIGN", u8"SUB_ASSIGN", u8"MUL_ASSIGN", 
-  u8"DIV_ASSIGN", u8"AND_ASSIGN", u8"OR_ASSIGN", u8"XOR_ASSIGN", u8"MOD_ASSIGN", 
-  u8"LSHIFT_ASSIGN", u8"RSHIFT_ASSIGN", u8"URSHIFT_ASSIGN", u8"AT", u8"ELLIPSIS", 
-  u8"WS", u8"COMMENT", u8"LINE_COMMENT", u8"Identifier", u8"JavaLetter", 
-  u8"JavaLetterOrDigit", u8"ILLEGAL_TOKEN"
+  u8"ZeroToThree", u8"UnicodeEscape", u8"UnknownEscape", u8"NULLLITERAL", 
+  u8"LPAREN", u8"RPAREN", u8"LBRACE", u8"RBRACE", u8"LBRACK", u8"RBRACK", 
+  u8"SEMI", u8"COMMA", u8"DOT", u8"ASSIGN", u8"GT", u8"LT", u8"BANG", u8"TILDE", 
+  u8"QUESTION", u8"COLON", u8"EQUAL", u8"LE", u8"GE", u8"NOTEQUAL", u8"AND", 
+  u8"OR", u8"INC", u8"DEC", u8"ADD", u8"SUB", u8"MUL", u8"DIV", u8"BITAND", 
+  u8"BITOR", u8"CARET", u8"MOD", u8"ARROW", u8"COLONCOLON", u8"ADD_ASSIGN", 
+  u8"SUB_ASSIGN", u8"MUL_ASSIGN", u8"DIV_ASSIGN", u8"AND_ASSIGN", u8"OR_ASSIGN", 
+  u8"XOR_ASSIGN", u8"MOD_ASSIGN", u8"LSHIFT_ASSIGN", u8"RSHIFT_ASSIGN", 
+  u8"URSHIFT_ASSIGN", u8"AT", u8"ELLIPSIS", u8"WS", u8"COMMENT", u8"LINE_COMMENT", 
+  u8"Identifier", u8"JavaLetter", u8"JavaLetterOrDigit", u8"ILLEGAL_TOKEN"
 };
 
 std::vector<std::string> SlovenCLanguageLexer::_channelNames = {
@@ -154,7 +154,7 @@ std::vector<std::string> SlovenCLanguageLexer::_symbolicNames = {
   u8"INSTANCEOF", u8"SUPER", u8"THIS", u8"VOID", u8"PRIVATE", u8"PUBLIC", 
   u8"STATIC", u8"RETURN", u8"CONSTRUCTOR", u8"DESTRUCTOR", u8"IntegerLiteral", 
   u8"FloatingPointLiteral", u8"TRUE", u8"FALSE", u8"CharacterLiteral", u8"StringLiteral", 
-  u8"NULL", u8"LPAREN", u8"RPAREN", u8"LBRACE", u8"RBRACE", u8"LBRACK", 
+  u8"NULLLITERAL", u8"LPAREN", u8"RPAREN", u8"LBRACE", u8"RBRACE", u8"LBRACK", 
   u8"RBRACK", u8"SEMI", u8"COMMA", u8"DOT", u8"ASSIGN", u8"GT", u8"LT", 
   u8"BANG", u8"TILDE", u8"QUESTION", u8"COLON", u8"EQUAL", u8"LE", u8"GE", 
   u8"NOTEQUAL", u8"AND", u8"OR", u8"INC", u8"DEC", u8"ADD", u8"SUB", u8"MUL", 
