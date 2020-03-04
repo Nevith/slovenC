@@ -33,3 +33,10 @@
 
 # CLion
 .idea
+
+# VisualStduio
+.vs
+out
+
+#Antlr4
+.antlr
