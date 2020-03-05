@@ -167,7 +167,7 @@ classBodyDeclaration
         ;
 
 fieldDeclaration
-        : (modifiers+=modifier)* type variableDeclaratorList SEMI? { if ($SEMI == NULLLITERAL) notifyErrorListeners("Missing ';'"); }
+        : (modifiers+=modifier)* type variableDeclaratorList SEMI? { if ($SEMI == NULL) notifyErrorListeners("Missing ';'"); }
         ;
 
 variableDeclaratorList
@@ -192,7 +192,7 @@ result
         ;
 
 methodDeclarator
-        : Identifier (LPAREN formalParameterList? RPAREN)? { if ($LPAREN == NULLLITERAL) notifyErrorListeners("Missing '('"); }
+        : Identifier (LPAREN formalParameterList? RPAREN)? { if ($LPAREN == NULL) notifyErrorListeners("Missing '('"); }
         ;
 
 formalParameterList
@@ -213,7 +213,7 @@ constructorDeclaration
         ;
 
 constructorDeclarator
-        : CONSTRUCTOR (LPAREN formalParameterList? RPAREN)?  { if ($LPAREN == NULLLITERAL) notifyErrorListeners("Missing '('"); }
+        : CONSTRUCTOR (LPAREN formalParameterList? RPAREN)?  { if ($LPAREN == NULL) notifyErrorListeners("Missing '('"); }
         ;
 
 constructorBody
@@ -225,7 +225,7 @@ destructorDeclaration
         ;
 
 destructorDeclarator
-        : DESTRUCTOR (LPAREN formalParameterList? RPAREN)?  { if ($LPAREN == NULLLITERAL) notifyErrorListeners("Missing '('"); }
+        : DESTRUCTOR (LPAREN formalParameterList? RPAREN)?  { if ($LPAREN == NULL) notifyErrorListeners("Missing '('"); }
         ;
 
 destructorBody
@@ -373,7 +373,7 @@ expression
         | expression bop=(EQUAL | NOTEQUAL) expression                      #EqualityExpression
         | expression bop=AND expression                                     #ConditionalAndExpression
         | expression bop=OR expression                                      #ConditionalOrExpression
-        | expression bop=QUESTION expression? COLON expression? { if ($expression.ctx == NULLLITERAL) notifyErrorListeners("Missing expression."); } #ConditionalExpression
+        | expression bop=QUESTION expression? COLON expression? { if ($expression.ctx == NULL) notifyErrorListeners("Missing expression."); } #ConditionalExpression
         | <assoc=right> expression bop=(ASSIGN | ADD_ASSIGN | SUB_ASSIGN | MUL_ASSIGN | DIV_ASSIGN | MOD_ASSIGN) expression #AssignmentExpression
         | primary                                                           #PrimaryExpression
         | expression bop=DOT {notifyErrorListeners("Invalid dotted expression.");}  #InvalidDottedExpression

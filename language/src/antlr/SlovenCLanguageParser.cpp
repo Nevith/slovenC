@@ -2047,7 +2047,7 @@ SlovenCLanguageParser::FieldDeclarationContext* SlovenCLanguageParser::fieldDecl
     }
 
     }
-     if (dynamic_cast<FieldDeclarationContext *>(_localctx)->semiToken == NULLLITERAL) notifyErrorListeners("Missing ';'"); 
+     if (dynamic_cast<FieldDeclarationContext *>(_localctx)->semiToken == NULL) notifyErrorListeners("Missing ';'"); 
    
   }
   catch (RecognitionException &e) {
@@ -2530,7 +2530,7 @@ SlovenCLanguageParser::MethodDeclaratorContext* SlovenCLanguageParser::methodDec
       setState(303);
       match(SlovenCLanguageParser::RPAREN);
     }
-     if (dynamic_cast<MethodDeclaratorContext *>(_localctx)->lparenToken == NULLLITERAL) notifyErrorListeners("Missing '('"); 
+     if (dynamic_cast<MethodDeclaratorContext *>(_localctx)->lparenToken == NULL) notifyErrorListeners("Missing '('"); 
    
   }
   catch (RecognitionException &e) {
@@ -3014,7 +3014,7 @@ SlovenCLanguageParser::ConstructorDeclaratorContext* SlovenCLanguageParser::cons
       setState(350);
       match(SlovenCLanguageParser::RPAREN);
     }
-     if (dynamic_cast<ConstructorDeclaratorContext *>(_localctx)->lparenToken == NULLLITERAL) notifyErrorListeners("Missing '('"); 
+     if (dynamic_cast<ConstructorDeclaratorContext *>(_localctx)->lparenToken == NULL) notifyErrorListeners("Missing '('"); 
    
   }
   catch (RecognitionException &e) {
@@ -3309,7 +3309,7 @@ SlovenCLanguageParser::DestructorDeclaratorContext* SlovenCLanguageParser::destr
       setState(378);
       match(SlovenCLanguageParser::RPAREN);
     }
-     if (dynamic_cast<DestructorDeclaratorContext *>(_localctx)->lparenToken == NULLLITERAL) notifyErrorListeners("Missing '('"); 
+     if (dynamic_cast<DestructorDeclaratorContext *>(_localctx)->lparenToken == NULL) notifyErrorListeners("Missing '('"); 
    
   }
   catch (RecognitionException &e) {
@@ -7148,7 +7148,7 @@ SlovenCLanguageParser::ExpressionContext* SlovenCLanguageParser::expression(int 
           }
 
           }
-           if (dynamic_cast<ConditionalExpressionContext *>(_localctx)->expressionContext == NULLLITERAL) notifyErrorListeners("Missing expression."); 
+           if (dynamic_cast<ConditionalExpressionContext *>(_localctx)->expressionContext == NULL) notifyErrorListeners("Missing expression."); 
           break;
         }
 
