@@ -34,8 +34,9 @@
 # CLion
 .idea
 
-# VisualStduio
+# VisualStduio & Code
 .vs
+.vscode
 out
 
 #Antlr4

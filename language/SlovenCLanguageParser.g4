@@ -221,7 +221,7 @@ constructorBody
         ;
 
 destructorDeclaration
-        : (modifiers+=modifier)* constructorDeclarator constructorBody
+        : (modifiers+=modifier)* destructorDeclarator destructorBody
         ;
 
 destructorDeclarator
