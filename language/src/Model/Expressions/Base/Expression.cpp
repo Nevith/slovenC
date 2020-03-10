@@ -9,11 +9,3 @@
 /**
  * Expression implementation
  */
-
-
-/**
- * @return Expression
- */
-TypeSymbol* Expression::getType() {
-    return nullptr;
-}

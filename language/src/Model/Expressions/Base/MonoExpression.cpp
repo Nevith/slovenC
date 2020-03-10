@@ -9,3 +9,11 @@
 /**
  * MonoExpression implementation
  */
+
+Expression *MonoExpression::getExpression() {
+    return nullptr;
+}
+
+void MonoExpression::setExpression(Expression *expression) {
+    this->expression = expression;
+}

@@ -12,9 +12,6 @@
 
 
 class Expression : public Visitable {
-public:
-
-	TypeSymbol* getType();
 };
 
 #endif //_EXPRESSION_H

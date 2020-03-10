@@ -11,9 +11,16 @@
 
 
 class MonoExpression : public Expression {
+
+private:
+    Expression *expression;
+
+
 public:
 
-	virtual Expression* getExpression() = 0;
+    virtual Expression *getExpression();
+
+    virtual void setExpression(Expression *expression);
 };
 
 #endif //_MONOEXPRESSION_H

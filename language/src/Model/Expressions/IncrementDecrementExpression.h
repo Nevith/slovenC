@@ -11,7 +11,13 @@
 #include "base/OperationalExpression.h"
 
 
-class IncrementDecrementExpression: public MonoExpression, public OperationalExpression {
+class IncrementDecrementExpression : public MonoExpression, public OperationalExpression {
+private:
+    std::string incrementDecrementOperator;
+public:
+    std::string getOperator() override;
+
+    void setIncrementDecrementOperator(const std::string &incrementDecrementOperator);
 };
 
 #endif //_INCREMENTDECREMENTEXPRESSION_H

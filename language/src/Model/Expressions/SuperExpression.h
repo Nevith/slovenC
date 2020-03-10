@@ -10,7 +10,7 @@
 #include "base/DottedExpression.h"
 
 
-class SuperExpression: public DottedExpression {
+class SuperExpression : public DottedExpression {
 };
 
 #endif //_SUPEREXPRESSION_H

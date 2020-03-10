@@ -9,3 +9,6 @@
 /**
  * MultiplicationExpression implementation
  */
+std::string MultiplicationExpression::getOperator() {
+    return "*";
+}

@@ -9,3 +9,7 @@
 /**
  * AdditionExpression implementation
  */
+
+std::string AdditionExpression::getOperator() {
+    return "+";
+}

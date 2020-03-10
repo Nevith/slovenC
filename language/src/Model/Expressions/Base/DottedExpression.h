@@ -10,9 +10,9 @@
 #include "MonoExpression.h"
 #include <string>
 
-class DottedExpression: public MonoExpression {
-public: 
-    
+class DottedExpression : public MonoExpression {
+public:
+
     virtual std::string getName() = 0;
 };
 

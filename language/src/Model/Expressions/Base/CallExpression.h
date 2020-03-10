@@ -9,13 +9,19 @@
 
 #include "DottedExpression.h"
 #include <vector>
+#include <model/expressions/IdentifierExpression.h>
 
 
+class CallExpression : public IdentifierExpression {
 
-class CallExpression : public DottedExpression {
+private:
+    std::vector<Expression *> arguments;
+
 public:
 
-	virtual std::vector<Expression> getArguments() = 0;
+    virtual std::vector<Expression *> getArguments();
+
+    virtual void addArgument(Expression *expression);
 };
 
 #endif //_CALLEXPRESSION_H

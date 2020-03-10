@@ -11,11 +11,20 @@
 
 
 class DuoExpression : public Expression {
+private:
+    Expression *rightExpression;
+    Expression *leftExpression;
+
 public:
 
-	virtual Expression* getLeftExpression() = 0;
+    Expression *getLeftExpression() const;
 
-	virtual Expression* getRightExpression() = 0;
+    void setLeftExpression(Expression *leftExpression);
+
+    Expression *getRightExpression() const;
+
+    void setRightExpression(Expression *rightExpression);
+
 };
 
 #endif //_DUOEXPRESSION_H

@@ -9,3 +9,6 @@
 /**
  * SubtractExpression implementation
  */
+std::string SubtractExpression::getOperator() {
+    return "-";
+}

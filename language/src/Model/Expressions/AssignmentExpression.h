@@ -9,12 +9,18 @@
 
 #include "base/MonoExpression.h"
 #include "base/OperationalExpression.h"
-
+#include "IdentifierExpression.h"
 
 class AssignmentExpression : public MonoExpression, public OperationalExpression {
+private:
+    IdentifierExpression *identifier;
+
 public:
 
-	Expression* getIdentifier();
+    IdentifierExpression *getIdentifier();
+
+    void setIdentifier(IdentifierExpression *identifier);
+
 };
 
 #endif //_ASSIGNMENTEXPRESSION_H

@@ -10,7 +10,9 @@
 #include "base/MathExpression.h"
 
 
-class DivisionExpression: public MathExpression {
+class DivisionExpression : public MathExpression {
+public:
+    std::string getOperator() override;
 };
 
 #endif //_DIVISIONEXPRESSION_H

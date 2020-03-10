@@ -4,7 +4,7 @@
  */
 
 
-#include "PackageSymbol.h"
+#include "model/symbols/PackageSymbol.h"
 
 /**
  * PackageSymbol implementation

@@ -11,7 +11,14 @@
 #include "base/DuoExpression.h"
 
 
-class EqualityExpression: public OperationalExpression, public DuoExpression {
+class EqualityExpression : public OperationalExpression, public DuoExpression {
+private:
+    std::string equalityOperator;
+
+public:
+    std::string getOperator() override;
+
+    void setEqualityOperator(const std::string &equalityOperator);
 };
 
 #endif //_EQUALITYEXPRESSION_H

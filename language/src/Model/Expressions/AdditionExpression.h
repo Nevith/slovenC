@@ -9,7 +9,9 @@
 
 #include "base/MathExpression.h"
 
-class AdditionExpression: public MathExpression {
+class AdditionExpression : public MathExpression {
+public:
+    std::string getOperator() override;
 };
 
 #endif //_ADDITIONEXPRESSION_H

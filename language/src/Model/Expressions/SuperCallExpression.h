@@ -10,7 +10,7 @@
 #include "base/CallExpression.h"
 
 
-class SuperCallExpression: public CallExpression {
+class SuperCallExpression : public CallExpression {
 };
 
 #endif //_SUPERCALLEXPRESSION_H

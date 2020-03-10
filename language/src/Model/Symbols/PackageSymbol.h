@@ -7,8 +7,8 @@
 #ifndef _PACKAGESYMBOL_H
 #define _PACKAGESYMBOL_H
 
-#include "../symbols/FullyQualifiedSymbol.h"
-#include "../symbols/FileSymbol.h"
+#include "FullyQualifiedSymbol.h"
+#include "FileSymbol.h"
 #include <vector>
 
 

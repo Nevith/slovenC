@@ -10,7 +10,7 @@
 #include "base/CallExpression.h"
 
 
-class ThisCallExpression: public CallExpression {
+class ThisCallExpression : public CallExpression {
 };
 
 #endif //_THISCALLEXPRESSION_H

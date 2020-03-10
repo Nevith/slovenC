@@ -14,6 +14,10 @@
 /**
  * @return Expression
  */
-Expression* AssignmentExpression::getIdentifier() {
+Expression *AssignmentExpression::getIdentifier() {
     return nullptr;
+}
+
+void AssignmentExpression::setIdentifier(IdentifierExpression *identifier) {
+    this->identifier = identifier;
 }

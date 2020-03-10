@@ -11,7 +11,9 @@
 #include "base/OperationalExpression.h"
 
 
-class NotExpression: public MonoExpression, public OperationalExpression {
+class NotExpression : public MonoExpression, public OperationalExpression {
+public:
+    std::string getOperator() override;
 };
 
 #endif //_NOTEXPRESSION_H

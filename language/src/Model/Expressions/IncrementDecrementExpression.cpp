@@ -9,3 +9,10 @@
 /**
  * IncrementDecrementExpression implementation
  */
+std::string IncrementDecrementExpression::getOperator() {
+    return incrementDecrementOperator;
+}
+
+void IncrementDecrementExpression::setIncrementDecrementOperator(const std::string &incrementDecrementOperator) {
+    IncrementDecrementExpression::incrementDecrementOperator = incrementDecrementOperator;
+}

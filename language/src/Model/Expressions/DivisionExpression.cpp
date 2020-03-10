@@ -9,3 +9,7 @@
 /**
  * DivisionExpression implementation
  */
+
+std::string DivisionExpression::getOperator() {
+    return "/";
+}

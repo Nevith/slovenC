@@ -9,3 +9,7 @@
 /**
  * NotExpression implementation
  */
+
+std::string NotExpression::getOperator() {
+    return "!";
+}
