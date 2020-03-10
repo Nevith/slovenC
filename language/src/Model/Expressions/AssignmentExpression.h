@@ -7,8 +7,8 @@
 #ifndef _ASSIGNMENTEXPRESSION_H
 #define _ASSIGNMENTEXPRESSION_H
 
-#include "Base/MonoExpression.h"
-#include "Base/OperationalExpression.h"
+#include "base/MonoExpression.h"
+#include "base/OperationalExpression.h"
 
 
 class AssignmentExpression : public MonoExpression, public OperationalExpression {

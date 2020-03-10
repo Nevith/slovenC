@@ -7,7 +7,7 @@
 #ifndef _SUPEREXPRESSION_H
 #define _SUPEREXPRESSION_H
 
-#include "Base/DottedExpression.h"
+#include "base/DottedExpression.h"
 
 
 class SuperExpression: public DottedExpression {

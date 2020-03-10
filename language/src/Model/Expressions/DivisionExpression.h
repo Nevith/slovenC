@@ -7,7 +7,7 @@
 #ifndef _DIVISIONEXPRESSION_H
 #define _DIVISIONEXPRESSION_H
 
-#include "Base/MathExpression.h"
+#include "base/MathExpression.h"
 
 
 class DivisionExpression: public MathExpression {

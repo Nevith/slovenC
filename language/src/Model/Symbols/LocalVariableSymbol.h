@@ -7,7 +7,7 @@
 #ifndef _LOCALVARIABLESYMBOL_H
 #define _LOCALVARIABLESYMBOL_H
 
-#include "Base/VariableSymbol.h"
+#include "base/VariableSymbol.h"
 
 
 class LocalVariableSymbol: public VariableSymbol {

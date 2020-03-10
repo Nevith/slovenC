@@ -7,7 +7,7 @@
 #ifndef _FIELDSYMBOL_H
 #define _FIELDSYMBOL_H
 
-#include "Base/VariableSymbol.h"
+#include "base/VariableSymbol.h"
 #include "FullyQualifiedSymbol.h"
 #include "MemberSymbol.h"
 

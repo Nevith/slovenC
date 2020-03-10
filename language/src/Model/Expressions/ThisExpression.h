@@ -7,7 +7,7 @@
 #ifndef _THISEXPRESSION_H
 #define _THISEXPRESSION_H
 
-#include "Base/DottedExpression.h"
+#include "base/DottedExpression.h"
 
 
 class ThisExpression: public DottedExpression {

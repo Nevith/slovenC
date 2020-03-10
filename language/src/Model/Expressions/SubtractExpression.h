@@ -7,7 +7,7 @@
 #ifndef _SUBTRACTEXPRESSION_H
 #define _SUBTRACTEXPRESSION_H
 
-#include "Base/MathExpression.h"
+#include "base/MathExpression.h"
 
 
 class SubtractExpression: public MathExpression {

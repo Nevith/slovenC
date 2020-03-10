@@ -7,7 +7,7 @@
 #ifndef _CLASSSYMBOL_H
 #define _CLASSSYMBOL_H
 
-#include "Base/TypeSymbol.h"
+#include "base/TypeSymbol.h"
 #include "FullyQualifiedSymbol.h"
 #include "MethodSymbol.h"
 #include "FieldSymbol.h"

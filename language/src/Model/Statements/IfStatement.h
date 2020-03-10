@@ -7,8 +7,8 @@
 #ifndef _IFSTATEMENT_H
 #define _IFSTATEMENT_H
 
-#include "Base/StatementContainingStatement.h"
-#include "Base/ConditionalStatement.h"
+#include "base/StatementContainingStatement.h"
+#include "base/ConditionalStatement.h"
 #include "ElseStatement.h"
 
 

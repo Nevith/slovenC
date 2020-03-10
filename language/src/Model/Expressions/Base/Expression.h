@@ -7,7 +7,7 @@
 #ifndef _EXPRESSION_H
 #define _EXPRESSION_H
 
-#include "../../Symbols/Base/TypeSymbol.h"
+#include "../../symbols/base/TypeSymbol.h"
 #include "../../Visitable.h"
 
 

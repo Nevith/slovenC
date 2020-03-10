@@ -14,13 +14,13 @@
 /**
  * @param return
  */
-std::vector<Statement*>  ForStatement::getStatements() {
+std::vector<Statement*>  ForStatement::getstatements() {
     return std::vector<Statement*>();
 }
 
 /**
  * @return std::vector<Expression>
  */
-std::vector<Expression*> ForStatement::getExpressions() {
+std::vector<Expression*> ForStatement::getexpressions() {
     return std::vector<Expression*>();
 }

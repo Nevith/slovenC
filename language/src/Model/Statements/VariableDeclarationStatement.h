@@ -7,8 +7,8 @@
 #ifndef _VARIABLEDECLARATIONSTATEMENT_H
 #define _VARIABLEDECLARATIONSTATEMENT_H
 
-#include "Base/Statement.h"
-#include"../Symbols/Base/VariableSymbol.h"
+#include "base/Statement.h"
+#include"../symbols/base/VariableSymbol.h"
 
 class VariableDeclarationStatement : public Statement {
 public:

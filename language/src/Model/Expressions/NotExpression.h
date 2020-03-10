@@ -7,8 +7,8 @@
 #ifndef _NOTEXPRESSION_H
 #define _NOTEXPRESSION_H
 
-#include "Base/MonoExpression.h"
-#include "Base/OperationalExpression.h"
+#include "base/MonoExpression.h"
+#include "base/OperationalExpression.h"
 
 
 class NotExpression: public MonoExpression, public OperationalExpression {

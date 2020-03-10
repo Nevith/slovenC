@@ -7,8 +7,8 @@
 #ifndef _EXPRESSIONSTATEMENT_H
 #define _EXPRESSIONSTATEMENT_H
 
-#include "Base/Statement.h"
-#include "../Expressions/Base/Expression.h"
+#include "base/Statement.h"
+#include "../expressions/base/Expression.h"
 
 class ExpressionStatement: public Statement {
 public: 

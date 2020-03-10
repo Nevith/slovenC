@@ -7,7 +7,7 @@
 #ifndef _EMPTYSTATEMENT_H
 #define _EMPTYSTATEMENT_H
 
-#include "Base/Statement.h"
+#include "base/Statement.h"
 
 
 class EmptyStatement: public Statement {

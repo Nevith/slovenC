@@ -7,7 +7,7 @@
 #ifndef _FULLYQUALIFIEDSYMBOL_H
 #define _FULLYQUALIFIEDSYMBOL_H
 
-#include "Base/Symbol.h"
+#include "base/Symbol.h"
 #include <string>
 
 

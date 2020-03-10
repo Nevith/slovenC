@@ -7,8 +7,8 @@
 #ifndef _INCREMENTDECREMENTEXPRESSION_H
 #define _INCREMENTDECREMENTEXPRESSION_H
 
-#include "Base/MonoExpression.h"
-#include "Base/OperationalExpression.h"
+#include "base/MonoExpression.h"
+#include "base/OperationalExpression.h"
 
 
 class IncrementDecrementExpression: public MonoExpression, public OperationalExpression {

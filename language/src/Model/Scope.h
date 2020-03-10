@@ -8,14 +8,14 @@
 #define _SCOPE_H
 
 #include "Visitable.h"
-#include "Statements/Base/Statement.h"
+#include "statements/base/Statement.h"
 #include <vector>
 
 
 class Scope: public Visitable {
 public: 
     
-std::vector<Statement*> getStatements();
+std::vector<Statement*> getstatements();
 };
 
 #endif //_SCOPE_H

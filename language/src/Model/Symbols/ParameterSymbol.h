@@ -7,7 +7,7 @@
 #ifndef _PARAMETERSYMBOL_H
 #define _PARAMETERSYMBOL_H
 
-#include "Base/VariableSymbol.h"
+#include "base/VariableSymbol.h"
 
 
 class ParameterSymbol: public VariableSymbol {

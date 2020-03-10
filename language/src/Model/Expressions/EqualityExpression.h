@@ -7,8 +7,8 @@
 #ifndef _EQUALITYEXPRESSION_H
 #define _EQUALITYEXPRESSION_H
 
-#include "Base/OperationalExpression.h"
-#include "Base/DuoExpression.h"
+#include "base/OperationalExpression.h"
+#include "base/DuoExpression.h"
 
 
 class EqualityExpression: public OperationalExpression, public DuoExpression {

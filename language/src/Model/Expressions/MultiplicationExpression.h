@@ -7,7 +7,7 @@
 #ifndef _MULTIPLICATIONEXPRESSION_H
 #define _MULTIPLICATIONEXPRESSION_H
 
-#include "Base/MathExpression.h"
+#include "base/MathExpression.h"
 
 
 class MultiplicationExpression: public MathExpression {

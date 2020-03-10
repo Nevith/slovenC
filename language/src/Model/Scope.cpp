@@ -14,6 +14,6 @@
 /**
  * @return std::vector<Statement>
  */
-std::vector<Statement*> Scope::getStatements() {
+std::vector<Statement*> Scope::getstatements() {
     return std::vector<Statement*>();
 }

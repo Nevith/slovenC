@@ -7,10 +7,10 @@
 #ifndef _FORSTATEMENT_H
 #define _FORSTATEMENT_H
 
-#include "Base/StatementContainingStatement.h"
-#include "Base/ConditionalStatement.h"
-#include "Base/Statement.h"
-#include "../Expressions/Base/Expression.h"
+#include "base/StatementContainingStatement.h"
+#include "base/ConditionalStatement.h"
+#include "base/Statement.h"
+#include "../expressions/base/Expression.h"
 
 #include <vector>
 
@@ -20,9 +20,9 @@ public:
 /**
  * @param return
  */
- std::vector<Statement*> getStatements();
+ std::vector<Statement*> getstatements();
     
- std::vector<Expression*> getExpressions();
+ std::vector<Expression*> getexpressions();
 };
 
 #endif //_FORSTATEMENT_H

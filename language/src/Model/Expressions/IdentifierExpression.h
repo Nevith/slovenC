@@ -7,7 +7,7 @@
 #ifndef _IDENTIFIEREXPRESSION_H
 #define _IDENTIFIEREXPRESSION_H
 
-#include "Base/DottedExpression.h"
+#include "base/DottedExpression.h"
 
 
 class IdentifierExpression: public DottedExpression {

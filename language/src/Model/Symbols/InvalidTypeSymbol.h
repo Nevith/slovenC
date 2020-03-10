@@ -7,7 +7,7 @@
 #ifndef _INVALIDTYPESYMBOL_H
 #define _INVALIDTYPESYMBOL_H
 
-#include "Base/TypeSymbol.h"
+#include "base/TypeSymbol.h"
 
 
 class InvalidTypeSymbol: public TypeSymbol {
