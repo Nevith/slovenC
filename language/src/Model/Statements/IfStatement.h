@@ -12,10 +12,14 @@
 #include "ElseStatement.h"
 
 
-class IfStatement: public StatementContainingStatement, public ConditionalStatement {
-public: 
-    
-ElseStatement* getElseStatement();
+class IfStatement : public StatementContainingStatement, public ConditionalStatement {
+private:
+    ElseStatement *elseStatement;
+
+public:
+    ElseStatement *getElseStatement() const;
+
+    void setElseStatement(ElseStatement *elseStatement);
 };
 
 #endif //_IFSTATEMENT_H

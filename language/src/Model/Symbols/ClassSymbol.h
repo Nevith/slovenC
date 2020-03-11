@@ -8,7 +8,7 @@
 #define _CLASSSYMBOL_H
 
 #include "base/TypeSymbol.h"
-#include "FullyQualifiedSymbol.h"
+#include "model/symbols/base/FullyQualifiedSymbol.h"
 #include "MethodSymbol.h"
 #include "FieldSymbol.h"
 #include "MemberSymbol.h"

@@ -7,7 +7,7 @@
 #ifndef _METHODSYMBOL_H
 #define _METHODSYMBOL_H
 
-#include "FullyQualifiedSymbol.h"
+#include "model/symbols/base/FullyQualifiedSymbol.h"
 #include "MemberSymbol.h"
 #include "ParameterSymbol.h"
 

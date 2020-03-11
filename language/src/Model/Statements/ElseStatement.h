@@ -10,7 +10,7 @@
 #include "base/StatementContainingStatement.h"
 
 
-class ElseStatement: public StatementContainingStatement {
+class ElseStatement : public StatementContainingStatement {
 };
 
 #endif //_ELSESTATEMENT_H

@@ -11,10 +11,13 @@
 #include "TypeSymbol.h"
 
 
-class VariableSymbol: public Symbol {
-public: 
-    
-TypeSymbol* getType();
+class VariableSymbol : public Symbol {
+private:
+    TypeSymbol *typeSymbol;
+public:
+    TypeSymbol *getTypeSymbol() const;
+
+    void setTypeSymbol(TypeSymbol *typeSymbol);
 };
 
 #endif //_VARIABLESYMBOL_H

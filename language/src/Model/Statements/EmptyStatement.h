@@ -10,7 +10,7 @@
 #include "base/Statement.h"
 
 
-class EmptyStatement: public Statement {
+class EmptyStatement : public Statement {
 };
 
 #endif //_EMPTYSTATEMENT_H

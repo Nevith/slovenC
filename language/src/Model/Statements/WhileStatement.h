@@ -11,7 +11,7 @@
 #include "base/ConditionalStatement.h"
 
 
-class WhileStatement: public StatementContainingStatement, public ConditionalStatement {
+class WhileStatement : public ConditionalStatement {
 };
 
 #endif //_WHILESTATEMENT_H

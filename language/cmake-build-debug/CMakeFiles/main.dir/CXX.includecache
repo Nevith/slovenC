@@ -1,0 +1,56 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/Visitable.h
+
+E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/expressions/AssignmentExpression.cpp
+AssignmentExpression.h
+E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/expressions/AssignmentExpression.h
+
+E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/expressions/AssignmentExpression.h
+base/MonoExpression.h
+E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/expressions/base/MonoExpression.h
+base/OperationalExpression.h
+E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/expressions/base/OperationalExpression.h
+IdentifierExpression.h
+E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/expressions/IdentifierExpression.h
+
+E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/expressions/IdentifierExpression.h
+base/DottedExpression.h
+E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/expressions/base/DottedExpression.h
+
+E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/expressions/base/DottedExpression.h
+MonoExpression.h
+E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/expressions/base/MonoExpression.h
+string
+-
+
+E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/expressions/base/Expression.h
+../../symbols/base/TypeSymbol.h
+E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/symbols/base/TypeSymbol.h
+../../Visitable.h
+E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/Visitable.h
+
+E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/expressions/base/MonoExpression.h
+Expression.h
+E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/expressions/base/Expression.h
+
+E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/expressions/base/OperationalExpression.h
+Expression.h
+E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/expressions/base/Expression.h
+string
+-
+
+E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/symbols/base/Symbol.h
+../../Visitable.h
+E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/Visitable.h
+
+E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/symbols/base/TypeSymbol.h
+Symbol.h
+E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/symbols/base/Symbol.h
+

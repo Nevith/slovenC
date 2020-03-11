@@ -14,13 +14,19 @@
 /**
  * @param return
  */
-std::vector<Statement*>  ForStatement::getstatements() {
-    return std::vector<Statement*>();
+const std::vector<VariableDeclarationStatement *> &ForStatement::getVariableDeclarationStatements() const {
+    return variableDeclarationStatements;
 }
 
-/**
- * @return std::vector<Expression>
- */
-std::vector<Expression*> ForStatement::getexpressions() {
-    return std::vector<Expression*>();
+const std::vector<Expression *> &ForStatement::getUpdateExpressions() const {
+    return updateExpressions;
 }
+
+const void ForStatement::addVariableDeclarationStatement(VariableDeclarationStatement *variableDeclarationStatement) {
+    variableDeclarationStatements.push_back(variableDeclarationStatement);
+}
+
+const void ForStatement::addUpdateExpression(Expression *expression) {
+    updateExpressions.push_back(expression);
+}
+

@@ -14,7 +14,7 @@
 /**
  * @return Expression
  */
-Expression *AssignmentExpression::getIdentifier() {
+IdentifierExpression *AssignmentExpression::getIdentifier() {
     return nullptr;
 }
 

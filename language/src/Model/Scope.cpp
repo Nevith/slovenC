@@ -14,6 +14,10 @@
 /**
  * @return std::vector<Statement>
  */
-std::vector<Statement*> Scope::getstatements() {
-    return std::vector<Statement*>();
+const std::vector<Statement *> &Scope::getStatements() const {
+    return statements;
+}
+
+void Scope::setStatements(const std::vector<Statement *> &statements) {
+    Scope::statements = statements;
 }

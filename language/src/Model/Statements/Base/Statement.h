@@ -10,7 +10,7 @@
 #include "../../Visitable.h"
 
 
-class Statement: public Visitable {
+class Statement : public Visitable {
 };
 
 #endif //_STATEMENT_H

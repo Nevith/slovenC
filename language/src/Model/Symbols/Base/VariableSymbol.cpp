@@ -14,6 +14,10 @@
 /**
  * @return TypeSymbol
  */
-TypeSymbol* VariableSymbol::getType() {
-    return nullptr;
+TypeSymbol *VariableSymbol::getTypeSymbol() const {
+    return typeSymbol;
+}
+
+void VariableSymbol::setTypeSymbol(TypeSymbol *typeSymbol) {
+    VariableSymbol::typeSymbol = typeSymbol;
 }

@@ -8,9 +8,10 @@
 #define _TYPESYMBOL_H
 
 #include "Symbol.h"
+#include "FullyQualifiedSymbol.h"
 
 
-class TypeSymbol: public Symbol {
+class TypeSymbol: public FullyQualifiedSymbol {
 };
 
 #endif //_TYPESYMBOL_H

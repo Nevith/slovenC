@@ -711,33 +711,6 @@ src\model\expressions\NotExpression.cpp.s:
 	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\model\expressions\NotExpression.cpp.s
 .PHONY : src\model\expressions\NotExpression.cpp.s
 
-src\model\expressions\PackageSymbol.obj: src\model\expressions\PackageSymbol.cpp.obj
-
-.PHONY : src\model\expressions\PackageSymbol.obj
-
-# target to build an object file
-src\model\expressions\PackageSymbol.cpp.obj:
-	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\model\expressions\PackageSymbol.cpp.obj
-.PHONY : src\model\expressions\PackageSymbol.cpp.obj
-
-src\model\expressions\PackageSymbol.i: src\model\expressions\PackageSymbol.cpp.i
-
-.PHONY : src\model\expressions\PackageSymbol.i
-
-# target to preprocess a source file
-src\model\expressions\PackageSymbol.cpp.i:
-	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\model\expressions\PackageSymbol.cpp.i
-.PHONY : src\model\expressions\PackageSymbol.cpp.i
-
-src\model\expressions\PackageSymbol.s: src\model\expressions\PackageSymbol.cpp.s
-
-.PHONY : src\model\expressions\PackageSymbol.s
-
-# target to generate assembly for a file
-src\model\expressions\PackageSymbol.cpp.s:
-	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\model\expressions\PackageSymbol.cpp.s
-.PHONY : src\model\expressions\PackageSymbol.cpp.s
-
 src\model\expressions\SubtractExpression.obj: src\model\expressions\SubtractExpression.cpp.obj
 
 .PHONY : src\model\expressions\SubtractExpression.obj
@@ -1629,6 +1602,33 @@ src\model\symbols\MethodSymbol.cpp.s:
 	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\model\symbols\MethodSymbol.cpp.s
 .PHONY : src\model\symbols\MethodSymbol.cpp.s
 
+src\model\symbols\PackageSymbol.obj: src\model\symbols\PackageSymbol.cpp.obj
+
+.PHONY : src\model\symbols\PackageSymbol.obj
+
+# target to build an object file
+src\model\symbols\PackageSymbol.cpp.obj:
+	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\model\symbols\PackageSymbol.cpp.obj
+.PHONY : src\model\symbols\PackageSymbol.cpp.obj
+
+src\model\symbols\PackageSymbol.i: src\model\symbols\PackageSymbol.cpp.i
+
+.PHONY : src\model\symbols\PackageSymbol.i
+
+# target to preprocess a source file
+src\model\symbols\PackageSymbol.cpp.i:
+	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\model\symbols\PackageSymbol.cpp.i
+.PHONY : src\model\symbols\PackageSymbol.cpp.i
+
+src\model\symbols\PackageSymbol.s: src\model\symbols\PackageSymbol.cpp.s
+
+.PHONY : src\model\symbols\PackageSymbol.s
+
+# target to generate assembly for a file
+src\model\symbols\PackageSymbol.cpp.s:
+	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\model\symbols\PackageSymbol.cpp.s
+.PHONY : src\model\symbols\PackageSymbol.cpp.s
+
 src\model\symbols\ParameterSymbol.obj: src\model\symbols\ParameterSymbol.cpp.obj
 
 .PHONY : src\model\symbols\ParameterSymbol.obj
@@ -1863,9 +1863,6 @@ help:
 	@echo ... src/model/expressions/NotExpression.obj
 	@echo ... src/model/expressions/NotExpression.i
 	@echo ... src/model/expressions/NotExpression.s
-	@echo ... src/model/expressions/PackageSymbol.obj
-	@echo ... src/model/expressions/PackageSymbol.i
-	@echo ... src/model/expressions/PackageSymbol.s
 	@echo ... src/model/expressions/SubtractExpression.obj
 	@echo ... src/model/expressions/SubtractExpression.i
 	@echo ... src/model/expressions/SubtractExpression.s
@@ -1965,6 +1962,9 @@ help:
 	@echo ... src/model/symbols/MethodSymbol.obj
 	@echo ... src/model/symbols/MethodSymbol.i
 	@echo ... src/model/symbols/MethodSymbol.s
+	@echo ... src/model/symbols/PackageSymbol.obj
+	@echo ... src/model/symbols/PackageSymbol.i
+	@echo ... src/model/symbols/PackageSymbol.s
 	@echo ... src/model/symbols/ParameterSymbol.obj
 	@echo ... src/model/symbols/ParameterSymbol.i
 	@echo ... src/model/symbols/ParameterSymbol.s

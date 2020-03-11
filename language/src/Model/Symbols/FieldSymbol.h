@@ -8,7 +8,7 @@
 #define _FIELDSYMBOL_H
 
 #include "base/VariableSymbol.h"
-#include "FullyQualifiedSymbol.h"
+#include "model/symbols/base/FullyQualifiedSymbol.h"
 #include "MemberSymbol.h"
 
 

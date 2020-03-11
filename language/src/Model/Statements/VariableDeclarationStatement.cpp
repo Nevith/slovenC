@@ -9,11 +9,18 @@
 /**
  * VariableDeclarationStatement implementation
  */
+VariableSymbol *VariableDeclarationStatement::getVariableSymbol() const {
+    return variableSymbol;
+}
 
+void VariableDeclarationStatement::setVariableSymbol(VariableSymbol *variableSymbol) {
+    VariableDeclarationStatement::variableSymbol = variableSymbol;
+}
 
- /**
- * @return LocalVariableSymbol
- */
-VariableSymbol* VariableDeclarationStatement::getVariable() {
-    return nullptr;
+Expression *VariableDeclarationStatement::getExpression() const {
+    return expression;
+}
+
+void VariableDeclarationStatement::setExpression(Expression *expression) {
+    VariableDeclarationStatement::expression = expression;
 }

@@ -11,9 +11,10 @@
  */
 
 
-/**
- * @return std::vector<Expression>
- */
-std::vector<Expression*> StatementContainingStatement::getNestedStatement() {
-    return std::vector<Expression*>();
+Statement *StatementContainingStatement::getNestedStatement() const {
+    return nestedStatement;
+}
+
+void StatementContainingStatement::setNestedStatement(Statement *nestedStatement) {
+    StatementContainingStatement::nestedStatement = nestedStatement;
 }

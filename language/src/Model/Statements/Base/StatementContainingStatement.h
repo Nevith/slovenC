@@ -12,10 +12,15 @@
 #include <vector>
 
 
-class StatementContainingStatement: public Statement {
-public: 
-    
-std::vector<Expression*> getNestedStatement();
+class StatementContainingStatement : public Statement {
+public:
+    Statement *getNestedStatement() const;
+
+    void setNestedStatement(Statement *nestedStatement);
+
+private:
+    Statement *nestedStatement;
+public:
 };
 
 #endif //_STATEMENTCONTAININGSTATEMENT_H

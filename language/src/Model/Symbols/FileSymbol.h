@@ -7,7 +7,7 @@
 #ifndef _FILESYMBOL_H
 #define _FILESYMBOL_H
 
-#include "FullyQualifiedSymbol.h"
+#include "model/symbols/base/FullyQualifiedSymbol.h"
 #include "ClassSymbol.h"
 #include <string>
 

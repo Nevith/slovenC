@@ -9,11 +9,10 @@
 /**
  * IfStatement implementation
  */
+ElseStatement *IfStatement::getElseStatement() const {
+    return elseStatement;
+}
 
-
-/**
- * @return ElseStatement
- */
-ElseStatement* IfStatement::getElseStatement() {
-    return nullptr;
+void IfStatement::setElseStatement(ElseStatement *elseStatement) {
+    IfStatement::elseStatement = elseStatement;
 }

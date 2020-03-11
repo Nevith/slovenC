@@ -7,7 +7,7 @@
 #ifndef _MEMBERSYMBOL_H
 #define _MEMBERSYMBOL_H
 
-#include "FullyQualifiedSymbol.h"
+#include "model/symbols/base/FullyQualifiedSymbol.h"
 
 
 class MemberSymbol: public FullyQualifiedSymbol {

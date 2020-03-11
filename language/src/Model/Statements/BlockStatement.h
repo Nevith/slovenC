@@ -11,7 +11,7 @@
 #include "../Scope.h"
 
 
-class BlockStatement: public Statement, public Scope {
+class BlockStatement : public Statement, public Scope {
 };
 
 #endif //_BLOCKSTATEMENT_H

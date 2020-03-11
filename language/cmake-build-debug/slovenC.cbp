@@ -1551,12 +1551,6 @@
 		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/expressions/NotExpression.h">
 			<Option target="main"/>
 		</Unit>
-		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/expressions/PackageSymbol.cpp">
-			<Option target="main"/>
-		</Unit>
-		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/expressions/PackageSymbol.h">
-			<Option target="main"/>
-		</Unit>
 		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/expressions/SubtractExpression.cpp">
 			<Option target="main"/>
 		</Unit>
@@ -1753,6 +1747,12 @@
 			<Option target="main"/>
 		</Unit>
 		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/symbols/MethodSymbol.h">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/symbols/PackageSymbol.cpp">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/symbols/PackageSymbol.h">
 			<Option target="main"/>
 		</Unit>
 		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/symbols/ParameterSymbol.cpp">

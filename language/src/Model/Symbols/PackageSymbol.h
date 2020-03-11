@@ -7,7 +7,7 @@
 #ifndef _PACKAGESYMBOL_H
 #define _PACKAGESYMBOL_H
 
-#include "FullyQualifiedSymbol.h"
+#include "model/symbols/base/FullyQualifiedSymbol.h"
 #include "FileSymbol.h"
 #include <vector>
 

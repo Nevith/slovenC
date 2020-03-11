@@ -13,9 +13,14 @@
 
 
 class Scope: public Visitable {
-public: 
-    
-std::vector<Statement*> getstatements();
+
+private:
+    std::vector<Statement*> statements;
+
+public:
+    const std::vector<Statement *> &getStatements() const;
+
+    void setStatements(const std::vector<Statement *> &statements);
 };
 
 #endif //_SCOPE_H

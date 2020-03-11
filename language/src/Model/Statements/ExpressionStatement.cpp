@@ -14,6 +14,10 @@
 /**
  * @return Expression
  */
-Expression* ExpressionStatement::getExpression() {
-    return nullptr;
+Expression *ExpressionStatement::getExpression() const {
+    return expression;
+}
+
+void ExpressionStatement::setExpression(Expression *expression) {
+    ExpressionStatement::expression = expression;
 }

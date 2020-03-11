@@ -11,10 +11,15 @@
 #include "../../expressions/base/Expression.h"
 
 
-class ConditionalStatement: public StatementContainingStatement {
-public: 
-    
-Expression* getCondition();
+class ConditionalStatement : public StatementContainingStatement {
+private:
+    Expression *condition;
+
+public:
+
+    void setCondition(Expression *condition);
+
+    Expression *getCondition() const;
 };
 
 #endif //_CONDITIONALSTATEMENT_H

@@ -7,13 +7,23 @@
 #ifndef _VARIABLEDECLARATIONSTATEMENT_H
 #define _VARIABLEDECLARATIONSTATEMENT_H
 
+#include <model/expressions/base/Expression.h>
 #include "base/Statement.h"
 #include"../symbols/base/VariableSymbol.h"
 
 class VariableDeclarationStatement : public Statement {
-public:
+private:
+    VariableSymbol *variableSymbol;
+    Expression *expression;
 
-	VariableSymbol* getVariable();
+public:
+    VariableSymbol *getVariableSymbol() const;
+
+    void setVariableSymbol(VariableSymbol *variableSymbol);
+
+    Expression *getExpression() const;
+
+    void setExpression(Expression *expression);
 };
 
 #endif //_VARIABLEDECLARATIONSTATEMENT_H

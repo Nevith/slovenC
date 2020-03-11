@@ -14,6 +14,14 @@
 /**
  * @return Expression
  */
-Expression* ConditionalStatement::getCondition() {
-    return nullptr;
+
+
+
+
+void ConditionalStatement::setCondition(Expression *condition) {
+    ConditionalStatement::condition = condition;
+}
+
+Expression *ConditionalStatement::getCondition() const {
+    return condition;
 }
