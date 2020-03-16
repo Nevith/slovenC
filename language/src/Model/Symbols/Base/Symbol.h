@@ -11,7 +11,7 @@
 #include "../../Visitable.h"
 
 
-class Symbol: public Visitable {
+class Symbol : public Visitable {
 private:
     std::string name;
 public:

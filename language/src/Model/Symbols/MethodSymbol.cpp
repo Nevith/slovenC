@@ -10,17 +10,14 @@
  * MethodSymbol implementation
  */
 
-std::vector<ParameterSymbol*> MethodSymbol::getParameters()
-{
-    return std::vector<ParameterSymbol*>();
+std::vector<ParameterSymbol *> MethodSymbol::getParameters() {
+    return std::vector<ParameterSymbol *>();
 }
 
-ParameterSymbol* MethodSymbol::getParameter(std::string name)
-{
+ParameterSymbol *MethodSymbol::getParameter(std::string name) {
     return nullptr;
 }
 
-ParameterSymbol* MethodSymbol::getParameter(int position)
-{
+ParameterSymbol *MethodSymbol::getParameter(int position) {
     return nullptr;
 }

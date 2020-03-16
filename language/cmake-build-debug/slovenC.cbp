@@ -1479,6 +1479,18 @@
 		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/antlr/SlovenCLanguageParserVisitor.h">
 			<Option target="main"/>
 		</Unit>
+		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/async/Job.cpp">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/async/Job.h">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/async/JobManager.cpp">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/async/JobManager.h">
+			<Option target="main"/>
+		</Unit>
 		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/Scope.cpp">
 			<Option target="main"/>
 		</Unit>
@@ -1713,12 +1725,6 @@
 		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/symbols/FileSymbol.h">
 			<Option target="main"/>
 		</Unit>
-		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/symbols/FullyQualifiedSymbol.cpp">
-			<Option target="main"/>
-		</Unit>
-		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/symbols/FullyQualifiedSymbol.h">
-			<Option target="main"/>
-		</Unit>
 		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/symbols/ImportSymbol.cpp">
 			<Option target="main"/>
 		</Unit>
@@ -1773,6 +1779,12 @@
 		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/symbols/PrimitiveTypeSymbol.h">
 			<Option target="main"/>
 		</Unit>
+		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/symbols/base/FullyQualifiedSymbol.cpp">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/symbols/base/FullyQualifiedSymbol.h">
+			<Option target="main"/>
+		</Unit>
 		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/symbols/base/Symbol.cpp">
 			<Option target="main"/>
 		</Unit>
@@ -1789,6 +1801,9 @@
 			<Option target="main"/>
 		</Unit>
 		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/symbols/base/VariableSymbol.h">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/utils/ContainerUtils.h">
 			<Option target="main"/>
 		</Unit>
 		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/CMakeLists.txt">

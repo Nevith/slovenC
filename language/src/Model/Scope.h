@@ -12,10 +12,10 @@
 #include <vector>
 
 
-class Scope: public Visitable {
+class Scope : public Visitable {
 
 private:
-    std::vector<Statement*> statements;
+    std::vector<Statement *> statements;
 
 public:
     const std::vector<Statement *> &getStatements() const;

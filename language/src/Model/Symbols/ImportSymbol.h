@@ -10,7 +10,7 @@
 #include "base/Symbol.h"
 
 
-class ImportSymbol: public Symbol {
+class ImportSymbol : public Symbol {
 };
 
 #endif //_IMPORTSYMBOL_H

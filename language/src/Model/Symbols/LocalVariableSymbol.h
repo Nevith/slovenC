@@ -10,7 +10,7 @@
 #include "base/VariableSymbol.h"
 
 
-class LocalVariableSymbol: public VariableSymbol {
+class LocalVariableSymbol : public VariableSymbol {
 };
 
 #endif //_LOCALVARIABLESYMBOL_H

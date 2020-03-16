@@ -1123,6 +1123,14 @@ CMakeFiles\main.dir\src\antlr\SlovenCLanguageParserVisitor.cpp.obj: ..\src\antlr
 CMakeFiles\main.dir\src\antlr\SlovenCLanguageParserVisitor.cpp.obj: ..\src\antlr\SlovenCLanguageParserVisitor.cpp
 CMakeFiles\main.dir\src\antlr\SlovenCLanguageParserVisitor.cpp.obj: ..\src\antlr\SlovenCLanguageParserVisitor.h
 
+CMakeFiles\main.dir\src\async\Job.cpp.obj: ..\src\async\Job.cpp
+CMakeFiles\main.dir\src\async\Job.cpp.obj: ..\src\async\Job.h
+
+CMakeFiles\main.dir\src\async\JobManager.cpp.obj: ..\src\utils\ContainerUtils.h
+CMakeFiles\main.dir\src\async\JobManager.cpp.obj: ..\src\async\Job.h
+CMakeFiles\main.dir\src\async\JobManager.cpp.obj: ..\src\async\JobManager.cpp
+CMakeFiles\main.dir\src\async\JobManager.cpp.obj: ..\src\async\JobManager.h
+
 CMakeFiles\main.dir\src\model\Scope.cpp.obj: ..\src\model\Scope.cpp
 CMakeFiles\main.dir\src\model\Scope.cpp.obj: ..\src\model\Scope.h
 CMakeFiles\main.dir\src\model\Scope.cpp.obj: ..\src\model\Visitable.h
@@ -1138,6 +1146,7 @@ CMakeFiles\main.dir\src\model\expressions\AdditionExpression.cpp.obj: ..\src\mod
 CMakeFiles\main.dir\src\model\expressions\AdditionExpression.cpp.obj: ..\src\model\expressions\base\Expression.h
 CMakeFiles\main.dir\src\model\expressions\AdditionExpression.cpp.obj: ..\src\model\expressions\base\MathExpression.h
 CMakeFiles\main.dir\src\model\expressions\AdditionExpression.cpp.obj: ..\src\model\expressions\base\OperationalExpression.h
+CMakeFiles\main.dir\src\model\expressions\AdditionExpression.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\expressions\AdditionExpression.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\expressions\AdditionExpression.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
 
@@ -1149,6 +1158,7 @@ CMakeFiles\main.dir\src\model\expressions\AssignmentExpression.cpp.obj: ..\src\m
 CMakeFiles\main.dir\src\model\expressions\AssignmentExpression.cpp.obj: ..\src\model\expressions\base\Expression.h
 CMakeFiles\main.dir\src\model\expressions\AssignmentExpression.cpp.obj: ..\src\model\expressions\base\MonoExpression.h
 CMakeFiles\main.dir\src\model\expressions\AssignmentExpression.cpp.obj: ..\src\model\expressions\base\OperationalExpression.h
+CMakeFiles\main.dir\src\model\expressions\AssignmentExpression.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\expressions\AssignmentExpression.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\expressions\AssignmentExpression.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
 
@@ -1161,6 +1171,7 @@ CMakeFiles\main.dir\src\model\expressions\ConstructorCallExpression.cpp.obj: ..\
 CMakeFiles\main.dir\src\model\expressions\ConstructorCallExpression.cpp.obj: ..\src\model\expressions\base\DottedExpression.h
 CMakeFiles\main.dir\src\model\expressions\ConstructorCallExpression.cpp.obj: ..\src\model\expressions\base\Expression.h
 CMakeFiles\main.dir\src\model\expressions\ConstructorCallExpression.cpp.obj: ..\src\model\expressions\base\MonoExpression.h
+CMakeFiles\main.dir\src\model\expressions\ConstructorCallExpression.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\expressions\ConstructorCallExpression.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\expressions\ConstructorCallExpression.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
 
@@ -1171,6 +1182,7 @@ CMakeFiles\main.dir\src\model\expressions\DivisionExpression.cpp.obj: ..\src\mod
 CMakeFiles\main.dir\src\model\expressions\DivisionExpression.cpp.obj: ..\src\model\expressions\base\Expression.h
 CMakeFiles\main.dir\src\model\expressions\DivisionExpression.cpp.obj: ..\src\model\expressions\base\MathExpression.h
 CMakeFiles\main.dir\src\model\expressions\DivisionExpression.cpp.obj: ..\src\model\expressions\base\OperationalExpression.h
+CMakeFiles\main.dir\src\model\expressions\DivisionExpression.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\expressions\DivisionExpression.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\expressions\DivisionExpression.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
 
@@ -1180,6 +1192,7 @@ CMakeFiles\main.dir\src\model\expressions\EqualityExpression.cpp.obj: ..\src\mod
 CMakeFiles\main.dir\src\model\expressions\EqualityExpression.cpp.obj: ..\src\model\expressions\base\DuoExpression.h
 CMakeFiles\main.dir\src\model\expressions\EqualityExpression.cpp.obj: ..\src\model\expressions\base\Expression.h
 CMakeFiles\main.dir\src\model\expressions\EqualityExpression.cpp.obj: ..\src\model\expressions\base\OperationalExpression.h
+CMakeFiles\main.dir\src\model\expressions\EqualityExpression.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\expressions\EqualityExpression.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\expressions\EqualityExpression.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
 
@@ -1189,6 +1202,7 @@ CMakeFiles\main.dir\src\model\expressions\IdentifierExpression.cpp.obj: ..\src\m
 CMakeFiles\main.dir\src\model\expressions\IdentifierExpression.cpp.obj: ..\src\model\expressions\base\DottedExpression.h
 CMakeFiles\main.dir\src\model\expressions\IdentifierExpression.cpp.obj: ..\src\model\expressions\base\Expression.h
 CMakeFiles\main.dir\src\model\expressions\IdentifierExpression.cpp.obj: ..\src\model\expressions\base\MonoExpression.h
+CMakeFiles\main.dir\src\model\expressions\IdentifierExpression.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\expressions\IdentifierExpression.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\expressions\IdentifierExpression.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
 
@@ -1198,6 +1212,7 @@ CMakeFiles\main.dir\src\model\expressions\IncrementDecrementExpression.cpp.obj: 
 CMakeFiles\main.dir\src\model\expressions\IncrementDecrementExpression.cpp.obj: ..\src\model\expressions\base\Expression.h
 CMakeFiles\main.dir\src\model\expressions\IncrementDecrementExpression.cpp.obj: ..\src\model\expressions\base\MonoExpression.h
 CMakeFiles\main.dir\src\model\expressions\IncrementDecrementExpression.cpp.obj: ..\src\model\expressions\base\OperationalExpression.h
+CMakeFiles\main.dir\src\model\expressions\IncrementDecrementExpression.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\expressions\IncrementDecrementExpression.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\expressions\IncrementDecrementExpression.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
 
@@ -1210,6 +1225,7 @@ CMakeFiles\main.dir\src\model\expressions\MethodCallExpression.cpp.obj: ..\src\m
 CMakeFiles\main.dir\src\model\expressions\MethodCallExpression.cpp.obj: ..\src\model\expressions\base\DottedExpression.h
 CMakeFiles\main.dir\src\model\expressions\MethodCallExpression.cpp.obj: ..\src\model\expressions\base\Expression.h
 CMakeFiles\main.dir\src\model\expressions\MethodCallExpression.cpp.obj: ..\src\model\expressions\base\MonoExpression.h
+CMakeFiles\main.dir\src\model\expressions\MethodCallExpression.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\expressions\MethodCallExpression.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\expressions\MethodCallExpression.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
 
@@ -1220,6 +1236,7 @@ CMakeFiles\main.dir\src\model\expressions\MultiplicationExpression.cpp.obj: ..\s
 CMakeFiles\main.dir\src\model\expressions\MultiplicationExpression.cpp.obj: ..\src\model\expressions\base\Expression.h
 CMakeFiles\main.dir\src\model\expressions\MultiplicationExpression.cpp.obj: ..\src\model\expressions\base\MathExpression.h
 CMakeFiles\main.dir\src\model\expressions\MultiplicationExpression.cpp.obj: ..\src\model\expressions\base\OperationalExpression.h
+CMakeFiles\main.dir\src\model\expressions\MultiplicationExpression.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\expressions\MultiplicationExpression.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\expressions\MultiplicationExpression.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
 
@@ -1229,6 +1246,7 @@ CMakeFiles\main.dir\src\model\expressions\NotExpression.cpp.obj: ..\src\model\ex
 CMakeFiles\main.dir\src\model\expressions\NotExpression.cpp.obj: ..\src\model\expressions\base\Expression.h
 CMakeFiles\main.dir\src\model\expressions\NotExpression.cpp.obj: ..\src\model\expressions\base\MonoExpression.h
 CMakeFiles\main.dir\src\model\expressions\NotExpression.cpp.obj: ..\src\model\expressions\base\OperationalExpression.h
+CMakeFiles\main.dir\src\model\expressions\NotExpression.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\expressions\NotExpression.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\expressions\NotExpression.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
 
@@ -1239,6 +1257,7 @@ CMakeFiles\main.dir\src\model\expressions\SubtractExpression.cpp.obj: ..\src\mod
 CMakeFiles\main.dir\src\model\expressions\SubtractExpression.cpp.obj: ..\src\model\expressions\base\Expression.h
 CMakeFiles\main.dir\src\model\expressions\SubtractExpression.cpp.obj: ..\src\model\expressions\base\MathExpression.h
 CMakeFiles\main.dir\src\model\expressions\SubtractExpression.cpp.obj: ..\src\model\expressions\base\OperationalExpression.h
+CMakeFiles\main.dir\src\model\expressions\SubtractExpression.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\expressions\SubtractExpression.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\expressions\SubtractExpression.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
 
@@ -1251,6 +1270,7 @@ CMakeFiles\main.dir\src\model\expressions\SuperCallExpression.cpp.obj: ..\src\mo
 CMakeFiles\main.dir\src\model\expressions\SuperCallExpression.cpp.obj: ..\src\model\expressions\base\DottedExpression.h
 CMakeFiles\main.dir\src\model\expressions\SuperCallExpression.cpp.obj: ..\src\model\expressions\base\Expression.h
 CMakeFiles\main.dir\src\model\expressions\SuperCallExpression.cpp.obj: ..\src\model\expressions\base\MonoExpression.h
+CMakeFiles\main.dir\src\model\expressions\SuperCallExpression.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\expressions\SuperCallExpression.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\expressions\SuperCallExpression.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
 
@@ -1260,6 +1280,7 @@ CMakeFiles\main.dir\src\model\expressions\SuperExpression.cpp.obj: ..\src\model\
 CMakeFiles\main.dir\src\model\expressions\SuperExpression.cpp.obj: ..\src\model\expressions\base\DottedExpression.h
 CMakeFiles\main.dir\src\model\expressions\SuperExpression.cpp.obj: ..\src\model\expressions\base\Expression.h
 CMakeFiles\main.dir\src\model\expressions\SuperExpression.cpp.obj: ..\src\model\expressions\base\MonoExpression.h
+CMakeFiles\main.dir\src\model\expressions\SuperExpression.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\expressions\SuperExpression.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\expressions\SuperExpression.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
 
@@ -1272,6 +1293,7 @@ CMakeFiles\main.dir\src\model\expressions\ThisCallExpression.cpp.obj: ..\src\mod
 CMakeFiles\main.dir\src\model\expressions\ThisCallExpression.cpp.obj: ..\src\model\expressions\base\DottedExpression.h
 CMakeFiles\main.dir\src\model\expressions\ThisCallExpression.cpp.obj: ..\src\model\expressions\base\Expression.h
 CMakeFiles\main.dir\src\model\expressions\ThisCallExpression.cpp.obj: ..\src\model\expressions\base\MonoExpression.h
+CMakeFiles\main.dir\src\model\expressions\ThisCallExpression.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\expressions\ThisCallExpression.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\expressions\ThisCallExpression.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
 
@@ -1281,6 +1303,7 @@ CMakeFiles\main.dir\src\model\expressions\ThisExpression.cpp.obj: ..\src\model\e
 CMakeFiles\main.dir\src\model\expressions\ThisExpression.cpp.obj: ..\src\model\expressions\base\DottedExpression.h
 CMakeFiles\main.dir\src\model\expressions\ThisExpression.cpp.obj: ..\src\model\expressions\base\Expression.h
 CMakeFiles\main.dir\src\model\expressions\ThisExpression.cpp.obj: ..\src\model\expressions\base\MonoExpression.h
+CMakeFiles\main.dir\src\model\expressions\ThisExpression.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\expressions\ThisExpression.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\expressions\ThisExpression.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
 
@@ -1288,6 +1311,7 @@ CMakeFiles\main.dir\src\model\expressions\TypeExpression.cpp.obj: ..\src\model\V
 CMakeFiles\main.dir\src\model\expressions\TypeExpression.cpp.obj: ..\src\model\expressions\TypeExpression.cpp
 CMakeFiles\main.dir\src\model\expressions\TypeExpression.cpp.obj: ..\src\model\expressions\TypeExpression.h
 CMakeFiles\main.dir\src\model\expressions\TypeExpression.cpp.obj: ..\src\model\expressions\base\Expression.h
+CMakeFiles\main.dir\src\model\expressions\TypeExpression.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\expressions\TypeExpression.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\expressions\TypeExpression.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
 
@@ -1299,6 +1323,7 @@ CMakeFiles\main.dir\src\model\expressions\base\CallExpression.cpp.obj: ..\src\mo
 CMakeFiles\main.dir\src\model\expressions\base\CallExpression.cpp.obj: ..\src\model\expressions\base\DottedExpression.h
 CMakeFiles\main.dir\src\model\expressions\base\CallExpression.cpp.obj: ..\src\model\expressions\base\Expression.h
 CMakeFiles\main.dir\src\model\expressions\base\CallExpression.cpp.obj: ..\src\model\expressions\base\MonoExpression.h
+CMakeFiles\main.dir\src\model\expressions\base\CallExpression.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\expressions\base\CallExpression.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\expressions\base\CallExpression.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
 
@@ -1307,6 +1332,7 @@ CMakeFiles\main.dir\src\model\expressions\base\DottedExpression.cpp.obj: ..\src\
 CMakeFiles\main.dir\src\model\expressions\base\DottedExpression.cpp.obj: ..\src\model\expressions\base\DottedExpression.h
 CMakeFiles\main.dir\src\model\expressions\base\DottedExpression.cpp.obj: ..\src\model\expressions\base\Expression.h
 CMakeFiles\main.dir\src\model\expressions\base\DottedExpression.cpp.obj: ..\src\model\expressions\base\MonoExpression.h
+CMakeFiles\main.dir\src\model\expressions\base\DottedExpression.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\expressions\base\DottedExpression.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\expressions\base\DottedExpression.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
 
@@ -1314,12 +1340,14 @@ CMakeFiles\main.dir\src\model\expressions\base\DuoExpression.cpp.obj: ..\src\mod
 CMakeFiles\main.dir\src\model\expressions\base\DuoExpression.cpp.obj: ..\src\model\expressions\base\DuoExpression.cpp
 CMakeFiles\main.dir\src\model\expressions\base\DuoExpression.cpp.obj: ..\src\model\expressions\base\DuoExpression.h
 CMakeFiles\main.dir\src\model\expressions\base\DuoExpression.cpp.obj: ..\src\model\expressions\base\Expression.h
+CMakeFiles\main.dir\src\model\expressions\base\DuoExpression.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\expressions\base\DuoExpression.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\expressions\base\DuoExpression.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
 
 CMakeFiles\main.dir\src\model\expressions\base\Expression.cpp.obj: ..\src\model\Visitable.h
 CMakeFiles\main.dir\src\model\expressions\base\Expression.cpp.obj: ..\src\model\expressions\base\Expression.cpp
 CMakeFiles\main.dir\src\model\expressions\base\Expression.cpp.obj: ..\src\model\expressions\base\Expression.h
+CMakeFiles\main.dir\src\model\expressions\base\Expression.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\expressions\base\Expression.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\expressions\base\Expression.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
 
@@ -1329,6 +1357,7 @@ CMakeFiles\main.dir\src\model\expressions\base\MathExpression.cpp.obj: ..\src\mo
 CMakeFiles\main.dir\src\model\expressions\base\MathExpression.cpp.obj: ..\src\model\expressions\base\MathExpression.cpp
 CMakeFiles\main.dir\src\model\expressions\base\MathExpression.cpp.obj: ..\src\model\expressions\base\MathExpression.h
 CMakeFiles\main.dir\src\model\expressions\base\MathExpression.cpp.obj: ..\src\model\expressions\base\OperationalExpression.h
+CMakeFiles\main.dir\src\model\expressions\base\MathExpression.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\expressions\base\MathExpression.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\expressions\base\MathExpression.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
 
@@ -1336,6 +1365,7 @@ CMakeFiles\main.dir\src\model\expressions\base\MonoExpression.cpp.obj: ..\src\mo
 CMakeFiles\main.dir\src\model\expressions\base\MonoExpression.cpp.obj: ..\src\model\expressions\base\Expression.h
 CMakeFiles\main.dir\src\model\expressions\base\MonoExpression.cpp.obj: ..\src\model\expressions\base\MonoExpression.cpp
 CMakeFiles\main.dir\src\model\expressions\base\MonoExpression.cpp.obj: ..\src\model\expressions\base\MonoExpression.h
+CMakeFiles\main.dir\src\model\expressions\base\MonoExpression.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\expressions\base\MonoExpression.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\expressions\base\MonoExpression.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
 
@@ -1343,6 +1373,7 @@ CMakeFiles\main.dir\src\model\expressions\base\OperationalExpression.cpp.obj: ..
 CMakeFiles\main.dir\src\model\expressions\base\OperationalExpression.cpp.obj: ..\src\model\expressions\base\Expression.h
 CMakeFiles\main.dir\src\model\expressions\base\OperationalExpression.cpp.obj: ..\src\model\expressions\base\OperationalExpression.cpp
 CMakeFiles\main.dir\src\model\expressions\base\OperationalExpression.cpp.obj: ..\src\model\expressions\base\OperationalExpression.h
+CMakeFiles\main.dir\src\model\expressions\base\OperationalExpression.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\expressions\base\OperationalExpression.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\expressions\base\OperationalExpression.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
 
@@ -1358,6 +1389,7 @@ CMakeFiles\main.dir\src\model\statements\ElseStatement.cpp.obj: ..\src\model\sta
 CMakeFiles\main.dir\src\model\statements\ElseStatement.cpp.obj: ..\src\model\statements\ElseStatement.h
 CMakeFiles\main.dir\src\model\statements\ElseStatement.cpp.obj: ..\src\model\statements\base\Statement.h
 CMakeFiles\main.dir\src\model\statements\ElseStatement.cpp.obj: ..\src\model\statements\base\StatementContainingStatement.h
+CMakeFiles\main.dir\src\model\statements\ElseStatement.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\statements\ElseStatement.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\statements\ElseStatement.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
 
@@ -1371,18 +1403,23 @@ CMakeFiles\main.dir\src\model\statements\ExpressionStatement.cpp.obj: ..\src\mod
 CMakeFiles\main.dir\src\model\statements\ExpressionStatement.cpp.obj: ..\src\model\statements\ExpressionStatement.cpp
 CMakeFiles\main.dir\src\model\statements\ExpressionStatement.cpp.obj: ..\src\model\statements\ExpressionStatement.h
 CMakeFiles\main.dir\src\model\statements\ExpressionStatement.cpp.obj: ..\src\model\statements\base\Statement.h
+CMakeFiles\main.dir\src\model\statements\ExpressionStatement.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\statements\ExpressionStatement.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\statements\ExpressionStatement.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
 
+CMakeFiles\main.dir\src\model\statements\ForStatement.cpp.obj: ..\src\model\expressions\base\Expression.h
 CMakeFiles\main.dir\src\model\statements\ForStatement.cpp.obj: ..\src\model\Visitable.h
 CMakeFiles\main.dir\src\model\statements\ForStatement.cpp.obj: ..\src\model\expressions\base\Expression.h
 CMakeFiles\main.dir\src\model\statements\ForStatement.cpp.obj: ..\src\model\statements\ForStatement.cpp
 CMakeFiles\main.dir\src\model\statements\ForStatement.cpp.obj: ..\src\model\statements\ForStatement.h
+CMakeFiles\main.dir\src\model\statements\ForStatement.cpp.obj: ..\src\model\statements\VariableDeclarationStatement.h
 CMakeFiles\main.dir\src\model\statements\ForStatement.cpp.obj: ..\src\model\statements\base\ConditionalStatement.h
 CMakeFiles\main.dir\src\model\statements\ForStatement.cpp.obj: ..\src\model\statements\base\Statement.h
 CMakeFiles\main.dir\src\model\statements\ForStatement.cpp.obj: ..\src\model\statements\base\StatementContainingStatement.h
+CMakeFiles\main.dir\src\model\statements\ForStatement.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\statements\ForStatement.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\statements\ForStatement.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
+CMakeFiles\main.dir\src\model\statements\ForStatement.cpp.obj: ..\src\model\symbols\base\VariableSymbol.h
 
 CMakeFiles\main.dir\src\model\statements\IfStatement.cpp.obj: ..\src\model\Visitable.h
 CMakeFiles\main.dir\src\model\statements\IfStatement.cpp.obj: ..\src\model\expressions\base\Expression.h
@@ -1392,10 +1429,14 @@ CMakeFiles\main.dir\src\model\statements\IfStatement.cpp.obj: ..\src\model\state
 CMakeFiles\main.dir\src\model\statements\IfStatement.cpp.obj: ..\src\model\statements\base\ConditionalStatement.h
 CMakeFiles\main.dir\src\model\statements\IfStatement.cpp.obj: ..\src\model\statements\base\Statement.h
 CMakeFiles\main.dir\src\model\statements\IfStatement.cpp.obj: ..\src\model\statements\base\StatementContainingStatement.h
+CMakeFiles\main.dir\src\model\statements\IfStatement.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\statements\IfStatement.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\statements\IfStatement.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
 
 CMakeFiles\main.dir\src\model\statements\VariableDeclarationStatement.cpp.obj: ..\src\model\Visitable.h
+CMakeFiles\main.dir\src\model\statements\VariableDeclarationStatement.cpp.obj: ..\src\model\expressions\base\Expression.h
+CMakeFiles\main.dir\src\model\statements\VariableDeclarationStatement.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
+CMakeFiles\main.dir\src\model\statements\VariableDeclarationStatement.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
 CMakeFiles\main.dir\src\model\statements\VariableDeclarationStatement.cpp.obj: ..\src\model\statements\VariableDeclarationStatement.cpp
 CMakeFiles\main.dir\src\model\statements\VariableDeclarationStatement.cpp.obj: ..\src\model\statements\VariableDeclarationStatement.h
 CMakeFiles\main.dir\src\model\statements\VariableDeclarationStatement.cpp.obj: ..\src\model\statements\base\Statement.h
@@ -1410,6 +1451,7 @@ CMakeFiles\main.dir\src\model\statements\WhileStatement.cpp.obj: ..\src\model\st
 CMakeFiles\main.dir\src\model\statements\WhileStatement.cpp.obj: ..\src\model\statements\base\ConditionalStatement.h
 CMakeFiles\main.dir\src\model\statements\WhileStatement.cpp.obj: ..\src\model\statements\base\Statement.h
 CMakeFiles\main.dir\src\model\statements\WhileStatement.cpp.obj: ..\src\model\statements\base\StatementContainingStatement.h
+CMakeFiles\main.dir\src\model\statements\WhileStatement.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\statements\WhileStatement.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\statements\WhileStatement.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
 
@@ -1419,6 +1461,7 @@ CMakeFiles\main.dir\src\model\statements\base\ConditionalStatement.cpp.obj: ..\s
 CMakeFiles\main.dir\src\model\statements\base\ConditionalStatement.cpp.obj: ..\src\model\statements\base\ConditionalStatement.h
 CMakeFiles\main.dir\src\model\statements\base\ConditionalStatement.cpp.obj: ..\src\model\statements\base\Statement.h
 CMakeFiles\main.dir\src\model\statements\base\ConditionalStatement.cpp.obj: ..\src\model\statements\base\StatementContainingStatement.h
+CMakeFiles\main.dir\src\model\statements\base\ConditionalStatement.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\statements\base\ConditionalStatement.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\statements\base\ConditionalStatement.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
 
@@ -1431,47 +1474,46 @@ CMakeFiles\main.dir\src\model\statements\base\StatementContainingStatement.cpp.o
 CMakeFiles\main.dir\src\model\statements\base\StatementContainingStatement.cpp.obj: ..\src\model\statements\base\Statement.h
 CMakeFiles\main.dir\src\model\statements\base\StatementContainingStatement.cpp.obj: ..\src\model\statements\base\StatementContainingStatement.cpp
 CMakeFiles\main.dir\src\model\statements\base\StatementContainingStatement.cpp.obj: ..\src\model\statements\base\StatementContainingStatement.h
+CMakeFiles\main.dir\src\model\statements\base\StatementContainingStatement.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\statements\base\StatementContainingStatement.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\statements\base\StatementContainingStatement.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
 
+CMakeFiles\main.dir\src\model\symbols\ClassSymbol.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\symbols\ClassSymbol.cpp.obj: ..\src\model\Visitable.h
 CMakeFiles\main.dir\src\model\symbols\ClassSymbol.cpp.obj: ..\src\model\symbols\ClassSymbol.cpp
 CMakeFiles\main.dir\src\model\symbols\ClassSymbol.cpp.obj: ..\src\model\symbols\ClassSymbol.h
 CMakeFiles\main.dir\src\model\symbols\ClassSymbol.cpp.obj: ..\src\model\symbols\FieldSymbol.h
-CMakeFiles\main.dir\src\model\symbols\ClassSymbol.cpp.obj: ..\src\model\symbols\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\symbols\ClassSymbol.cpp.obj: ..\src\model\symbols\MemberSymbol.h
 CMakeFiles\main.dir\src\model\symbols\ClassSymbol.cpp.obj: ..\src\model\symbols\MethodSymbol.h
 CMakeFiles\main.dir\src\model\symbols\ClassSymbol.cpp.obj: ..\src\model\symbols\ParameterSymbol.h
+CMakeFiles\main.dir\src\model\symbols\ClassSymbol.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\symbols\ClassSymbol.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\symbols\ClassSymbol.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
 CMakeFiles\main.dir\src\model\symbols\ClassSymbol.cpp.obj: ..\src\model\symbols\base\VariableSymbol.h
 
+CMakeFiles\main.dir\src\model\symbols\FieldSymbol.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\symbols\FieldSymbol.cpp.obj: ..\src\model\Visitable.h
 CMakeFiles\main.dir\src\model\symbols\FieldSymbol.cpp.obj: ..\src\model\symbols\FieldSymbol.cpp
 CMakeFiles\main.dir\src\model\symbols\FieldSymbol.cpp.obj: ..\src\model\symbols\FieldSymbol.h
-CMakeFiles\main.dir\src\model\symbols\FieldSymbol.cpp.obj: ..\src\model\symbols\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\symbols\FieldSymbol.cpp.obj: ..\src\model\symbols\MemberSymbol.h
+CMakeFiles\main.dir\src\model\symbols\FieldSymbol.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\symbols\FieldSymbol.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\symbols\FieldSymbol.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
 CMakeFiles\main.dir\src\model\symbols\FieldSymbol.cpp.obj: ..\src\model\symbols\base\VariableSymbol.h
 
 CMakeFiles\main.dir\src\model\symbols\FileSymbol.cpp.obj: ..\src\model\Visitable.h
+CMakeFiles\main.dir\src\model\symbols\FileSymbol.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
+CMakeFiles\main.dir\src\model\symbols\FileSymbol.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\symbols\FileSymbol.cpp.obj: ..\src\model\symbols\ClassSymbol.h
 CMakeFiles\main.dir\src\model\symbols\FileSymbol.cpp.obj: ..\src\model\symbols\FieldSymbol.h
 CMakeFiles\main.dir\src\model\symbols\FileSymbol.cpp.obj: ..\src\model\symbols\FileSymbol.cpp
 CMakeFiles\main.dir\src\model\symbols\FileSymbol.cpp.obj: ..\src\model\symbols\FileSymbol.h
-CMakeFiles\main.dir\src\model\symbols\FileSymbol.cpp.obj: ..\src\model\symbols\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\symbols\FileSymbol.cpp.obj: ..\src\model\symbols\MemberSymbol.h
 CMakeFiles\main.dir\src\model\symbols\FileSymbol.cpp.obj: ..\src\model\symbols\MethodSymbol.h
 CMakeFiles\main.dir\src\model\symbols\FileSymbol.cpp.obj: ..\src\model\symbols\ParameterSymbol.h
-CMakeFiles\main.dir\src\model\symbols\FileSymbol.cpp.obj: ..\src\model\symbols\base\Symbol.h
+CMakeFiles\main.dir\src\model\symbols\FileSymbol.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\symbols\FileSymbol.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
 CMakeFiles\main.dir\src\model\symbols\FileSymbol.cpp.obj: ..\src\model\symbols\base\VariableSymbol.h
-
-CMakeFiles\main.dir\src\model\symbols\FullyQualifiedSymbol.cpp.obj: ..\src\model\Visitable.h
-CMakeFiles\main.dir\src\model\symbols\FullyQualifiedSymbol.cpp.obj: ..\src\model\symbols\FullyQualifiedSymbol.cpp
-CMakeFiles\main.dir\src\model\symbols\FullyQualifiedSymbol.cpp.obj: ..\src\model\symbols\FullyQualifiedSymbol.h
-CMakeFiles\main.dir\src\model\symbols\FullyQualifiedSymbol.cpp.obj: ..\src\model\symbols\base\Symbol.h
 
 CMakeFiles\main.dir\src\model\symbols\ImportSymbol.cpp.obj: ..\src\model\Visitable.h
 CMakeFiles\main.dir\src\model\symbols\ImportSymbol.cpp.obj: ..\src\model\symbols\ImportSymbol.cpp
@@ -1481,29 +1523,32 @@ CMakeFiles\main.dir\src\model\symbols\ImportSymbol.cpp.obj: ..\src\model\symbols
 CMakeFiles\main.dir\src\model\symbols\InvalidTypeSymbol.cpp.obj: ..\src\model\Visitable.h
 CMakeFiles\main.dir\src\model\symbols\InvalidTypeSymbol.cpp.obj: ..\src\model\symbols\InvalidTypeSymbol.cpp
 CMakeFiles\main.dir\src\model\symbols\InvalidTypeSymbol.cpp.obj: ..\src\model\symbols\InvalidTypeSymbol.h
+CMakeFiles\main.dir\src\model\symbols\InvalidTypeSymbol.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\symbols\InvalidTypeSymbol.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\symbols\InvalidTypeSymbol.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
 
 CMakeFiles\main.dir\src\model\symbols\LocalVariableSymbol.cpp.obj: ..\src\model\Visitable.h
 CMakeFiles\main.dir\src\model\symbols\LocalVariableSymbol.cpp.obj: ..\src\model\symbols\LocalVariableSymbol.cpp
 CMakeFiles\main.dir\src\model\symbols\LocalVariableSymbol.cpp.obj: ..\src\model\symbols\LocalVariableSymbol.h
+CMakeFiles\main.dir\src\model\symbols\LocalVariableSymbol.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\symbols\LocalVariableSymbol.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\symbols\LocalVariableSymbol.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
 CMakeFiles\main.dir\src\model\symbols\LocalVariableSymbol.cpp.obj: ..\src\model\symbols\base\VariableSymbol.h
 
 CMakeFiles\main.dir\src\model\symbols\MemberSymbol.cpp.obj: ..\src\model\Visitable.h
-CMakeFiles\main.dir\src\model\symbols\MemberSymbol.cpp.obj: ..\src\model\symbols\FullyQualifiedSymbol.h
+CMakeFiles\main.dir\src\model\symbols\MemberSymbol.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
+CMakeFiles\main.dir\src\model\symbols\MemberSymbol.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\symbols\MemberSymbol.cpp.obj: ..\src\model\symbols\MemberSymbol.cpp
 CMakeFiles\main.dir\src\model\symbols\MemberSymbol.cpp.obj: ..\src\model\symbols\MemberSymbol.h
-CMakeFiles\main.dir\src\model\symbols\MemberSymbol.cpp.obj: ..\src\model\symbols\base\Symbol.h
 
 CMakeFiles\main.dir\src\model\symbols\MethodSymbol.cpp.obj: ..\src\model\Visitable.h
-CMakeFiles\main.dir\src\model\symbols\MethodSymbol.cpp.obj: ..\src\model\symbols\FullyQualifiedSymbol.h
+CMakeFiles\main.dir\src\model\symbols\MethodSymbol.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
+CMakeFiles\main.dir\src\model\symbols\MethodSymbol.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\symbols\MethodSymbol.cpp.obj: ..\src\model\symbols\MemberSymbol.h
 CMakeFiles\main.dir\src\model\symbols\MethodSymbol.cpp.obj: ..\src\model\symbols\MethodSymbol.cpp
 CMakeFiles\main.dir\src\model\symbols\MethodSymbol.cpp.obj: ..\src\model\symbols\MethodSymbol.h
 CMakeFiles\main.dir\src\model\symbols\MethodSymbol.cpp.obj: ..\src\model\symbols\ParameterSymbol.h
-CMakeFiles\main.dir\src\model\symbols\MethodSymbol.cpp.obj: ..\src\model\symbols\base\Symbol.h
+CMakeFiles\main.dir\src\model\symbols\MethodSymbol.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\symbols\MethodSymbol.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
 CMakeFiles\main.dir\src\model\symbols\MethodSymbol.cpp.obj: ..\src\model\symbols\base\VariableSymbol.h
 
@@ -1511,11 +1556,11 @@ CMakeFiles\main.dir\src\model\symbols\PackageSymbol.cpp.obj: ..\src\model\Visita
 CMakeFiles\main.dir\src\model\symbols\PackageSymbol.cpp.obj: ..\src\model\symbols\ClassSymbol.h
 CMakeFiles\main.dir\src\model\symbols\PackageSymbol.cpp.obj: ..\src\model\symbols\FieldSymbol.h
 CMakeFiles\main.dir\src\model\symbols\PackageSymbol.cpp.obj: ..\src\model\symbols\FileSymbol.h
-CMakeFiles\main.dir\src\model\symbols\PackageSymbol.cpp.obj: ..\src\model\symbols\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\symbols\PackageSymbol.cpp.obj: ..\src\model\symbols\MemberSymbol.h
 CMakeFiles\main.dir\src\model\symbols\PackageSymbol.cpp.obj: ..\src\model\symbols\MethodSymbol.h
 CMakeFiles\main.dir\src\model\symbols\PackageSymbol.cpp.obj: ..\src\model\symbols\PackageSymbol.h
 CMakeFiles\main.dir\src\model\symbols\PackageSymbol.cpp.obj: ..\src\model\symbols\ParameterSymbol.h
+CMakeFiles\main.dir\src\model\symbols\PackageSymbol.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\symbols\PackageSymbol.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\symbols\PackageSymbol.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
 CMakeFiles\main.dir\src\model\symbols\PackageSymbol.cpp.obj: ..\src\model\symbols\base\VariableSymbol.h
@@ -1524,19 +1569,21 @@ CMakeFiles\main.dir\src\model\symbols\PackageSymbol.cpp.obj: ..\src\model\symbol
 CMakeFiles\main.dir\src\model\symbols\ParameterSymbol.cpp.obj: ..\src\model\Visitable.h
 CMakeFiles\main.dir\src\model\symbols\ParameterSymbol.cpp.obj: ..\src\model\symbols\ParameterSymbol.cpp
 CMakeFiles\main.dir\src\model\symbols\ParameterSymbol.cpp.obj: ..\src\model\symbols\ParameterSymbol.h
+CMakeFiles\main.dir\src\model\symbols\ParameterSymbol.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\symbols\ParameterSymbol.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\symbols\ParameterSymbol.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
 CMakeFiles\main.dir\src\model\symbols\ParameterSymbol.cpp.obj: ..\src\model\symbols\base\VariableSymbol.h
 
+CMakeFiles\main.dir\src\model\symbols\PredefinedClassSymbol.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\symbols\PredefinedClassSymbol.cpp.obj: ..\src\model\Visitable.h
 CMakeFiles\main.dir\src\model\symbols\PredefinedClassSymbol.cpp.obj: ..\src\model\symbols\ClassSymbol.h
 CMakeFiles\main.dir\src\model\symbols\PredefinedClassSymbol.cpp.obj: ..\src\model\symbols\FieldSymbol.h
-CMakeFiles\main.dir\src\model\symbols\PredefinedClassSymbol.cpp.obj: ..\src\model\symbols\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\symbols\PredefinedClassSymbol.cpp.obj: ..\src\model\symbols\MemberSymbol.h
 CMakeFiles\main.dir\src\model\symbols\PredefinedClassSymbol.cpp.obj: ..\src\model\symbols\MethodSymbol.h
 CMakeFiles\main.dir\src\model\symbols\PredefinedClassSymbol.cpp.obj: ..\src\model\symbols\ParameterSymbol.h
 CMakeFiles\main.dir\src\model\symbols\PredefinedClassSymbol.cpp.obj: ..\src\model\symbols\PredefinedClassSymbol.cpp
 CMakeFiles\main.dir\src\model\symbols\PredefinedClassSymbol.cpp.obj: ..\src\model\symbols\PredefinedClassSymbol.h
+CMakeFiles\main.dir\src\model\symbols\PredefinedClassSymbol.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\symbols\PredefinedClassSymbol.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\symbols\PredefinedClassSymbol.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
 CMakeFiles\main.dir\src\model\symbols\PredefinedClassSymbol.cpp.obj: ..\src\model\symbols\base\VariableSymbol.h
@@ -1544,19 +1591,27 @@ CMakeFiles\main.dir\src\model\symbols\PredefinedClassSymbol.cpp.obj: ..\src\mode
 CMakeFiles\main.dir\src\model\symbols\PrimitiveTypeSymbol.cpp.obj: ..\src\model\Visitable.h
 CMakeFiles\main.dir\src\model\symbols\PrimitiveTypeSymbol.cpp.obj: ..\src\model\symbols\PrimitiveTypeSymbol.cpp
 CMakeFiles\main.dir\src\model\symbols\PrimitiveTypeSymbol.cpp.obj: ..\src\model\symbols\PrimitiveTypeSymbol.h
+CMakeFiles\main.dir\src\model\symbols\PrimitiveTypeSymbol.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\symbols\PrimitiveTypeSymbol.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\symbols\PrimitiveTypeSymbol.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
+
+CMakeFiles\main.dir\src\model\symbols\base\FullyQualifiedSymbol.cpp.obj: ..\src\model\Visitable.h
+CMakeFiles\main.dir\src\model\symbols\base\FullyQualifiedSymbol.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.cpp
+CMakeFiles\main.dir\src\model\symbols\base\FullyQualifiedSymbol.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
+CMakeFiles\main.dir\src\model\symbols\base\FullyQualifiedSymbol.cpp.obj: ..\src\model\symbols\base\Symbol.h
 
 CMakeFiles\main.dir\src\model\symbols\base\Symbol.cpp.obj: ..\src\model\Visitable.h
 CMakeFiles\main.dir\src\model\symbols\base\Symbol.cpp.obj: ..\src\model\symbols\base\Symbol.cpp
 CMakeFiles\main.dir\src\model\symbols\base\Symbol.cpp.obj: ..\src\model\symbols\base\Symbol.h
 
 CMakeFiles\main.dir\src\model\symbols\base\TypeSymbol.cpp.obj: ..\src\model\Visitable.h
+CMakeFiles\main.dir\src\model\symbols\base\TypeSymbol.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\symbols\base\TypeSymbol.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\symbols\base\TypeSymbol.cpp.obj: ..\src\model\symbols\base\TypeSymbol.cpp
 CMakeFiles\main.dir\src\model\symbols\base\TypeSymbol.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
 
 CMakeFiles\main.dir\src\model\symbols\base\VariableSymbol.cpp.obj: ..\src\model\Visitable.h
+CMakeFiles\main.dir\src\model\symbols\base\VariableSymbol.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.h
 CMakeFiles\main.dir\src\model\symbols\base\VariableSymbol.cpp.obj: ..\src\model\symbols\base\Symbol.h
 CMakeFiles\main.dir\src\model\symbols\base\VariableSymbol.cpp.obj: ..\src\model\symbols\base\TypeSymbol.h
 CMakeFiles\main.dir\src\model\symbols\base\VariableSymbol.cpp.obj: ..\src\model\symbols\base\VariableSymbol.cpp

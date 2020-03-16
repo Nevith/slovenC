@@ -10,7 +10,7 @@
 #include "ClassSymbol.h"
 
 
-class PredefinedClassSymbol: public ClassSymbol {
+class PredefinedClassSymbol : public ClassSymbol {
 };
 
 #endif //_PREDEFINEDCLASSSYMBOL_H

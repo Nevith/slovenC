@@ -10,7 +10,7 @@
 #include "model/symbols/base/FullyQualifiedSymbol.h"
 
 
-class MemberSymbol: public FullyQualifiedSymbol {
+class MemberSymbol : public FullyQualifiedSymbol {
 };
 
 #endif //_MEMBERSYMBOL_H

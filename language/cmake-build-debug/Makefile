@@ -387,6 +387,60 @@ src\antlr\SlovenCLanguageParserVisitor.cpp.s:
 	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\antlr\SlovenCLanguageParserVisitor.cpp.s
 .PHONY : src\antlr\SlovenCLanguageParserVisitor.cpp.s
 
+src\async\Job.obj: src\async\Job.cpp.obj
+
+.PHONY : src\async\Job.obj
+
+# target to build an object file
+src\async\Job.cpp.obj:
+	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\async\Job.cpp.obj
+.PHONY : src\async\Job.cpp.obj
+
+src\async\Job.i: src\async\Job.cpp.i
+
+.PHONY : src\async\Job.i
+
+# target to preprocess a source file
+src\async\Job.cpp.i:
+	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\async\Job.cpp.i
+.PHONY : src\async\Job.cpp.i
+
+src\async\Job.s: src\async\Job.cpp.s
+
+.PHONY : src\async\Job.s
+
+# target to generate assembly for a file
+src\async\Job.cpp.s:
+	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\async\Job.cpp.s
+.PHONY : src\async\Job.cpp.s
+
+src\async\JobManager.obj: src\async\JobManager.cpp.obj
+
+.PHONY : src\async\JobManager.obj
+
+# target to build an object file
+src\async\JobManager.cpp.obj:
+	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\async\JobManager.cpp.obj
+.PHONY : src\async\JobManager.cpp.obj
+
+src\async\JobManager.i: src\async\JobManager.cpp.i
+
+.PHONY : src\async\JobManager.i
+
+# target to preprocess a source file
+src\async\JobManager.cpp.i:
+	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\async\JobManager.cpp.i
+.PHONY : src\async\JobManager.cpp.i
+
+src\async\JobManager.s: src\async\JobManager.cpp.s
+
+.PHONY : src\async\JobManager.s
+
+# target to generate assembly for a file
+src\async\JobManager.cpp.s:
+	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\async\JobManager.cpp.s
+.PHONY : src\async\JobManager.cpp.s
+
 src\model\Scope.obj: src\model\Scope.cpp.obj
 
 .PHONY : src\model\Scope.obj
@@ -1440,33 +1494,6 @@ src\model\symbols\FileSymbol.cpp.s:
 	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\model\symbols\FileSymbol.cpp.s
 .PHONY : src\model\symbols\FileSymbol.cpp.s
 
-src\model\symbols\FullyQualifiedSymbol.obj: src\model\symbols\FullyQualifiedSymbol.cpp.obj
-
-.PHONY : src\model\symbols\FullyQualifiedSymbol.obj
-
-# target to build an object file
-src\model\symbols\FullyQualifiedSymbol.cpp.obj:
-	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\model\symbols\FullyQualifiedSymbol.cpp.obj
-.PHONY : src\model\symbols\FullyQualifiedSymbol.cpp.obj
-
-src\model\symbols\FullyQualifiedSymbol.i: src\model\symbols\FullyQualifiedSymbol.cpp.i
-
-.PHONY : src\model\symbols\FullyQualifiedSymbol.i
-
-# target to preprocess a source file
-src\model\symbols\FullyQualifiedSymbol.cpp.i:
-	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\model\symbols\FullyQualifiedSymbol.cpp.i
-.PHONY : src\model\symbols\FullyQualifiedSymbol.cpp.i
-
-src\model\symbols\FullyQualifiedSymbol.s: src\model\symbols\FullyQualifiedSymbol.cpp.s
-
-.PHONY : src\model\symbols\FullyQualifiedSymbol.s
-
-# target to generate assembly for a file
-src\model\symbols\FullyQualifiedSymbol.cpp.s:
-	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\model\symbols\FullyQualifiedSymbol.cpp.s
-.PHONY : src\model\symbols\FullyQualifiedSymbol.cpp.s
-
 src\model\symbols\ImportSymbol.obj: src\model\symbols\ImportSymbol.cpp.obj
 
 .PHONY : src\model\symbols\ImportSymbol.obj
@@ -1710,6 +1737,33 @@ src\model\symbols\PrimitiveTypeSymbol.cpp.s:
 	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\model\symbols\PrimitiveTypeSymbol.cpp.s
 .PHONY : src\model\symbols\PrimitiveTypeSymbol.cpp.s
 
+src\model\symbols\base\FullyQualifiedSymbol.obj: src\model\symbols\base\FullyQualifiedSymbol.cpp.obj
+
+.PHONY : src\model\symbols\base\FullyQualifiedSymbol.obj
+
+# target to build an object file
+src\model\symbols\base\FullyQualifiedSymbol.cpp.obj:
+	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\model\symbols\base\FullyQualifiedSymbol.cpp.obj
+.PHONY : src\model\symbols\base\FullyQualifiedSymbol.cpp.obj
+
+src\model\symbols\base\FullyQualifiedSymbol.i: src\model\symbols\base\FullyQualifiedSymbol.cpp.i
+
+.PHONY : src\model\symbols\base\FullyQualifiedSymbol.i
+
+# target to preprocess a source file
+src\model\symbols\base\FullyQualifiedSymbol.cpp.i:
+	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\model\symbols\base\FullyQualifiedSymbol.cpp.i
+.PHONY : src\model\symbols\base\FullyQualifiedSymbol.cpp.i
+
+src\model\symbols\base\FullyQualifiedSymbol.s: src\model\symbols\base\FullyQualifiedSymbol.cpp.s
+
+.PHONY : src\model\symbols\base\FullyQualifiedSymbol.s
+
+# target to generate assembly for a file
+src\model\symbols\base\FullyQualifiedSymbol.cpp.s:
+	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\model\symbols\base\FullyQualifiedSymbol.cpp.s
+.PHONY : src\model\symbols\base\FullyQualifiedSymbol.cpp.s
+
 src\model\symbols\base\Symbol.obj: src\model\symbols\base\Symbol.cpp.obj
 
 .PHONY : src\model\symbols\base\Symbol.obj
@@ -1827,6 +1881,12 @@ help:
 	@echo ... src/antlr/SlovenCLanguageParserVisitor.obj
 	@echo ... src/antlr/SlovenCLanguageParserVisitor.i
 	@echo ... src/antlr/SlovenCLanguageParserVisitor.s
+	@echo ... src/async/Job.obj
+	@echo ... src/async/Job.i
+	@echo ... src/async/Job.s
+	@echo ... src/async/JobManager.obj
+	@echo ... src/async/JobManager.i
+	@echo ... src/async/JobManager.s
 	@echo ... src/model/Scope.obj
 	@echo ... src/model/Scope.i
 	@echo ... src/model/Scope.s
@@ -1944,9 +2004,6 @@ help:
 	@echo ... src/model/symbols/FileSymbol.obj
 	@echo ... src/model/symbols/FileSymbol.i
 	@echo ... src/model/symbols/FileSymbol.s
-	@echo ... src/model/symbols/FullyQualifiedSymbol.obj
-	@echo ... src/model/symbols/FullyQualifiedSymbol.i
-	@echo ... src/model/symbols/FullyQualifiedSymbol.s
 	@echo ... src/model/symbols/ImportSymbol.obj
 	@echo ... src/model/symbols/ImportSymbol.i
 	@echo ... src/model/symbols/ImportSymbol.s
@@ -1974,6 +2031,9 @@ help:
 	@echo ... src/model/symbols/PrimitiveTypeSymbol.obj
 	@echo ... src/model/symbols/PrimitiveTypeSymbol.i
 	@echo ... src/model/symbols/PrimitiveTypeSymbol.s
+	@echo ... src/model/symbols/base/FullyQualifiedSymbol.obj
+	@echo ... src/model/symbols/base/FullyQualifiedSymbol.i
+	@echo ... src/model/symbols/base/FullyQualifiedSymbol.s
 	@echo ... src/model/symbols/base/Symbol.obj
 	@echo ... src/model/symbols/base/Symbol.i
 	@echo ... src/model/symbols/base/Symbol.s

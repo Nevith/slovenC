@@ -11,7 +11,7 @@
 #include "FullyQualifiedSymbol.h"
 
 
-class TypeSymbol: public FullyQualifiedSymbol {
+class TypeSymbol : public FullyQualifiedSymbol {
 };
 
 #endif //_TYPESYMBOL_H

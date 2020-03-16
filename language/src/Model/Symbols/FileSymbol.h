@@ -14,12 +14,12 @@
 class FileSymbol : public FullyQualifiedSymbol {
 public:
 
-	std::vector<ClassSymbol*> getClasses();
+    std::vector<ClassSymbol *> getClasses();
 
-	/**
-	 * @param name
-	 */
-	ClassSymbol *getClass(std::string name);
+    /**
+     * @param name
+     */
+    ClassSymbol *getClass(std::string name);
 };
 
 #endif //_FILESYMBOL_H

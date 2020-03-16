@@ -12,7 +12,7 @@
 #include "ElseStatement.h"
 
 
-class IfStatement : public StatementContainingStatement, public ConditionalStatement {
+class IfStatement : public ConditionalStatement {
 private:
     ElseStatement *elseStatement;
 

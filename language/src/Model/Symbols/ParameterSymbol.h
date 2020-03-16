@@ -10,7 +10,7 @@
 #include "base/VariableSymbol.h"
 
 
-class ParameterSymbol: public VariableSymbol {
+class ParameterSymbol : public VariableSymbol {
 };
 
 #endif //_PARAMETERSYMBOL_H

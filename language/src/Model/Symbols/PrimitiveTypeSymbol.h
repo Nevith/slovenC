@@ -10,7 +10,7 @@
 #include "base/TypeSymbol.h"
 
 
-class PrimitiveTypeSymbol: public TypeSymbol {
+class PrimitiveTypeSymbol : public TypeSymbol {
 };
 
 #endif //_PRIMITIVETYPESYMBOL_H

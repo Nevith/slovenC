@@ -10,7 +10,7 @@
 #include "base/TypeSymbol.h"
 
 
-class InvalidTypeSymbol: public TypeSymbol {
+class InvalidTypeSymbol : public TypeSymbol {
 };
 
 #endif //_INVALIDTYPESYMBOL_H

@@ -12,7 +12,7 @@
 #include "MemberSymbol.h"
 
 
-class FieldSymbol: public VariableSymbol, public FullyQualifiedSymbol, public MemberSymbol {
+class FieldSymbol : public VariableSymbol, public MemberSymbol {
 };
 
 #endif //_FIELDSYMBOL_H

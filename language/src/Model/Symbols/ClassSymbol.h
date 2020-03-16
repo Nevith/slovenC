@@ -16,35 +16,35 @@
 #include <string>
 
 
-class ClassSymbol: public TypeSymbol, public FullyQualifiedSymbol, public MemberSymbol {
-public: 
-    
-std::vector<ClassSymbol*> getClasses();
-    
+class ClassSymbol : public TypeSymbol, public MemberSymbol {
+public:
+
+    std::vector<ClassSymbol *> getClasses();
+
 /**
  * @param name
  */
-ClassSymbol* getClass(std::string name);
-    
+    ClassSymbol *getClass(std::string name);
+
 /**
  * @param name
  */
-MethodSymbol* getMethod(std::string name);
-    
+    MethodSymbol *getMethod(std::string name);
+
 /**
  * @param return
  */
-std::vector<MethodSymbol*> getMethods();
-    
+    std::vector<MethodSymbol *> getMethods();
+
 /**
  * @param name
  */
-FieldSymbol* getField(std::string name);
-    
+    FieldSymbol *getField(std::string name);
+
 /**
  * @param return
  */
-std::vector<FieldSymbol*> getFields();
+    std::vector<FieldSymbol *> getFields();
 };
 
 #endif //_CLASSSYMBOL_H

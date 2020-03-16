@@ -13,13 +13,13 @@
 
 
 class FullyQualifiedSymbol : public Symbol {
-    std::vector<FullyQualifiedSymbol*> parentSymbols;
+    std::vector<FullyQualifiedSymbol *> parentSymbols;
 
 public:
 
-    void addParentSymbol(FullyQualifiedSymbol* parentSymbol);
+    void addParentSymbol(FullyQualifiedSymbol *parentSymbol);
 
-	std::string getFullyQualifiedName();
+    std::string getFullyQualifiedName();
 
     void setParentSymbols(const std::vector<FullyQualifiedSymbol *> &parentSymbols);
 
