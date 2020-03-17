@@ -11,18 +11,18 @@
  */
 
 
-Expression *DuoExpression::getLeftExpression() const {
+std::shared_ptr<Expression> DuoExpression::getLeftExpression() const {
     return leftExpression;
 }
 
-void DuoExpression::setLeftExpression(Expression *leftExpression) {
+void DuoExpression::setLeftExpression(std::shared_ptr<Expression> leftExpression) {
     DuoExpression::leftExpression = leftExpression;
 }
 
-Expression *DuoExpression::getRightExpression() const {
+std::shared_ptr<Expression> DuoExpression::getRightExpression() const {
     return rightExpression;
 }
 
-void DuoExpression::setRightExpression(Expression *rightExpression) {
+void DuoExpression::setRightExpression(std::shared_ptr<Expression> rightExpression) {
     DuoExpression::rightExpression = rightExpression;
 }

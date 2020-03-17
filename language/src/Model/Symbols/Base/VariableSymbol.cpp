@@ -14,10 +14,10 @@
 /**
  * @return TypeSymbol
  */
-TypeSymbol *VariableSymbol::getTypeSymbol() const {
+std::shared_ptr<TypeSymbol> VariableSymbol::getTypeSymbol() const {
     return typeSymbol;
 }
 
-void VariableSymbol::setTypeSymbol(TypeSymbol *typeSymbol) {
+void VariableSymbol::setTypeSymbol(std::shared_ptr<TypeSymbol> typeSymbol) {
     VariableSymbol::typeSymbol = typeSymbol;
 }

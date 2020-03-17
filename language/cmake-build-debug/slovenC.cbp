@@ -1803,6 +1803,12 @@
 		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/symbols/base/VariableSymbol.h">
 			<Option target="main"/>
 		</Unit>
+		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/pipeline/FileSymbolJob.cpp">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/pipeline/FileSymbolJob.h">
+			<Option target="main"/>
+		</Unit>
 		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/utils/ContainerUtils.h">
 			<Option target="main"/>
 		</Unit>

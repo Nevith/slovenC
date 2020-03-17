@@ -21,7 +21,7 @@ public:
 
     virtual void run() = 0;
 
-    virtual std::vector<Job *> onComplete() = 0;
+    virtual std::vector<std::shared_ptr<Job>> onComplete() = 0;
 };
 
 

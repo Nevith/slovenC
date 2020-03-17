@@ -10,20 +10,21 @@
 #include "Symbol.h"
 #include <string>
 #include <vector>
+#include <memory>
 
 
 class FullyQualifiedSymbol : public Symbol {
-    std::vector<FullyQualifiedSymbol *> parentSymbols;
+    std::vector<std::shared_ptr<FullyQualifiedSymbol>> parentSymbols;
 
 public:
 
-    void addParentSymbol(FullyQualifiedSymbol *parentSymbol);
+    void addParentSymbol(std::shared_ptr<FullyQualifiedSymbol> parentSymbol);
 
     std::string getFullyQualifiedName();
 
-    void setParentSymbols(const std::vector<FullyQualifiedSymbol *> &parentSymbols);
+    void setParentSymbols(const std::vector<std::shared_ptr<FullyQualifiedSymbol>> &parentSymbols);
 
-    const std::vector<FullyQualifiedSymbol *> &getParentSymbols() const;
+    const std::vector<std::shared_ptr<FullyQualifiedSymbol>> &getParentSymbols() const;
 };
 
 #endif //_FULLYQUALIFIEDSYMBOL_H

@@ -10,16 +10,19 @@
 #include "Statement.h"
 #include "../../expressions/base/Expression.h"
 #include <vector>
+#include <memory>
 
 
 class StatementContainingStatement : public Statement {
-public:
-    Statement *getNestedStatement() const;
-
-    void setNestedStatement(Statement *nestedStatement);
-
 private:
-    Statement *nestedStatement;
+    std::shared_ptr<Statement> nestedStatement;
+
+public:
+
+    std::shared_ptr<Statement> getNestedStatement() const;
+
+    void setNestedStatement(std::shared_ptr<Statement> nestedStatement);
+
 public:
 };
 

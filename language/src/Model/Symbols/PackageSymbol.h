@@ -13,14 +13,6 @@
 
 
 class PackageSymbol : public FullyQualifiedSymbol {
-public:
-
-    /**
-     * @param name
-     */
-    FileSymbol *getFile(std::string name);
-
-    std::vector<FileSymbol *> getFiles();
 };
 
 #endif //_PACKAGESYMBOL_H

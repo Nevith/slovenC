@@ -14,12 +14,12 @@
 
 class IfStatement : public ConditionalStatement {
 private:
-    ElseStatement *elseStatement;
+    std::shared_ptr<ElseStatement> elseStatement;
 
 public:
-    ElseStatement *getElseStatement() const;
+    std::shared_ptr<ElseStatement> getElseStatement() const;
 
-    void setElseStatement(ElseStatement *elseStatement);
+    void setElseStatement(std::shared_ptr<ElseStatement> elseStatement);
 };
 
 #endif //_IFSTATEMENT_H

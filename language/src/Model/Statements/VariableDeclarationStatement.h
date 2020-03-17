@@ -8,22 +8,23 @@
 #define _VARIABLEDECLARATIONSTATEMENT_H
 
 #include <model/expressions/base/Expression.h>
+#include <memory>
 #include "base/Statement.h"
 #include"../symbols/base/VariableSymbol.h"
 
 class VariableDeclarationStatement : public Statement {
 private:
-    VariableSymbol *variableSymbol;
-    Expression *expression;
+    std::shared_ptr<VariableSymbol> variableSymbol;
+    std::shared_ptr<Expression> expression;
 
 public:
-    VariableSymbol *getVariableSymbol() const;
+    std::shared_ptr<VariableSymbol> getVariableSymbol() const;
 
-    void setVariableSymbol(VariableSymbol *variableSymbol);
+    void setVariableSymbol(std::shared_ptr<VariableSymbol> variableSymbol);
 
-    Expression *getExpression() const;
+    std::shared_ptr<Expression> getExpression() const;
 
-    void setExpression(Expression *expression);
+    void setExpression(std::shared_ptr<Expression> expression);
 };
 
 #endif //_VARIABLEDECLARATIONSTATEMENT_H

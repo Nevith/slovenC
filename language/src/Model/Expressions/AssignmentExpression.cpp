@@ -14,10 +14,10 @@
 /**
  * @return Expression
  */
-IdentifierExpression *AssignmentExpression::getIdentifier() {
-    return nullptr;
+std::shared_ptr<IdentifierExpression> AssignmentExpression::getIdentifier() {
+    return identifier;
 }
 
-void AssignmentExpression::setIdentifier(IdentifierExpression *identifier) {
+void AssignmentExpression::setIdentifier(std::shared_ptr<IdentifierExpression> identifier) {
     this->identifier = identifier;
 }

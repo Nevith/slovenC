@@ -10,17 +10,18 @@
 #include "Visitable.h"
 #include "statements/base/Statement.h"
 #include <vector>
+#include <memory>
 
 
 class Scope : public Visitable {
 
 private:
-    std::vector<Statement *> statements;
+    std::vector<std::shared_ptr<Statement>> statements;
 
 public:
-    const std::vector<Statement *> &getStatements() const;
+    const std::vector<std::shared_ptr<Statement>> &getStatements() const;
 
-    void setStatements(const std::vector<Statement *> &statements);
+    void setStatements(const std::vector<std::shared_ptr<Statement>> &statements);
 };
 
 #endif //_SCOPE_H

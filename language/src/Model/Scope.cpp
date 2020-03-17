@@ -14,10 +14,10 @@
 /**
  * @return std::vector<Statement>
  */
-const std::vector<Statement *> &Scope::getStatements() const {
+const std::vector<std::shared_ptr<Statement>> &Scope::getStatements() const {
     return statements;
 }
 
-void Scope::setStatements(const std::vector<Statement *> &statements) {
+void Scope::setStatements(const std::vector<std::shared_ptr<Statement>> &statements) {
     Scope::statements = statements;
 }

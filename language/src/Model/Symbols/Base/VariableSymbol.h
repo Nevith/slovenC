@@ -13,11 +13,11 @@
 
 class VariableSymbol : public Symbol {
 private:
-    TypeSymbol *typeSymbol;
+    std::shared_ptr<TypeSymbol> typeSymbol;
 public:
-    TypeSymbol *getTypeSymbol() const;
+    std::shared_ptr<TypeSymbol> getTypeSymbol() const;
 
-    void setTypeSymbol(TypeSymbol *typeSymbol);
+    void setTypeSymbol(std::shared_ptr<TypeSymbol> typeSymbol);
 };
 
 #endif //_VARIABLESYMBOL_H

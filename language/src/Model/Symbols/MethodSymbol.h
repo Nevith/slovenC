@@ -14,24 +14,6 @@
 #include <vector>
 
 class MethodSymbol : public MemberSymbol {
-public:
-
-/**
- * @param return
- */
-    std::vector<ParameterSymbol *> getParameters();
-
-/**
- * @param name
- * @param return
- */
-    ParameterSymbol *getParameter(std::string name);
-
-/**
- * @param position
- * @param return
- */
-    ParameterSymbol *getParameter(int position);
 };
 
 #endif //_METHODSYMBOL_H

@@ -14,10 +14,10 @@
 /**
  * @return Expression
  */
-Expression *ExpressionStatement::getExpression() const {
+std::shared_ptr<Expression> ExpressionStatement::getExpression() const {
     return expression;
 }
 
-void ExpressionStatement::setExpression(Expression *expression) {
+void ExpressionStatement::setExpression(std::shared_ptr<Expression> expression) {
     ExpressionStatement::expression = expression;
 }

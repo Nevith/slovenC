@@ -7,20 +7,21 @@
 #ifndef _MONOEXPRESSION_H
 #define _MONOEXPRESSION_H
 
+#include <memory>
 #include "Expression.h"
 
 
 class MonoExpression : public Expression {
 
 private:
-    Expression *expression;
+    std::shared_ptr<Expression> expression;
 
 
 public:
 
-    virtual Expression *getExpression();
+    virtual std::shared_ptr<Expression> getExpression();
 
-    virtual void setExpression(Expression *expression);
+    virtual void setExpression(std::shared_ptr<Expression> expression);
 };
 
 #endif //_MONOEXPRESSION_H

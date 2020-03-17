@@ -13,12 +13,12 @@
 class TypeExpression : public Expression {
 
 private:
-    TypeSymbol *type;
+    std::shared_ptr<TypeSymbol> type;
 
 public:
-    TypeSymbol *getType() const;
+    std::shared_ptr<TypeSymbol> getType() const;
 
-    void setType1(TypeSymbol *type);
+    void setType1(std::shared_ptr<TypeSymbol> type);
 };
 
 #endif //_TYPEEXPRESSION_H

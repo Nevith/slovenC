@@ -1617,3 +1617,6 @@ CMakeFiles\main.dir\src\model\symbols\base\VariableSymbol.cpp.obj: ..\src\model\
 CMakeFiles\main.dir\src\model\symbols\base\VariableSymbol.cpp.obj: ..\src\model\symbols\base\VariableSymbol.cpp
 CMakeFiles\main.dir\src\model\symbols\base\VariableSymbol.cpp.obj: ..\src\model\symbols\base\VariableSymbol.h
 
+CMakeFiles\main.dir\src\pipeline\FileSymbolJob.cpp.obj: ..\src\pipeline\FileSymbolJob.cpp
+CMakeFiles\main.dir\src\pipeline\FileSymbolJob.cpp.obj: ..\src\pipeline\FileSymbolJob.h
+

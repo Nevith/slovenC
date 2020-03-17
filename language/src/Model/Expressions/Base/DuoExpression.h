@@ -7,23 +7,24 @@
 #ifndef _DUOEXPRESSION_H
 #define _DUOEXPRESSION_H
 
+#include <memory>
 #include "Expression.h"
 
 
 class DuoExpression : public Expression {
 private:
-    Expression *rightExpression;
-    Expression *leftExpression;
+    std::shared_ptr<Expression> rightExpression;
+    std::shared_ptr<Expression> leftExpression;
 
 public:
 
-    Expression *getLeftExpression() const;
+    std::shared_ptr<Expression> getLeftExpression() const;
 
-    void setLeftExpression(Expression *leftExpression);
+    void setLeftExpression(std::shared_ptr<Expression> leftExpression);
 
-    Expression *getRightExpression() const;
+    std::shared_ptr<Expression> getRightExpression() const;
 
-    void setRightExpression(Expression *rightExpression);
+    void setRightExpression(std::shared_ptr<Expression> rightExpression);
 
 };
 

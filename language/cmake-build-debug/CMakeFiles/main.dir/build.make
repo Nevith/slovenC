@@ -1217,6 +1217,25 @@ CMakeFiles\main.dir\src\model\symbols\base\VariableSymbol.cpp.s: cmake_force
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\main.dir\src\model\symbols\base\VariableSymbol.cpp.s /c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\symbols\base\VariableSymbol.cpp"
 <<
 
+CMakeFiles\main.dir\src\pipeline\FileSymbolJob.cpp.obj: CMakeFiles\main.dir\flags.make
+CMakeFiles\main.dir\src\pipeline\FileSymbolJob.cpp.obj: ..\src\pipeline\FileSymbolJob.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_62) "Building CXX object CMakeFiles/main.dir/src/pipeline/FileSymbolJob.cpp.obj"
+	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\pipeline\FileSymbolJob.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\pipeline\FileSymbolJob.cpp"
+<<
+
+CMakeFiles\main.dir\src\pipeline\FileSymbolJob.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/pipeline/FileSymbolJob.cpp.i"
+	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe > CMakeFiles\main.dir\src\pipeline\FileSymbolJob.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\pipeline\FileSymbolJob.cpp"
+<<
+
+CMakeFiles\main.dir\src\pipeline\FileSymbolJob.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/pipeline/FileSymbolJob.cpp.s"
+	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\main.dir\src\pipeline\FileSymbolJob.cpp.s /c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\pipeline\FileSymbolJob.cpp"
+<<
+
 # Object files for target main
 main_OBJECTS = \
 "CMakeFiles\main.dir\main.cpp.obj" \
@@ -1279,7 +1298,8 @@ main_OBJECTS = \
 "CMakeFiles\main.dir\src\model\symbols\base\FullyQualifiedSymbol.cpp.obj" \
 "CMakeFiles\main.dir\src\model\symbols\base\Symbol.cpp.obj" \
 "CMakeFiles\main.dir\src\model\symbols\base\TypeSymbol.cpp.obj" \
-"CMakeFiles\main.dir\src\model\symbols\base\VariableSymbol.cpp.obj"
+"CMakeFiles\main.dir\src\model\symbols\base\VariableSymbol.cpp.obj" \
+"CMakeFiles\main.dir\src\pipeline\FileSymbolJob.cpp.obj"
 
 # External object files for target main
 main_EXTERNAL_OBJECTS =
@@ -1345,10 +1365,11 @@ main.exe: CMakeFiles\main.dir\src\model\symbols\base\FullyQualifiedSymbol.cpp.ob
 main.exe: CMakeFiles\main.dir\src\model\symbols\base\Symbol.cpp.obj
 main.exe: CMakeFiles\main.dir\src\model\symbols\base\TypeSymbol.cpp.obj
 main.exe: CMakeFiles\main.dir\src\model\symbols\base\VariableSymbol.cpp.obj
+main.exe: CMakeFiles\main.dir\src\pipeline\FileSymbolJob.cpp.obj
 main.exe: CMakeFiles\main.dir\build.make
 main.exe: ..\lib\antlr4-runtime\dist\antlr4-runtime-static.lib
 main.exe: CMakeFiles\main.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_62) "Linking CXX executable main.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_63) "Linking CXX executable main.exe"
 	"D:\Programes\InteliJ CLion\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\main.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x86\mt.exe --manifests  -- D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\main.dir\objects1.rsp @<<
  /out:main.exe /implib:main.lib /pdb:"E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\main.pdb" /version:0.0  /machine:X86 /debug /INCREMENTAL /subsystem:console ..\lib\antlr4-runtime\dist\antlr4-runtime-static.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
 <<

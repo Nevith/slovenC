@@ -17,34 +17,6 @@
 
 
 class ClassSymbol : public TypeSymbol, public MemberSymbol {
-public:
-
-    std::vector<ClassSymbol *> getClasses();
-
-/**
- * @param name
- */
-    ClassSymbol *getClass(std::string name);
-
-/**
- * @param name
- */
-    MethodSymbol *getMethod(std::string name);
-
-/**
- * @param return
- */
-    std::vector<MethodSymbol *> getMethods();
-
-/**
- * @param name
- */
-    FieldSymbol *getField(std::string name);
-
-/**
- * @param return
- */
-    std::vector<FieldSymbol *> getFields();
 };
 
 #endif //_CLASSSYMBOL_H

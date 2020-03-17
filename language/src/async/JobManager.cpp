@@ -12,7 +12,7 @@ JobManager::JobManager() {
     supportedThreads = concurrentThreadsSupported;
 }
 
-void JobManager::queueJob(Job *job) {
+void JobManager::queueJob(std::shared_ptr<Job> job) {
     const std::lock_guard<std::mutex> lock(mutex);
 
     jobQueue.push(job);
@@ -40,10 +40,10 @@ void JobManager::runNextJob() {
         jobQueue.pop();
 
         runningJobs.push_back(nextJob);
-        std::future result = std::async([](Job *a, JobManager *jobManager) {
+        std::future result = std::async([](std::shared_ptr<Job> a, JobManager *jobManager) {
             a->run();
             if (!a->isCanceled()) {
-                for (Job *newJob : a->onComplete()) {
+                for (std::shared_ptr<Job> newJob : a->onComplete()) {
                     jobManager->queueJob(newJob);
                 }
                 jobManager->jobFinished(a);
@@ -52,7 +52,7 @@ void JobManager::runNextJob() {
     }
 }
 
-void JobManager::jobFinished(Job *job) {
+void JobManager::jobFinished(std::shared_ptr<Job> job) {
     const std::lock_guard<std::mutex> lock(mutex);
 
     ContainerUtils::remove(runningJobs, job);

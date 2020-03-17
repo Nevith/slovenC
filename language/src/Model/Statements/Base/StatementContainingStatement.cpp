@@ -11,10 +11,10 @@
  */
 
 
-Statement *StatementContainingStatement::getNestedStatement() const {
+std::shared_ptr<Statement> StatementContainingStatement::getNestedStatement() const {
     return nestedStatement;
 }
 
-void StatementContainingStatement::setNestedStatement(Statement *nestedStatement) {
+void StatementContainingStatement::setNestedStatement(std::shared_ptr<Statement> nestedStatement) {
     StatementContainingStatement::nestedStatement = nestedStatement;
 }

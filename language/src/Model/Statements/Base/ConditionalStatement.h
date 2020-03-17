@@ -7,19 +7,20 @@
 #ifndef _CONDITIONALSTATEMENT_H
 #define _CONDITIONALSTATEMENT_H
 
+#include <memory>
 #include "StatementContainingStatement.h"
 #include "../../expressions/base/Expression.h"
 
 
 class ConditionalStatement : public StatementContainingStatement {
 private:
-    Expression *condition;
+    std::shared_ptr<Expression> condition;
 
 public:
 
-    void setCondition(Expression *condition);
+    void setCondition(std::shared_ptr<Expression> condition);
 
-    Expression *getCondition() const;
+    std::shared_ptr<Expression> getCondition() const;
 };
 
 #endif //_CONDITIONALSTATEMENT_H

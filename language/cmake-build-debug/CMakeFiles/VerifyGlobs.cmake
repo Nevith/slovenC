@@ -64,6 +64,7 @@ set(OLD_GLOB
   "E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/symbols/base/Symbol.cpp"
   "E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/symbols/base/TypeSymbol.cpp"
   "E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/symbols/base/VariableSymbol.cpp"
+  "E:/Projects/Faks/Diplomska naloga/slovenC/language/src/pipeline/FileSymbolJob.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
@@ -133,6 +134,7 @@ set(OLD_GLOB
   "E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/symbols/base/Symbol.h"
   "E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/symbols/base/TypeSymbol.h"
   "E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/symbols/base/VariableSymbol.h"
+  "E:/Projects/Faks/Diplomska naloga/slovenC/language/src/pipeline/FileSymbolJob.h"
   "E:/Projects/Faks/Diplomska naloga/slovenC/language/src/utils/ContainerUtils.h"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")

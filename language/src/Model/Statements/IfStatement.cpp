@@ -9,10 +9,10 @@
 /**
  * IfStatement implementation
  */
-ElseStatement *IfStatement::getElseStatement() const {
+std::shared_ptr<ElseStatement> IfStatement::getElseStatement() const {
     return elseStatement;
 }
 
-void IfStatement::setElseStatement(ElseStatement *elseStatement) {
+void IfStatement::setElseStatement(std::shared_ptr<ElseStatement> elseStatement) {
     IfStatement::elseStatement = elseStatement;
 }

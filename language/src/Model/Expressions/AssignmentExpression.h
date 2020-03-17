@@ -7,19 +7,20 @@
 #ifndef _ASSIGNMENTEXPRESSION_H
 #define _ASSIGNMENTEXPRESSION_H
 
+#include <memory>
 #include "base/MonoExpression.h"
 #include "base/OperationalExpression.h"
 #include "IdentifierExpression.h"
 
 class AssignmentExpression : public MonoExpression, public OperationalExpression {
 private:
-    IdentifierExpression *identifier;
+    std::shared_ptr<IdentifierExpression> identifier;
 
 public:
 
-    IdentifierExpression *getIdentifier();
+    std::shared_ptr<IdentifierExpression> getIdentifier();
 
-    void setIdentifier(IdentifierExpression *identifier);
+    void setIdentifier(std::shared_ptr<IdentifierExpression> identifier);
 
 };
 

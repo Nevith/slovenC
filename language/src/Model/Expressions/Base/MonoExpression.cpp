@@ -9,11 +9,10 @@
 /**
  * MonoExpression implementation
  */
-
-Expression *MonoExpression::getExpression() {
+std::shared_ptr<Expression> MonoExpression::getExpression() {
     return nullptr;
 }
 
-void MonoExpression::setExpression(Expression *expression) {
+void MonoExpression::setExpression(std::shared_ptr<Expression> expression) {
     this->expression = expression;
 }

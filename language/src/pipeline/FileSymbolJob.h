@@ -6,11 +6,9 @@
 #define SLOVENC_FILESYMBOLJOB_H
 
 
-
 class FileSymbolJob {
 
 };
-
 
 
 #endif //SLOVENC_FILESYMBOLJOB_H

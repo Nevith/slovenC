@@ -60,6 +60,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/main.dir/src/model/symbols/base/Symbol.cpp.obj"
   "CMakeFiles/main.dir/src/model/symbols/base/TypeSymbol.cpp.obj"
   "CMakeFiles/main.dir/src/model/symbols/base/VariableSymbol.cpp.obj"
+  "CMakeFiles/main.dir/src/pipeline/FileSymbolJob.cpp.obj"
   "main.exe"
   "main.exe.manifest"
   "main.lib"

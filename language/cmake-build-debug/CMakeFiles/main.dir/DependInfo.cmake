@@ -65,6 +65,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/symbols/base/Symbol.cpp" "E:/Projects/Faks/Diplomska naloga/slovenC/language/cmake-build-debug/CMakeFiles/main.dir/src/model/symbols/base/Symbol.cpp.obj"
   "E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/symbols/base/TypeSymbol.cpp" "E:/Projects/Faks/Diplomska naloga/slovenC/language/cmake-build-debug/CMakeFiles/main.dir/src/model/symbols/base/TypeSymbol.cpp.obj"
   "E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/symbols/base/VariableSymbol.cpp" "E:/Projects/Faks/Diplomska naloga/slovenC/language/cmake-build-debug/CMakeFiles/main.dir/src/model/symbols/base/VariableSymbol.cpp.obj"
+  "E:/Projects/Faks/Diplomska naloga/slovenC/language/src/pipeline/FileSymbolJob.cpp" "E:/Projects/Faks/Diplomska naloga/slovenC/language/cmake-build-debug/CMakeFiles/main.dir/src/pipeline/FileSymbolJob.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "MSVC")
 

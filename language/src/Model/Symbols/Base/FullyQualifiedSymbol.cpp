@@ -16,7 +16,7 @@
  */
 std::string FullyQualifiedSymbol::getFullyQualifiedName() {
     std::string fullyQualifiedName;
-    for (FullyQualifiedSymbol *fullyQualifiedSymbol : parentSymbols) {
+    for (std::shared_ptr<FullyQualifiedSymbol> fullyQualifiedSymbol : parentSymbols) {
         if (!fullyQualifiedName.empty()) {
             fullyQualifiedName.append(".");
         }
@@ -29,14 +29,14 @@ std::string FullyQualifiedSymbol::getFullyQualifiedName() {
     return fullyQualifiedName;
 }
 
-void FullyQualifiedSymbol::addParentSymbol(FullyQualifiedSymbol *parentSymbol) {
+void FullyQualifiedSymbol::addParentSymbol(std::shared_ptr<FullyQualifiedSymbol> parentSymbol) {
     parentSymbols.push_back(parentSymbol);
 }
 
-void FullyQualifiedSymbol::setParentSymbols(const std::vector<FullyQualifiedSymbol *> &parentSymbols) {
+void FullyQualifiedSymbol::setParentSymbols(const std::vector<std::shared_ptr<FullyQualifiedSymbol>> &parentSymbols) {
     FullyQualifiedSymbol::parentSymbols = parentSymbols;
 }
 
-const std::vector<FullyQualifiedSymbol *> &FullyQualifiedSymbol::getParentSymbols() const {
+const std::vector<std::shared_ptr<FullyQualifiedSymbol>> &FullyQualifiedSymbol::getParentSymbols() const {
     return parentSymbols;
 }

@@ -18,10 +18,10 @@
 
 
 
-void ConditionalStatement::setCondition(Expression *condition) {
+void ConditionalStatement::setCondition(std::shared_ptr<Expression> condition) {
     ConditionalStatement::condition = condition;
 }
 
-Expression *ConditionalStatement::getCondition() const {
+std::shared_ptr<Expression> ConditionalStatement::getCondition() const {
     return condition;
 }

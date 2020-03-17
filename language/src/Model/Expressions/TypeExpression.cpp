@@ -9,10 +9,10 @@
 /**
  * TypeExpression implementation
  */
-TypeSymbol *TypeExpression::getType() const {
+std::shared_ptr<TypeSymbol> TypeExpression::getType() const {
     return type;
 }
 
-void TypeExpression::setType1(TypeSymbol *type) {
+void TypeExpression::setType1(std::shared_ptr<TypeSymbol> type) {
     TypeExpression::type = type;
 }

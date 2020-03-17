@@ -1845,6 +1845,33 @@ src\model\symbols\base\VariableSymbol.cpp.s:
 	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\model\symbols\base\VariableSymbol.cpp.s
 .PHONY : src\model\symbols\base\VariableSymbol.cpp.s
 
+src\pipeline\FileSymbolJob.obj: src\pipeline\FileSymbolJob.cpp.obj
+
+.PHONY : src\pipeline\FileSymbolJob.obj
+
+# target to build an object file
+src\pipeline\FileSymbolJob.cpp.obj:
+	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\pipeline\FileSymbolJob.cpp.obj
+.PHONY : src\pipeline\FileSymbolJob.cpp.obj
+
+src\pipeline\FileSymbolJob.i: src\pipeline\FileSymbolJob.cpp.i
+
+.PHONY : src\pipeline\FileSymbolJob.i
+
+# target to preprocess a source file
+src\pipeline\FileSymbolJob.cpp.i:
+	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\pipeline\FileSymbolJob.cpp.i
+.PHONY : src\pipeline\FileSymbolJob.cpp.i
+
+src\pipeline\FileSymbolJob.s: src\pipeline\FileSymbolJob.cpp.s
+
+.PHONY : src\pipeline\FileSymbolJob.s
+
+# target to generate assembly for a file
+src\pipeline\FileSymbolJob.cpp.s:
+	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\pipeline\FileSymbolJob.cpp.s
+.PHONY : src\pipeline\FileSymbolJob.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -2043,6 +2070,9 @@ help:
 	@echo ... src/model/symbols/base/VariableSymbol.obj
 	@echo ... src/model/symbols/base/VariableSymbol.i
 	@echo ... src/model/symbols/base/VariableSymbol.s
+	@echo ... src/pipeline/FileSymbolJob.obj
+	@echo ... src/pipeline/FileSymbolJob.i
+	@echo ... src/pipeline/FileSymbolJob.s
 .PHONY : help
 
 
