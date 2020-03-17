@@ -6,95 +6,29 @@
 
 #IncludeRegexTransform: 
 
-../src/model/Visitable.h
-
-../src/model/symbols/ClassSymbol.h
-base/TypeSymbol.h
-../src/model/symbols/base/TypeSymbol.h
-model/symbols/base/FullyQualifiedSymbol.h
-../src/model/symbols/model/symbols/base/FullyQualifiedSymbol.h
-MethodSymbol.h
-../src/model/symbols/MethodSymbol.h
-FieldSymbol.h
-../src/model/symbols/FieldSymbol.h
-MemberSymbol.h
-../src/model/symbols/MemberSymbol.h
-vector
--
-string
--
-
-../src/model/symbols/FieldSymbol.h
-base/VariableSymbol.h
-../src/model/symbols/base/VariableSymbol.h
-model/symbols/base/FullyQualifiedSymbol.h
-../src/model/symbols/model/symbols/base/FullyQualifiedSymbol.h
-MemberSymbol.h
-../src/model/symbols/MemberSymbol.h
-
-../src/model/symbols/FileSymbol.h
-model/symbols/base/FullyQualifiedSymbol.h
-../src/model/symbols/model/symbols/base/FullyQualifiedSymbol.h
-ClassSymbol.h
-../src/model/symbols/ClassSymbol.h
-string
--
-
-../src/model/symbols/MemberSymbol.h
-model/symbols/base/FullyQualifiedSymbol.h
-../src/model/symbols/model/symbols/base/FullyQualifiedSymbol.h
-
-../src/model/symbols/MethodSymbol.h
-model/symbols/base/FullyQualifiedSymbol.h
-../src/model/symbols/model/symbols/base/FullyQualifiedSymbol.h
-MemberSymbol.h
-../src/model/symbols/MemberSymbol.h
-ParameterSymbol.h
-../src/model/symbols/ParameterSymbol.h
+../src/utils/ContainerUtils.h
 vector
 -
 
-../src/model/symbols/PackageSymbol.h
-model/symbols/base/FullyQualifiedSymbol.h
-../src/model/symbols/model/symbols/base/FullyQualifiedSymbol.h
-FileSymbol.h
-../src/model/symbols/FileSymbol.h
-vector
+E:/Projects/Faks/Diplomska naloga/slovenC/language/src/async/Job.h
+future
 -
 
-../src/model/symbols/ParameterSymbol.h
-base/VariableSymbol.h
-../src/model/symbols/base/VariableSymbol.h
+E:/Projects/Faks/Diplomska naloga/slovenC/language/src/async/JobManager.cpp
+JobManager.h
+E:/Projects/Faks/Diplomska naloga/slovenC/language/src/async/JobManager.h
 
-../src/model/symbols/base/FullyQualifiedSymbol.h
-Symbol.h
-../src/model/symbols/base/Symbol.h
-string
+E:/Projects/Faks/Diplomska naloga/slovenC/language/src/async/JobManager.h
+queue
 -
 vector
 -
 memory
 -
-
-../src/model/symbols/base/Symbol.h
-string
+future
 -
-../../Visitable.h
-../src/model/Visitable.h
-
-../src/model/symbols/base/TypeSymbol.h
-Symbol.h
-../src/model/symbols/base/Symbol.h
-FullyQualifiedSymbol.h
-../src/model/symbols/base/FullyQualifiedSymbol.h
-
-../src/model/symbols/base/VariableSymbol.h
-Symbol.h
-../src/model/symbols/base/Symbol.h
-TypeSymbol.h
-../src/model/symbols/base/TypeSymbol.h
-
-E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/symbols/PackageSymbol.cpp
-model/symbols/PackageSymbol.h
-E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/symbols/model/symbols/PackageSymbol.h
+Job.h
+E:/Projects/Faks/Diplomska naloga/slovenC/language/src/async/Job.h
+utils/ContainerUtils.h
+E:/Projects/Faks/Diplomska naloga/slovenC/language/src/async/utils/ContainerUtils.h
 

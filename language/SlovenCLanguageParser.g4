@@ -44,10 +44,6 @@ options {
    tokenVocab=SlovenCLanguageLexer;
 }
 
-// we allow multiple starting points for the parser, similar to how
-// expression.cup allowed - need this to ignore the EOF token when
-// doing partial parsing, more can be added.
-
 parseWhole
     : compilationUnit EOF
     ;
@@ -58,7 +54,7 @@ literal
         | TRUE                                                #LiteralBoolean
         | FALSE                                               #LiteralBoolean
         | StringLiteral                                       #LiteralString
-        | NULLLITERAL                                                #LiteralNULLLITERAL
+        | NULLLITERAL                                         #LiteralNULLLITERAL
         ;
 
 /*
@@ -95,11 +91,6 @@ typeName
         | typeName DOT Identifier                             #TypeNameQual
         ;
 
-packageOrTypeName
-        : Identifier                                          #PackageOrTypeNameUnqual
-        | packageOrTypeName DOT Identifier                    #PackageOrTypeNameQual
-        ;
-
 /*
  * Productions from Â§7 (Packages)
  */
@@ -114,7 +105,6 @@ importDeclarations
 
 importDeclaration
         : singleTypeImportDeclaration
-        | typeImportOnDemandDeclaration
         ;
 
 typeDeclarations
@@ -123,10 +113,6 @@ typeDeclarations
 
 singleTypeImportDeclaration
         : IMPORT typeName SEMI
-        ;
-
-typeImportOnDemandDeclaration
-        : IMPORT packageOrTypeName DOT MUL SEMI
         ;
 
 typeDeclaration
@@ -220,18 +206,6 @@ constructorBody
         : LBRACE blockStatement* RBRACE
         ;
 
-destructorDeclaration
-        : (modifiers+=modifier)* destructorDeclarator destructorBody
-        ;
-
-destructorDeclarator
-        : DESTRUCTOR (LPAREN formalParameterList? RPAREN)?  { if ($LPAREN == NULL) notifyErrorListeners("Missing '('"); }
-        ;
-
-destructorBody
-        : LBRACE blockStatement* RBRACE
-        ;
-
 /*
  * Productions from Â§14 (Blocks and Statements)
  */
@@ -259,7 +233,6 @@ statement
         | ifThenStatement
         | basicForStatement
         | whileStatement
-        | tryCatchesFinally
         | returnStatement
         | throwStatement
         | breakStatement
@@ -284,14 +257,6 @@ whileStatement
         : WHILE LPAREN condition RPAREN statement
         ;
 
-tryCatchesFinally
-        : tryBlock (catchClause+ finallyBlock? | finallyBlock)
-        ;
-
-tryBlock
-        : TRY block
-        ;
-
 returnStatement
         : RETURN expression? SEMI
         ;
@@ -314,18 +279,6 @@ emptyStatement
 
 expressionStatement
         : expression SEMI
-        ;
-
-finallyBlock
-        : FINALLY block
-        ;
-
-catchClause
-        : CATCH LPAREN modifier* classType (BITOR classType)* Identifier RPAREN catchBlock // todo: consider using "exceptionType"
-        ;
-
-catchBlock
-        : block
         ;
 
 condition
@@ -353,7 +306,6 @@ expression
         : expression bop=DOT Identifier LPAREN expressionList? RPAREN       #DottedCallExpression
         | expression bop=DOT THIS LPAREN expressionList? RPAREN             #DottedThisCallExpression
         | expression bop=DOT SUPER LPAREN expressionList? RPAREN            #DottedSuperCallExpression
-        | expression bop=DOT creatorExpression                              #DottedConstructorCallExpression
         | expression bop=DOT THIS                                           #DottedThisExpression
         | expression bop=DOT SUPER                                          #DottedSuperExpression
         | expression bop=DOT Identifier                                     #DottedExpression
@@ -361,7 +313,6 @@ expression
         | THIS LPAREN expressionList? RPAREN                                #ThisCallExpression
         | SUPER LPAREN expressionList? RPAREN                               #SuperCallExpression
         | LPAREN type RPAREN expression                                     #CastExpression
-        | creatorExpression                                                 #ConstructorCallExpression
         | expression postfix=(INC | DEC)                                    #PostIncrementDecrementExpression
         | prefix=(INC | DEC) expression                                     #PreIncrementDecrementExpression
         | prefix=(ADD | SUB) expression                                     #UnaryExpression
@@ -377,16 +328,6 @@ expression
         | <assoc=right> expression bop=(ASSIGN | ADD_ASSIGN | SUB_ASSIGN | MUL_ASSIGN | DIV_ASSIGN | MOD_ASSIGN) expression #AssignmentExpression
         | primary                                                           #PrimaryExpression
         | expression bop=DOT {notifyErrorListeners("Invalid dotted expression.");}  #InvalidDottedExpression
-        ;
-
-creatorExpression
-        : NEW createdName LPAREN expressionList? RPAREN classBody?
-        | NEW createdName {notifyErrorListeners("'(' expected.");}
-        | NEW {notifyErrorListeners("Missing identifier.");}
-        ;
-
-createdName
-        : (Identifier DOT)* Identifier
         ;
 
 primary
