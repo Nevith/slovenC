@@ -13,6 +13,11 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "E:/Projects/Faks/Diplomska naloga/slovenC/language/src/antlr/SlovenCLanguageParserVisitor.cpp" "E:/Projects/Faks/Diplomska naloga/slovenC/language/cmake-build-debug/CMakeFiles/main.dir/src/antlr/SlovenCLanguageParserVisitor.cpp.obj"
   "E:/Projects/Faks/Diplomska naloga/slovenC/language/src/async/Job.cpp" "E:/Projects/Faks/Diplomska naloga/slovenC/language/cmake-build-debug/CMakeFiles/main.dir/src/async/Job.cpp.obj"
   "E:/Projects/Faks/Diplomska naloga/slovenC/language/src/async/JobManager.cpp" "E:/Projects/Faks/Diplomska naloga/slovenC/language/cmake-build-debug/CMakeFiles/main.dir/src/async/JobManager.cpp.obj"
+  "E:/Projects/Faks/Diplomska naloga/slovenC/language/src/graph/base/Edge.cpp" "E:/Projects/Faks/Diplomska naloga/slovenC/language/cmake-build-debug/CMakeFiles/main.dir/src/graph/base/Edge.cpp.obj"
+  "E:/Projects/Faks/Diplomska naloga/slovenC/language/src/graph/base/FillerNode.cpp" "E:/Projects/Faks/Diplomska naloga/slovenC/language/cmake-build-debug/CMakeFiles/main.dir/src/graph/base/FillerNode.cpp.obj"
+  "E:/Projects/Faks/Diplomska naloga/slovenC/language/src/graph/base/Graph.cpp" "E:/Projects/Faks/Diplomska naloga/slovenC/language/cmake-build-debug/CMakeFiles/main.dir/src/graph/base/Graph.cpp.obj"
+  "E:/Projects/Faks/Diplomska naloga/slovenC/language/src/graph/base/GraphOrNode.cpp" "E:/Projects/Faks/Diplomska naloga/slovenC/language/cmake-build-debug/CMakeFiles/main.dir/src/graph/base/GraphOrNode.cpp.obj"
+  "E:/Projects/Faks/Diplomska naloga/slovenC/language/src/graph/base/Node.cpp" "E:/Projects/Faks/Diplomska naloga/slovenC/language/cmake-build-debug/CMakeFiles/main.dir/src/graph/base/Node.cpp.obj"
   "E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/Scope.cpp" "E:/Projects/Faks/Diplomska naloga/slovenC/language/cmake-build-debug/CMakeFiles/main.dir/src/model/Scope.cpp.obj"
   "E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/Visitable.cpp" "E:/Projects/Faks/Diplomska naloga/slovenC/language/cmake-build-debug/CMakeFiles/main.dir/src/model/Visitable.cpp.obj"
   "E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/expressions/AdditionExpression.cpp" "E:/Projects/Faks/Diplomska naloga/slovenC/language/cmake-build-debug/CMakeFiles/main.dir/src/model/expressions/AdditionExpression.cpp.obj"
@@ -66,6 +71,8 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/symbols/base/TypeSymbol.cpp" "E:/Projects/Faks/Diplomska naloga/slovenC/language/cmake-build-debug/CMakeFiles/main.dir/src/model/symbols/base/TypeSymbol.cpp.obj"
   "E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/symbols/base/VariableSymbol.cpp" "E:/Projects/Faks/Diplomska naloga/slovenC/language/cmake-build-debug/CMakeFiles/main.dir/src/model/symbols/base/VariableSymbol.cpp.obj"
   "E:/Projects/Faks/Diplomska naloga/slovenC/language/src/pipeline/FileSymbolJob.cpp" "E:/Projects/Faks/Diplomska naloga/slovenC/language/cmake-build-debug/CMakeFiles/main.dir/src/pipeline/FileSymbolJob.cpp.obj"
+  "E:/Projects/Faks/Diplomska naloga/slovenC/language/src/pipeline/ProjectJob.cpp" "E:/Projects/Faks/Diplomska naloga/slovenC/language/cmake-build-debug/CMakeFiles/main.dir/src/pipeline/ProjectJob.cpp.obj"
+  "E:/Projects/Faks/Diplomska naloga/slovenC/language/src/project/Project.cpp" "E:/Projects/Faks/Diplomska naloga/slovenC/language/cmake-build-debug/CMakeFiles/main.dir/src/project/Project.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "MSVC")
 

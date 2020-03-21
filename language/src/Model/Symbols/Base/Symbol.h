@@ -15,9 +15,10 @@ class Symbol : public Visitable {
 private:
     std::string name;
 public:
+    Symbol(const std::string &name);
+
     const std::string &getName() const;
 
-    void setName(const std::string &name);
 };
 
 #endif //_SYMBOL_H

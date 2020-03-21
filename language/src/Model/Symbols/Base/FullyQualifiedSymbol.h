@@ -14,17 +14,18 @@
 
 
 class FullyQualifiedSymbol : public Symbol {
-    std::vector<std::shared_ptr<FullyQualifiedSymbol>> parentSymbols;
+    std::shared_ptr<FullyQualifiedSymbol> parentSymbol;
 
 public:
 
-    void addParentSymbol(std::shared_ptr<FullyQualifiedSymbol> parentSymbol);
+    FullyQualifiedSymbol(std::string name);
 
-    std::string getFullyQualifiedName();
+    virtual std::string getFullyQualifiedName();
 
-    void setParentSymbols(const std::vector<std::shared_ptr<FullyQualifiedSymbol>> &parentSymbols);
+    const std::shared_ptr<FullyQualifiedSymbol> &getParentSymbol() const;
 
-    const std::vector<std::shared_ptr<FullyQualifiedSymbol>> &getParentSymbols() const;
+    virtual void setParentSymbol(const std::shared_ptr<FullyQualifiedSymbol> &parentSymbol);
+
 };
 
 #endif //_FULLYQUALIFIEDSYMBOL_H

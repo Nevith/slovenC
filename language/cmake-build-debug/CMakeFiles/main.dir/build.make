@@ -229,9 +229,104 @@ CMakeFiles\main.dir\src\async\JobManager.cpp.s: cmake_force
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\main.dir\src\async\JobManager.cpp.s /c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\async\JobManager.cpp"
 <<
 
+CMakeFiles\main.dir\src\graph\base\Edge.cpp.obj: CMakeFiles\main.dir\flags.make
+CMakeFiles\main.dir\src\graph\base\Edge.cpp.obj: ..\src\graph\base\Edge.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/main.dir/src/graph/base/Edge.cpp.obj"
+	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\graph\base\Edge.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\graph\base\Edge.cpp"
+<<
+
+CMakeFiles\main.dir\src\graph\base\Edge.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/graph/base/Edge.cpp.i"
+	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe > CMakeFiles\main.dir\src\graph\base\Edge.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\graph\base\Edge.cpp"
+<<
+
+CMakeFiles\main.dir\src\graph\base\Edge.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/graph/base/Edge.cpp.s"
+	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\main.dir\src\graph\base\Edge.cpp.s /c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\graph\base\Edge.cpp"
+<<
+
+CMakeFiles\main.dir\src\graph\base\FillerNode.cpp.obj: CMakeFiles\main.dir\flags.make
+CMakeFiles\main.dir\src\graph\base\FillerNode.cpp.obj: ..\src\graph\base\FillerNode.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/main.dir/src/graph/base/FillerNode.cpp.obj"
+	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\graph\base\FillerNode.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\graph\base\FillerNode.cpp"
+<<
+
+CMakeFiles\main.dir\src\graph\base\FillerNode.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/graph/base/FillerNode.cpp.i"
+	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe > CMakeFiles\main.dir\src\graph\base\FillerNode.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\graph\base\FillerNode.cpp"
+<<
+
+CMakeFiles\main.dir\src\graph\base\FillerNode.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/graph/base/FillerNode.cpp.s"
+	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\main.dir\src\graph\base\FillerNode.cpp.s /c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\graph\base\FillerNode.cpp"
+<<
+
+CMakeFiles\main.dir\src\graph\base\Graph.cpp.obj: CMakeFiles\main.dir\flags.make
+CMakeFiles\main.dir\src\graph\base\Graph.cpp.obj: ..\src\graph\base\Graph.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/main.dir/src/graph/base/Graph.cpp.obj"
+	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\graph\base\Graph.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\graph\base\Graph.cpp"
+<<
+
+CMakeFiles\main.dir\src\graph\base\Graph.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/graph/base/Graph.cpp.i"
+	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe > CMakeFiles\main.dir\src\graph\base\Graph.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\graph\base\Graph.cpp"
+<<
+
+CMakeFiles\main.dir\src\graph\base\Graph.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/graph/base/Graph.cpp.s"
+	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\main.dir\src\graph\base\Graph.cpp.s /c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\graph\base\Graph.cpp"
+<<
+
+CMakeFiles\main.dir\src\graph\base\GraphOrNode.cpp.obj: CMakeFiles\main.dir\flags.make
+CMakeFiles\main.dir\src\graph\base\GraphOrNode.cpp.obj: ..\src\graph\base\GraphOrNode.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/main.dir/src/graph/base/GraphOrNode.cpp.obj"
+	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\graph\base\GraphOrNode.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\graph\base\GraphOrNode.cpp"
+<<
+
+CMakeFiles\main.dir\src\graph\base\GraphOrNode.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/graph/base/GraphOrNode.cpp.i"
+	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe > CMakeFiles\main.dir\src\graph\base\GraphOrNode.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\graph\base\GraphOrNode.cpp"
+<<
+
+CMakeFiles\main.dir\src\graph\base\GraphOrNode.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/graph/base/GraphOrNode.cpp.s"
+	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\main.dir\src\graph\base\GraphOrNode.cpp.s /c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\graph\base\GraphOrNode.cpp"
+<<
+
+CMakeFiles\main.dir\src\graph\base\Node.cpp.obj: CMakeFiles\main.dir\flags.make
+CMakeFiles\main.dir\src\graph\base\Node.cpp.obj: ..\src\graph\base\Node.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/main.dir/src/graph/base/Node.cpp.obj"
+	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\graph\base\Node.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\graph\base\Node.cpp"
+<<
+
+CMakeFiles\main.dir\src\graph\base\Node.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/graph/base/Node.cpp.i"
+	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe > CMakeFiles\main.dir\src\graph\base\Node.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\graph\base\Node.cpp"
+<<
+
+CMakeFiles\main.dir\src\graph\base\Node.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/graph/base/Node.cpp.s"
+	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\main.dir\src\graph\base\Node.cpp.s /c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\graph\base\Node.cpp"
+<<
+
 CMakeFiles\main.dir\src\model\Scope.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\Scope.cpp.obj: ..\src\model\Scope.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/main.dir/src/model/Scope.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/main.dir/src/model/Scope.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\Scope.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\Scope.cpp"
 <<
@@ -250,7 +345,7 @@ CMakeFiles\main.dir\src\model\Scope.cpp.s: cmake_force
 
 CMakeFiles\main.dir\src\model\Visitable.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\Visitable.cpp.obj: ..\src\model\Visitable.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/main.dir/src/model/Visitable.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/main.dir/src/model/Visitable.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\Visitable.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\Visitable.cpp"
 <<
@@ -269,7 +364,7 @@ CMakeFiles\main.dir\src\model\Visitable.cpp.s: cmake_force
 
 CMakeFiles\main.dir\src\model\expressions\AdditionExpression.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\expressions\AdditionExpression.cpp.obj: ..\src\model\expressions\AdditionExpression.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/main.dir/src/model/expressions/AdditionExpression.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/main.dir/src/model/expressions/AdditionExpression.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\expressions\AdditionExpression.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\expressions\AdditionExpression.cpp"
 <<
@@ -288,7 +383,7 @@ CMakeFiles\main.dir\src\model\expressions\AdditionExpression.cpp.s: cmake_force
 
 CMakeFiles\main.dir\src\model\expressions\AssignmentExpression.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\expressions\AssignmentExpression.cpp.obj: ..\src\model\expressions\AssignmentExpression.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/main.dir/src/model/expressions/AssignmentExpression.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/main.dir/src/model/expressions/AssignmentExpression.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\expressions\AssignmentExpression.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\expressions\AssignmentExpression.cpp"
 <<
@@ -307,7 +402,7 @@ CMakeFiles\main.dir\src\model\expressions\AssignmentExpression.cpp.s: cmake_forc
 
 CMakeFiles\main.dir\src\model\expressions\ConstructorCallExpression.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\expressions\ConstructorCallExpression.cpp.obj: ..\src\model\expressions\ConstructorCallExpression.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/main.dir/src/model/expressions/ConstructorCallExpression.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/main.dir/src/model/expressions/ConstructorCallExpression.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\expressions\ConstructorCallExpression.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\expressions\ConstructorCallExpression.cpp"
 <<
@@ -326,7 +421,7 @@ CMakeFiles\main.dir\src\model\expressions\ConstructorCallExpression.cpp.s: cmake
 
 CMakeFiles\main.dir\src\model\expressions\DivisionExpression.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\expressions\DivisionExpression.cpp.obj: ..\src\model\expressions\DivisionExpression.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/main.dir/src/model/expressions/DivisionExpression.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/main.dir/src/model/expressions/DivisionExpression.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\expressions\DivisionExpression.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\expressions\DivisionExpression.cpp"
 <<
@@ -345,7 +440,7 @@ CMakeFiles\main.dir\src\model\expressions\DivisionExpression.cpp.s: cmake_force
 
 CMakeFiles\main.dir\src\model\expressions\EqualityExpression.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\expressions\EqualityExpression.cpp.obj: ..\src\model\expressions\EqualityExpression.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/main.dir/src/model/expressions/EqualityExpression.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/main.dir/src/model/expressions/EqualityExpression.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\expressions\EqualityExpression.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\expressions\EqualityExpression.cpp"
 <<
@@ -364,7 +459,7 @@ CMakeFiles\main.dir\src\model\expressions\EqualityExpression.cpp.s: cmake_force
 
 CMakeFiles\main.dir\src\model\expressions\IdentifierExpression.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\expressions\IdentifierExpression.cpp.obj: ..\src\model\expressions\IdentifierExpression.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/main.dir/src/model/expressions/IdentifierExpression.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/main.dir/src/model/expressions/IdentifierExpression.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\expressions\IdentifierExpression.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\expressions\IdentifierExpression.cpp"
 <<
@@ -383,7 +478,7 @@ CMakeFiles\main.dir\src\model\expressions\IdentifierExpression.cpp.s: cmake_forc
 
 CMakeFiles\main.dir\src\model\expressions\IncrementDecrementExpression.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\expressions\IncrementDecrementExpression.cpp.obj: ..\src\model\expressions\IncrementDecrementExpression.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/main.dir/src/model/expressions/IncrementDecrementExpression.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/main.dir/src/model/expressions/IncrementDecrementExpression.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\expressions\IncrementDecrementExpression.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\expressions\IncrementDecrementExpression.cpp"
 <<
@@ -402,7 +497,7 @@ CMakeFiles\main.dir\src\model\expressions\IncrementDecrementExpression.cpp.s: cm
 
 CMakeFiles\main.dir\src\model\expressions\MethodCallExpression.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\expressions\MethodCallExpression.cpp.obj: ..\src\model\expressions\MethodCallExpression.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/main.dir/src/model/expressions/MethodCallExpression.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/main.dir/src/model/expressions/MethodCallExpression.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\expressions\MethodCallExpression.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\expressions\MethodCallExpression.cpp"
 <<
@@ -421,7 +516,7 @@ CMakeFiles\main.dir\src\model\expressions\MethodCallExpression.cpp.s: cmake_forc
 
 CMakeFiles\main.dir\src\model\expressions\MultiplicationExpression.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\expressions\MultiplicationExpression.cpp.obj: ..\src\model\expressions\MultiplicationExpression.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/main.dir/src/model/expressions/MultiplicationExpression.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/main.dir/src/model/expressions/MultiplicationExpression.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\expressions\MultiplicationExpression.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\expressions\MultiplicationExpression.cpp"
 <<
@@ -440,7 +535,7 @@ CMakeFiles\main.dir\src\model\expressions\MultiplicationExpression.cpp.s: cmake_
 
 CMakeFiles\main.dir\src\model\expressions\NotExpression.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\expressions\NotExpression.cpp.obj: ..\src\model\expressions\NotExpression.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/main.dir/src/model/expressions/NotExpression.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/main.dir/src/model/expressions/NotExpression.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\expressions\NotExpression.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\expressions\NotExpression.cpp"
 <<
@@ -459,7 +554,7 @@ CMakeFiles\main.dir\src\model\expressions\NotExpression.cpp.s: cmake_force
 
 CMakeFiles\main.dir\src\model\expressions\SubtractExpression.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\expressions\SubtractExpression.cpp.obj: ..\src\model\expressions\SubtractExpression.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/main.dir/src/model/expressions/SubtractExpression.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/main.dir/src/model/expressions/SubtractExpression.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\expressions\SubtractExpression.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\expressions\SubtractExpression.cpp"
 <<
@@ -478,7 +573,7 @@ CMakeFiles\main.dir\src\model\expressions\SubtractExpression.cpp.s: cmake_force
 
 CMakeFiles\main.dir\src\model\expressions\SuperCallExpression.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\expressions\SuperCallExpression.cpp.obj: ..\src\model\expressions\SuperCallExpression.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/main.dir/src/model/expressions/SuperCallExpression.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/main.dir/src/model/expressions/SuperCallExpression.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\expressions\SuperCallExpression.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\expressions\SuperCallExpression.cpp"
 <<
@@ -497,7 +592,7 @@ CMakeFiles\main.dir\src\model\expressions\SuperCallExpression.cpp.s: cmake_force
 
 CMakeFiles\main.dir\src\model\expressions\SuperExpression.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\expressions\SuperExpression.cpp.obj: ..\src\model\expressions\SuperExpression.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/main.dir/src/model/expressions/SuperExpression.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/main.dir/src/model/expressions/SuperExpression.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\expressions\SuperExpression.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\expressions\SuperExpression.cpp"
 <<
@@ -516,7 +611,7 @@ CMakeFiles\main.dir\src\model\expressions\SuperExpression.cpp.s: cmake_force
 
 CMakeFiles\main.dir\src\model\expressions\ThisCallExpression.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\expressions\ThisCallExpression.cpp.obj: ..\src\model\expressions\ThisCallExpression.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/main.dir/src/model/expressions/ThisCallExpression.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/main.dir/src/model/expressions/ThisCallExpression.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\expressions\ThisCallExpression.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\expressions\ThisCallExpression.cpp"
 <<
@@ -535,7 +630,7 @@ CMakeFiles\main.dir\src\model\expressions\ThisCallExpression.cpp.s: cmake_force
 
 CMakeFiles\main.dir\src\model\expressions\ThisExpression.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\expressions\ThisExpression.cpp.obj: ..\src\model\expressions\ThisExpression.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/main.dir/src/model/expressions/ThisExpression.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/main.dir/src/model/expressions/ThisExpression.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\expressions\ThisExpression.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\expressions\ThisExpression.cpp"
 <<
@@ -554,7 +649,7 @@ CMakeFiles\main.dir\src\model\expressions\ThisExpression.cpp.s: cmake_force
 
 CMakeFiles\main.dir\src\model\expressions\TypeExpression.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\expressions\TypeExpression.cpp.obj: ..\src\model\expressions\TypeExpression.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/main.dir/src/model/expressions/TypeExpression.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/main.dir/src/model/expressions/TypeExpression.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\expressions\TypeExpression.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\expressions\TypeExpression.cpp"
 <<
@@ -573,7 +668,7 @@ CMakeFiles\main.dir\src\model\expressions\TypeExpression.cpp.s: cmake_force
 
 CMakeFiles\main.dir\src\model\expressions\base\CallExpression.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\expressions\base\CallExpression.cpp.obj: ..\src\model\expressions\base\CallExpression.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/main.dir/src/model/expressions/base/CallExpression.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/main.dir/src/model/expressions/base/CallExpression.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\expressions\base\CallExpression.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\expressions\base\CallExpression.cpp"
 <<
@@ -592,7 +687,7 @@ CMakeFiles\main.dir\src\model\expressions\base\CallExpression.cpp.s: cmake_force
 
 CMakeFiles\main.dir\src\model\expressions\base\DottedExpression.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\expressions\base\DottedExpression.cpp.obj: ..\src\model\expressions\base\DottedExpression.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/main.dir/src/model/expressions/base/DottedExpression.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/main.dir/src/model/expressions/base/DottedExpression.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\expressions\base\DottedExpression.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\expressions\base\DottedExpression.cpp"
 <<
@@ -611,7 +706,7 @@ CMakeFiles\main.dir\src\model\expressions\base\DottedExpression.cpp.s: cmake_for
 
 CMakeFiles\main.dir\src\model\expressions\base\DuoExpression.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\expressions\base\DuoExpression.cpp.obj: ..\src\model\expressions\base\DuoExpression.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/main.dir/src/model/expressions/base/DuoExpression.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/main.dir/src/model/expressions/base/DuoExpression.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\expressions\base\DuoExpression.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\expressions\base\DuoExpression.cpp"
 <<
@@ -630,7 +725,7 @@ CMakeFiles\main.dir\src\model\expressions\base\DuoExpression.cpp.s: cmake_force
 
 CMakeFiles\main.dir\src\model\expressions\base\Expression.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\expressions\base\Expression.cpp.obj: ..\src\model\expressions\base\Expression.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/main.dir/src/model/expressions/base/Expression.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/main.dir/src/model/expressions/base/Expression.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\expressions\base\Expression.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\expressions\base\Expression.cpp"
 <<
@@ -649,7 +744,7 @@ CMakeFiles\main.dir\src\model\expressions\base\Expression.cpp.s: cmake_force
 
 CMakeFiles\main.dir\src\model\expressions\base\MathExpression.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\expressions\base\MathExpression.cpp.obj: ..\src\model\expressions\base\MathExpression.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/main.dir/src/model/expressions/base/MathExpression.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/main.dir/src/model/expressions/base/MathExpression.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\expressions\base\MathExpression.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\expressions\base\MathExpression.cpp"
 <<
@@ -668,7 +763,7 @@ CMakeFiles\main.dir\src\model\expressions\base\MathExpression.cpp.s: cmake_force
 
 CMakeFiles\main.dir\src\model\expressions\base\MonoExpression.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\expressions\base\MonoExpression.cpp.obj: ..\src\model\expressions\base\MonoExpression.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/main.dir/src/model/expressions/base/MonoExpression.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/main.dir/src/model/expressions/base/MonoExpression.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\expressions\base\MonoExpression.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\expressions\base\MonoExpression.cpp"
 <<
@@ -687,7 +782,7 @@ CMakeFiles\main.dir\src\model\expressions\base\MonoExpression.cpp.s: cmake_force
 
 CMakeFiles\main.dir\src\model\expressions\base\OperationalExpression.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\expressions\base\OperationalExpression.cpp.obj: ..\src\model\expressions\base\OperationalExpression.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/main.dir/src/model/expressions/base/OperationalExpression.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/main.dir/src/model/expressions/base/OperationalExpression.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\expressions\base\OperationalExpression.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\expressions\base\OperationalExpression.cpp"
 <<
@@ -706,7 +801,7 @@ CMakeFiles\main.dir\src\model\expressions\base\OperationalExpression.cpp.s: cmak
 
 CMakeFiles\main.dir\src\model\statements\BlockStatement.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\statements\BlockStatement.cpp.obj: ..\src\model\statements\BlockStatement.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/main.dir/src/model/statements/BlockStatement.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/main.dir/src/model/statements/BlockStatement.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\statements\BlockStatement.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\statements\BlockStatement.cpp"
 <<
@@ -725,7 +820,7 @@ CMakeFiles\main.dir\src\model\statements\BlockStatement.cpp.s: cmake_force
 
 CMakeFiles\main.dir\src\model\statements\ElseStatement.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\statements\ElseStatement.cpp.obj: ..\src\model\statements\ElseStatement.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/main.dir/src/model/statements/ElseStatement.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/main.dir/src/model/statements/ElseStatement.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\statements\ElseStatement.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\statements\ElseStatement.cpp"
 <<
@@ -744,7 +839,7 @@ CMakeFiles\main.dir\src\model\statements\ElseStatement.cpp.s: cmake_force
 
 CMakeFiles\main.dir\src\model\statements\EmptyStatement.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\statements\EmptyStatement.cpp.obj: ..\src\model\statements\EmptyStatement.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/main.dir/src/model/statements/EmptyStatement.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/main.dir/src/model/statements/EmptyStatement.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\statements\EmptyStatement.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\statements\EmptyStatement.cpp"
 <<
@@ -763,7 +858,7 @@ CMakeFiles\main.dir\src\model\statements\EmptyStatement.cpp.s: cmake_force
 
 CMakeFiles\main.dir\src\model\statements\ExpressionStatement.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\statements\ExpressionStatement.cpp.obj: ..\src\model\statements\ExpressionStatement.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/main.dir/src/model/statements/ExpressionStatement.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/main.dir/src/model/statements/ExpressionStatement.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\statements\ExpressionStatement.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\statements\ExpressionStatement.cpp"
 <<
@@ -782,7 +877,7 @@ CMakeFiles\main.dir\src\model\statements\ExpressionStatement.cpp.s: cmake_force
 
 CMakeFiles\main.dir\src\model\statements\ForStatement.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\statements\ForStatement.cpp.obj: ..\src\model\statements\ForStatement.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/main.dir/src/model/statements/ForStatement.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/main.dir/src/model/statements/ForStatement.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\statements\ForStatement.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\statements\ForStatement.cpp"
 <<
@@ -801,7 +896,7 @@ CMakeFiles\main.dir\src\model\statements\ForStatement.cpp.s: cmake_force
 
 CMakeFiles\main.dir\src\model\statements\IfStatement.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\statements\IfStatement.cpp.obj: ..\src\model\statements\IfStatement.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/main.dir/src/model/statements/IfStatement.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/main.dir/src/model/statements/IfStatement.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\statements\IfStatement.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\statements\IfStatement.cpp"
 <<
@@ -820,7 +915,7 @@ CMakeFiles\main.dir\src\model\statements\IfStatement.cpp.s: cmake_force
 
 CMakeFiles\main.dir\src\model\statements\VariableDeclarationStatement.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\statements\VariableDeclarationStatement.cpp.obj: ..\src\model\statements\VariableDeclarationStatement.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/main.dir/src/model/statements/VariableDeclarationStatement.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/main.dir/src/model/statements/VariableDeclarationStatement.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\statements\VariableDeclarationStatement.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\statements\VariableDeclarationStatement.cpp"
 <<
@@ -839,7 +934,7 @@ CMakeFiles\main.dir\src\model\statements\VariableDeclarationStatement.cpp.s: cma
 
 CMakeFiles\main.dir\src\model\statements\WhileStatement.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\statements\WhileStatement.cpp.obj: ..\src\model\statements\WhileStatement.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/main.dir/src/model/statements/WhileStatement.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/main.dir/src/model/statements/WhileStatement.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\statements\WhileStatement.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\statements\WhileStatement.cpp"
 <<
@@ -858,7 +953,7 @@ CMakeFiles\main.dir\src\model\statements\WhileStatement.cpp.s: cmake_force
 
 CMakeFiles\main.dir\src\model\statements\base\ConditionalStatement.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\statements\base\ConditionalStatement.cpp.obj: ..\src\model\statements\base\ConditionalStatement.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/main.dir/src/model/statements/base/ConditionalStatement.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object CMakeFiles/main.dir/src/model/statements/base/ConditionalStatement.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\statements\base\ConditionalStatement.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\statements\base\ConditionalStatement.cpp"
 <<
@@ -877,7 +972,7 @@ CMakeFiles\main.dir\src\model\statements\base\ConditionalStatement.cpp.s: cmake_
 
 CMakeFiles\main.dir\src\model\statements\base\Statement.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\statements\base\Statement.cpp.obj: ..\src\model\statements\base\Statement.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/main.dir/src/model/statements/base/Statement.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/main.dir/src/model/statements/base/Statement.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\statements\base\Statement.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\statements\base\Statement.cpp"
 <<
@@ -896,7 +991,7 @@ CMakeFiles\main.dir\src\model\statements\base\Statement.cpp.s: cmake_force
 
 CMakeFiles\main.dir\src\model\statements\base\StatementContainingStatement.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\statements\base\StatementContainingStatement.cpp.obj: ..\src\model\statements\base\StatementContainingStatement.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/main.dir/src/model/statements/base/StatementContainingStatement.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/main.dir/src/model/statements/base/StatementContainingStatement.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\statements\base\StatementContainingStatement.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\statements\base\StatementContainingStatement.cpp"
 <<
@@ -915,7 +1010,7 @@ CMakeFiles\main.dir\src\model\statements\base\StatementContainingStatement.cpp.s
 
 CMakeFiles\main.dir\src\model\symbols\ClassSymbol.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\symbols\ClassSymbol.cpp.obj: ..\src\model\symbols\ClassSymbol.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/main.dir/src/model/symbols/ClassSymbol.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/main.dir/src/model/symbols/ClassSymbol.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\symbols\ClassSymbol.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\symbols\ClassSymbol.cpp"
 <<
@@ -934,7 +1029,7 @@ CMakeFiles\main.dir\src\model\symbols\ClassSymbol.cpp.s: cmake_force
 
 CMakeFiles\main.dir\src\model\symbols\FieldSymbol.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\symbols\FieldSymbol.cpp.obj: ..\src\model\symbols\FieldSymbol.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/main.dir/src/model/symbols/FieldSymbol.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object CMakeFiles/main.dir/src/model/symbols/FieldSymbol.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\symbols\FieldSymbol.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\symbols\FieldSymbol.cpp"
 <<
@@ -953,7 +1048,7 @@ CMakeFiles\main.dir\src\model\symbols\FieldSymbol.cpp.s: cmake_force
 
 CMakeFiles\main.dir\src\model\symbols\FileSymbol.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\symbols\FileSymbol.cpp.obj: ..\src\model\symbols\FileSymbol.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object CMakeFiles/main.dir/src/model/symbols/FileSymbol.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object CMakeFiles/main.dir/src/model/symbols/FileSymbol.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\symbols\FileSymbol.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\symbols\FileSymbol.cpp"
 <<
@@ -972,7 +1067,7 @@ CMakeFiles\main.dir\src\model\symbols\FileSymbol.cpp.s: cmake_force
 
 CMakeFiles\main.dir\src\model\symbols\ImportSymbol.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\symbols\ImportSymbol.cpp.obj: ..\src\model\symbols\ImportSymbol.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/main.dir/src/model/symbols/ImportSymbol.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object CMakeFiles/main.dir/src/model/symbols/ImportSymbol.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\symbols\ImportSymbol.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\symbols\ImportSymbol.cpp"
 <<
@@ -991,7 +1086,7 @@ CMakeFiles\main.dir\src\model\symbols\ImportSymbol.cpp.s: cmake_force
 
 CMakeFiles\main.dir\src\model\symbols\InvalidTypeSymbol.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\symbols\InvalidTypeSymbol.cpp.obj: ..\src\model\symbols\InvalidTypeSymbol.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/main.dir/src/model/symbols/InvalidTypeSymbol.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_55) "Building CXX object CMakeFiles/main.dir/src/model/symbols/InvalidTypeSymbol.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\symbols\InvalidTypeSymbol.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\symbols\InvalidTypeSymbol.cpp"
 <<
@@ -1010,7 +1105,7 @@ CMakeFiles\main.dir\src\model\symbols\InvalidTypeSymbol.cpp.s: cmake_force
 
 CMakeFiles\main.dir\src\model\symbols\LocalVariableSymbol.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\symbols\LocalVariableSymbol.cpp.obj: ..\src\model\symbols\LocalVariableSymbol.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/main.dir/src/model/symbols/LocalVariableSymbol.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_56) "Building CXX object CMakeFiles/main.dir/src/model/symbols/LocalVariableSymbol.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\symbols\LocalVariableSymbol.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\symbols\LocalVariableSymbol.cpp"
 <<
@@ -1029,7 +1124,7 @@ CMakeFiles\main.dir\src\model\symbols\LocalVariableSymbol.cpp.s: cmake_force
 
 CMakeFiles\main.dir\src\model\symbols\MemberSymbol.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\symbols\MemberSymbol.cpp.obj: ..\src\model\symbols\MemberSymbol.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object CMakeFiles/main.dir/src/model/symbols/MemberSymbol.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_57) "Building CXX object CMakeFiles/main.dir/src/model/symbols/MemberSymbol.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\symbols\MemberSymbol.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\symbols\MemberSymbol.cpp"
 <<
@@ -1048,7 +1143,7 @@ CMakeFiles\main.dir\src\model\symbols\MemberSymbol.cpp.s: cmake_force
 
 CMakeFiles\main.dir\src\model\symbols\MethodSymbol.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\symbols\MethodSymbol.cpp.obj: ..\src\model\symbols\MethodSymbol.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object CMakeFiles/main.dir/src/model/symbols/MethodSymbol.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_58) "Building CXX object CMakeFiles/main.dir/src/model/symbols/MethodSymbol.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\symbols\MethodSymbol.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\symbols\MethodSymbol.cpp"
 <<
@@ -1067,7 +1162,7 @@ CMakeFiles\main.dir\src\model\symbols\MethodSymbol.cpp.s: cmake_force
 
 CMakeFiles\main.dir\src\model\symbols\PackageSymbol.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\symbols\PackageSymbol.cpp.obj: ..\src\model\symbols\PackageSymbol.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object CMakeFiles/main.dir/src/model/symbols/PackageSymbol.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_59) "Building CXX object CMakeFiles/main.dir/src/model/symbols/PackageSymbol.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\symbols\PackageSymbol.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\symbols\PackageSymbol.cpp"
 <<
@@ -1086,7 +1181,7 @@ CMakeFiles\main.dir\src\model\symbols\PackageSymbol.cpp.s: cmake_force
 
 CMakeFiles\main.dir\src\model\symbols\ParameterSymbol.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\symbols\ParameterSymbol.cpp.obj: ..\src\model\symbols\ParameterSymbol.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_55) "Building CXX object CMakeFiles/main.dir/src/model/symbols/ParameterSymbol.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_60) "Building CXX object CMakeFiles/main.dir/src/model/symbols/ParameterSymbol.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\symbols\ParameterSymbol.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\symbols\ParameterSymbol.cpp"
 <<
@@ -1105,7 +1200,7 @@ CMakeFiles\main.dir\src\model\symbols\ParameterSymbol.cpp.s: cmake_force
 
 CMakeFiles\main.dir\src\model\symbols\PredefinedClassSymbol.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\symbols\PredefinedClassSymbol.cpp.obj: ..\src\model\symbols\PredefinedClassSymbol.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_56) "Building CXX object CMakeFiles/main.dir/src/model/symbols/PredefinedClassSymbol.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_61) "Building CXX object CMakeFiles/main.dir/src/model/symbols/PredefinedClassSymbol.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\symbols\PredefinedClassSymbol.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\symbols\PredefinedClassSymbol.cpp"
 <<
@@ -1124,7 +1219,7 @@ CMakeFiles\main.dir\src\model\symbols\PredefinedClassSymbol.cpp.s: cmake_force
 
 CMakeFiles\main.dir\src\model\symbols\PrimitiveTypeSymbol.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\symbols\PrimitiveTypeSymbol.cpp.obj: ..\src\model\symbols\PrimitiveTypeSymbol.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_57) "Building CXX object CMakeFiles/main.dir/src/model/symbols/PrimitiveTypeSymbol.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_62) "Building CXX object CMakeFiles/main.dir/src/model/symbols/PrimitiveTypeSymbol.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\symbols\PrimitiveTypeSymbol.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\symbols\PrimitiveTypeSymbol.cpp"
 <<
@@ -1143,7 +1238,7 @@ CMakeFiles\main.dir\src\model\symbols\PrimitiveTypeSymbol.cpp.s: cmake_force
 
 CMakeFiles\main.dir\src\model\symbols\base\FullyQualifiedSymbol.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\symbols\base\FullyQualifiedSymbol.cpp.obj: ..\src\model\symbols\base\FullyQualifiedSymbol.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_58) "Building CXX object CMakeFiles/main.dir/src/model/symbols/base/FullyQualifiedSymbol.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_63) "Building CXX object CMakeFiles/main.dir/src/model/symbols/base/FullyQualifiedSymbol.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\symbols\base\FullyQualifiedSymbol.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\symbols\base\FullyQualifiedSymbol.cpp"
 <<
@@ -1162,7 +1257,7 @@ CMakeFiles\main.dir\src\model\symbols\base\FullyQualifiedSymbol.cpp.s: cmake_for
 
 CMakeFiles\main.dir\src\model\symbols\base\Symbol.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\symbols\base\Symbol.cpp.obj: ..\src\model\symbols\base\Symbol.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_59) "Building CXX object CMakeFiles/main.dir/src/model/symbols/base/Symbol.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_64) "Building CXX object CMakeFiles/main.dir/src/model/symbols/base/Symbol.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\symbols\base\Symbol.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\symbols\base\Symbol.cpp"
 <<
@@ -1181,7 +1276,7 @@ CMakeFiles\main.dir\src\model\symbols\base\Symbol.cpp.s: cmake_force
 
 CMakeFiles\main.dir\src\model\symbols\base\TypeSymbol.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\symbols\base\TypeSymbol.cpp.obj: ..\src\model\symbols\base\TypeSymbol.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_60) "Building CXX object CMakeFiles/main.dir/src/model/symbols/base/TypeSymbol.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_65) "Building CXX object CMakeFiles/main.dir/src/model/symbols/base/TypeSymbol.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\symbols\base\TypeSymbol.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\symbols\base\TypeSymbol.cpp"
 <<
@@ -1200,7 +1295,7 @@ CMakeFiles\main.dir\src\model\symbols\base\TypeSymbol.cpp.s: cmake_force
 
 CMakeFiles\main.dir\src\model\symbols\base\VariableSymbol.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\model\symbols\base\VariableSymbol.cpp.obj: ..\src\model\symbols\base\VariableSymbol.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_61) "Building CXX object CMakeFiles/main.dir/src/model/symbols/base/VariableSymbol.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_66) "Building CXX object CMakeFiles/main.dir/src/model/symbols/base/VariableSymbol.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\model\symbols\base\VariableSymbol.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\model\symbols\base\VariableSymbol.cpp"
 <<
@@ -1219,7 +1314,7 @@ CMakeFiles\main.dir\src\model\symbols\base\VariableSymbol.cpp.s: cmake_force
 
 CMakeFiles\main.dir\src\pipeline\FileSymbolJob.cpp.obj: CMakeFiles\main.dir\flags.make
 CMakeFiles\main.dir\src\pipeline\FileSymbolJob.cpp.obj: ..\src\pipeline\FileSymbolJob.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_62) "Building CXX object CMakeFiles/main.dir/src/pipeline/FileSymbolJob.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_67) "Building CXX object CMakeFiles/main.dir/src/pipeline/FileSymbolJob.cpp.obj"
 	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\pipeline\FileSymbolJob.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\pipeline\FileSymbolJob.cpp"
 <<
@@ -1236,6 +1331,44 @@ CMakeFiles\main.dir\src\pipeline\FileSymbolJob.cpp.s: cmake_force
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\main.dir\src\pipeline\FileSymbolJob.cpp.s /c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\pipeline\FileSymbolJob.cpp"
 <<
 
+CMakeFiles\main.dir\src\pipeline\ProjectJob.cpp.obj: CMakeFiles\main.dir\flags.make
+CMakeFiles\main.dir\src\pipeline\ProjectJob.cpp.obj: ..\src\pipeline\ProjectJob.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_68) "Building CXX object CMakeFiles/main.dir/src/pipeline/ProjectJob.cpp.obj"
+	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\pipeline\ProjectJob.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\pipeline\ProjectJob.cpp"
+<<
+
+CMakeFiles\main.dir\src\pipeline\ProjectJob.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/pipeline/ProjectJob.cpp.i"
+	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe > CMakeFiles\main.dir\src\pipeline\ProjectJob.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\pipeline\ProjectJob.cpp"
+<<
+
+CMakeFiles\main.dir\src\pipeline\ProjectJob.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/pipeline/ProjectJob.cpp.s"
+	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\main.dir\src\pipeline\ProjectJob.cpp.s /c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\pipeline\ProjectJob.cpp"
+<<
+
+CMakeFiles\main.dir\src\project\Project.cpp.obj: CMakeFiles\main.dir\flags.make
+CMakeFiles\main.dir\src\project\Project.cpp.obj: ..\src\project\Project.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_69) "Building CXX object CMakeFiles/main.dir/src/project/Project.cpp.obj"
+	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\main.dir\src\project\Project.cpp.obj /FdCMakeFiles\main.dir\ /FS -c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\project\Project.cpp"
+<<
+
+CMakeFiles\main.dir\src\project\Project.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/project/Project.cpp.i"
+	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe > CMakeFiles\main.dir\src\project\Project.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\project\Project.cpp"
+<<
+
+CMakeFiles\main.dir\src\project\Project.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/project/Project.cpp.s"
+	D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\main.dir\src\project\Project.cpp.s /c "E:\Projects\Faks\Diplomska naloga\slovenC\language\src\project\Project.cpp"
+<<
+
 # Object files for target main
 main_OBJECTS = \
 "CMakeFiles\main.dir\main.cpp.obj" \
@@ -1247,6 +1380,11 @@ main_OBJECTS = \
 "CMakeFiles\main.dir\src\antlr\SlovenCLanguageParserVisitor.cpp.obj" \
 "CMakeFiles\main.dir\src\async\Job.cpp.obj" \
 "CMakeFiles\main.dir\src\async\JobManager.cpp.obj" \
+"CMakeFiles\main.dir\src\graph\base\Edge.cpp.obj" \
+"CMakeFiles\main.dir\src\graph\base\FillerNode.cpp.obj" \
+"CMakeFiles\main.dir\src\graph\base\Graph.cpp.obj" \
+"CMakeFiles\main.dir\src\graph\base\GraphOrNode.cpp.obj" \
+"CMakeFiles\main.dir\src\graph\base\Node.cpp.obj" \
 "CMakeFiles\main.dir\src\model\Scope.cpp.obj" \
 "CMakeFiles\main.dir\src\model\Visitable.cpp.obj" \
 "CMakeFiles\main.dir\src\model\expressions\AdditionExpression.cpp.obj" \
@@ -1299,7 +1437,9 @@ main_OBJECTS = \
 "CMakeFiles\main.dir\src\model\symbols\base\Symbol.cpp.obj" \
 "CMakeFiles\main.dir\src\model\symbols\base\TypeSymbol.cpp.obj" \
 "CMakeFiles\main.dir\src\model\symbols\base\VariableSymbol.cpp.obj" \
-"CMakeFiles\main.dir\src\pipeline\FileSymbolJob.cpp.obj"
+"CMakeFiles\main.dir\src\pipeline\FileSymbolJob.cpp.obj" \
+"CMakeFiles\main.dir\src\pipeline\ProjectJob.cpp.obj" \
+"CMakeFiles\main.dir\src\project\Project.cpp.obj"
 
 # External object files for target main
 main_EXTERNAL_OBJECTS =
@@ -1313,6 +1453,11 @@ main.exe: CMakeFiles\main.dir\src\antlr\SlovenCLanguageParserListener.cpp.obj
 main.exe: CMakeFiles\main.dir\src\antlr\SlovenCLanguageParserVisitor.cpp.obj
 main.exe: CMakeFiles\main.dir\src\async\Job.cpp.obj
 main.exe: CMakeFiles\main.dir\src\async\JobManager.cpp.obj
+main.exe: CMakeFiles\main.dir\src\graph\base\Edge.cpp.obj
+main.exe: CMakeFiles\main.dir\src\graph\base\FillerNode.cpp.obj
+main.exe: CMakeFiles\main.dir\src\graph\base\Graph.cpp.obj
+main.exe: CMakeFiles\main.dir\src\graph\base\GraphOrNode.cpp.obj
+main.exe: CMakeFiles\main.dir\src\graph\base\Node.cpp.obj
 main.exe: CMakeFiles\main.dir\src\model\Scope.cpp.obj
 main.exe: CMakeFiles\main.dir\src\model\Visitable.cpp.obj
 main.exe: CMakeFiles\main.dir\src\model\expressions\AdditionExpression.cpp.obj
@@ -1366,10 +1511,12 @@ main.exe: CMakeFiles\main.dir\src\model\symbols\base\Symbol.cpp.obj
 main.exe: CMakeFiles\main.dir\src\model\symbols\base\TypeSymbol.cpp.obj
 main.exe: CMakeFiles\main.dir\src\model\symbols\base\VariableSymbol.cpp.obj
 main.exe: CMakeFiles\main.dir\src\pipeline\FileSymbolJob.cpp.obj
+main.exe: CMakeFiles\main.dir\src\pipeline\ProjectJob.cpp.obj
+main.exe: CMakeFiles\main.dir\src\project\Project.cpp.obj
 main.exe: CMakeFiles\main.dir\build.make
 main.exe: ..\lib\antlr4-runtime\dist\antlr4-runtime-static.lib
 main.exe: CMakeFiles\main.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_63) "Linking CXX executable main.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_70) "Linking CXX executable main.exe"
 	"D:\Programes\InteliJ CLion\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\main.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x86\mt.exe --manifests  -- D:\Programes\VisualStudio\VC\Tools\MSVC\14.24.28314\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\main.dir\objects1.rsp @<<
  /out:main.exe /implib:main.lib /pdb:"E:\Projects\Faks\Diplomska naloga\slovenC\language\cmake-build-debug\main.pdb" /version:0.0  /machine:X86 /debug /INCREMENTAL /subsystem:console ..\lib\antlr4-runtime\dist\antlr4-runtime-static.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
 <<

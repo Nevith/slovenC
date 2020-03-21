@@ -13,6 +13,4 @@ const std::string &Symbol::getName() const {
     return name;
 }
 
-void Symbol::setName(const std::string &name) {
-    Symbol::name = name;
-}
+Symbol::Symbol(const std::string &name) : name(name) {}

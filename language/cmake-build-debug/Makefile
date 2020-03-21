@@ -441,6 +441,141 @@ src\async\JobManager.cpp.s:
 	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\async\JobManager.cpp.s
 .PHONY : src\async\JobManager.cpp.s
 
+src\graph\base\Edge.obj: src\graph\base\Edge.cpp.obj
+
+.PHONY : src\graph\base\Edge.obj
+
+# target to build an object file
+src\graph\base\Edge.cpp.obj:
+	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\graph\base\Edge.cpp.obj
+.PHONY : src\graph\base\Edge.cpp.obj
+
+src\graph\base\Edge.i: src\graph\base\Edge.cpp.i
+
+.PHONY : src\graph\base\Edge.i
+
+# target to preprocess a source file
+src\graph\base\Edge.cpp.i:
+	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\graph\base\Edge.cpp.i
+.PHONY : src\graph\base\Edge.cpp.i
+
+src\graph\base\Edge.s: src\graph\base\Edge.cpp.s
+
+.PHONY : src\graph\base\Edge.s
+
+# target to generate assembly for a file
+src\graph\base\Edge.cpp.s:
+	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\graph\base\Edge.cpp.s
+.PHONY : src\graph\base\Edge.cpp.s
+
+src\graph\base\FillerNode.obj: src\graph\base\FillerNode.cpp.obj
+
+.PHONY : src\graph\base\FillerNode.obj
+
+# target to build an object file
+src\graph\base\FillerNode.cpp.obj:
+	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\graph\base\FillerNode.cpp.obj
+.PHONY : src\graph\base\FillerNode.cpp.obj
+
+src\graph\base\FillerNode.i: src\graph\base\FillerNode.cpp.i
+
+.PHONY : src\graph\base\FillerNode.i
+
+# target to preprocess a source file
+src\graph\base\FillerNode.cpp.i:
+	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\graph\base\FillerNode.cpp.i
+.PHONY : src\graph\base\FillerNode.cpp.i
+
+src\graph\base\FillerNode.s: src\graph\base\FillerNode.cpp.s
+
+.PHONY : src\graph\base\FillerNode.s
+
+# target to generate assembly for a file
+src\graph\base\FillerNode.cpp.s:
+	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\graph\base\FillerNode.cpp.s
+.PHONY : src\graph\base\FillerNode.cpp.s
+
+src\graph\base\Graph.obj: src\graph\base\Graph.cpp.obj
+
+.PHONY : src\graph\base\Graph.obj
+
+# target to build an object file
+src\graph\base\Graph.cpp.obj:
+	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\graph\base\Graph.cpp.obj
+.PHONY : src\graph\base\Graph.cpp.obj
+
+src\graph\base\Graph.i: src\graph\base\Graph.cpp.i
+
+.PHONY : src\graph\base\Graph.i
+
+# target to preprocess a source file
+src\graph\base\Graph.cpp.i:
+	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\graph\base\Graph.cpp.i
+.PHONY : src\graph\base\Graph.cpp.i
+
+src\graph\base\Graph.s: src\graph\base\Graph.cpp.s
+
+.PHONY : src\graph\base\Graph.s
+
+# target to generate assembly for a file
+src\graph\base\Graph.cpp.s:
+	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\graph\base\Graph.cpp.s
+.PHONY : src\graph\base\Graph.cpp.s
+
+src\graph\base\GraphOrNode.obj: src\graph\base\GraphOrNode.cpp.obj
+
+.PHONY : src\graph\base\GraphOrNode.obj
+
+# target to build an object file
+src\graph\base\GraphOrNode.cpp.obj:
+	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\graph\base\GraphOrNode.cpp.obj
+.PHONY : src\graph\base\GraphOrNode.cpp.obj
+
+src\graph\base\GraphOrNode.i: src\graph\base\GraphOrNode.cpp.i
+
+.PHONY : src\graph\base\GraphOrNode.i
+
+# target to preprocess a source file
+src\graph\base\GraphOrNode.cpp.i:
+	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\graph\base\GraphOrNode.cpp.i
+.PHONY : src\graph\base\GraphOrNode.cpp.i
+
+src\graph\base\GraphOrNode.s: src\graph\base\GraphOrNode.cpp.s
+
+.PHONY : src\graph\base\GraphOrNode.s
+
+# target to generate assembly for a file
+src\graph\base\GraphOrNode.cpp.s:
+	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\graph\base\GraphOrNode.cpp.s
+.PHONY : src\graph\base\GraphOrNode.cpp.s
+
+src\graph\base\Node.obj: src\graph\base\Node.cpp.obj
+
+.PHONY : src\graph\base\Node.obj
+
+# target to build an object file
+src\graph\base\Node.cpp.obj:
+	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\graph\base\Node.cpp.obj
+.PHONY : src\graph\base\Node.cpp.obj
+
+src\graph\base\Node.i: src\graph\base\Node.cpp.i
+
+.PHONY : src\graph\base\Node.i
+
+# target to preprocess a source file
+src\graph\base\Node.cpp.i:
+	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\graph\base\Node.cpp.i
+.PHONY : src\graph\base\Node.cpp.i
+
+src\graph\base\Node.s: src\graph\base\Node.cpp.s
+
+.PHONY : src\graph\base\Node.s
+
+# target to generate assembly for a file
+src\graph\base\Node.cpp.s:
+	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\graph\base\Node.cpp.s
+.PHONY : src\graph\base\Node.cpp.s
+
 src\model\Scope.obj: src\model\Scope.cpp.obj
 
 .PHONY : src\model\Scope.obj
@@ -1872,6 +2007,60 @@ src\pipeline\FileSymbolJob.cpp.s:
 	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\pipeline\FileSymbolJob.cpp.s
 .PHONY : src\pipeline\FileSymbolJob.cpp.s
 
+src\pipeline\ProjectJob.obj: src\pipeline\ProjectJob.cpp.obj
+
+.PHONY : src\pipeline\ProjectJob.obj
+
+# target to build an object file
+src\pipeline\ProjectJob.cpp.obj:
+	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\pipeline\ProjectJob.cpp.obj
+.PHONY : src\pipeline\ProjectJob.cpp.obj
+
+src\pipeline\ProjectJob.i: src\pipeline\ProjectJob.cpp.i
+
+.PHONY : src\pipeline\ProjectJob.i
+
+# target to preprocess a source file
+src\pipeline\ProjectJob.cpp.i:
+	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\pipeline\ProjectJob.cpp.i
+.PHONY : src\pipeline\ProjectJob.cpp.i
+
+src\pipeline\ProjectJob.s: src\pipeline\ProjectJob.cpp.s
+
+.PHONY : src\pipeline\ProjectJob.s
+
+# target to generate assembly for a file
+src\pipeline\ProjectJob.cpp.s:
+	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\pipeline\ProjectJob.cpp.s
+.PHONY : src\pipeline\ProjectJob.cpp.s
+
+src\project\Project.obj: src\project\Project.cpp.obj
+
+.PHONY : src\project\Project.obj
+
+# target to build an object file
+src\project\Project.cpp.obj:
+	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\project\Project.cpp.obj
+.PHONY : src\project\Project.cpp.obj
+
+src\project\Project.i: src\project\Project.cpp.i
+
+.PHONY : src\project\Project.i
+
+# target to preprocess a source file
+src\project\Project.cpp.i:
+	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\project\Project.cpp.i
+.PHONY : src\project\Project.cpp.i
+
+src\project\Project.s: src\project\Project.cpp.s
+
+.PHONY : src\project\Project.s
+
+# target to generate assembly for a file
+src\project\Project.cpp.s:
+	$(MAKE) -f CMakeFiles\main.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\main.dir\src\project\Project.cpp.s
+.PHONY : src\project\Project.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -1914,6 +2103,21 @@ help:
 	@echo ... src/async/JobManager.obj
 	@echo ... src/async/JobManager.i
 	@echo ... src/async/JobManager.s
+	@echo ... src/graph/base/Edge.obj
+	@echo ... src/graph/base/Edge.i
+	@echo ... src/graph/base/Edge.s
+	@echo ... src/graph/base/FillerNode.obj
+	@echo ... src/graph/base/FillerNode.i
+	@echo ... src/graph/base/FillerNode.s
+	@echo ... src/graph/base/Graph.obj
+	@echo ... src/graph/base/Graph.i
+	@echo ... src/graph/base/Graph.s
+	@echo ... src/graph/base/GraphOrNode.obj
+	@echo ... src/graph/base/GraphOrNode.i
+	@echo ... src/graph/base/GraphOrNode.s
+	@echo ... src/graph/base/Node.obj
+	@echo ... src/graph/base/Node.i
+	@echo ... src/graph/base/Node.s
 	@echo ... src/model/Scope.obj
 	@echo ... src/model/Scope.i
 	@echo ... src/model/Scope.s
@@ -2073,6 +2277,12 @@ help:
 	@echo ... src/pipeline/FileSymbolJob.obj
 	@echo ... src/pipeline/FileSymbolJob.i
 	@echo ... src/pipeline/FileSymbolJob.s
+	@echo ... src/pipeline/ProjectJob.obj
+	@echo ... src/pipeline/ProjectJob.i
+	@echo ... src/pipeline/ProjectJob.s
+	@echo ... src/project/Project.obj
+	@echo ... src/project/Project.i
+	@echo ... src/project/Project.s
 .PHONY : help
 
 

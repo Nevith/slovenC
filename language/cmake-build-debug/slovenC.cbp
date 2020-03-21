@@ -1491,6 +1491,36 @@
 		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/async/JobManager.h">
 			<Option target="main"/>
 		</Unit>
+		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/graph/base/Edge.cpp">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/graph/base/Edge.h">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/graph/base/FillerNode.cpp">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/graph/base/FillerNode.h">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/graph/base/Graph.cpp">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/graph/base/Graph.h">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/graph/base/GraphOrNode.cpp">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/graph/base/GraphOrNode.h">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/graph/base/Node.cpp">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/graph/base/Node.h">
+			<Option target="main"/>
+		</Unit>
 		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/model/Scope.cpp">
 			<Option target="main"/>
 		</Unit>
@@ -1809,7 +1839,22 @@
 		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/pipeline/FileSymbolJob.h">
 			<Option target="main"/>
 		</Unit>
+		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/pipeline/ProjectJob.cpp">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/pipeline/ProjectJob.h">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/project/Project.cpp">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/project/Project.h">
+			<Option target="main"/>
+		</Unit>
 		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/utils/ContainerUtils.h">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/src/utils/TypeUtils.h">
 			<Option target="main"/>
 		</Unit>
 		<Unit filename="E:/Projects/Faks/Diplomska naloga/slovenC/language/CMakeLists.txt">
