@@ -41,3 +41,6 @@ out
 
 #Antlr4
 .antlr
+
+#CmakeDebug
+cmake-build-debug

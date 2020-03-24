@@ -80,6 +80,5 @@ std::vector<std::shared_ptr<Job>> ProjectJob::onComplete() {
             fileJobs.push_back(std::make_shared<FileSymbolJob>(project, fileSymbol));
         }
     }
-    std::cout << fileJobs.size() << std::endl;
     return fileJobs;
 }

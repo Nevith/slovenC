@@ -24,27 +24,33 @@ void JobManager::queueJob(std::shared_ptr<Job> job) {
 
 void JobManager::wait() {
     while (true) {
-        const std::lock_guard<std::mutex> lock(mutex);
-        if (jobQueue.empty() && runningJobs.empty() && futures.empty()) {
-            return;
+        {
+            const std::lock_guard<std::mutex> lock(mutex);
+            if (jobQueue.empty() && runningJobs.empty() && futures.empty()) {
+                return;
+            }
+            cleanFutures();
         }
-        cleanFutures();
+        std::this_thread::sleep_for(std::chrono::seconds(1));
     }
 }
 
 void JobManager::stopJobs() {
     while (true) {
-        const std::lock_guard<std::mutex> lock(mutex);
-        while (!jobQueue.empty()) {
-            jobQueue.pop();
+        {
+            const std::lock_guard<std::mutex> lock(mutex);
+            while (!jobQueue.empty()) {
+                jobQueue.pop();
+            }
+            for (const auto &job : runningJobs) {
+                job->cancel();
+            }
+            if (jobQueue.empty() && runningJobs.empty() && futures.empty()) {
+                return;
+            }
+            cleanFutures();
         }
-        for (const auto &job : runningJobs) {
-            job->cancel();
-        }
-        if (jobQueue.empty() && runningJobs.empty() && futures.empty()) {
-            return;
-        }
-        cleanFutures();
+        std::this_thread::sleep_for(std::chrono::seconds(1));
     }
 }
 

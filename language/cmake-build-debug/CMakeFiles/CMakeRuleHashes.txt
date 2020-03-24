@@ -1,2 +1,0 @@
-# Hashes of file build rules.
-431d8b19b2ddc381058c4b87b0cc067f lib/antlr4-runtime/CMakeFiles/make_lib_output_dir
