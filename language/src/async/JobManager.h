@@ -17,14 +17,20 @@ class JobManager {
 private:
     std::queue<std::shared_ptr<Job>> jobQueue;
     std::vector<std::shared_ptr<Job>> runningJobs;
+    std::vector<std::future<void>> futures;
     std::mutex mutex;
     unsigned supportedThreads;
 
+    void cleanFutures();
+
 public:
     JobManager();
+    ~JobManager();
 
     void queueJob(std::shared_ptr<Job> job);
 
+
+    void wait();
     void stopJobs();
 
 protected:

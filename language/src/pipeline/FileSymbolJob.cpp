@@ -8,7 +8,7 @@
 #include <iostream>
 
 FileSymbolJob::FileSymbolJob(std::shared_ptr<Project> project, std::shared_ptr<FileSymbol> fileSymbol)
-        : project(std::move(project)), fileSymbol(std::move(fileSymbol)) {}
+        : project(project), fileSymbol(fileSymbol) {}
 
 void FileSymbolJob::run() {
     std::cout << fileSymbol->getFullyQualifiedName() << std::endl;

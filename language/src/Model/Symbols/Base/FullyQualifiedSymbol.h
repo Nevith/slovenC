@@ -22,9 +22,9 @@ public:
 
     virtual std::string getFullyQualifiedName();
 
-    const std::shared_ptr<FullyQualifiedSymbol> &getParentSymbol() const;
+    const std::shared_ptr<FullyQualifiedSymbol> getParentSymbol() const;
 
-    virtual void setParentSymbol(const std::shared_ptr<FullyQualifiedSymbol> &parentSymbol);
+    virtual void setParentSymbol(std::shared_ptr<FullyQualifiedSymbol> parentSymbol);
 
 };
 

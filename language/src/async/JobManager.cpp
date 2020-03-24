@@ -15,25 +15,37 @@ JobManager::JobManager() {
 
 void JobManager::queueJob(std::shared_ptr<Job> job) {
     const std::lock_guard<std::mutex> lock(mutex);
-    std::cout << "Locked mutex" << std::endl;
     jobQueue.push(job);
 
     if (runningJobs.size() < supportedThreads && !jobQueue.empty()) {
         runNextJob();
     }
-    std::cout << "Released mutex" << std::endl;
+}
+
+void JobManager::wait() {
+    while (true) {
+        const std::lock_guard<std::mutex> lock(mutex);
+        if (jobQueue.empty() && runningJobs.empty() && futures.empty()) {
+            return;
+        }
+        cleanFutures();
+    }
 }
 
 void JobManager::stopJobs() {
-    const std::lock_guard<std::mutex> lock(mutex);
-
-    while (!jobQueue.empty()) {
-        jobQueue.pop();
+    while (true) {
+        const std::lock_guard<std::mutex> lock(mutex);
+        while (!jobQueue.empty()) {
+            jobQueue.pop();
+        }
+        for (const auto &job : runningJobs) {
+            job->cancel();
+        }
+        if (jobQueue.empty() && runningJobs.empty() && futures.empty()) {
+            return;
+        }
+        cleanFutures();
     }
-    for (auto job : runningJobs) {
-        job->cancel();
-    }
-    runningJobs.clear();
 }
 
 void JobManager::runNextJob() {
@@ -42,17 +54,17 @@ void JobManager::runNextJob() {
         jobQueue.pop();
 
         runningJobs.push_back(nextJob);
-        std::future result = std::async(std::launch::async,[](std::shared_ptr<Job> a, JobManager *jobManager) {
+        std::future result = std::async(std::launch::async, [](std::shared_ptr<Job> a, JobManager *jobManager) {
             a->run();
             if (!a->isCanceled()) {
                 for (std::shared_ptr<Job> newJob : a->onComplete()) {
-                    std::cout << "QueuedJob" << std::endl;
                     jobManager->queueJob(newJob);
                 }
-                jobManager->jobFinished(a);
             }
+            jobManager->jobFinished(a);
         }, nextJob, this);
-        std::cout << "aaaaa" << std::endl;
+
+        futures.push_back(std::move(result));
     }
 }
 
@@ -60,5 +72,20 @@ void JobManager::jobFinished(std::shared_ptr<Job> job) {
     const std::lock_guard<std::mutex> lock(mutex);
 
     ContainerUtils::remove(runningJobs, job);
+    cleanFutures();
     runNextJob();
+}
+
+void JobManager::cleanFutures() {
+    for (auto it = futures.begin(); it < futures.end();) {
+        if ((*it)._Is_ready()) {
+            it = futures.erase(it);
+        } else {
+            ++it;
+        }
+    }
+}
+
+JobManager::~JobManager() {
+    stopJobs();
 }

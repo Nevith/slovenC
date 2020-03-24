@@ -14,7 +14,7 @@ ProjectJob::ProjectJob(const std::string &absolutePath) {
     project = std::make_shared<Project>(absolutePath);
 }
 
-void collectSources(const std::shared_ptr<Project> &project) {
+void collectSources(std::shared_ptr<Project> project) {
     auto projectPath = project->getAbsolutePath();
     for (std::filesystem::recursive_directory_iterator i(projectPath), end; i != end; ++i) {
         auto absolutePath = i->path();
@@ -30,7 +30,7 @@ void collectSources(const std::shared_ptr<Project> &project) {
     }
 }
 
-void buildRelations(const std::shared_ptr<Project> &project) {
+void buildRelations(std::shared_ptr<Project> project) {
     auto projectSources = project->getRelativePathMap();
     for (auto &projectSource : projectSources) {
         auto relativePath = projectSource.first;
@@ -52,11 +52,20 @@ void buildRelations(const std::shared_ptr<Project> &project) {
 
 void ProjectJob::run() {
     collectSources(project);
+
+    if (isCanceled()) {
+        return;
+    }
+
     buildRelations(project);
+
+    if (isCanceled()) {
+        return;
+    }
 
     // Fill fullyQualifiedMap
     auto projectSources = project->getRelativePathMap();
-    for (auto &projectSource : projectSources) {
+    for (auto projectSource : projectSources) {
         auto symbol = projectSource.second;
         project->addFullyQualifiedSource(symbol);   // TODO - check if multiple symbols with same key
     }

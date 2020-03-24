@@ -11,9 +11,9 @@
  */
 
 
-/**
- * @return std::string
- */
+FullyQualifiedSymbol::FullyQualifiedSymbol(std::string name): Symbol(name) {
+}
+
 std::string FullyQualifiedSymbol::getFullyQualifiedName() {
     if (parentSymbol != nullptr) {
         if (!parentSymbol->getName().empty()) {
@@ -23,13 +23,10 @@ std::string FullyQualifiedSymbol::getFullyQualifiedName() {
     return getName();
 }
 
-const std::shared_ptr<FullyQualifiedSymbol> &FullyQualifiedSymbol::getParentSymbol() const {
+const std::shared_ptr<FullyQualifiedSymbol> FullyQualifiedSymbol::getParentSymbol() const {
     return parentSymbol;
 }
 
-void FullyQualifiedSymbol::setParentSymbol(const std::shared_ptr<FullyQualifiedSymbol> &parentSymbol) {
+void FullyQualifiedSymbol::setParentSymbol(std::shared_ptr<FullyQualifiedSymbol> parentSymbol) {
     FullyQualifiedSymbol::parentSymbol = parentSymbol;
-}
-
-FullyQualifiedSymbol::FullyQualifiedSymbol(std::string name): Symbol(name) {
 }

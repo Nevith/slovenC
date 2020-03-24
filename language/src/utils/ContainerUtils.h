@@ -10,13 +10,14 @@
 namespace ContainerUtils {
 
     template<class T>
-    std::shared_ptr<T> remove(std::vector<std::shared_ptr<T>> vector, std::shared_ptr<T> element) {
+    bool remove(std::vector<std::shared_ptr<T>> &vector, const std::shared_ptr<T> &element) {
         for (auto it = vector.begin(); it != vector.end(); it++) {
             if (*it == element) {
                 vector.erase(it);
-                return *it;
+                return true;
             }
         }
+        return false;
     }
 
 }

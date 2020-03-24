@@ -10,6 +10,6 @@ int main(int, const char **) {
     JobManager jobManager;
 
     jobManager.queueJob(std::make_shared<ProjectJob>(absolutePath));
-
+    jobManager.wait();
     return 0;
 }
