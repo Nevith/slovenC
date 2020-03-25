@@ -5,7 +5,7 @@
 #ifndef SLOVENC_EDGE_H
 #define SLOVENC_EDGE_H
 
-template <class V>
+template<class V>
 class Edge {
 
 };

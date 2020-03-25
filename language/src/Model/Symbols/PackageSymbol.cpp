@@ -13,9 +13,11 @@
  * PackageSymbol implementation
  */
 PackageSymbol::PackageSymbol(std::string name, std::string absolutePath, std::string relativePath) :
-        FullyQualifiedSymbol(std::move(name)), absolutePath(std::move(absolutePath)), relativePath(std::move(relativePath)) {}
+        FullyQualifiedSymbol(std::move(name)), absolutePath(std::move(absolutePath)),
+        relativePath(std::move(relativePath)) {}
 
-PackageSymbol::PackageSymbol(std::string name, const std::filesystem::path& absolutePath, const std::filesystem::path& relativePath) :
+PackageSymbol::PackageSymbol(std::string name, const std::filesystem::path &absolutePath,
+                             const std::filesystem::path &relativePath) :
         FullyQualifiedSymbol(std::move(name)) {
     this->absolutePath = absolutePath.string();
     this->relativePath = relativePath.string();

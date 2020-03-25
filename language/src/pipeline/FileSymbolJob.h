@@ -10,7 +10,7 @@
 #include <project/Project.h>
 #include <async/Job.h>
 
-class FileSymbolJob: public Job {
+class FileSymbolJob : public Job {
 public:
     FileSymbolJob(std::shared_ptr<Project> project, std::shared_ptr<FileSymbol> fileSymbol);
 

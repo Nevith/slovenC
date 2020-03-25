@@ -25,12 +25,14 @@ private:
 
 public:
     JobManager();
+
     ~JobManager();
 
     void queueJob(std::shared_ptr<Job> job);
 
 
     void wait();
+
     void stopJobs();
 
 protected:

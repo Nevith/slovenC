@@ -9,11 +9,11 @@
 #include <project/Project.h>
 #include <async/Job.h>
 
-class ProjectJob: public Job {
+class ProjectJob : public Job {
     std::shared_ptr<Project> project;
 
 public:
-    ProjectJob(const std::string& absolutePath);
+    ProjectJob(const std::string &absolutePath);
 
     void run() override;
 

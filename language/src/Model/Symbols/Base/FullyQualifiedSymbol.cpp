@@ -11,7 +11,7 @@
  */
 
 
-FullyQualifiedSymbol::FullyQualifiedSymbol(std::string name): Symbol(name) {
+FullyQualifiedSymbol::FullyQualifiedSymbol(std::string name) : Symbol(name) {
 }
 
 std::string FullyQualifiedSymbol::getFullyQualifiedName() {

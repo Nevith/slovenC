@@ -6,8 +6,15 @@
 #define SLOVENC_SYMBOLBUILDER_H
 
 
-class SymbolBuilder {
+#include <memory>
+#include "CurrentState.h"
 
+class SymbolBuilder {
+private:
+    const std::shared_ptr<CurrentState> currentState;
+
+public:
+    SymbolBuilder(const std::shared_ptr<CurrentState> &currentState);
 };
 
 

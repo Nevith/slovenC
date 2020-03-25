@@ -3,3 +3,5 @@
 //
 
 #include "SymbolBuilder.h"
+
+SymbolBuilder::SymbolBuilder(const std::shared_ptr<CurrentState> &currentState) : currentState(currentState) {}

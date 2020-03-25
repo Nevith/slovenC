@@ -16,7 +16,9 @@
 class FileSymbol : public FullyQualifiedSymbol {
 public:
     FileSymbol(std::string name, std::string absolutePath, std::string relativePath, std::string extension);
-    FileSymbol(std::string name, const std::filesystem::path& absolutePath, const std::filesystem::path& relativePath, std::string extension);
+
+    FileSymbol(std::string name, const std::filesystem::path &absolutePath, const std::filesystem::path &relativePath,
+               std::string extension);
 
 private:
     std::string absolutePath;

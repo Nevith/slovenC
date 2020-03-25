@@ -33,7 +33,7 @@ void FileSymbolJob::run() {
     SlovenCLanguageParser parser(&tokens);
     SlovenCLanguageParser::ParseWholeContext *rootContext = parser.parseWhole();
 
-    auto builder = Builder();
+    auto builder = Builder(std::make_shared<CurrentState>(fileSymbol));
     tree::ParseTreeWalker::DEFAULT.walk(&builder, rootContext);
 }
 

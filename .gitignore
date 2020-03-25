@@ -41,6 +41,8 @@ out
 
 #Antlr4
 .antlr
+#Antlr4 VisualCode debug tools
+gen
 
 #CmakeDebug
 cmake-build-debug

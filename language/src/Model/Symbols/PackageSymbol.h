@@ -17,7 +17,9 @@
 class PackageSymbol : public FullyQualifiedSymbol {
 public:
     PackageSymbol(std::string name, std::string absolutePath, std::string relativePath);
-    PackageSymbol(std::string name, const std::filesystem::path& absolutePath, const std::filesystem::path&  relativePath);
+
+    PackageSymbol(std::string name, const std::filesystem::path &absolutePath,
+                  const std::filesystem::path &relativePath);
 
 private:
     std::string absolutePath;

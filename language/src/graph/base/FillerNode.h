@@ -7,8 +7,8 @@
 
 #include "Node.h"
 
-template <typename V>
-class FillerNode: public Node<V> {
+template<typename V>
+class FillerNode : public Node<V> {
 
 };
 

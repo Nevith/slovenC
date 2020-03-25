@@ -8,8 +8,8 @@
 
 #include "GraphOrNode.h"
 
-template <class E>
-class Node: public GraphOrNode {
+template<class E>
+class Node : public GraphOrNode {
 
 };
 
