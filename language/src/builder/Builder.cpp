@@ -125,10 +125,6 @@ void Builder::exitWhileStatement(SlovenCLanguageParser::WhileStatementContext *c
     SlovenCLanguageParserBaseListener::exitWhileStatement(context);
 }
 
-void Builder::exitBreakStatement(SlovenCLanguageParser::BreakStatementContext *context) {
-    SlovenCLanguageParserBaseListener::exitBreakStatement(context);
-}
-
 void Builder::enterExpressionStatement(SlovenCLanguageParser::ExpressionStatementContext *context) {
     SlovenCLanguageParserBaseListener::enterExpressionStatement(context);
 }

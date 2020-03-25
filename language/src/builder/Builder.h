@@ -82,8 +82,6 @@ public:
 
     void exitWhileStatement(SlovenCLanguageParser::WhileStatementContext *context) override;
 
-    void exitBreakStatement(SlovenCLanguageParser::BreakStatementContext *context) override;
-
     void enterExpressionStatement(SlovenCLanguageParser::ExpressionStatementContext *context) override;
 
     void exitExpressionStatement(SlovenCLanguageParser::ExpressionStatementContext *context) override;
