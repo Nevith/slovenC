@@ -42,14 +42,22 @@ void CurrentState::pushCurrentExpression(const std::shared_ptr<Expression> &curr
     expressionStack.push(currentExpression);
 }
 
-void CurrentState::popCurrentClass(const std::shared_ptr<ClassSymbol> &currentClass) {
+void CurrentState::pushCurrentScope(const std::shared_ptr<Scope> &currentScope) {
+    scopeStack.push(currentScope);
+}
+
+void CurrentState::popCurrentClass() {
     classStack.pop();
 }
 
-void CurrentState::popCurrentStatement(const std::shared_ptr<Statement> &currentStatement) {
+void CurrentState::popCurrentStatement() {
     statementStack.pop();
 }
 
-void CurrentState::popCurrentExpression(const std::shared_ptr<Expression> &currentExpression) {
+void CurrentState::popCurrentExpression() {
     expressionStack.pop();
+}
+
+void CurrentState::popCurrentScope() {
+    scopeStack.pop();
 }

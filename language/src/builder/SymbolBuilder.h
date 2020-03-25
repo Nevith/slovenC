@@ -7,9 +7,12 @@
 
 
 #include <memory>
+#include <antlr/SlovenCLanguageParserBaseVisitor.h>
 #include "CurrentState.h"
 
-class SymbolBuilder {
+using namespace antlr;
+
+class SymbolBuilder: public SlovenCLanguageParserBaseVisitor {
 private:
     const std::shared_ptr<CurrentState> currentState;
 

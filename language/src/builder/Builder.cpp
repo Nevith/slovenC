@@ -7,8 +7,27 @@
 Builder::Builder(const std::shared_ptr<CurrentState> &currentState) : currentState(currentState),
                                                                       symbolBuilder(currentState),
                                                                       statementBuilder(currentState),
-                                                                      expressionBuilder(currentState) {}
+                                                                      expressionBuilder(currentState),
+                                                                      typeBuilder(currentState) {}
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////// Imports /////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+void Builder::exitImportDeclaration(SlovenCLanguageParser::ImportDeclarationContext *context) {
+    SlovenCLanguageParserBaseListener::exitImportDeclaration(context);
+}
+
+void Builder::enterSingleTypeImportDeclaration(SlovenCLanguageParser::SingleTypeImportDeclarationContext *context) {
+    SlovenCLanguageParserBaseListener::enterSingleTypeImportDeclaration(context);
+}
+
+void Builder::exitSingleTypeImportDeclaration(SlovenCLanguageParser::SingleTypeImportDeclarationContext *context) {
+    SlovenCLanguageParserBaseListener::exitSingleTypeImportDeclaration(context);
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////// Declarations ////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void Builder::enterNormalClassDeclaration(SlovenCLanguageParser::NormalClassDeclarationContext *context) {
     SlovenCLanguageParserBaseListener::enterNormalClassDeclaration(context);
 }
@@ -33,14 +52,6 @@ void Builder::exitConstructorDeclaration(SlovenCLanguageParser::ConstructorDecla
     SlovenCLanguageParserBaseListener::exitConstructorDeclaration(context);
 }
 
-void Builder::enterBlockStatement(SlovenCLanguageParser::BlockStatementContext *context) {
-    SlovenCLanguageParserBaseListener::enterBlockStatement(context);
-}
-
-void Builder::exitBlockStatement(SlovenCLanguageParser::BlockStatementContext *context) {
-    SlovenCLanguageParserBaseListener::exitBlockStatement(context);
-}
-
 void Builder::enterLocalVariableDeclarationStatement(
         SlovenCLanguageParser::LocalVariableDeclarationStatementContext *context) {
     SlovenCLanguageParserBaseListener::enterLocalVariableDeclarationStatement(context);
@@ -49,18 +60,6 @@ void Builder::enterLocalVariableDeclarationStatement(
 void Builder::exitLocalVariableDeclarationStatement(
         SlovenCLanguageParser::LocalVariableDeclarationStatementContext *context) {
     SlovenCLanguageParserBaseListener::exitLocalVariableDeclarationStatement(context);
-}
-
-void Builder::enterStatement(SlovenCLanguageParser::StatementContext *context) {
-    SlovenCLanguageParserBaseListener::enterStatement(context);
-}
-
-void Builder::exitStatement(SlovenCLanguageParser::StatementContext *context) {
-    SlovenCLanguageParserBaseListener::exitStatement(context);
-}
-
-void Builder::enterImportDeclaration(SlovenCLanguageParser::ImportDeclarationContext *context) {
-    SlovenCLanguageParserBaseListener::enterImportDeclaration(context);
 }
 
 void Builder::enterFieldDeclaration(SlovenCLanguageParser::FieldDeclarationContext *context) {
@@ -79,16 +78,27 @@ void Builder::exitLocalVariableDeclaration(SlovenCLanguageParser::LocalVariableD
     SlovenCLanguageParserBaseListener::exitLocalVariableDeclaration(context);
 }
 
-void Builder::exitImportDeclaration(SlovenCLanguageParser::ImportDeclarationContext *context) {
-    SlovenCLanguageParserBaseListener::exitImportDeclaration(context);
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////// Statements //////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+void Builder::enterStatement(SlovenCLanguageParser::StatementContext *context) {
+    SlovenCLanguageParserBaseListener::enterStatement(context);
 }
 
-void Builder::enterSingleTypeImportDeclaration(SlovenCLanguageParser::SingleTypeImportDeclarationContext *context) {
-    SlovenCLanguageParserBaseListener::enterSingleTypeImportDeclaration(context);
+void Builder::exitStatement(SlovenCLanguageParser::StatementContext *context) {
+    SlovenCLanguageParserBaseListener::exitStatement(context);
 }
 
-void Builder::exitSingleTypeImportDeclaration(SlovenCLanguageParser::SingleTypeImportDeclarationContext *context) {
-    SlovenCLanguageParserBaseListener::exitSingleTypeImportDeclaration(context);
+void Builder::enterBlockStatement(SlovenCLanguageParser::BlockStatementContext *context) {
+    SlovenCLanguageParserBaseListener::enterBlockStatement(context);
+}
+
+void Builder::exitBlockStatement(SlovenCLanguageParser::BlockStatementContext *context) {
+    SlovenCLanguageParserBaseListener::exitBlockStatement(context);
+}
+
+void Builder::enterImportDeclaration(SlovenCLanguageParser::ImportDeclarationContext *context) {
+    SlovenCLanguageParserBaseListener::enterImportDeclaration(context);
 }
 
 void Builder::enterIfThenStatement(SlovenCLanguageParser::IfThenStatementContext *context) {

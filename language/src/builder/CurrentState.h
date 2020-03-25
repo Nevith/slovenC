@@ -11,6 +11,7 @@
 #include <model/symbols/FileSymbol.h>
 #include <model/statements/base/Statement.h>
 #include <model/expressions/base/Expression.h>
+#include <model/Scope.h>
 
 class CurrentState {
 public:
@@ -22,6 +23,7 @@ private:
     std::stack<std::shared_ptr<ClassSymbol>> classStack;
     std::stack<std::shared_ptr<Statement>> statementStack;
     std::stack<std::shared_ptr<Expression>> expressionStack;
+    std::stack<std::shared_ptr<Scope>> scopeStack;
 
 public:
 
@@ -35,6 +37,8 @@ public:
 
     const std::shared_ptr<Expression> &getCurrentExpression() const;
 
+    const std::shared_ptr<Scope> &getCurrentScope() const;
+
     void setCurrentMethod(const std::shared_ptr<MethodSymbol> &currentMethod);
 
     void pushCurrentClass(const std::shared_ptr<ClassSymbol> &currentClass);
@@ -43,11 +47,15 @@ public:
 
     void pushCurrentExpression(const std::shared_ptr<Expression> &currentExpression);
 
-    void popCurrentClass(const std::shared_ptr<ClassSymbol> &currentClass);
+    void pushCurrentScope(const std::shared_ptr<Scope> &currentScope);
 
-    void popCurrentStatement(const std::shared_ptr<Statement> &currentStatement);
+    void popCurrentClass();
 
-    void popCurrentExpression(const std::shared_ptr<Expression> &currentExpression);
+    void popCurrentStatement();
+
+    void popCurrentExpression();
+
+    void popCurrentScope();
 };
 
 

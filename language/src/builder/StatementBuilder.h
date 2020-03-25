@@ -6,9 +6,12 @@
 #define SLOVENC_STATEMENTBUILDER_H
 
 
+#include <antlr/SlovenCLanguageParserBaseVisitor.h>
 #include "CurrentState.h"
 
-class StatementBuilder {
+using namespace antlr;
+
+class StatementBuilder: public SlovenCLanguageParserBaseVisitor {
 private:
     const std::shared_ptr<CurrentState> currentState;
 

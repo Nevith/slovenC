@@ -7,9 +7,12 @@
 
 
 #include <memory>
+#include <antlr/SlovenCLanguageParserBaseVisitor.h>
 #include "CurrentState.h"
 
-class ExpressionBuilder {
+using namespace antlr;
+
+class ExpressionBuilder: public SlovenCLanguageParserBaseVisitor {
 private:
     const std::shared_ptr<CurrentState> currentState;
 

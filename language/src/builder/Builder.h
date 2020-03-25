@@ -11,15 +11,17 @@
 #include "SymbolBuilder.h"
 #include "StatementBuilder.h"
 #include "ExpressionBuilder.h"
+#include "TypeBuilder.h"
 
 using namespace antlr;
 
 class Builder : public SlovenCLanguageParserBaseListener {
 private:
     const std::shared_ptr<CurrentState> currentState;
-    SymbolBuilder symbolBuilder;
-    StatementBuilder statementBuilder;
-    ExpressionBuilder expressionBuilder;
+    const SymbolBuilder symbolBuilder;
+    const StatementBuilder statementBuilder;
+    const ExpressionBuilder expressionBuilder;
+    const TypeBuilder typeBuilder;
 
 public:
     Builder(const std::shared_ptr<CurrentState> &currentState);
