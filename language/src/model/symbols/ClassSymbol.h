@@ -17,6 +17,20 @@
 
 
 class ClassSymbol : public TypeSymbol, public MemberSymbol {
+private:
+
+    std::vector<std::shared_ptr<TypeSymbol>> superClasses;
+    std::vector<std::shared_ptr<ClassSymbol>> declaredClasses;
+    std::vector<std::shared_ptr<MethodSymbol>> declaredMethods;
+    std::vector<std::shared_ptr<FieldSymbol>> declaredFields;
+
+public:
+    ClassSymbol(std::string name);
+
+    void addSuperClass(std::shared_ptr<TypeSymbol> superClass);
+    void declareClass(std::shared_ptr<ClassSymbol> declaredClass);
+    void declareMethod(std::shared_ptr<MethodSymbol> declaredMethod);
+    void declareField(std::shared_ptr<FieldSymbol> declareField);
 };
 
 #endif //_CLASSSYMBOL_H

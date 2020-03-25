@@ -18,6 +18,8 @@ private:
 
 public:
     SymbolBuilder(const std::shared_ptr<CurrentState> &currentState);
+
+    antlrcpp::Any visitNormalClassDeclaration(SlovenCLanguageParser::NormalClassDeclarationContext *ctx) override;
 };
 
 

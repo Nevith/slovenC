@@ -27,19 +27,19 @@ private:
 
 public:
 
-    const std::shared_ptr<FileSymbol> &getFileSymbol() const;
+    const std::shared_ptr<FileSymbol> getFileSymbol() const;
 
-    const std::shared_ptr<ClassSymbol> &getCurrentClass() const;
+    const std::shared_ptr<ClassSymbol> getCurrentClass() const;
 
     const std::shared_ptr<MemberSymbol> getCurrentMethod() const;
 
-    const std::shared_ptr<Statement> &getCurrentStatement() const;
+    const std::shared_ptr<Statement> getCurrentStatement() const;
 
-    const std::shared_ptr<Expression> &getCurrentExpression() const;
+    const std::shared_ptr<Expression> getCurrentExpression() const;
 
-    const std::shared_ptr<Scope> &getCurrentScope() const;
+    const std::shared_ptr<Scope> getCurrentScope() const;
 
-    void setCurrentMethod(const std::shared_ptr<MethodSymbol> &currentMethod);
+    const void setCurrentMethod(const std::shared_ptr<MethodSymbol> &currentMethod);
 
     void pushCurrentClass(const std::shared_ptr<ClassSymbol> &currentClass);
 

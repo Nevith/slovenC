@@ -7,9 +7,17 @@
 #ifndef _VISITABLE_H
 #define _VISITABLE_H
 
-class Visitable {
-public:
+#include <tree/ParseTree.h>
 
+using namespace antlr4;
+
+class Visitable {
+private:
+    tree::ParseTree* context;
+public:
+    tree::ParseTree *getContext() const;
+
+    void setContext(tree::ParseTree *context);
 /**
  * Double dispatch method used to correctly visit the derived symbol.
  * @param visitor

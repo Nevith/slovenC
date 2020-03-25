@@ -9,3 +9,6 @@
 /**
  * TypeSymbol implementation
  */
+TypeSymbol::TypeSymbol(std::string name) : FullyQualifiedSymbol(name) {
+
+}

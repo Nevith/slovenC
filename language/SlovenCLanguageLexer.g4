@@ -60,7 +60,7 @@ ELSE          : 'sicer';
 FOR           : 'za';
 WHILE         : 'dokler';
 TRY			  : 'poskusi';
-CATCH		  : 'ujami';
+CATCH		  : 'ujemi';
 FINALLY       : 'konec';
 THROW         : 'javi';
 
@@ -69,16 +69,15 @@ PACKAGE       : 'paket';
 NEW           : 'nov';
 INSTANCEOF    : 'jeprimer';
 SUPER         : 'super';
-THIS         : 'to';
-VOID          : 'prazno';
+THIS          : 'to';
+VOID          : 'praznost';
 
-PRIVATE       : 'privatno';
-PUBLIC        : 'javno';
-STATIC        : 'globalno';
+PRIVATE       : 'privat' | 'privatno';
+PUBLIC        : 'odkrit' | 'odkrito';
+STATIC        : 'closten' | 'celostno' ;
 RETURN        : 'vrni';
 
 CONSTRUCTOR   : 'Konstruktor';
-DESTRUCTOR    : 'Destruktor';
 
 // §3.10.1 Integer Literals
 

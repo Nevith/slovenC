@@ -9,7 +9,8 @@ int main(int, const char **) {
 
     JobManager jobManager;
 
-    jobManager.queueJob(std::make_shared<ProjectJob>(absolutePath));
+    auto project = std::make_shared<Project>(absolutePath);
+    jobManager.queueJob(std::make_shared<ProjectJob>(project));
     jobManager.wait();
     return 0;
 }

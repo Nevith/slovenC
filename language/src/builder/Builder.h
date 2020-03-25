@@ -18,10 +18,10 @@ using namespace antlr;
 class Builder : public SlovenCLanguageParserBaseListener {
 private:
     const std::shared_ptr<CurrentState> currentState;
-    const SymbolBuilder symbolBuilder;
-    const StatementBuilder statementBuilder;
-    const ExpressionBuilder expressionBuilder;
-    const TypeBuilder typeBuilder;
+    SymbolBuilder symbolBuilder;
+    StatementBuilder statementBuilder;
+    ExpressionBuilder expressionBuilder;
+    TypeBuilder typeBuilder;
 
 public:
     Builder(const std::shared_ptr<CurrentState> &currentState);

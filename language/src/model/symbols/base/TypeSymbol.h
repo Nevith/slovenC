@@ -12,6 +12,8 @@
 
 
 class TypeSymbol : public FullyQualifiedSymbol {
+public:
+    TypeSymbol(std::string name);
 };
 
 #endif //_TYPESYMBOL_H

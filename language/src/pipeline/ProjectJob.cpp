@@ -4,15 +4,11 @@
 
 #include "ProjectJob.h"
 #include "FileSymbolJob.h"
-#include <iostream>
 #include <filesystem>
 #include <memory>
-#include <model/symbols/PackageSymbol.h>
 
 
-ProjectJob::ProjectJob(const std::string &absolutePath) {
-    project = std::make_shared<Project>(absolutePath);
-}
+ProjectJob::ProjectJob(std::shared_ptr<Project> project) : project(project) {};
 
 void collectSources(std::shared_ptr<Project> project) {
     auto projectPath = project->getAbsolutePath();

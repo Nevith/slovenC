@@ -16,5 +16,6 @@ add_subdirectory(${CMAKE_SOURCE_DIR}/lib/antlr4-runtime)
 add_executable(main main.cpp ${sourcesc} ${sourcesh})
 
 # Link with antlr4_runtime
+add_definitions("-DANTLR4CPP_STATIC")
 target_link_libraries(main antlr4_static)
 

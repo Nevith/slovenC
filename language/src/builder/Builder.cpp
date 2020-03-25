@@ -17,6 +17,10 @@ void Builder::exitImportDeclaration(SlovenCLanguageParser::ImportDeclarationCont
     SlovenCLanguageParserBaseListener::exitImportDeclaration(context);
 }
 
+void Builder::enterImportDeclaration(SlovenCLanguageParser::ImportDeclarationContext *context) {
+    SlovenCLanguageParserBaseListener::enterImportDeclaration(context);
+}
+
 void Builder::enterSingleTypeImportDeclaration(SlovenCLanguageParser::SingleTypeImportDeclarationContext *context) {
     SlovenCLanguageParserBaseListener::enterSingleTypeImportDeclaration(context);
 }
@@ -29,11 +33,12 @@ void Builder::exitSingleTypeImportDeclaration(SlovenCLanguageParser::SingleTypeI
 ///////////////////////////////////////////// Declarations ////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void Builder::enterNormalClassDeclaration(SlovenCLanguageParser::NormalClassDeclarationContext *context) {
-    SlovenCLanguageParserBaseListener::enterNormalClassDeclaration(context);
+    std::shared_ptr<ClassSymbol> classSymbol = symbolBuilder.visit(context);
+    currentState->pushCurrentClass(classSymbol);
 }
 
 void Builder::exitNormalClassDeclaration(SlovenCLanguageParser::NormalClassDeclarationContext *context) {
-    SlovenCLanguageParserBaseListener::exitNormalClassDeclaration(context);
+    currentState->popCurrentClass();
 }
 
 void Builder::enterMethodDeclaration(SlovenCLanguageParser::MethodDeclarationContext *context) {
@@ -95,10 +100,6 @@ void Builder::enterBlockStatement(SlovenCLanguageParser::BlockStatementContext *
 
 void Builder::exitBlockStatement(SlovenCLanguageParser::BlockStatementContext *context) {
     SlovenCLanguageParserBaseListener::exitBlockStatement(context);
-}
-
-void Builder::enterImportDeclaration(SlovenCLanguageParser::ImportDeclarationContext *context) {
-    SlovenCLanguageParserBaseListener::enterImportDeclaration(context);
 }
 
 void Builder::enterIfThenStatement(SlovenCLanguageParser::IfThenStatementContext *context) {

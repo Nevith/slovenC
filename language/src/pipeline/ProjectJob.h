@@ -13,7 +13,7 @@ class ProjectJob : public Job {
     std::shared_ptr<Project> project;
 
 public:
-    ProjectJob(const std::string &absolutePath);
+    ProjectJob(std::shared_ptr<Project> project);
 
     void run() override;
 
