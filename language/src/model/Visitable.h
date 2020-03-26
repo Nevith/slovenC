@@ -11,13 +11,19 @@
 
 using namespace antlr4;
 
+class FileSymbol;
 class Visitable {
 private:
     tree::ParseTree* context;
+    std::shared_ptr<FileSymbol> fileSymbol;
 public:
     tree::ParseTree *getContext() const;
 
     void setContext(tree::ParseTree *context);
+
+    const std::shared_ptr<FileSymbol> &getFileSymbol() const;
+
+    void setFileSymbol(const std::shared_ptr<FileSymbol> &fileSymbol);
 /**
  * Double dispatch method used to correctly visit the derived symbol.
  * @param visitor

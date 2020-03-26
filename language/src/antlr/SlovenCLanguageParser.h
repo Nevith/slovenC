@@ -33,21 +33,21 @@ public:
 
   enum {
     RuleParseWhole = 0, RuleLiteral = 1, RuleType = 2, RuleClassType = 3, 
-    RuleModifier = 4, RuleTypeName = 5, RuleCompilationUnit = 6, RuleImportDeclarations = 7, 
-    RuleImportDeclaration = 8, RuleTypeDeclarations = 9, RuleSingleTypeImportDeclaration = 10, 
-    RuleTypeDeclaration = 11, RuleClassDeclaration = 12, RuleInheritance = 13, 
-    RuleSuperclass = 14, RuleClassTypeList = 15, RuleClassBody = 16, RuleClassBodyDeclaration = 17, 
-    RuleFieldDeclaration = 18, RuleVariableDeclaratorList = 19, RuleVariableDeclarator = 20, 
-    RuleMethodDeclaration = 21, RuleMethodHeader = 22, RuleResult = 23, 
-    RuleMethodDeclarator = 24, RuleFormalParameterList = 25, RuleFormalParameter = 26, 
-    RuleMethodBody = 27, RuleConstructorDeclaration = 28, RuleConstructorDeclarator = 29, 
-    RuleConstructorBody = 30, RuleBlock = 31, RuleBlockStatement = 32, RuleLocalVariableDeclarationStatement = 33, 
-    RuleLocalVariableDeclaration = 34, RuleStatement = 35, RuleBlock_ = 36, 
-    RuleIfThenStatement = 37, RuleBasicForStatement = 38, RuleWhileStatement = 39, 
-    RuleReturnStatement = 40, RuleThrowStatement = 41, RuleBreakStatement = 42, 
-    RuleContinueStatement = 43, RuleEmptyStatement = 44, RuleExpressionStatement = 45, 
-    RuleCondition = 46, RuleElseStatement = 47, RuleForInit = 48, RuleForUpdate = 49, 
-    RuleExpression = 50, RulePrimary = 51, RuleExpressionList = 52
+    RuleModifier = 4, RuleFileName = 5, RuleCompilationUnit = 6, RuleImportDeclarations = 7, 
+    RuleImportDeclaration = 8, RuleTypeDeclarations = 9, RuleTypeDeclaration = 10, 
+    RuleClassDeclaration = 11, RuleInheritance = 12, RuleSuperclass = 13, 
+    RuleClassTypeList = 14, RuleClassBody = 15, RuleClassBodyDeclaration = 16, 
+    RuleFieldDeclaration = 17, RuleVariableDeclaratorList = 18, RuleVariableDeclarator = 19, 
+    RuleMethodDeclaration = 20, RuleMethodHeader = 21, RuleResult = 22, 
+    RuleMethodDeclarator = 23, RuleFormalParameterList = 24, RuleFormalParameter = 25, 
+    RuleMethodBody = 26, RuleConstructorDeclaration = 27, RuleConstructorDeclarator = 28, 
+    RuleConstructorBody = 29, RuleBlock = 30, RuleBlockStatement = 31, RuleLocalVariableDeclarationStatement = 32, 
+    RuleLocalVariableDeclaration = 33, RuleStatement = 34, RuleBlock_ = 35, 
+    RuleIfThenStatement = 36, RuleBasicForStatement = 37, RuleWhileStatement = 38, 
+    RuleReturnStatement = 39, RuleThrowStatement = 40, RuleBreakStatement = 41, 
+    RuleContinueStatement = 42, RuleEmptyStatement = 43, RuleExpressionStatement = 44, 
+    RuleCondition = 45, RuleElseStatement = 46, RuleForInit = 47, RuleForUpdate = 48, 
+    RuleExpression = 49, RulePrimary = 50, RuleExpressionList = 51
   };
 
   SlovenCLanguageParser(antlr4::TokenStream *input);
@@ -65,12 +65,11 @@ public:
   class TypeContext;
   class ClassTypeContext;
   class ModifierContext;
-  class TypeNameContext;
+  class FileNameContext;
   class CompilationUnitContext;
   class ImportDeclarationsContext;
   class ImportDeclarationContext;
   class TypeDeclarationsContext;
-  class SingleTypeImportDeclarationContext;
   class TypeDeclarationContext;
   class ClassDeclarationContext;
   class InheritanceContext;
@@ -297,12 +296,12 @@ public:
 
   ModifierContext* modifier();
 
-  class  TypeNameContext : public antlr4::ParserRuleContext {
+  class  FileNameContext : public antlr4::ParserRuleContext {
   public:
-    TypeNameContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    FileNameContext(antlr4::ParserRuleContext *parent, size_t invokingState);
    
-    TypeNameContext() = default;
-    void copyFrom(TypeNameContext *context);
+    FileNameContext() = default;
+    void copyFrom(FileNameContext *context);
     using antlr4::ParserRuleContext::copyFrom;
 
     virtual size_t getRuleIndex() const override;
@@ -310,11 +309,11 @@ public:
    
   };
 
-  class  TypeNameQualContext : public TypeNameContext {
+  class  FileNameQualContext : public FileNameContext {
   public:
-    TypeNameQualContext(TypeNameContext *ctx);
+    FileNameQualContext(FileNameContext *ctx);
 
-    TypeNameContext *typeName();
+    FileNameContext *fileName();
     antlr4::tree::TerminalNode *DOT();
     antlr4::tree::TerminalNode *Identifier();
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -323,9 +322,9 @@ public:
     virtual antlrcpp::Any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
   };
 
-  class  TypeNameUnqualContext : public TypeNameContext {
+  class  FileNameUnqualContext : public FileNameContext {
   public:
-    TypeNameUnqualContext(TypeNameContext *ctx);
+    FileNameUnqualContext(FileNameContext *ctx);
 
     antlr4::tree::TerminalNode *Identifier();
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -334,8 +333,8 @@ public:
     virtual antlrcpp::Any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
   };
 
-  TypeNameContext* typeName();
-  TypeNameContext* typeName(int precedence);
+  FileNameContext* fileName();
+  FileNameContext* fileName(int precedence);
   class  CompilationUnitContext : public antlr4::ParserRuleContext {
   public:
     CompilationUnitContext(antlr4::ParserRuleContext *parent, size_t invokingState);
@@ -372,7 +371,9 @@ public:
   public:
     ImportDeclarationContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
-    SingleTypeImportDeclarationContext *singleTypeImportDeclaration();
+    antlr4::tree::TerminalNode *IMPORT();
+    FileNameContext *fileName();
+    antlr4::tree::TerminalNode *SEMI();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -398,23 +399,6 @@ public:
   };
 
   TypeDeclarationsContext* typeDeclarations();
-
-  class  SingleTypeImportDeclarationContext : public antlr4::ParserRuleContext {
-  public:
-    SingleTypeImportDeclarationContext(antlr4::ParserRuleContext *parent, size_t invokingState);
-    virtual size_t getRuleIndex() const override;
-    antlr4::tree::TerminalNode *IMPORT();
-    TypeNameContext *typeName();
-    antlr4::tree::TerminalNode *SEMI();
-
-    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
-    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
-
-    virtual antlrcpp::Any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
-   
-  };
-
-  SingleTypeImportDeclarationContext* singleTypeImportDeclaration();
 
   class  TypeDeclarationContext : public antlr4::ParserRuleContext {
   public:
@@ -1634,7 +1618,7 @@ public:
 
   virtual bool sempred(antlr4::RuleContext *_localctx, size_t ruleIndex, size_t predicateIndex) override;
   bool classTypeSempred(ClassTypeContext *_localctx, size_t predicateIndex);
-  bool typeNameSempred(TypeNameContext *_localctx, size_t predicateIndex);
+  bool fileNameSempred(FileNameContext *_localctx, size_t predicateIndex);
   bool expressionSempred(ExpressionContext *_localctx, size_t predicateIndex);
 
 private:

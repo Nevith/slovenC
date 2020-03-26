@@ -5,10 +5,10 @@
 #include "Builder.h"
 
 Builder::Builder(const std::shared_ptr<CurrentState> &currentState) : currentState(currentState),
-                                                                      symbolBuilder(currentState),
-                                                                      statementBuilder(currentState),
-                                                                      expressionBuilder(currentState),
-                                                                      typeBuilder(currentState) {}
+                                                                      typeBuilder(currentState),
+                                                                      symbolBuilder(currentState, &typeBuilder),
+                                                                      statementBuilder(currentState, &typeBuilder),
+                                                                      expressionBuilder(currentState, &typeBuilder) {}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////// Imports /////////////////////////////////////////////////////////////////
@@ -19,14 +19,6 @@ void Builder::exitImportDeclaration(SlovenCLanguageParser::ImportDeclarationCont
 
 void Builder::enterImportDeclaration(SlovenCLanguageParser::ImportDeclarationContext *context) {
     SlovenCLanguageParserBaseListener::enterImportDeclaration(context);
-}
-
-void Builder::enterSingleTypeImportDeclaration(SlovenCLanguageParser::SingleTypeImportDeclarationContext *context) {
-    SlovenCLanguageParserBaseListener::enterSingleTypeImportDeclaration(context);
-}
-
-void Builder::exitSingleTypeImportDeclaration(SlovenCLanguageParser::SingleTypeImportDeclarationContext *context) {
-    SlovenCLanguageParserBaseListener::exitSingleTypeImportDeclaration(context);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -72,7 +72,7 @@ SUPER         : 'super';
 THIS          : 'to';
 VOID          : 'praznost';
 
-PRIVATE       : 'privat' | 'privatno';
+PRIVATE       : 'zakrit' | 'zakrito';
 PUBLIC        : 'odkrit' | 'odkrito';
 STATIC        : 'closten' | 'celostno' ;
 RETURN        : 'vrni';

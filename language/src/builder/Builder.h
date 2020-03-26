@@ -7,11 +7,11 @@
 
 
 #include <antlr/SlovenCLanguageParserBaseListener.h>
-#include "CurrentState.h"
-#include "SymbolBuilder.h"
-#include "StatementBuilder.h"
-#include "ExpressionBuilder.h"
-#include "TypeBuilder.h"
+#include "builder/utils/CurrentState.h"
+#include "builder/visitors/SymbolBuilder.h"
+#include "builder/visitors/StatementBuilder.h"
+#include "builder/visitors/ExpressionBuilder.h"
+#include "builder/visitors/TypeReferenceBuilder.h"
 
 using namespace antlr;
 
@@ -21,7 +21,7 @@ private:
     SymbolBuilder symbolBuilder;
     StatementBuilder statementBuilder;
     ExpressionBuilder expressionBuilder;
-    TypeBuilder typeBuilder;
+    TypeReferenceBuilder typeBuilder;
 
 public:
     Builder(const std::shared_ptr<CurrentState> &currentState);
@@ -93,10 +93,6 @@ public:
     void enterImportDeclaration(SlovenCLanguageParser::ImportDeclarationContext *context) override;
 
     void exitImportDeclaration(SlovenCLanguageParser::ImportDeclarationContext *context) override;
-
-    void enterSingleTypeImportDeclaration(SlovenCLanguageParser::SingleTypeImportDeclarationContext *context) override;
-
-    void exitSingleTypeImportDeclaration(SlovenCLanguageParser::SingleTypeImportDeclarationContext *context) override;
 
     void enterFieldDeclaration(SlovenCLanguageParser::FieldDeclarationContext *context) override;
 

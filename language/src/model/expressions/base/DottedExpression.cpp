@@ -9,3 +9,10 @@
 /**
  * DottedExpression implementation
  */
+DottedExpression::DottedExpression(std::string name): name(name) {
+
+}
+
+std::string DottedExpression::getName() const {
+    return name;
+}

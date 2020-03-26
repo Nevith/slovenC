@@ -9,7 +9,7 @@
 
 #include "base/VariableSymbol.h"
 #include "model/symbols/base/FullyQualifiedSymbol.h"
-#include "MemberSymbol.h"
+#include "model/symbols/base/MemberSymbol.h"
 
 
 class FieldSymbol : public VariableSymbol, public MemberSymbol {

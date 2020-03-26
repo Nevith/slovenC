@@ -61,11 +61,11 @@ public:
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitTypeNameQual(SlovenCLanguageParser::TypeNameQualContext *ctx) override {
+  virtual antlrcpp::Any visitFileNameQual(SlovenCLanguageParser::FileNameQualContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitTypeNameUnqual(SlovenCLanguageParser::TypeNameUnqualContext *ctx) override {
+  virtual antlrcpp::Any visitFileNameUnqual(SlovenCLanguageParser::FileNameUnqualContext *ctx) override {
     return visitChildren(ctx);
   }
 
@@ -82,10 +82,6 @@ public:
   }
 
   virtual antlrcpp::Any visitTypeDeclarations(SlovenCLanguageParser::TypeDeclarationsContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
-  virtual antlrcpp::Any visitSingleTypeImportDeclaration(SlovenCLanguageParser::SingleTypeImportDeclarationContext *ctx) override {
     return visitChildren(ctx);
   }
 

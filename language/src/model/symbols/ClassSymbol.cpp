@@ -10,7 +10,7 @@ ClassSymbol::ClassSymbol(std::string name) : TypeSymbol(name) {
 
 }
 
-void ClassSymbol::addSuperClass(std::shared_ptr<TypeSymbol> superClass) {
+void ClassSymbol::addSuperClass(std::shared_ptr<TypeReferenceExpression> superClass) {
     superClasses.push_back(superClass);
 }
 

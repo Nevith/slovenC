@@ -16,3 +16,11 @@ tree::ParseTree *Visitable::getContext() const {
 void Visitable::setContext(tree::ParseTree *context) {
     Visitable::context = context;
 }
+
+const std::shared_ptr<FileSymbol> &Visitable::getFileSymbol() const {
+    return fileSymbol;
+}
+
+void Visitable::setFileSymbol(const std::shared_ptr<FileSymbol> &fileSymbol) {
+    Visitable::fileSymbol = fileSymbol;
+}

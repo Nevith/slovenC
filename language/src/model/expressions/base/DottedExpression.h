@@ -11,9 +11,13 @@
 #include <string>
 
 class DottedExpression : public MonoExpression {
+private:
+    const std::string name;
 public:
 
-    virtual std::string getName() = 0;
+    DottedExpression(std::string name);
+
+    std::string getName() const;
 };
 
 #endif //_DOTTEDEXPRESSION_H

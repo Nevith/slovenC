@@ -49,11 +49,11 @@ public:
   virtual void enterModifier(SlovenCLanguageParser::ModifierContext *ctx) = 0;
   virtual void exitModifier(SlovenCLanguageParser::ModifierContext *ctx) = 0;
 
-  virtual void enterTypeNameQual(SlovenCLanguageParser::TypeNameQualContext *ctx) = 0;
-  virtual void exitTypeNameQual(SlovenCLanguageParser::TypeNameQualContext *ctx) = 0;
+  virtual void enterFileNameQual(SlovenCLanguageParser::FileNameQualContext *ctx) = 0;
+  virtual void exitFileNameQual(SlovenCLanguageParser::FileNameQualContext *ctx) = 0;
 
-  virtual void enterTypeNameUnqual(SlovenCLanguageParser::TypeNameUnqualContext *ctx) = 0;
-  virtual void exitTypeNameUnqual(SlovenCLanguageParser::TypeNameUnqualContext *ctx) = 0;
+  virtual void enterFileNameUnqual(SlovenCLanguageParser::FileNameUnqualContext *ctx) = 0;
+  virtual void exitFileNameUnqual(SlovenCLanguageParser::FileNameUnqualContext *ctx) = 0;
 
   virtual void enterCompilationUnit(SlovenCLanguageParser::CompilationUnitContext *ctx) = 0;
   virtual void exitCompilationUnit(SlovenCLanguageParser::CompilationUnitContext *ctx) = 0;
@@ -66,9 +66,6 @@ public:
 
   virtual void enterTypeDeclarations(SlovenCLanguageParser::TypeDeclarationsContext *ctx) = 0;
   virtual void exitTypeDeclarations(SlovenCLanguageParser::TypeDeclarationsContext *ctx) = 0;
-
-  virtual void enterSingleTypeImportDeclaration(SlovenCLanguageParser::SingleTypeImportDeclarationContext *ctx) = 0;
-  virtual void exitSingleTypeImportDeclaration(SlovenCLanguageParser::SingleTypeImportDeclarationContext *ctx) = 0;
 
   virtual void enterTypeDeclaration(SlovenCLanguageParser::TypeDeclarationContext *ctx) = 0;
   virtual void exitTypeDeclaration(SlovenCLanguageParser::TypeDeclarationContext *ctx) = 0;

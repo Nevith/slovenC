@@ -12,5 +12,6 @@ int main(int, const char **) {
     auto project = std::make_shared<Project>(absolutePath);
     jobManager.queueJob(std::make_shared<ProjectJob>(project));
     jobManager.wait();
+    auto test = project.get();
     return 0;
 }

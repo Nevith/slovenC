@@ -9,8 +9,11 @@
 /**
  * Symbol implementation
  */
+
+Symbol::Symbol(const std::string &name) : name(name) {
+
+}
+
 const std::string &Symbol::getName() const {
     return name;
 }
-
-Symbol::Symbol(const std::string &name) : name(name) {}

@@ -20,11 +20,11 @@ public:
 
     FullyQualifiedSymbol(std::string name);
 
-    virtual std::string getFullyQualifiedName();
+    virtual std::string getFullyQualifiedName() const;
 
-    const std::shared_ptr<FullyQualifiedSymbol> getParentSymbol() const;
+    virtual std::shared_ptr<FullyQualifiedSymbol> getParentSymbol() const;
 
-    virtual void setParentSymbol(std::shared_ptr<FullyQualifiedSymbol> parentSymbol);
+    void setParentSymbol(std::shared_ptr<FullyQualifiedSymbol> parentSymbol);
 
 };
 

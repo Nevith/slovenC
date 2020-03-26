@@ -8,7 +8,9 @@
 
 #include <memory>
 #include <antlr/SlovenCLanguageParserBaseVisitor.h>
-#include "CurrentState.h"
+#include "builder/utils/CurrentState.h"
+#include "TypeReferenceBuilder.h"
+#include <builder/utils/ModBuilder.h>
 
 using namespace antlr;
 
@@ -16,8 +18,10 @@ class SymbolBuilder: public SlovenCLanguageParserBaseVisitor {
 private:
     const std::shared_ptr<CurrentState> currentState;
 
+    TypeReferenceBuilder* typeBuilder;
+
 public:
-    SymbolBuilder(const std::shared_ptr<CurrentState> &currentState);
+    SymbolBuilder(const std::shared_ptr<CurrentState> &currentState, TypeReferenceBuilder* typeBuilder);
 
     antlrcpp::Any visitNormalClassDeclaration(SlovenCLanguageParser::NormalClassDeclarationContext *ctx) override;
 };

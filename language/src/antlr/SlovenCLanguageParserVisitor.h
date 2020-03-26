@@ -42,9 +42,9 @@ public:
 
     virtual antlrcpp::Any visitModifier(SlovenCLanguageParser::ModifierContext *context) = 0;
 
-    virtual antlrcpp::Any visitTypeNameQual(SlovenCLanguageParser::TypeNameQualContext *context) = 0;
+    virtual antlrcpp::Any visitFileNameQual(SlovenCLanguageParser::FileNameQualContext *context) = 0;
 
-    virtual antlrcpp::Any visitTypeNameUnqual(SlovenCLanguageParser::TypeNameUnqualContext *context) = 0;
+    virtual antlrcpp::Any visitFileNameUnqual(SlovenCLanguageParser::FileNameUnqualContext *context) = 0;
 
     virtual antlrcpp::Any visitCompilationUnit(SlovenCLanguageParser::CompilationUnitContext *context) = 0;
 
@@ -53,8 +53,6 @@ public:
     virtual antlrcpp::Any visitImportDeclaration(SlovenCLanguageParser::ImportDeclarationContext *context) = 0;
 
     virtual antlrcpp::Any visitTypeDeclarations(SlovenCLanguageParser::TypeDeclarationsContext *context) = 0;
-
-    virtual antlrcpp::Any visitSingleTypeImportDeclaration(SlovenCLanguageParser::SingleTypeImportDeclarationContext *context) = 0;
 
     virtual antlrcpp::Any visitTypeDeclaration(SlovenCLanguageParser::TypeDeclarationContext *context) = 0;
 

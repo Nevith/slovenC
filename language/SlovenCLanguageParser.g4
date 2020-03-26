@@ -86,9 +86,9 @@ modifier
  * Productions from Â§6 (Names)
  */
 
-typeName
-        : Identifier                                          #TypeNameUnqual
-        | typeName DOT Identifier                             #TypeNameQual
+fileName
+        : Identifier                                          #FileNameUnqual
+        | fileName DOT Identifier                             #FileNameQual
         ;
 
 /*
@@ -104,15 +104,11 @@ importDeclarations
         ;
 
 importDeclaration
-        : singleTypeImportDeclaration
+        : IMPORT fileName SEMI
         ;
 
 typeDeclarations
         : typeDeclaration*
-        ;
-
-singleTypeImportDeclaration
-        : IMPORT typeName SEMI
         ;
 
 typeDeclaration

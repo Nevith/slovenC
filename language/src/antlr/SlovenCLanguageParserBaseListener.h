@@ -51,11 +51,11 @@ public:
   virtual void enterModifier(SlovenCLanguageParser::ModifierContext * /*ctx*/) override { }
   virtual void exitModifier(SlovenCLanguageParser::ModifierContext * /*ctx*/) override { }
 
-  virtual void enterTypeNameQual(SlovenCLanguageParser::TypeNameQualContext * /*ctx*/) override { }
-  virtual void exitTypeNameQual(SlovenCLanguageParser::TypeNameQualContext * /*ctx*/) override { }
+  virtual void enterFileNameQual(SlovenCLanguageParser::FileNameQualContext * /*ctx*/) override { }
+  virtual void exitFileNameQual(SlovenCLanguageParser::FileNameQualContext * /*ctx*/) override { }
 
-  virtual void enterTypeNameUnqual(SlovenCLanguageParser::TypeNameUnqualContext * /*ctx*/) override { }
-  virtual void exitTypeNameUnqual(SlovenCLanguageParser::TypeNameUnqualContext * /*ctx*/) override { }
+  virtual void enterFileNameUnqual(SlovenCLanguageParser::FileNameUnqualContext * /*ctx*/) override { }
+  virtual void exitFileNameUnqual(SlovenCLanguageParser::FileNameUnqualContext * /*ctx*/) override { }
 
   virtual void enterCompilationUnit(SlovenCLanguageParser::CompilationUnitContext * /*ctx*/) override { }
   virtual void exitCompilationUnit(SlovenCLanguageParser::CompilationUnitContext * /*ctx*/) override { }
@@ -68,9 +68,6 @@ public:
 
   virtual void enterTypeDeclarations(SlovenCLanguageParser::TypeDeclarationsContext * /*ctx*/) override { }
   virtual void exitTypeDeclarations(SlovenCLanguageParser::TypeDeclarationsContext * /*ctx*/) override { }
-
-  virtual void enterSingleTypeImportDeclaration(SlovenCLanguageParser::SingleTypeImportDeclarationContext * /*ctx*/) override { }
-  virtual void exitSingleTypeImportDeclaration(SlovenCLanguageParser::SingleTypeImportDeclarationContext * /*ctx*/) override { }
 
   virtual void enterTypeDeclaration(SlovenCLanguageParser::TypeDeclarationContext * /*ctx*/) override { }
   virtual void exitTypeDeclaration(SlovenCLanguageParser::TypeDeclarationContext * /*ctx*/) override { }
