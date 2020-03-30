@@ -22,3 +22,11 @@ void MethodSymbol::setResult(const std::shared_ptr<TypeReferenceExpression> &res
 const bool MethodSymbol::getIsConstructor() const {
     return isConstructor;
 }
+
+const std::vector<std::shared_ptr<ParameterSymbol>> &MethodSymbol::getParameters() const {
+    return parameters;
+}
+
+void MethodSymbol::addParameter(const std::shared_ptr<ParameterSymbol>& parameter) {
+    parameters.push_back(parameter);
+}

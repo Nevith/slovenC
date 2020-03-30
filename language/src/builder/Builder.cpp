@@ -2,6 +2,7 @@
 // Created by Andraz on 24/03/2020.
 //
 
+#include <model/statements/BlockStatement.h>
 #include "Builder.h"
 
 Builder::Builder(const std::shared_ptr<CurrentState> &currentState) : currentState(currentState),
@@ -14,14 +15,29 @@ Builder::Builder(const std::shared_ptr<CurrentState> &currentState) : currentSta
                                                                                     &expressionBuilder) {}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////// Imports /////////////////////////////////////////////////////////////////
+///////////////////////////////////////////// SCOPE ///////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-void Builder::exitImportDeclaration(SlovenCLanguageParser::ImportDeclarationContext *context) {
-    SlovenCLanguageParserBaseListener::exitImportDeclaration(context);
+void Builder::enterBlockStatement(SlovenCLanguageParser::BlockStatementContext *context) {
+    std::shared_ptr<BlockStatement> statement = statementBuilder.visit(context);
+    currentState->pushCurrentScope(statement);
+    currentState->pushCurrentStatement(statement);
 }
 
+void Builder::exitBlockStatement(SlovenCLanguageParser::BlockStatementContext *context) {
+    currentState->popCurrentScope();
+    currentState->popCurrentStatement();
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////// Imports /////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void Builder::enterImportDeclaration(SlovenCLanguageParser::ImportDeclarationContext *context) {
-    SlovenCLanguageParserBaseListener::enterImportDeclaration(context);
+    std::shared_ptr<PackageOrFileReferenceExpression> import = referenceBuilder.visit(context->fileName());
+    currentState->getFileSymbol()->addImport(import);
+}
+
+void Builder::exitImportDeclaration(SlovenCLanguageParser::ImportDeclarationContext *context) {
+
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -56,121 +72,117 @@ void Builder::exitConstructorDeclaration(SlovenCLanguageParser::ConstructorDecla
 
 void Builder::enterLocalVariableDeclarationStatement(
         SlovenCLanguageParser::LocalVariableDeclarationStatementContext *context) {
-    SlovenCLanguageParserBaseListener::enterLocalVariableDeclarationStatement(context);
+    statementBuilder.visit(context);
 }
 
 void Builder::exitLocalVariableDeclarationStatement(
         SlovenCLanguageParser::LocalVariableDeclarationStatementContext *context) {
-    SlovenCLanguageParserBaseListener::exitLocalVariableDeclarationStatement(context);
 }
 
 void Builder::enterFieldDeclaration(SlovenCLanguageParser::FieldDeclarationContext *context) {
-    SlovenCLanguageParserBaseListener::enterFieldDeclaration(context);
+    symbolBuilder.visit(context);
 }
 
 void Builder::exitFieldDeclaration(SlovenCLanguageParser::FieldDeclarationContext *context) {
-    SlovenCLanguageParserBaseListener::exitFieldDeclaration(context);
 }
 
-void Builder::enterLocalVariableDeclaration(SlovenCLanguageParser::LocalVariableDeclarationContext *context) {
-    SlovenCLanguageParserBaseListener::enterLocalVariableDeclaration(context);
+void Builder::enterFormalParameter(SlovenCLanguageParser::FormalParameterContext *context) {
+    symbolBuilder.visit(context);
 }
 
-void Builder::exitLocalVariableDeclaration(SlovenCLanguageParser::LocalVariableDeclarationContext *context) {
-    SlovenCLanguageParserBaseListener::exitLocalVariableDeclaration(context);
+void Builder::exitFormalParameter(SlovenCLanguageParser::FormalParameterContext *context) {
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////// Statements //////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-void Builder::enterStatement(SlovenCLanguageParser::StatementContext *context) {
-    SlovenCLanguageParserBaseListener::enterStatement(context);
-}
-
-void Builder::exitStatement(SlovenCLanguageParser::StatementContext *context) {
-    SlovenCLanguageParserBaseListener::exitStatement(context);
-}
-
-void Builder::enterBlockStatement(SlovenCLanguageParser::BlockStatementContext *context) {
-    SlovenCLanguageParserBaseListener::enterBlockStatement(context);
-}
-
-void Builder::exitBlockStatement(SlovenCLanguageParser::BlockStatementContext *context) {
-    SlovenCLanguageParserBaseListener::exitBlockStatement(context);
-}
-
 void Builder::enterIfThenStatement(SlovenCLanguageParser::IfThenStatementContext *context) {
-    SlovenCLanguageParserBaseListener::enterIfThenStatement(context);
+    std::shared_ptr<Statement> statement = statementBuilder.visit(context);
+    currentState->pushCurrentStatement(statement);
 }
 
 void Builder::exitIfThenStatement(SlovenCLanguageParser::IfThenStatementContext *context) {
-    SlovenCLanguageParserBaseListener::exitIfThenStatement(context);
+    currentState->popCurrentStatement();
 }
 
 void Builder::enterBasicForStatement(SlovenCLanguageParser::BasicForStatementContext *context) {
-    SlovenCLanguageParserBaseListener::enterBasicForStatement(context);
+    std::shared_ptr<Statement> statement = statementBuilder.visit(context);
+    currentState->pushCurrentStatement(statement);
 }
 
 void Builder::exitBasicForStatement(SlovenCLanguageParser::BasicForStatementContext *context) {
-    SlovenCLanguageParserBaseListener::exitBasicForStatement(context);
+    currentState->popCurrentStatement();
 }
 
 void Builder::enterWhileStatement(SlovenCLanguageParser::WhileStatementContext *context) {
-    SlovenCLanguageParserBaseListener::enterWhileStatement(context);
+    std::shared_ptr<Statement> statement = statementBuilder.visit(context);
+    currentState->pushCurrentStatement(statement);
 }
 
 void Builder::exitWhileStatement(SlovenCLanguageParser::WhileStatementContext *context) {
-    SlovenCLanguageParserBaseListener::exitWhileStatement(context);
-}
-
-void Builder::enterExpressionStatement(SlovenCLanguageParser::ExpressionStatementContext *context) {
-    SlovenCLanguageParserBaseListener::enterExpressionStatement(context);
-}
-
-void Builder::exitExpressionStatement(SlovenCLanguageParser::ExpressionStatementContext *context) {
-    SlovenCLanguageParserBaseListener::exitExpressionStatement(context);
-}
-
-void Builder::enterElseStatement(SlovenCLanguageParser::ElseStatementContext *context) {
-    SlovenCLanguageParserBaseListener::enterElseStatement(context);
-}
-
-void Builder::exitElseStatement(SlovenCLanguageParser::ElseStatementContext *context) {
-    SlovenCLanguageParserBaseListener::exitElseStatement(context);
+    currentState->popCurrentStatement();
 }
 
 void Builder::enterReturnStatement(SlovenCLanguageParser::ReturnStatementContext *context) {
-    SlovenCLanguageParserBaseListener::enterReturnStatement(context);
+    std::shared_ptr<Statement> statement = statementBuilder.visit(context);
+    currentState->pushCurrentStatement(statement);
 }
 
 void Builder::exitReturnStatement(SlovenCLanguageParser::ReturnStatementContext *context) {
-    SlovenCLanguageParserBaseListener::exitReturnStatement(context);
+    std::shared_ptr<Statement> statement = statementBuilder.visit(context);
+    currentState->popCurrentStatement();
 }
 
 void Builder::enterThrowStatement(SlovenCLanguageParser::ThrowStatementContext *context) {
-    SlovenCLanguageParserBaseListener::enterThrowStatement(context);
+    std::shared_ptr<Statement> statement = statementBuilder.visit(context);
+    currentState->pushCurrentStatement(statement);
 }
 
 void Builder::exitThrowStatement(SlovenCLanguageParser::ThrowStatementContext *context) {
-    SlovenCLanguageParserBaseListener::exitThrowStatement(context);
+    currentState->popCurrentStatement();
 }
 
 void Builder::enterBreakStatement(SlovenCLanguageParser::BreakStatementContext *context) {
-    SlovenCLanguageParserBaseListener::enterBreakStatement(context);
+    std::shared_ptr<Statement> statement = statementBuilder.visit(context);
+    currentState->pushCurrentStatement(statement);
+}
+
+void Builder::exitBreakStatement(SlovenCLanguageParser::BreakStatementContext *context) {
+    currentState->popCurrentStatement();
 }
 
 void Builder::enterContinueStatement(SlovenCLanguageParser::ContinueStatementContext *context) {
-    SlovenCLanguageParserBaseListener::enterContinueStatement(context);
+    std::shared_ptr<Statement> statement = statementBuilder.visit(context);
+    currentState->pushCurrentStatement(statement);
 }
 
 void Builder::exitContinueStatement(SlovenCLanguageParser::ContinueStatementContext *context) {
-    SlovenCLanguageParserBaseListener::exitContinueStatement(context);
+    currentState->popCurrentStatement();
 }
 
 void Builder::enterEmptyStatement(SlovenCLanguageParser::EmptyStatementContext *context) {
-    SlovenCLanguageParserBaseListener::enterEmptyStatement(context);
+    std::shared_ptr<Statement> statement = statementBuilder.visit(context);
+    currentState->pushCurrentStatement(statement);
 }
 
 void Builder::exitEmptyStatement(SlovenCLanguageParser::EmptyStatementContext *context) {
-    SlovenCLanguageParserBaseListener::exitEmptyStatement(context);
+    currentState->popCurrentStatement();
+}
+
+void Builder::enterExpressionStatement(SlovenCLanguageParser::ExpressionStatementContext *context) {
+    std::shared_ptr<Statement> statement = statementBuilder.visit(context);
+    currentState->pushCurrentStatement(statement);
+}
+
+void Builder::exitExpressionStatement(SlovenCLanguageParser::ExpressionStatementContext *context) {
+    currentState->popCurrentStatement();
+}
+
+void Builder::enterElseStatement(SlovenCLanguageParser::ElseStatementContext *context) {
+    std::shared_ptr<Statement> statement = statementBuilder.visit(context);
+    currentState->pushCurrentStatement(statement);
+}
+
+void Builder::exitElseStatement(SlovenCLanguageParser::ElseStatementContext *context) {
+    currentState->popCurrentStatement();
 }

@@ -28,6 +28,10 @@ public:
     const std::shared_ptr<TypeReferenceExpression> &getResult() const;
 
     void setResult(const std::shared_ptr<TypeReferenceExpression> &result);
+
+    const std::vector<std::shared_ptr<ParameterSymbol>> &getParameters() const;
+
+    void addParameter(const std::shared_ptr<ParameterSymbol>& parameter);
 };
 
 #endif //_METHODSYMBOL_H

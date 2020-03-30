@@ -34,24 +34,6 @@ public:
 
     void exitNormalClassDeclaration(SlovenCLanguageParser::NormalClassDeclarationContext *context) override;
 
-    void enterReturnStatement(SlovenCLanguageParser::ReturnStatementContext *context) override;
-
-    void exitReturnStatement(SlovenCLanguageParser::ReturnStatementContext *context) override;
-
-    void enterThrowStatement(SlovenCLanguageParser::ThrowStatementContext *context) override;
-
-    void exitThrowStatement(SlovenCLanguageParser::ThrowStatementContext *context) override;
-
-    void enterBreakStatement(SlovenCLanguageParser::BreakStatementContext *context) override;
-
-    void enterContinueStatement(SlovenCLanguageParser::ContinueStatementContext *context) override;
-
-    void exitContinueStatement(SlovenCLanguageParser::ContinueStatementContext *context) override;
-
-    void enterEmptyStatement(SlovenCLanguageParser::EmptyStatementContext *context) override;
-
-    void exitEmptyStatement(SlovenCLanguageParser::EmptyStatementContext *context) override;
-
     void enterConstructorDeclaration(SlovenCLanguageParser::ConstructorDeclarationContext *context) override;
 
     void exitConstructorDeclaration(SlovenCLanguageParser::ConstructorDeclarationContext *context) override;
@@ -66,9 +48,17 @@ public:
     void exitLocalVariableDeclarationStatement(
             SlovenCLanguageParser::LocalVariableDeclarationStatementContext *context) override;
 
-    void enterStatement(SlovenCLanguageParser::StatementContext *context) override;
+    void enterImportDeclaration(SlovenCLanguageParser::ImportDeclarationContext *context) override;
 
-    void exitStatement(SlovenCLanguageParser::StatementContext *context) override;
+    void exitImportDeclaration(SlovenCLanguageParser::ImportDeclarationContext *context) override;
+
+    void enterFieldDeclaration(SlovenCLanguageParser::FieldDeclarationContext *context) override;
+
+    void exitFieldDeclaration(SlovenCLanguageParser::FieldDeclarationContext *context) override;
+
+    void enterFormalParameter(SlovenCLanguageParser::FormalParameterContext *context) override;
+
+    void exitFormalParameter(SlovenCLanguageParser::FormalParameterContext *context) override;
 
     void enterIfThenStatement(SlovenCLanguageParser::IfThenStatementContext *context) override;
 
@@ -82,6 +72,26 @@ public:
 
     void exitWhileStatement(SlovenCLanguageParser::WhileStatementContext *context) override;
 
+    void enterReturnStatement(SlovenCLanguageParser::ReturnStatementContext *context) override;
+
+    void exitReturnStatement(SlovenCLanguageParser::ReturnStatementContext *context) override;
+
+    void enterThrowStatement(SlovenCLanguageParser::ThrowStatementContext *context) override;
+
+    void exitThrowStatement(SlovenCLanguageParser::ThrowStatementContext *context) override;
+
+    void enterBreakStatement(SlovenCLanguageParser::BreakStatementContext *context) override;
+
+    void exitBreakStatement(SlovenCLanguageParser::BreakStatementContext *context) override;
+
+    void enterContinueStatement(SlovenCLanguageParser::ContinueStatementContext *context) override;
+
+    void exitContinueStatement(SlovenCLanguageParser::ContinueStatementContext *context) override;
+
+    void enterEmptyStatement(SlovenCLanguageParser::EmptyStatementContext *context) override;
+
+    void exitEmptyStatement(SlovenCLanguageParser::EmptyStatementContext *context) override;
+
     void enterExpressionStatement(SlovenCLanguageParser::ExpressionStatementContext *context) override;
 
     void exitExpressionStatement(SlovenCLanguageParser::ExpressionStatementContext *context) override;
@@ -89,18 +99,6 @@ public:
     void enterElseStatement(SlovenCLanguageParser::ElseStatementContext *context) override;
 
     void exitElseStatement(SlovenCLanguageParser::ElseStatementContext *context) override;
-
-    void enterImportDeclaration(SlovenCLanguageParser::ImportDeclarationContext *context) override;
-
-    void exitImportDeclaration(SlovenCLanguageParser::ImportDeclarationContext *context) override;
-
-    void enterFieldDeclaration(SlovenCLanguageParser::FieldDeclarationContext *context) override;
-
-    void exitFieldDeclaration(SlovenCLanguageParser::FieldDeclarationContext *context) override;
-
-    void enterLocalVariableDeclaration(SlovenCLanguageParser::LocalVariableDeclarationContext *context) override;
-
-    void exitLocalVariableDeclaration(SlovenCLanguageParser::LocalVariableDeclarationContext *context) override;
 };
 
 

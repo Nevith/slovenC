@@ -3,6 +3,7 @@
 //
 
 #include <model/symbols/variables/LocalVariableSymbol.h>
+#include <future>
 #include "SymbolBuilder.h"
 
 SymbolBuilder::SymbolBuilder(const std::shared_ptr<CurrentState> &currentState, ReferenceBuilder *referenceBuilder,
@@ -49,6 +50,7 @@ antlrcpp::Any SymbolBuilder::visitNormalClassDeclaration(SlovenCLanguageParser::
 antlrcpp::Any SymbolBuilder::visitMethodDeclaration(SlovenCLanguageParser::MethodDeclarationContext *ctx) {
     // Obtain method symbol from the child contexts
     std::shared_ptr<MethodSymbol> symbol = visit(ctx->methodHeader());
+    symbol->setContext(ctx);
     // Build modifiers
     ModBuilder::buildModifiers(symbol, ctx->modifierContext);
 
@@ -81,6 +83,7 @@ antlrcpp::Any SymbolBuilder::visitMethodDeclarator(SlovenCLanguageParser::Method
 antlrcpp::Any SymbolBuilder::visitConstructorDeclaration(SlovenCLanguageParser::ConstructorDeclarationContext *ctx) {
     // Obtain method symbol from the child contexts
     std::shared_ptr<MethodSymbol> symbol = visit(ctx->constructorDeclarator());
+    symbol->setContext(ctx);
 
     // Build modifiers
     ModBuilder::buildModifiers(symbol, ctx->modifierContext);
@@ -107,7 +110,7 @@ antlrcpp::Any SymbolBuilder::visitConstructorDeclarator(SlovenCLanguageParser::C
 antlrcpp::Any SymbolBuilder::visitFieldDeclaration(SlovenCLanguageParser::FieldDeclarationContext *ctx) {
     std::shared_ptr<FieldSymbol> symbol = visit(ctx->fieldDeclarator());
 
-
+    symbol->setContext(ctx);
     symbol->setType(expressionBuilder->visit(ctx->type()));
     ModBuilder::buildModifiers(symbol, ctx->modifierContext);
 
@@ -139,7 +142,7 @@ antlrcpp::Any
 SymbolBuilder::visitLocalVariableDeclaration(SlovenCLanguageParser::LocalVariableDeclarationContext *ctx) {
     std::shared_ptr<LocalVariableSymbol> symbol = visit(ctx->variableDeclarator());
 
-
+    symbol->setContext(ctx);
     symbol->setType(expressionBuilder->visit(ctx->type()));
 
     // Obtain the parents
@@ -153,7 +156,6 @@ SymbolBuilder::visitLocalVariableDeclaration(SlovenCLanguageParser::LocalVariabl
     symbol->setFileSymbol(currentState->getFileSymbol());
 
     return symbol;
-    return SlovenCLanguageParserBaseVisitor::visitLocalVariableDeclaration(ctx);
 }
 
 antlrcpp::Any SymbolBuilder::visitVariableDeclarator(SlovenCLanguageParser::VariableDeclaratorContext *ctx) {
@@ -171,16 +173,18 @@ antlrcpp::Any SymbolBuilder::visitVariableDeclarator(SlovenCLanguageParser::Vari
 
 antlrcpp::Any SymbolBuilder::visitFormalParameter(SlovenCLanguageParser::FormalParameterContext *ctx) {
     std::shared_ptr<ParameterSymbol> symbol = std::make_shared<ParameterSymbol>(ctx->Identifier()->getText());
-
+    symbol->setContext(ctx);
     symbol->setType(expressionBuilder->visit(ctx->type()));
 
     // Obtain the parents
-    auto parentMethod = currentState->getCurrentMethod();
     auto parentClass = currentState->getCurrentClass();
+    auto parentMethod = currentState->getCurrentMethod();
     // Declare parents
-    symbol->setParentMethod(parentMethod);
     symbol->setParentClass(parentClass);
+    symbol->setParentMethod(parentMethod);
     symbol->setFileSymbol(currentState->getFileSymbol());
+
+    parentMethod->addParameter(symbol);
 
     return symbol;
 }

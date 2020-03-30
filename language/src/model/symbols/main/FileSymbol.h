@@ -31,7 +31,7 @@ private:
 public:
     const std::vector<std::shared_ptr<PackageOrFileReferenceExpression>> &getImports() const;
 
-    void addImport(std::shared_ptr<PackageOrFileReferenceExpression> imports);
+    void addImport(std::shared_ptr<PackageOrFileReferenceExpression> import);
 
     const std::vector<std::shared_ptr<ClassSymbol>> &getDeclaredClasses() const;
 
