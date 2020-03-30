@@ -7,14 +7,14 @@
 
 
 #include <antlr/SlovenCLanguageParser.h>
-#include <model/symbols/base/MemberSymbol.h>
+#include <model/symbols/base/Member.h>
 
 using namespace antlr;
 
 class ModBuilder {
 public:
     static short
-    buildModifiers(std::shared_ptr<MemberSymbol> memberSymbol, SlovenCLanguageParser::ModifierContext *modifierContext);
+    buildModifiers(std::shared_ptr<Member> memberSymbol, SlovenCLanguageParser::ModifierContext *modifierContext);
 };
 
 

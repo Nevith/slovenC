@@ -93,8 +93,8 @@ public:
   virtual void enterFieldDeclaration(SlovenCLanguageParser::FieldDeclarationContext * /*ctx*/) override { }
   virtual void exitFieldDeclaration(SlovenCLanguageParser::FieldDeclarationContext * /*ctx*/) override { }
 
-  virtual void enterVariableDeclaratorList(SlovenCLanguageParser::VariableDeclaratorListContext * /*ctx*/) override { }
-  virtual void exitVariableDeclaratorList(SlovenCLanguageParser::VariableDeclaratorListContext * /*ctx*/) override { }
+  virtual void enterFieldDeclarator(SlovenCLanguageParser::FieldDeclaratorContext * /*ctx*/) override { }
+  virtual void exitFieldDeclarator(SlovenCLanguageParser::FieldDeclaratorContext * /*ctx*/) override { }
 
   virtual void enterVariableDeclarator(SlovenCLanguageParser::VariableDeclaratorContext * /*ctx*/) override { }
   virtual void exitVariableDeclarator(SlovenCLanguageParser::VariableDeclaratorContext * /*ctx*/) override { }
@@ -189,17 +189,32 @@ public:
   virtual void enterPostIncrementDecrementExpression(SlovenCLanguageParser::PostIncrementDecrementExpressionContext * /*ctx*/) override { }
   virtual void exitPostIncrementDecrementExpression(SlovenCLanguageParser::PostIncrementDecrementExpressionContext * /*ctx*/) override { }
 
+  virtual void enterInvalidDottedExpression(SlovenCLanguageParser::InvalidDottedExpressionContext * /*ctx*/) override { }
+  virtual void exitInvalidDottedExpression(SlovenCLanguageParser::InvalidDottedExpressionContext * /*ctx*/) override { }
+
+  virtual void enterAdditiveExpression(SlovenCLanguageParser::AdditiveExpressionContext * /*ctx*/) override { }
+  virtual void exitAdditiveExpression(SlovenCLanguageParser::AdditiveExpressionContext * /*ctx*/) override { }
+
+  virtual void enterRelationalExpression(SlovenCLanguageParser::RelationalExpressionContext * /*ctx*/) override { }
+  virtual void exitRelationalExpression(SlovenCLanguageParser::RelationalExpressionContext * /*ctx*/) override { }
+
+  virtual void enterPreIncrementDecrementExpression(SlovenCLanguageParser::PreIncrementDecrementExpressionContext * /*ctx*/) override { }
+  virtual void exitPreIncrementDecrementExpression(SlovenCLanguageParser::PreIncrementDecrementExpressionContext * /*ctx*/) override { }
+
   virtual void enterThisCallExpression(SlovenCLanguageParser::ThisCallExpressionContext * /*ctx*/) override { }
   virtual void exitThisCallExpression(SlovenCLanguageParser::ThisCallExpressionContext * /*ctx*/) override { }
 
   virtual void enterPrimaryExpression(SlovenCLanguageParser::PrimaryExpressionContext * /*ctx*/) override { }
   virtual void exitPrimaryExpression(SlovenCLanguageParser::PrimaryExpressionContext * /*ctx*/) override { }
 
+  virtual void enterConditionalExpression(SlovenCLanguageParser::ConditionalExpressionContext * /*ctx*/) override { }
+  virtual void exitConditionalExpression(SlovenCLanguageParser::ConditionalExpressionContext * /*ctx*/) override { }
+
   virtual void enterUnaryExpression(SlovenCLanguageParser::UnaryExpressionContext * /*ctx*/) override { }
   virtual void exitUnaryExpression(SlovenCLanguageParser::UnaryExpressionContext * /*ctx*/) override { }
 
-  virtual void enterDottedSuperCallExpression(SlovenCLanguageParser::DottedSuperCallExpressionContext * /*ctx*/) override { }
-  virtual void exitDottedSuperCallExpression(SlovenCLanguageParser::DottedSuperCallExpressionContext * /*ctx*/) override { }
+  virtual void enterNegateExpression(SlovenCLanguageParser::NegateExpressionContext * /*ctx*/) override { }
+  virtual void exitNegateExpression(SlovenCLanguageParser::NegateExpressionContext * /*ctx*/) override { }
 
   virtual void enterAssignmentExpression(SlovenCLanguageParser::AssignmentExpressionContext * /*ctx*/) override { }
   virtual void exitAssignmentExpression(SlovenCLanguageParser::AssignmentExpressionContext * /*ctx*/) override { }
@@ -216,6 +231,12 @@ public:
   virtual void enterDottedThisExpression(SlovenCLanguageParser::DottedThisExpressionContext * /*ctx*/) override { }
   virtual void exitDottedThisExpression(SlovenCLanguageParser::DottedThisExpressionContext * /*ctx*/) override { }
 
+  virtual void enterCastExpression(SlovenCLanguageParser::CastExpressionContext * /*ctx*/) override { }
+  virtual void exitCastExpression(SlovenCLanguageParser::CastExpressionContext * /*ctx*/) override { }
+
+  virtual void enterDottedExpression(SlovenCLanguageParser::DottedExpressionContext * /*ctx*/) override { }
+  virtual void exitDottedExpression(SlovenCLanguageParser::DottedExpressionContext * /*ctx*/) override { }
+
   virtual void enterEqualityExpression(SlovenCLanguageParser::EqualityExpressionContext * /*ctx*/) override { }
   virtual void exitEqualityExpression(SlovenCLanguageParser::EqualityExpressionContext * /*ctx*/) override { }
 
@@ -228,36 +249,6 @@ public:
   virtual void enterDottedCallExpression(SlovenCLanguageParser::DottedCallExpressionContext * /*ctx*/) override { }
   virtual void exitDottedCallExpression(SlovenCLanguageParser::DottedCallExpressionContext * /*ctx*/) override { }
 
-  virtual void enterDottedSuperExpression(SlovenCLanguageParser::DottedSuperExpressionContext * /*ctx*/) override { }
-  virtual void exitDottedSuperExpression(SlovenCLanguageParser::DottedSuperExpressionContext * /*ctx*/) override { }
-
-  virtual void enterInvalidDottedExpression(SlovenCLanguageParser::InvalidDottedExpressionContext * /*ctx*/) override { }
-  virtual void exitInvalidDottedExpression(SlovenCLanguageParser::InvalidDottedExpressionContext * /*ctx*/) override { }
-
-  virtual void enterAdditiveExpression(SlovenCLanguageParser::AdditiveExpressionContext * /*ctx*/) override { }
-  virtual void exitAdditiveExpression(SlovenCLanguageParser::AdditiveExpressionContext * /*ctx*/) override { }
-
-  virtual void enterRelationalExpression(SlovenCLanguageParser::RelationalExpressionContext * /*ctx*/) override { }
-  virtual void exitRelationalExpression(SlovenCLanguageParser::RelationalExpressionContext * /*ctx*/) override { }
-
-  virtual void enterPreIncrementDecrementExpression(SlovenCLanguageParser::PreIncrementDecrementExpressionContext * /*ctx*/) override { }
-  virtual void exitPreIncrementDecrementExpression(SlovenCLanguageParser::PreIncrementDecrementExpressionContext * /*ctx*/) override { }
-
-  virtual void enterConditionalExpression(SlovenCLanguageParser::ConditionalExpressionContext * /*ctx*/) override { }
-  virtual void exitConditionalExpression(SlovenCLanguageParser::ConditionalExpressionContext * /*ctx*/) override { }
-
-  virtual void enterNegateExpression(SlovenCLanguageParser::NegateExpressionContext * /*ctx*/) override { }
-  virtual void exitNegateExpression(SlovenCLanguageParser::NegateExpressionContext * /*ctx*/) override { }
-
-  virtual void enterSuperCallExpression(SlovenCLanguageParser::SuperCallExpressionContext * /*ctx*/) override { }
-  virtual void exitSuperCallExpression(SlovenCLanguageParser::SuperCallExpressionContext * /*ctx*/) override { }
-
-  virtual void enterCastExpression(SlovenCLanguageParser::CastExpressionContext * /*ctx*/) override { }
-  virtual void exitCastExpression(SlovenCLanguageParser::CastExpressionContext * /*ctx*/) override { }
-
-  virtual void enterDottedExpression(SlovenCLanguageParser::DottedExpressionContext * /*ctx*/) override { }
-  virtual void exitDottedExpression(SlovenCLanguageParser::DottedExpressionContext * /*ctx*/) override { }
-
   virtual void enterConditionalOrExpression(SlovenCLanguageParser::ConditionalOrExpressionContext * /*ctx*/) override { }
   virtual void exitConditionalOrExpression(SlovenCLanguageParser::ConditionalOrExpressionContext * /*ctx*/) override { }
 
@@ -266,9 +257,6 @@ public:
 
   virtual void enterThis(SlovenCLanguageParser::ThisContext * /*ctx*/) override { }
   virtual void exitThis(SlovenCLanguageParser::ThisContext * /*ctx*/) override { }
-
-  virtual void enterSuper(SlovenCLanguageParser::SuperContext * /*ctx*/) override { }
-  virtual void exitSuper(SlovenCLanguageParser::SuperContext * /*ctx*/) override { }
 
   virtual void enterPrimaryLiteral(SlovenCLanguageParser::PrimaryLiteralContext * /*ctx*/) override { }
   virtual void exitPrimaryLiteral(SlovenCLanguageParser::PrimaryLiteralContext * /*ctx*/) override { }

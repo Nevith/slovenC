@@ -47,13 +47,13 @@ BOOLEAN       : 'bit';
 BYTE          : 'zlog';
 DOUBLE        : 'decimalno';
 INT           : 'celo';
+VOID          : 'praznost';
 
 BREAK         : 'prelom';
 CONTINUE      : 'naslednji';
 
 CLASS         : 'razred';
 
-CONST         : 'konstanta';
 EXTENDS       : 'vpelje';
 IF            : 'ko';
 ELSE          : 'sicer';
@@ -68,9 +68,7 @@ IMPORT        : 'uporabi';
 PACKAGE       : 'paket';
 NEW           : 'nov';
 INSTANCEOF    : 'jeprimer';
-SUPER         : 'super';
 THIS          : 'to';
-VOID          : 'praznost';
 
 PRIVATE       : 'zakrit' | 'zakrito';
 PUBLIC        : 'odkrit' | 'odkrito';

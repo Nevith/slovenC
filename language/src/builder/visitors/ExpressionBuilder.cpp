@@ -4,5 +4,5 @@
 
 #include "ExpressionBuilder.h"
 
-ExpressionBuilder::ExpressionBuilder(const std::shared_ptr<CurrentState> &currentState, TypeReferenceBuilder* typeBuilder)
-        : currentState(currentState), typeBuilder(typeBuilder) {}
+ExpressionBuilder::ExpressionBuilder(const std::shared_ptr<CurrentState> &currentState, ReferenceBuilder* referenceBuilder)
+        : currentState(currentState), referenceBuilder(referenceBuilder) {}

@@ -11,7 +11,7 @@
 #include "Expression.h"
 
 
-class MonoExpression : public Expression {
+class MonoExpression {
 
 private:
     std::shared_ptr<Expression> expression;

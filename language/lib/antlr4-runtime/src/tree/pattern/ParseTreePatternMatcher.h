@@ -27,7 +27,7 @@ namespace pattern {
   /// {@code expr} rule (generally an instance of {@code ExprContext}.
   /// <p/>
   /// Pattern {@code x = 0;} is a similar pattern that matches the same pattern
-  /// except that it requires the identifier to be {@code x} and the expression to
+  /// except that it requires the assignee to be {@code x} and the expression to
   /// be {@code 0}.
   /// <p/>
   /// The <seealso cref="#matches"/> routines return {@code true} or {@code false} based

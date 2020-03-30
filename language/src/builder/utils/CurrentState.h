@@ -7,8 +7,8 @@
 
 
 #include <stack>
-#include <model/symbols/ClassSymbol.h>
-#include <model/symbols/FileSymbol.h>
+#include <model/symbols/main/ClassSymbol.h>
+#include <model/symbols/main/FileSymbol.h>
 #include <model/statements/base/Statement.h>
 #include <model/expressions/base/Expression.h>
 #include <model/Scope.h>
@@ -31,7 +31,7 @@ public:
 
     const std::shared_ptr<ClassSymbol> getCurrentClass() const;
 
-    const std::shared_ptr<MemberSymbol> getCurrentMethod() const;
+    const std::shared_ptr<MethodSymbol> getCurrentMethod() const;
 
     const std::shared_ptr<Statement> getCurrentStatement() const;
 

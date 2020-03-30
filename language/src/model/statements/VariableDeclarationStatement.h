@@ -10,17 +10,17 @@
 #include <model/expressions/base/Expression.h>
 #include <memory>
 #include "base/Statement.h"
-#include"../symbols/base/VariableSymbol.h"
+#include"../symbols/base/Variable.h"
 
 class VariableDeclarationStatement : public Statement {
 private:
-    std::shared_ptr<VariableSymbol> variableSymbol;
+    std::shared_ptr<Variable> variableSymbol;
     std::shared_ptr<Expression> expression;
 
 public:
-    std::shared_ptr<VariableSymbol> getVariableSymbol() const;
+    std::shared_ptr<Variable> getVariableSymbol() const;
 
-    void setVariableSymbol(std::shared_ptr<VariableSymbol> variableSymbol);
+    void setVariableSymbol(std::shared_ptr<Variable> variableSymbol);
 
     std::shared_ptr<Expression> getExpression() const;
 

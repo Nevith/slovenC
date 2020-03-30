@@ -8,7 +8,8 @@
 
 #include <antlr/SlovenCLanguageParserBaseVisitor.h>
 #include "builder/utils/CurrentState.h"
-#include "TypeReferenceBuilder.h"
+#include "ReferenceBuilder.h"
+#include "ExpressionBuilder.h"
 
 using namespace antlr;
 
@@ -16,10 +17,12 @@ class StatementBuilder: public SlovenCLanguageParserBaseVisitor {
 private:
     const std::shared_ptr<CurrentState> currentState;
 
-    TypeReferenceBuilder* typeBuilder;
+    ReferenceBuilder* referenceBuilder;
+    ExpressionBuilder* expressionBuilder;
 
 public:
-    StatementBuilder(const std::shared_ptr<CurrentState> &currentState, TypeReferenceBuilder* typeBuilder);
+    StatementBuilder(const std::shared_ptr<CurrentState> &currentState, ReferenceBuilder *referenceBuilder,
+                     ExpressionBuilder *expressionBuilder);
 };
 
 

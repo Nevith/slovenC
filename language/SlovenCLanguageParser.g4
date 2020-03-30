@@ -149,11 +149,11 @@ classBodyDeclaration
         ;
 
 fieldDeclaration
-        : (modifiers+=modifier)* type variableDeclaratorList SEMI? { if ($SEMI == NULL) notifyErrorListeners("Missing ';'"); }
+        : (modifiers+=modifier)* type fieldDeclarator SEMI? { if ($SEMI == NULL) notifyErrorListeners("Missing ';'"); }
         ;
 
-variableDeclaratorList
-        : variableDeclarator (COMMA variableDeclarator)*
+fieldDeclarator
+        : Identifier (ASSIGN expression)?
         ;
 
 variableDeclarator
@@ -221,7 +221,7 @@ localVariableDeclarationStatement
         ;
 
 localVariableDeclaration
-        : modifier* type variableDeclaratorList
+        : modifier* type variableDeclarator
         ;
 
 statement
@@ -301,13 +301,10 @@ forUpdate
 expression
         : expression bop=DOT Identifier LPAREN expressionList? RPAREN       #DottedCallExpression
         | expression bop=DOT THIS LPAREN expressionList? RPAREN             #DottedThisCallExpression
-        | expression bop=DOT SUPER LPAREN expressionList? RPAREN            #DottedSuperCallExpression
         | expression bop=DOT THIS                                           #DottedThisExpression
-        | expression bop=DOT SUPER                                          #DottedSuperExpression
         | expression bop=DOT Identifier                                     #DottedExpression
         | Identifier LPAREN expressionList? RPAREN                          #CallExpression
         | THIS LPAREN expressionList? RPAREN                                #ThisCallExpression
-        | SUPER LPAREN expressionList? RPAREN                               #SuperCallExpression
         | LPAREN type RPAREN expression                                     #CastExpression
         | expression postfix=(INC | DEC)                                    #PostIncrementDecrementExpression
         | prefix=(INC | DEC) expression                                     #PreIncrementDecrementExpression
@@ -329,7 +326,6 @@ expression
 primary
         : LPAREN expression RPAREN                      #ParenthesizedExpression
         | THIS                                          #This
-        | SUPER                                         #Super
         | literal                                       #PrimaryLiteral
         | Identifier                                    #PrimaryIdentifier
         | type DOT CLASS                                #PrimaryTypeClass

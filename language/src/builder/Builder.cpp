@@ -5,10 +5,13 @@
 #include "Builder.h"
 
 Builder::Builder(const std::shared_ptr<CurrentState> &currentState) : currentState(currentState),
-                                                                      typeBuilder(currentState),
-                                                                      symbolBuilder(currentState, &typeBuilder),
-                                                                      statementBuilder(currentState, &typeBuilder),
-                                                                      expressionBuilder(currentState, &typeBuilder) {}
+                                                                      referenceBuilder(currentState),
+                                                                      expressionBuilder(currentState,
+                                                                                        &referenceBuilder),
+                                                                      statementBuilder(currentState, &referenceBuilder,
+                                                                                       &expressionBuilder),
+                                                                      symbolBuilder(currentState, &referenceBuilder,
+                                                                                    &expressionBuilder) {}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////// Imports /////////////////////////////////////////////////////////////////
@@ -34,19 +37,21 @@ void Builder::exitNormalClassDeclaration(SlovenCLanguageParser::NormalClassDecla
 }
 
 void Builder::enterMethodDeclaration(SlovenCLanguageParser::MethodDeclarationContext *context) {
-    SlovenCLanguageParserBaseListener::enterMethodDeclaration(context);
+    std::shared_ptr<MethodSymbol> methodSymbol = symbolBuilder.visit(context);
+    currentState->setCurrentMethod(methodSymbol);
 }
 
 void Builder::exitMethodDeclaration(SlovenCLanguageParser::MethodDeclarationContext *context) {
-    SlovenCLanguageParserBaseListener::exitMethodDeclaration(context);
+    currentState->setCurrentMethod(nullptr);
 }
 
 void Builder::enterConstructorDeclaration(SlovenCLanguageParser::ConstructorDeclarationContext *context) {
-    SlovenCLanguageParserBaseListener::enterConstructorDeclaration(context);
+    std::shared_ptr<MethodSymbol> methodSymbol = symbolBuilder.visit(context);
+    currentState->setCurrentMethod(methodSymbol);
 }
 
 void Builder::exitConstructorDeclaration(SlovenCLanguageParser::ConstructorDeclarationContext *context) {
-    SlovenCLanguageParserBaseListener::exitConstructorDeclaration(context);
+    currentState->setCurrentMethod(nullptr);
 }
 
 void Builder::enterLocalVariableDeclarationStatement(

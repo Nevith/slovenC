@@ -10,7 +10,7 @@
 #include "Expression.h"
 #include <string>
 
-class OperationalExpression : public Expression {
+class OperationalExpression {
 public:
 
     virtual std::string getOperator() = 0;

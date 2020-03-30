@@ -11,7 +11,7 @@
 #include <atomic>
 #include <memory>
 #include <model/symbols/base/FullyQualifiedSymbol.h>
-#include <model/symbols/PackageSymbol.h>
+#include <model/symbols/main/PackageSymbol.h>
 
 class Project {
 private:

@@ -11,7 +11,7 @@
 #include "OperationalExpression.h"
 
 
-class MathExpression : public DuoExpression, public OperationalExpression {
+class MathExpression : public DuoExpression, public OperationalExpression, Expression {
 
 
 };

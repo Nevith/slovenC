@@ -5,7 +5,7 @@
 #include "Project.h"
 
 #include <utility>
-#include <model/symbols/PackageSymbol.h>
+#include <model/symbols/main/PackageSymbol.h>
 
 Project::Project(std::string absolutePath) : absolutePath(std::move(absolutePath)) {
     root = std::make_shared<PackageSymbol>("", absolutePath, "");

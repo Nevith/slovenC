@@ -11,7 +11,7 @@
 #include "Expression.h"
 
 
-class DuoExpression : public Expression {
+class DuoExpression {
 private:
     std::shared_ptr<Expression> rightExpression;
     std::shared_ptr<Expression> leftExpression;

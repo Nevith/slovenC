@@ -325,14 +325,14 @@ namespace antlr4 {
     ///  The recognizer attempts to recover from single missing
     ///  symbols. But, actions might refer to that missing symbol.
     ///  For example, x=ID {f($x);}. The action clearly assumes
-    ///  that there has been an identifier matched previously and that
+    ///  that there has been an assignee matched previously and that
     ///  $x points at that token. If that token is missing, but
     ///  the next token in the stream is what we want we assume that
     ///  this token is missing and we keep going. Because we
     ///  have to return some token to replace the missing token,
     ///  we have to conjure one up. This method gives the user control
     ///  over the tokens returned for missing tokens. Mostly,
-    ///  you will want to create something special for identifier
+    ///  you will want to create something special for assignee
     ///  tokens. For literals such as '{' and ',', the default
     ///  action in the parser or tree parser works. It simply creates
     ///  a CommonToken of the appropriate type. The text will be the token.

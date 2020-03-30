@@ -10,11 +10,11 @@
 #include <memory>
 #include "base/MonoExpression.h"
 #include "base/OperationalExpression.h"
-#include "IdentifierExpression.h"
+#include "model/expressions/dotted/IdentifierExpression.h"
 
 class AssignmentExpression : public MonoExpression, public OperationalExpression {
 private:
-    std::shared_ptr<IdentifierExpression> identifier;
+    std::shared_ptr<IdentifierExpression> assignee;
 
 public:
 

@@ -117,7 +117,7 @@ public:
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitVariableDeclaratorList(SlovenCLanguageParser::VariableDeclaratorListContext *ctx) override {
+  virtual antlrcpp::Any visitFieldDeclarator(SlovenCLanguageParser::FieldDeclaratorContext *ctx) override {
     return visitChildren(ctx);
   }
 
@@ -245,6 +245,22 @@ public:
     return visitChildren(ctx);
   }
 
+  virtual antlrcpp::Any visitInvalidDottedExpression(SlovenCLanguageParser::InvalidDottedExpressionContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitAdditiveExpression(SlovenCLanguageParser::AdditiveExpressionContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitRelationalExpression(SlovenCLanguageParser::RelationalExpressionContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitPreIncrementDecrementExpression(SlovenCLanguageParser::PreIncrementDecrementExpressionContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
   virtual antlrcpp::Any visitThisCallExpression(SlovenCLanguageParser::ThisCallExpressionContext *ctx) override {
     return visitChildren(ctx);
   }
@@ -253,11 +269,15 @@ public:
     return visitChildren(ctx);
   }
 
+  virtual antlrcpp::Any visitConditionalExpression(SlovenCLanguageParser::ConditionalExpressionContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
   virtual antlrcpp::Any visitUnaryExpression(SlovenCLanguageParser::UnaryExpressionContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitDottedSuperCallExpression(SlovenCLanguageParser::DottedSuperCallExpressionContext *ctx) override {
+  virtual antlrcpp::Any visitNegateExpression(SlovenCLanguageParser::NegateExpressionContext *ctx) override {
     return visitChildren(ctx);
   }
 
@@ -281,6 +301,14 @@ public:
     return visitChildren(ctx);
   }
 
+  virtual antlrcpp::Any visitCastExpression(SlovenCLanguageParser::CastExpressionContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitDottedExpression(SlovenCLanguageParser::DottedExpressionContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
   virtual antlrcpp::Any visitEqualityExpression(SlovenCLanguageParser::EqualityExpressionContext *ctx) override {
     return visitChildren(ctx);
   }
@@ -297,46 +325,6 @@ public:
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitDottedSuperExpression(SlovenCLanguageParser::DottedSuperExpressionContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
-  virtual antlrcpp::Any visitInvalidDottedExpression(SlovenCLanguageParser::InvalidDottedExpressionContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
-  virtual antlrcpp::Any visitAdditiveExpression(SlovenCLanguageParser::AdditiveExpressionContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
-  virtual antlrcpp::Any visitRelationalExpression(SlovenCLanguageParser::RelationalExpressionContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
-  virtual antlrcpp::Any visitPreIncrementDecrementExpression(SlovenCLanguageParser::PreIncrementDecrementExpressionContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
-  virtual antlrcpp::Any visitConditionalExpression(SlovenCLanguageParser::ConditionalExpressionContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
-  virtual antlrcpp::Any visitNegateExpression(SlovenCLanguageParser::NegateExpressionContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
-  virtual antlrcpp::Any visitSuperCallExpression(SlovenCLanguageParser::SuperCallExpressionContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
-  virtual antlrcpp::Any visitCastExpression(SlovenCLanguageParser::CastExpressionContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
-  virtual antlrcpp::Any visitDottedExpression(SlovenCLanguageParser::DottedExpressionContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
   virtual antlrcpp::Any visitConditionalOrExpression(SlovenCLanguageParser::ConditionalOrExpressionContext *ctx) override {
     return visitChildren(ctx);
   }
@@ -346,10 +334,6 @@ public:
   }
 
   virtual antlrcpp::Any visitThis(SlovenCLanguageParser::ThisContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
-  virtual antlrcpp::Any visitSuper(SlovenCLanguageParser::SuperContext *ctx) override {
     return visitChildren(ctx);
   }
 

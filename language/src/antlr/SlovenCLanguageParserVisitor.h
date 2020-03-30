@@ -70,7 +70,7 @@ public:
 
     virtual antlrcpp::Any visitFieldDeclaration(SlovenCLanguageParser::FieldDeclarationContext *context) = 0;
 
-    virtual antlrcpp::Any visitVariableDeclaratorList(SlovenCLanguageParser::VariableDeclaratorListContext *context) = 0;
+    virtual antlrcpp::Any visitFieldDeclarator(SlovenCLanguageParser::FieldDeclaratorContext *context) = 0;
 
     virtual antlrcpp::Any visitVariableDeclarator(SlovenCLanguageParser::VariableDeclaratorContext *context) = 0;
 
@@ -134,13 +134,23 @@ public:
 
     virtual antlrcpp::Any visitPostIncrementDecrementExpression(SlovenCLanguageParser::PostIncrementDecrementExpressionContext *context) = 0;
 
+    virtual antlrcpp::Any visitInvalidDottedExpression(SlovenCLanguageParser::InvalidDottedExpressionContext *context) = 0;
+
+    virtual antlrcpp::Any visitAdditiveExpression(SlovenCLanguageParser::AdditiveExpressionContext *context) = 0;
+
+    virtual antlrcpp::Any visitRelationalExpression(SlovenCLanguageParser::RelationalExpressionContext *context) = 0;
+
+    virtual antlrcpp::Any visitPreIncrementDecrementExpression(SlovenCLanguageParser::PreIncrementDecrementExpressionContext *context) = 0;
+
     virtual antlrcpp::Any visitThisCallExpression(SlovenCLanguageParser::ThisCallExpressionContext *context) = 0;
 
     virtual antlrcpp::Any visitPrimaryExpression(SlovenCLanguageParser::PrimaryExpressionContext *context) = 0;
 
+    virtual antlrcpp::Any visitConditionalExpression(SlovenCLanguageParser::ConditionalExpressionContext *context) = 0;
+
     virtual antlrcpp::Any visitUnaryExpression(SlovenCLanguageParser::UnaryExpressionContext *context) = 0;
 
-    virtual antlrcpp::Any visitDottedSuperCallExpression(SlovenCLanguageParser::DottedSuperCallExpressionContext *context) = 0;
+    virtual antlrcpp::Any visitNegateExpression(SlovenCLanguageParser::NegateExpressionContext *context) = 0;
 
     virtual antlrcpp::Any visitAssignmentExpression(SlovenCLanguageParser::AssignmentExpressionContext *context) = 0;
 
@@ -152,6 +162,10 @@ public:
 
     virtual antlrcpp::Any visitDottedThisExpression(SlovenCLanguageParser::DottedThisExpressionContext *context) = 0;
 
+    virtual antlrcpp::Any visitCastExpression(SlovenCLanguageParser::CastExpressionContext *context) = 0;
+
+    virtual antlrcpp::Any visitDottedExpression(SlovenCLanguageParser::DottedExpressionContext *context) = 0;
+
     virtual antlrcpp::Any visitEqualityExpression(SlovenCLanguageParser::EqualityExpressionContext *context) = 0;
 
     virtual antlrcpp::Any visitCallExpression(SlovenCLanguageParser::CallExpressionContext *context) = 0;
@@ -160,33 +174,11 @@ public:
 
     virtual antlrcpp::Any visitDottedCallExpression(SlovenCLanguageParser::DottedCallExpressionContext *context) = 0;
 
-    virtual antlrcpp::Any visitDottedSuperExpression(SlovenCLanguageParser::DottedSuperExpressionContext *context) = 0;
-
-    virtual antlrcpp::Any visitInvalidDottedExpression(SlovenCLanguageParser::InvalidDottedExpressionContext *context) = 0;
-
-    virtual antlrcpp::Any visitAdditiveExpression(SlovenCLanguageParser::AdditiveExpressionContext *context) = 0;
-
-    virtual antlrcpp::Any visitRelationalExpression(SlovenCLanguageParser::RelationalExpressionContext *context) = 0;
-
-    virtual antlrcpp::Any visitPreIncrementDecrementExpression(SlovenCLanguageParser::PreIncrementDecrementExpressionContext *context) = 0;
-
-    virtual antlrcpp::Any visitConditionalExpression(SlovenCLanguageParser::ConditionalExpressionContext *context) = 0;
-
-    virtual antlrcpp::Any visitNegateExpression(SlovenCLanguageParser::NegateExpressionContext *context) = 0;
-
-    virtual antlrcpp::Any visitSuperCallExpression(SlovenCLanguageParser::SuperCallExpressionContext *context) = 0;
-
-    virtual antlrcpp::Any visitCastExpression(SlovenCLanguageParser::CastExpressionContext *context) = 0;
-
-    virtual antlrcpp::Any visitDottedExpression(SlovenCLanguageParser::DottedExpressionContext *context) = 0;
-
     virtual antlrcpp::Any visitConditionalOrExpression(SlovenCLanguageParser::ConditionalOrExpressionContext *context) = 0;
 
     virtual antlrcpp::Any visitParenthesizedExpression(SlovenCLanguageParser::ParenthesizedExpressionContext *context) = 0;
 
     virtual antlrcpp::Any visitThis(SlovenCLanguageParser::ThisContext *context) = 0;
-
-    virtual antlrcpp::Any visitSuper(SlovenCLanguageParser::SuperContext *context) = 0;
 
     virtual antlrcpp::Any visitPrimaryLiteral(SlovenCLanguageParser::PrimaryLiteralContext *context) = 0;
 

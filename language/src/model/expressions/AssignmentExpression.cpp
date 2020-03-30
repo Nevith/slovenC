@@ -15,9 +15,9 @@
  * @return Expression
  */
 std::shared_ptr<IdentifierExpression> AssignmentExpression::getIdentifier() {
-    return identifier;
+    return assignee;
 }
 
 void AssignmentExpression::setIdentifier(std::shared_ptr<IdentifierExpression> identifier) {
-    this->identifier = identifier;
+    this->assignee = identifier;
 }

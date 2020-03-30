@@ -10,7 +10,7 @@ const std::shared_ptr<FileSymbol> CurrentState::getFileSymbol() const {
     return fileSymbol;
 }
 
-const std::shared_ptr<MemberSymbol> CurrentState::getCurrentMethod() const {
+const std::shared_ptr<MethodSymbol> CurrentState::getCurrentMethod() const {
     return currentMethod;
 }
 
