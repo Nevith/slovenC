@@ -11,7 +11,7 @@
 #include <model/expressions/base/DottedExpression.h>
 #include "IdentifierExpression.h"
 
-class TypeReferenceExpression: public IdentifierExpression {
+class TypeReferenceExpression : public IdentifierExpression {
 private:
 
     std::shared_ptr<TypeSymbol> resolve;
@@ -26,18 +26,16 @@ public:
 
     const std::shared_ptr<TypeSymbol> &getResolve() const;
 
-    class ReferenceNotResolvedException: public std::exception {
+    class ReferenceNotResolvedException : public std::exception {
     public:
         const char *what() const override;
     } referenceNotResolvedException;
 
-    class ReferenceAlreadyResolvedException: public std::exception {
+    class ReferenceAlreadyResolvedException : public std::exception {
     public:
         const char *what() const override;
     } referenceAlreadyResolvedException;
 };
-
-
 
 
 #endif // SLOVENC_TYPEREFERENCEEXPRESSION_H

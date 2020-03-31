@@ -13,7 +13,7 @@ using namespace antlr;
 
 class ModBuilder {
 public:
-    static short
+    static void
     buildModifiers(std::shared_ptr<Member> memberSymbol, SlovenCLanguageParser::ModifierContext *modifierContext);
 };
 

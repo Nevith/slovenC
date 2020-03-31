@@ -111,7 +111,7 @@ antlrcpp::Any SymbolBuilder::visitFieldDeclaration(SlovenCLanguageParser::FieldD
     std::shared_ptr<FieldSymbol> symbol = visit(ctx->fieldDeclarator());
 
     symbol->setContext(ctx);
-    symbol->setType(expressionBuilder->visit(ctx->type()));
+    symbol->setType(referenceBuilder->visit(ctx->type()));
     ModBuilder::buildModifiers(symbol, ctx->modifierContext);
 
     // Obtain the parent class

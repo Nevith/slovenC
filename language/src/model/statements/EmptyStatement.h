@@ -11,6 +11,8 @@
 
 
 class EmptyStatement : public Statement {
+public:
+    void define(std::shared_ptr<Visitable> object) override;
 };
 
 #endif //_EMPTYSTATEMENT_H

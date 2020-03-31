@@ -24,3 +24,7 @@ const std::shared_ptr<FileSymbol> &Visitable::getFileSymbol() const {
 void Visitable::setFileSymbol(const std::shared_ptr<FileSymbol> &fileSymbol) {
     Visitable::fileSymbol = fileSymbol;
 }
+
+void Visitable::visit() {
+
+}

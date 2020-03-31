@@ -9,10 +9,11 @@ Builder::Builder(const std::shared_ptr<CurrentState> &currentState) : currentSta
                                                                       referenceBuilder(currentState),
                                                                       expressionBuilder(currentState,
                                                                                         &referenceBuilder),
-                                                                      statementBuilder(currentState, &referenceBuilder,
-                                                                                       &expressionBuilder),
                                                                       symbolBuilder(currentState, &referenceBuilder,
-                                                                                    &expressionBuilder) {}
+                                                                                    &expressionBuilder),
+                                                                      statementBuilder(currentState, &referenceBuilder,
+                                                                                       &expressionBuilder,
+                                                                                       &symbolBuilder) {}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////// SCOPE ///////////////////////////////////////////////////////////////////
@@ -72,11 +73,13 @@ void Builder::exitConstructorDeclaration(SlovenCLanguageParser::ConstructorDecla
 
 void Builder::enterLocalVariableDeclarationStatement(
         SlovenCLanguageParser::LocalVariableDeclarationStatementContext *context) {
-    statementBuilder.visit(context);
+    auto statement = statementBuilder.visit(context);
+    currentState->pushCurrentStatement(statement);
 }
 
 void Builder::exitLocalVariableDeclarationStatement(
         SlovenCLanguageParser::LocalVariableDeclarationStatementContext *context) {
+    currentState->popCurrentStatement();
 }
 
 void Builder::enterFieldDeclaration(SlovenCLanguageParser::FieldDeclarationContext *context) {

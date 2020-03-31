@@ -4,7 +4,11 @@
 
 #include "ModBuilder.h"
 
-short ModBuilder::buildModifiers(std::shared_ptr<Member> memberSymbol, SlovenCLanguageParser::ModifierContext *modifierContext) {
+void ModBuilder::buildModifiers(std::shared_ptr<Member> memberSymbol,
+                                 SlovenCLanguageParser::ModifierContext *modifierContext) {
+    if (!modifierContext) {
+        return;
+    }
     if (modifierContext->PRIVATE()) {
         memberSymbol->setPrivate();
     }
@@ -14,5 +18,4 @@ short ModBuilder::buildModifiers(std::shared_ptr<Member> memberSymbol, SlovenCLa
     if (modifierContext->STATIC()) {
         memberSymbol->setStatic();
     }
-    return 0;
 }

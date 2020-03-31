@@ -18,6 +18,8 @@ public:
     std::shared_ptr<Expression> getExpression() const;
 
     void setExpression(std::shared_ptr<Expression> expression);
+
+    void define(std::shared_ptr<Visitable> object) override;
 };
 
 #endif //_EXPRESSIONSTATEMENT_H

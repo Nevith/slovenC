@@ -7,13 +7,13 @@
 #ifndef _SCOPE_H
 #define _SCOPE_H
 
-#include "Visitable.h"
-#include "statements/base/Statement.h"
 #include <vector>
 #include <memory>
 
 
-class Scope : public Visitable {
+class Statement;
+
+class Scope {
 
 private:
     std::vector<std::shared_ptr<Statement>> statements;
@@ -21,7 +21,7 @@ private:
 public:
     const std::vector<std::shared_ptr<Statement>> &getStatements() const;
 
-    void setStatements(const std::vector<std::shared_ptr<Statement>> &statements);
+    void addStatement(const std::shared_ptr<Statement> &statement);
 };
 
 #endif //_SCOPE_H

@@ -9,7 +9,8 @@
 /**
  * MethodSymbol implementation
  */
-MethodSymbol::MethodSymbol(std::string name, const bool isConstructor) : isConstructor(isConstructor), FullyQualifiedSymbol(name) {}
+MethodSymbol::MethodSymbol(std::string name, const bool isConstructor) : isConstructor(isConstructor),
+                                                                         FullyQualifiedSymbol(name) {}
 
 const std::shared_ptr<TypeReferenceExpression> &MethodSymbol::getResult() const {
     return result;
@@ -27,6 +28,17 @@ const std::vector<std::shared_ptr<ParameterSymbol>> &MethodSymbol::getParameters
     return parameters;
 }
 
-void MethodSymbol::addParameter(const std::shared_ptr<ParameterSymbol>& parameter) {
+void MethodSymbol::addParameter(const std::shared_ptr<ParameterSymbol> &parameter) {
     parameters.push_back(parameter);
+}
+
+const std::shared_ptr<BlockStatement> MethodSymbol::getScope() const {
+    return scope;
+}
+
+void MethodSymbol::setScope(const std::shared_ptr<BlockStatement> &scope) {
+    if (MethodSymbol::scope) {
+        return;
+    }
+    MethodSymbol::scope = scope;
 }

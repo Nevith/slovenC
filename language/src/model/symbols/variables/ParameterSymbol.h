@@ -10,7 +10,9 @@
 #include "model/symbols/base/Variable.h"
 
 class ClassSymbol;
+
 class MethodSymbol;
+
 class ParameterSymbol : public Variable, public Symbol {
 private:
     std::shared_ptr<ClassSymbol> parentClass;

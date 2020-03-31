@@ -13,13 +13,13 @@
 
 using namespace antlr;
 
-class ExpressionBuilder: public SlovenCLanguageParserBaseVisitor {
+class ExpressionBuilder : public SlovenCLanguageParserBaseVisitor {
 private:
     const std::shared_ptr<CurrentState> currentState;
 
-    ReferenceBuilder* referenceBuilder;
+    ReferenceBuilder *referenceBuilder;
 public:
-    ExpressionBuilder(const std::shared_ptr<CurrentState> &currentState, ReferenceBuilder* referenceBuilder);
+    ExpressionBuilder(const std::shared_ptr<CurrentState> &currentState, ReferenceBuilder *referenceBuilder);
 };
 
 

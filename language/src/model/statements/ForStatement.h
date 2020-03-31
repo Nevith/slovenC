@@ -17,18 +17,17 @@
 
 class ForStatement : public ConditionalStatement {
 private:
-    std::vector<std::shared_ptr<VariableDeclarationStatement>> variableDeclarationStatements;
+    std::vector<std::shared_ptr<LocalVariableSymbol>> variables;
     std::vector<std::shared_ptr<Expression>> updateExpressions;
 
 public:
-    const std::vector<std::shared_ptr<VariableDeclarationStatement>> &getVariableDeclarationStatements() const;
-
     const std::vector<std::shared_ptr<Expression>> &getUpdateExpressions() const;
 
-    const void
-    addVariableDeclarationStatement(std::shared_ptr<VariableDeclarationStatement> variableDeclarationStatement);
+    const std::vector<std::shared_ptr<LocalVariableSymbol>> &getVariables() const;
 
     const void addUpdateExpression(std::shared_ptr<Expression> expression);
+
+    const void addVariable(std::shared_ptr<LocalVariableSymbol> variable);
 /**
  * @param return
  */

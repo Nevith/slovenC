@@ -40,11 +40,18 @@ antlrcpp::Any ReferenceBuilder::visitClassTypeUnqual(SlovenCLanguageParser::Clas
 }
 
 antlrcpp::Any ReferenceBuilder::visitFileNameQual(SlovenCLanguageParser::FileNameQualContext *ctx) {
-    return SlovenCLanguageParserBaseVisitor::visitFileNameQual(ctx);
-}
+    auto result = std::make_shared<PackageOrFileReferenceExpression>(ctx->Identifier()->getText());
+    std::shared_ptr<TypeReferenceExpression> parent = visit(ctx->fileName());
+    result->setParent(parent);
+    result->setFileSymbol(currentState->getFileSymbol());
+    result->setContext(ctx);
+    return result;}
 
 antlrcpp::Any ReferenceBuilder::visitFileNameUnqual(SlovenCLanguageParser::FileNameUnqualContext *ctx) {
-    return SlovenCLanguageParserBaseVisitor::visitFileNameUnqual(ctx);
+    auto result = std::make_shared<PackageOrFileReferenceExpression>(ctx->Identifier()->getText());
+    result->setFileSymbol(currentState->getFileSymbol());
+    result->setContext(ctx);
+    return result;
 }
 
 antlrcpp::Any ReferenceBuilder::visitResult(SlovenCLanguageParser::ResultContext *ctx) {

@@ -13,14 +13,10 @@ std::shared_ptr<Variable> VariableDeclarationStatement::getVariableSymbol() cons
     return variableSymbol;
 }
 
-void VariableDeclarationStatement::setVariableSymbol(std::shared_ptr<Variable> variableSymbol) {
+void VariableDeclarationStatement::setVariableSymbol(std::shared_ptr<LocalVariableSymbol> variableSymbol) {
     VariableDeclarationStatement::variableSymbol = variableSymbol;
 }
 
-std::shared_ptr<Expression> VariableDeclarationStatement::getExpression() const {
-    return expression;
-}
+void VariableDeclarationStatement::define(std::shared_ptr<Visitable> object) {
 
-void VariableDeclarationStatement::setExpression(std::shared_ptr<Expression> expression) {
-    VariableDeclarationStatement::expression = expression;
 }

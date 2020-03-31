@@ -8,6 +8,7 @@
 #define _STATEMENTCONTAININGSTATEMENT_H
 
 #include "Statement.h"
+#include <utils/TypeUtils.h>
 #include "../../expressions/base/Expression.h"
 #include <vector>
 #include <memory>
@@ -22,6 +23,8 @@ public:
     std::shared_ptr<Statement> getNestedStatement() const;
 
     void setNestedStatement(std::shared_ptr<Statement> nestedStatement);
+
+    void define(std::shared_ptr<Visitable> object) override;
 
 public:
 };

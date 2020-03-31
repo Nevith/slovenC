@@ -15,12 +15,12 @@
 
 using namespace antlr;
 
-class SymbolBuilder: public SlovenCLanguageParserBaseVisitor {
+class SymbolBuilder : public SlovenCLanguageParserBaseVisitor {
 private:
     const std::shared_ptr<CurrentState> currentState;
 
-    ReferenceBuilder* referenceBuilder;
-    ExpressionBuilder* expressionBuilder;
+    ReferenceBuilder *referenceBuilder;
+    ExpressionBuilder *expressionBuilder;
 
 public:
     SymbolBuilder(const std::shared_ptr<CurrentState> &currentState, ReferenceBuilder *referenceBuilder,

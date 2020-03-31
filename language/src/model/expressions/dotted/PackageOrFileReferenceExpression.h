@@ -23,12 +23,12 @@ public:
 
     const std::shared_ptr<FullyQualifiedSymbol> &getResolve() const;
 
-    class ReferenceNotResolvedException: public std::exception {
+    class ReferenceNotResolvedException : public std::exception {
     public:
         const char *what() const override;
     } referenceNotResolvedException;
 
-    class ReferenceAlreadyResolvedException: public std::exception {
+    class ReferenceAlreadyResolvedException : public std::exception {
     public:
         const char *what() const override;
     } referenceAlreadyResolvedException;

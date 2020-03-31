@@ -221,7 +221,7 @@ localVariableDeclarationStatement
         ;
 
 localVariableDeclaration
-        : modifier* type variableDeclarator
+        : type variableDeclarator
         ;
 
 statement
@@ -246,7 +246,7 @@ ifThenStatement
         ;
 
 basicForStatement
-        : FOR LPAREN forInit? SEMI condition? SEMI forUpdate? RPAREN statement
+        : FOR LPAREN localVariableDeclaration* SEMI condition? SEMI forUpdate? RPAREN statement
         ;
 
 whileStatement
@@ -283,11 +283,6 @@ condition
 
 elseStatement
         : ELSE statement
-        ;
-
-forInit
-        : expressionList
-        | localVariableDeclaration
         ;
 
 forUpdate

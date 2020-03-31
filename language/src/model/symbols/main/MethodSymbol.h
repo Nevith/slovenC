@@ -15,11 +15,15 @@
 #include <model/expressions/dotted/TypeReferenceExpression.h>
 
 class ParameterSymbol;
+
+class BlockStatement;
+
 class MethodSymbol : public Member, public FullyQualifiedSymbol {
 private:
     const bool isConstructor;
     std::shared_ptr<TypeReferenceExpression> result;
     std::vector<std::shared_ptr<ParameterSymbol>> parameters;
+    std::shared_ptr<BlockStatement> scope;
 public:
     MethodSymbol(std::string name, const bool isConstructor);
 
@@ -31,7 +35,11 @@ public:
 
     const std::vector<std::shared_ptr<ParameterSymbol>> &getParameters() const;
 
-    void addParameter(const std::shared_ptr<ParameterSymbol>& parameter);
+    void addParameter(const std::shared_ptr<ParameterSymbol> &parameter);
+
+    const std::shared_ptr<BlockStatement> getScope() const;
+
+    void setScope(const std::shared_ptr<BlockStatement> &scope);
 };
 
 #endif //_METHODSYMBOL_H

@@ -10,6 +10,7 @@
 #include "base/StatementContainingStatement.h"
 #include "base/ConditionalStatement.h"
 #include "ElseStatement.h"
+#include <utils/TypeUtils.h>
 
 
 class IfStatement : public ConditionalStatement {
@@ -19,7 +20,7 @@ private:
 public:
     std::shared_ptr<ElseStatement> getElseStatement() const;
 
-    void setElseStatement(std::shared_ptr<ElseStatement> elseStatement);
+    void define(std::shared_ptr<Visitable> object) override;
 };
 
 #endif //_IFSTATEMENT_H

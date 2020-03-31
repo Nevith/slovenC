@@ -21,3 +21,7 @@ std::shared_ptr<Expression> ExpressionStatement::getExpression() const {
 void ExpressionStatement::setExpression(std::shared_ptr<Expression> expression) {
     ExpressionStatement::expression = expression;
 }
+
+void ExpressionStatement::define(std::shared_ptr<Visitable> object) {
+
+}
