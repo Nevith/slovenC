@@ -9,3 +9,4 @@
 /**
  * ThisExpression implementation
  */
+ThisExpression::ThisExpression() : IdentifierExpression("to") {}

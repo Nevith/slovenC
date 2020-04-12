@@ -11,8 +11,8 @@ namespace antlr4 {
 
   /** A rule context is a record of a single rule invocation.
    *
-   *  We form a stack of these context objects using the parent
-   *  pointer. A parent pointer of null indicates that the current
+   *  We form a stack of these context objects using the object
+   *  pointer. A object pointer of null indicates that the current
    *  context is the bottom of the stack. The ParserRuleContext subclass
    *  as a children list so that we can turn this data structure into a
    *  tree.
@@ -33,7 +33,7 @@ namespace antlr4 {
    *  }
    *
    *  A subsequent rule invocation of r from the start rule s pushes a
-   *  new context object for r whose parent points at s and use invoking
+   *  new context object for r whose object points at s and use invoking
    *  state is the state with r emanating as edge label.
    *
    *  The invokingState fields from a context object to the root
@@ -50,7 +50,7 @@ namespace antlr4 {
    *  rule and it holds the return address from another rule that invoke
    *  to this rule. To invoke a rule, we must always have a current context.
    *
-   *  The parent contexts are useful for computing lookahead sets and
+   *  The object contexts are useful for computing lookahead sets and
    *  getting error information.
    *
    *  These objects are used during parsing and prediction.
@@ -63,7 +63,7 @@ namespace antlr4 {
   public:
     /// What state invoked the rule associated with this context?
     /// The "return address" is the followState of invokingState
-    /// If parent is null, this should be -1 and this context object represents the start rule.
+    /// If object is null, this should be -1 and this context object represents the start rule.
     size_t invokingState;
 
     RuleContext();

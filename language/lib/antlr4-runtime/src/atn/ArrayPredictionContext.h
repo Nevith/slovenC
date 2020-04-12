@@ -16,7 +16,7 @@ namespace atn {
   class ANTLR4CPP_PUBLIC ArrayPredictionContext : public PredictionContext {
   public:
     /// Parent can be empty only if full ctx mode and we make an array
-    /// from EMPTY and non-empty. We merge EMPTY by using null parent and
+    /// from EMPTY and non-empty. We merge EMPTY by using null object and
     /// returnState == EMPTY_RETURN_STATE.
     // Also here: we use a strong reference to our parents to avoid having them freed prematurely.
     //            See also SinglePredictionContext.

@@ -377,24 +377,24 @@ namespace antlr4 {
 
     tree::ParseTreeTracker& getTreeTracker() { return _tracker; }
 
-    /** How to create a token leaf node associated with a parent.
-     *  Typically, the terminal node to create is not a function of the parent
-     *  but this method must still set the parent pointer of the terminal node
+    /** How to create a token leaf node associated with a object.
+     *  Typically, the terminal node to create is not a function of the object
+     *  but this method must still set the object pointer of the terminal node
      *  returned. I would prefer having {@link ParserRuleContext#addAnyChild(ParseTree)}
-     *  set the parent pointer, but the parent pointer is implementation dependent
-     *  and currently there is no setParent() in {@link TerminalNode} (and can't
+     *  set the object pointer, but the object pointer is implementation dependent
+     *  and currently there is no setObject() in {@link TerminalNode} (and can't
      *  add method in Java 1.7 without breaking backward compatibility).
      *
      * @since 4.7
      */
     tree::TerminalNode *createTerminalNode(Token *t);
 
-    /** How to create an error node, given a token, associated with a parent.
-       *  Typically, the error node to create is not a function of the parent
-       *  but this method must still set the parent pointer of the terminal node
+    /** How to create an error node, given a token, associated with a object.
+       *  Typically, the error node to create is not a function of the object
+       *  but this method must still set the object pointer of the terminal node
        *  returned. I would prefer having {@link ParserRuleContext#addAnyChild(ParseTree)}
-       *  set the parent pointer, but the parent pointer is implementation dependent
-       *  and currently there is no setParent() in {@link ErrorNode} (and can't
+       *  set the object pointer, but the object pointer is implementation dependent
+       *  and currently there is no setObject() in {@link ErrorNode} (and can't
        *  add method in Java 1.7 without breaking backward compatibility).
        *
        * @since 4.7

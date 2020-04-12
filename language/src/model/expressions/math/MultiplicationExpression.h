@@ -11,8 +11,12 @@
 
 
 class MultiplicationExpression : public MathExpression {
+private:
+    std::string operationSign;
 public:
     std::string getOperator() override;
+
+    void setOperator(const std::string &operationSign);
 };
 
 #endif //_MULTIPLICATIONEXPRESSION_H

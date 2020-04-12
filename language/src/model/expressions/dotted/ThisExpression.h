@@ -12,6 +12,8 @@
 
 
 class ThisExpression : public IdentifierExpression {
+public:
+    ThisExpression();
 };
 
 #endif //_THISEXPRESSION_H

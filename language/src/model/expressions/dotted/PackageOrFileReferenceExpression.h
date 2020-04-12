@@ -8,6 +8,8 @@
 
 #include "IdentifierExpression.h"
 
+class FullyQualifiedSymbol;
+
 class PackageOrFileReferenceExpression : public IdentifierExpression {
 private:
 

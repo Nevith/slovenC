@@ -295,25 +295,18 @@ forUpdate
 
 expression
         : expression bop=DOT Identifier LPAREN expressionList? RPAREN       #DottedCallExpression
-        | expression bop=DOT THIS LPAREN expressionList? RPAREN             #DottedThisCallExpression
-        | expression bop=DOT THIS                                           #DottedThisExpression
         | expression bop=DOT Identifier                                     #DottedExpression
         | Identifier LPAREN expressionList? RPAREN                          #CallExpression
         | THIS LPAREN expressionList? RPAREN                                #ThisCallExpression
-        | LPAREN type RPAREN expression                                     #CastExpression
         | expression postfix=(INC | DEC)                                    #PostIncrementDecrementExpression
-        | prefix=(INC | DEC) expression                                     #PreIncrementDecrementExpression
-        | prefix=(ADD | SUB) expression                                     #UnaryExpression
         | prefix=BANG expression                                            #NegateExpression
         | expression bop=(MUL|DIV|MOD) expression                           #MultiplicativeExpression
         | expression bop=(ADD|SUB) expression                               #AdditiveExpression
         | expression bop=(LE | GE | GT | LT) expression                     #RelationalExpression
-        | expression bop=INSTANCEOF type                                    #InstanceofExpression
-        | expression bop=(EQUAL | NOTEQUAL) expression                      #EqualityExpression
+        | expression bop=(EQUAL | NOTEQUAL) expression                      #CompareExpression
         | expression bop=AND expression                                     #ConditionalAndExpression
         | expression bop=OR expression                                      #ConditionalOrExpression
-        | expression bop=QUESTION expression? COLON expression? { if ($expression.ctx == NULL) notifyErrorListeners("Missing expression."); } #ConditionalExpression
-        | <assoc=right> expression bop=(ASSIGN | ADD_ASSIGN | SUB_ASSIGN | MUL_ASSIGN | DIV_ASSIGN | MOD_ASSIGN) expression #AssignmentExpression
+        | <assoc=right> expression ASSIGN expression #AssignmentExpression
         | primary                                                           #PrimaryExpression
         | expression bop=DOT {notifyErrorListeners("Invalid dotted expression.");}  #InvalidDottedExpression
         ;
@@ -323,8 +316,6 @@ primary
         | THIS                                          #This
         | literal                                       #PrimaryLiteral
         | Identifier                                    #PrimaryIdentifier
-        | type DOT CLASS                                #PrimaryTypeClass
-        | VOID DOT CLASS                                #PrimaryVoidClass
         ;
 
 expressionList

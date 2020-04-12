@@ -18,18 +18,18 @@ std::string DottedExpression::getName() const {
 }
 
 std::string DottedExpression::getFullyQualifiedName() const {
-    if (parent != nullptr) {
-        if (!parent->getName().empty()) {
-            return parent->getFullyQualifiedName() + "." + getName();
+    if (object != nullptr) {
+        if (!object->getName().empty()) {
+            return object->getFullyQualifiedName() + "." + getName();
         }
     }
     return getName();
 }
 
-const std::shared_ptr<DottedExpression> &DottedExpression::getParent() const {
-    return parent;
+const std::shared_ptr<DottedExpression> &DottedExpression::getObject() const {
+    return object;
 }
 
-void DottedExpression::setParent(const std::shared_ptr<DottedExpression> &parent) {
-    DottedExpression::parent = parent;
+void DottedExpression::setObject(const std::shared_ptr<DottedExpression> &object) {
+    DottedExpression::object = object;
 }

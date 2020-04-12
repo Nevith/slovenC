@@ -22,7 +22,7 @@ antlrcpp::Any SymbolBuilder::visitNormalClassDeclaration(SlovenCLanguageParser::
     // Set file symbol
     symbol->setFileSymbol(fileSymbol);
 
-    // Obtain the parent symbol of this class
+    // Obtain the object symbol of this class
     auto parentClass = currentState->getCurrentClass();
     if (parentClass) {
         parentClass->declareClass(symbol);
@@ -54,7 +54,7 @@ antlrcpp::Any SymbolBuilder::visitMethodDeclaration(SlovenCLanguageParser::Metho
     // Build modifiers
     ModBuilder::buildModifiers(symbol, ctx->modifierContext);
 
-    // Obtain the parent class
+    // Obtain the object class
     auto parentClass = currentState->getCurrentClass();
     // Declared method in class
     parentClass->declareMethod(symbol);
@@ -88,7 +88,7 @@ antlrcpp::Any SymbolBuilder::visitConstructorDeclaration(SlovenCLanguageParser::
     // Build modifiers
     ModBuilder::buildModifiers(symbol, ctx->modifierContext);
 
-    // Obtain the parent class
+    // Obtain the object class
     auto parentClass = currentState->getCurrentClass();
     // Declare method in class
     parentClass->declareMethod(symbol);
@@ -114,7 +114,7 @@ antlrcpp::Any SymbolBuilder::visitFieldDeclaration(SlovenCLanguageParser::FieldD
     symbol->setType(referenceBuilder->visit(ctx->type()));
     ModBuilder::buildModifiers(symbol, ctx->modifierContext);
 
-    // Obtain the parent class
+    // Obtain the object class
     auto parentClass = currentState->getCurrentClass();
     // Declare method in class
     parentClass->declareField(symbol);

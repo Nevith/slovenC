@@ -110,7 +110,7 @@ std::string RuleContext::toString(const std::vector<std::string> &ruleNames, Rul
       ss << ruleName;
     }
 
-    if (currentParent->parent == nullptr) // No parent anymore.
+    if (currentParent->parent == nullptr) // No object anymore.
       break;
     currentParent = static_cast<RuleContext *>(currentParent->parent);
     if (!ruleNames.empty() || !currentParent->isEmpty()) {

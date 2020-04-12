@@ -13,7 +13,7 @@
 class DottedExpression : public Expression {
 private:
     const std::string name;
-    std::shared_ptr<DottedExpression> parent;
+    std::shared_ptr<DottedExpression> object;
 public:
 
     DottedExpression(std::string name);
@@ -22,9 +22,9 @@ public:
 
     virtual std::string getFullyQualifiedName() const;
 
-    const std::shared_ptr<DottedExpression> &getParent() const;
+    const std::shared_ptr<DottedExpression> &getObject() const;
 
-    void setParent(const std::shared_ptr<DottedExpression> &parent);
+    void setObject(const std::shared_ptr<DottedExpression> &object);
 };
 
 #endif //_DOTTEDEXPRESSION_H

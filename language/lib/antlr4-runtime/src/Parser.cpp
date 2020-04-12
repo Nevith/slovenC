@@ -324,7 +324,7 @@ Token* Parser::consume() {
 }
 
 void Parser::addContextToParseTree() {
-  // Add current context to parent if we have a parent.
+  // Add current context to object if we have a object.
   if (_ctx->parent == nullptr)
     return;
 
@@ -352,7 +352,7 @@ void Parser::exitRule() {
     _ctx->stop = _input->LT(-1); // stop node is what we just matched
   }
 
-  // trigger event on ctx, before it reverts to parent
+  // trigger event on ctx, before it reverts to object
   if (_parseListeners.size() > 0) {
     triggerExitRuleEvent();
   }

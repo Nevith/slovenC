@@ -48,7 +48,7 @@ namespace atn {
     ///      int hash = <seealso cref="MurmurHash#initialize"/>(<seealso cref="#INITIAL_HASH"/>);
     ///
     ///      for (int i = 0; i < <seealso cref="#size()"/>; i++) {
-    ///          hash = <seealso cref="MurmurHash#update"/>(hash, <seealso cref="#getParent"/>(i));
+    ///          hash = <seealso cref="MurmurHash#update"/>(hash, <seealso cref="#getObject"/>(i));
     ///      }
     ///
     ///      for (int i = 0; i < <seealso cref="#size()"/>; i++) {
@@ -110,16 +110,16 @@ namespace atn {
     ///
     /// <p/>
     ///
-    /// Different stack tops pointing to same parent. Make array node for the
+    /// Different stack tops pointing to same object. Make array node for the
     /// root where both element in the root point to the same (original)
-    /// parent.<br/>
+    /// object.<br/>
     /// <embed src="images/SingletonMerge_DiffRootSamePar.svg" type="image/svg+xml"/>
     ///
     /// <p/>
     ///
     /// Different stack tops pointing to different parents. Make array node for
     /// the root where each element points to the corresponding original
-    /// parent.<br/>
+    /// object.<br/>
     /// <embed src="images/SingletonMerge_DiffRootDiffPar.svg" type="image/svg+xml"/>
     /// </summary>
     /// <param name="a"> the first <seealso cref="SingletonPredictionContext"/> </param>
@@ -143,7 +143,7 @@ namespace atn {
      * <p>{@link #EMPTY} is superset of any graph; return {@link #EMPTY}.<br>
      * <embed src="images/LocalMerge_EmptyRoot.svg" type="image/svg+xml"/></p>
      *
-     * <p>{@link #EMPTY} and anything is {@code #EMPTY}, so merged parent is
+     * <p>{@link #EMPTY} and anything is {@code #EMPTY}, so merged object is
      * {@code #EMPTY}; return left graph.<br>
      * <embed src="images/LocalMerge_EmptyParent.svg" type="image/svg+xml"/></p>
      *
@@ -158,7 +158,7 @@ namespace atn {
      * <p><embed src="images/FullMerge_EmptyRoots.svg" type="image/svg+xml"/></p>
      *
      * <p>Must keep all contexts; {@link #EMPTY} in array is a special value (and
-     * null parent).<br>
+     * null object).<br>
      * <embed src="images/FullMerge_EmptyRoot.svg" type="image/svg+xml"/></p>
      *
      * <p><embed src="images/FullMerge_SameRoot.svg" type="image/svg+xml"/></p>

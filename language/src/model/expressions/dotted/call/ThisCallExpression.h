@@ -11,6 +11,8 @@
 
 
 class ThisCallExpression : public CallExpression {
+public:
+    ThisCallExpression(const std::string &name);
 };
 
 #endif //_THISCALLEXPRESSION_H

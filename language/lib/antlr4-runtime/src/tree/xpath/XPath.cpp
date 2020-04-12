@@ -128,7 +128,7 @@ std::vector<ParseTree *> XPath::findAll(ParseTree *tree, std::string const& xpat
 }
 
 std::vector<ParseTree *> XPath::evaluate(ParseTree *t) {
-  dummyRoot.children = { t }; // don't set t's parent.
+  dummyRoot.children = { t }; // don't set t's object.
 
   std::vector<ParseTree *> work = { &dummyRoot };
 

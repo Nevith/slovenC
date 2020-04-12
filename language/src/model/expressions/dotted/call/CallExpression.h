@@ -20,6 +20,8 @@ private:
 
 public:
 
+    CallExpression(const std::string &name);
+
     virtual std::vector<std::shared_ptr<Expression>> getArguments();
 
     virtual void addArgument(std::shared_ptr<Expression> expression);

@@ -16,7 +16,7 @@ namespace tree {
 
     virtual Token* getSymbol() = 0;
 
-    /** Set the parent for this leaf node.
+    /** Set the object for this leaf node.
      *
      *  Technically, this is not backward compatible as it changes
      *  the interface but no one was able to create custom

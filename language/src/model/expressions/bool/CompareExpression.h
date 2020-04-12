@@ -11,14 +11,14 @@
 #include "model/expressions/base/DuoExpression.h"
 
 
-class EqualityExpression : public OperationalExpression, public DuoExpression {
+class CompareExpression : public OperationalExpression, public DuoExpression, public Expression {
 private:
-    std::string equalityOperator;
+    std::string expressionOperator;
 
 public:
     std::string getOperator() override;
 
-    void setEqualityOperator(const std::string &equalityOperator);
+    void setOperator(const std::string &newOperator);
 };
 
 #endif //_EQUALITYEXPRESSION_H

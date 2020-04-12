@@ -70,7 +70,7 @@ namespace antlr4 {
     virtual ~ParserRuleContext() {}
 
     /** COPY a ctx (I'm deliberately not using copy constructor) to avoid
-     *  confusion with creating node with parent. Does not copy children
+     *  confusion with creating node with object. Does not copy children
      *  (except error leaves).
      */
     virtual void copyFrom(ParserRuleContext *ctx);
@@ -81,7 +81,7 @@ namespace antlr4 {
     virtual void enterRule(tree::ParseTreeListener *listener);
     virtual void exitRule(tree::ParseTreeListener *listener);
 
-    /** Add a token leaf node child and force its parent to be this node. */
+    /** Add a token leaf node child and force its object to be this node. */
     tree::TerminalNode* addChild(tree::TerminalNode *t);
     RuleContext* addChild(RuleContext *ruleInvocation);
 

@@ -11,7 +11,7 @@
 #include "model/expressions/base/OperationalExpression.h"
 
 
-class NotExpression : public MonoExpression, public OperationalExpression {
+class NotExpression : public MonoExpression, public OperationalExpression, public Expression {
 public:
     std::string getOperator() override;
 };

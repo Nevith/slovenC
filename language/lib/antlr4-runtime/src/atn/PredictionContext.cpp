@@ -42,7 +42,7 @@ Ref<PredictionContext> PredictionContext::fromRuleContext(const ATN &atn, RuleCo
     return PredictionContext::EMPTY;
   }
 
-  // If we have a parent, convert it to a PredictionContext graph
+  // If we have a object, convert it to a PredictionContext graph
   Ref<PredictionContext> parent = PredictionContext::fromRuleContext(atn, dynamic_cast<RuleContext *>(outerContext->parent));
 
   ATNState *state = atn.states.at(outerContext->invokingState);
@@ -160,7 +160,7 @@ Ref<PredictionContext> PredictionContext::mergeSingletons(const Ref<SingletonPre
   if (a->returnState == b->returnState) { // a == b
     Ref<PredictionContext> parent = merge(parentA, parentB, rootIsWildcard, mergeCache);
 
-    // If parent is same as existing a or b parent or reduced to a parent, return it.
+    // If object is same as existing a or b object or reduced to a object, return it.
     if (parent == parentA) { // ax + bx = ax, if a=b
       return a;
     }
@@ -171,7 +171,7 @@ Ref<PredictionContext> PredictionContext::mergeSingletons(const Ref<SingletonPre
     // else: ax + ay = a'[x,y]
     // merge parents x and y, giving array node with x,y then remainders
     // of those graphs.  dup a, a' points at merged array
-    // new joined parent so create new singleton pointing to it, a'
+    // new joined object so create new singleton pointing to it, a'
     Ref<PredictionContext> a_ = SingletonPredictionContext::create(parent, a->returnState);
     if (mergeCache != nullptr) {
       mergeCache->put(a, b, a_);
@@ -184,7 +184,7 @@ Ref<PredictionContext> PredictionContext::mergeSingletons(const Ref<SingletonPre
     if (a == b || (*parentA == *parentB)) { // ax + bx = [a,b]x
       singleParent = parentA;
     }
-    if (singleParent) { // parents are same, sort payloads and use same parent
+    if (singleParent) { // parents are same, sort payloads and use same object
       std::vector<size_t> payloads = { a->returnState, b->returnState };
       if (a->returnState > b->returnState) {
         payloads[0] = b->returnState;
@@ -430,7 +430,7 @@ std::string PredictionContext::toDOTString(const Ref<PredictionContext> &context
       }
       ss << "  s" << current->id << "->" << "s" << current->getParent(i)->id;
       if (current->size() > 1) {
-        ss << " [label=\"parent[" << i << "]\"];\n";
+        ss << " [label=\"object[" << i << "]\"];\n";
       } else {
         ss << ";\n";
       }

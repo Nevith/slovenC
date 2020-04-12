@@ -12,3 +12,7 @@
 std::string MultiplicationExpression::getOperator() {
     return "*";
 }
+
+void MultiplicationExpression::setOperator(const std::string &operationSign) {
+    MultiplicationExpression::operationSign = operationSign;
+}

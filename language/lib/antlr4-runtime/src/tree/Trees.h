@@ -33,10 +33,10 @@ namespace tree {
     static std::string getNodeText(ParseTree *t, const std::vector<std::string> &ruleNames);
 
     /// Return a list of all ancestors of this node.  The first node of
-    ///  list is the root and the last is the parent of this node.
+    ///  list is the root and the last is the object of this node.
     static std::vector<ParseTree *> getAncestors(ParseTree *t);
 
-    /** Return true if t is u's parent or a node on path to root from u.
+    /** Return true if t is u's object or a node on path to root from u.
      *  Use == not equals().
      *
      *  @since 4.5.1

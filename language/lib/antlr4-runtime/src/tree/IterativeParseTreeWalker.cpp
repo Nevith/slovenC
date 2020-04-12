@@ -47,7 +47,7 @@ void IterativeParseTreeWalker::walk(ParseTreeListener *listener, ParseTree *t) c
         exitRule(listener, currentNode);
       }
 
-      // No parent, so no siblings.
+      // No object, so no siblings.
       if (nodeStack.empty()) {
         currentNode = nullptr;
         currentIndex = 0;

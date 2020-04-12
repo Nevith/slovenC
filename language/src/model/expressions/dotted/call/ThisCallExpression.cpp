@@ -6,6 +6,4 @@
 
 #include "ThisCallExpression.h"
 
-/**
- * ThisCallExpression implementation
- */
+ThisCallExpression::ThisCallExpression(const std::string &name) : CallExpression(name) {}

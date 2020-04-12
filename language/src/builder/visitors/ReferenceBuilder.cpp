@@ -26,7 +26,7 @@ antlrcpp::Any ReferenceBuilder::visitClassTypeList(SlovenCLanguageParser::ClassT
 antlrcpp::Any ReferenceBuilder::visitClassTypeQual(SlovenCLanguageParser::ClassTypeQualContext *ctx) {
     auto result = std::make_shared<TypeReferenceExpression>(ctx->Identifier()->getText());
     std::shared_ptr<TypeReferenceExpression> parent = visit(ctx->classType());
-    result->setParent(parent);
+    result->setObject(parent);
     result->setFileSymbol(currentState->getFileSymbol());
     result->setContext(ctx);
     return result;
@@ -42,7 +42,7 @@ antlrcpp::Any ReferenceBuilder::visitClassTypeUnqual(SlovenCLanguageParser::Clas
 antlrcpp::Any ReferenceBuilder::visitFileNameQual(SlovenCLanguageParser::FileNameQualContext *ctx) {
     auto result = std::make_shared<PackageOrFileReferenceExpression>(ctx->Identifier()->getText());
     std::shared_ptr<TypeReferenceExpression> parent = visit(ctx->fileName());
-    result->setParent(parent);
+    result->setObject(parent);
     result->setFileSymbol(currentState->getFileSymbol());
     result->setContext(ctx);
     return result;}

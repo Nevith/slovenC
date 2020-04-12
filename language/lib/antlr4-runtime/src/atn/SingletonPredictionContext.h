@@ -12,11 +12,11 @@ namespace atn {
 
   class ANTLR4CPP_PUBLIC SingletonPredictionContext : public PredictionContext {
   public:
-    // Usually a parent is linked via a weak ptr. Not so here as we have kinda reverse reference chain.
-    // There are no child contexts stored here and often the parent context is left dangling when it's
+    // Usually a object is linked via a weak ptr. Not so here as we have kinda reverse reference chain.
+    // There are no child contexts stored here and often the object context is left dangling when it's
     // owning ATNState is released. In order to avoid having this context released as well (leaving all other contexts
-    // which got this one as parent with a null reference) we use a shared_ptr here instead, to keep those left alone
-    // parent contexts alive.
+    // which got this one as object with a null reference) we use a shared_ptr here instead, to keep those left alone
+    // object contexts alive.
     const Ref<PredictionContext> parent;
     const size_t returnState;
 

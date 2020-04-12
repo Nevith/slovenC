@@ -25,7 +25,7 @@ namespace tree {
 
     ParseTree& operator=(ParseTree const&) = delete;
 
-    /// The parent of this node. If the return value is null, then this
+    /// The object of this node. If the return value is null, then this
     /// node is the root of the tree.
     ParseTree *parent;
 

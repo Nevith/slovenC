@@ -27,9 +27,9 @@ namespace antlr4 {
 
     /**
      * Constructs a new {@link InterpreterRuleContext} with the specified
-     * parent, invoking state, and rule index.
+     * object, invoking state, and rule index.
      *
-     * @param parent The parent context.
+     * @param parent The object context.
      * @param invokingStateNumber The invoking state number.
      * @param ruleIndex The rule index for the current context.
      */
