@@ -9,6 +9,13 @@
 #include <model/expressions/bool/NotExpression.h>
 #include <model/expressions/AssignmentExpression.h>
 #include <model/expressions/ParenthesizedExpression.h>
+#include <model/expressions/dotted/ThisExpression.h>
+#include <model/expressions/literal/IntegerLiteral.h>
+#include <model/expressions/literal/DoubleLiteral.h>
+#include <model/expressions/literal/BooleanLiteral.h>
+#include <model/expressions/literal/StringLiteral.h>
+#include <model/expressions/literal/NullLiteral.h>
+#include <utils/TypeUtils.h>
 #include "ExpressionBuilder.h"
 
 ExpressionBuilder::ExpressionBuilder(const std::shared_ptr<CurrentState> &currentState,
@@ -30,7 +37,7 @@ antlrcpp::Any ExpressionBuilder::visitThisCallExpression(SlovenCLanguageParser::
     }
 
     currentState->popCurrentExpression();
-    return symbol;
+    return TypeUtils::cast<Expression>(symbol);
 }
 
 antlrcpp::Any ExpressionBuilder::visitCallExpression(SlovenCLanguageParser::CallExpressionContext *ctx) {
@@ -47,7 +54,7 @@ antlrcpp::Any ExpressionBuilder::visitCallExpression(SlovenCLanguageParser::Call
     }
 
     currentState->popCurrentExpression();
-    return symbol;
+    return TypeUtils::cast<Expression>(symbol);
 }
 
 antlrcpp::Any ExpressionBuilder::visitDottedCallExpression(SlovenCLanguageParser::DottedCallExpressionContext *ctx) {
@@ -67,7 +74,7 @@ antlrcpp::Any ExpressionBuilder::visitDottedCallExpression(SlovenCLanguageParser
     symbol->setObject(expression);
 
     currentState->popCurrentExpression();
-    return symbol;
+    return TypeUtils::cast<Expression>(symbol);
 }
 
 antlrcpp::Any ExpressionBuilder::visitPostIncrementDecrementExpression(
@@ -86,7 +93,7 @@ antlrcpp::Any ExpressionBuilder::visitPostIncrementDecrementExpression(
     symbol->setExpression(expression);
 
     currentState->popCurrentExpression();
-    return symbol;
+    return TypeUtils::cast<Expression>(symbol);
 }
 
 antlrcpp::Any
@@ -100,7 +107,7 @@ ExpressionBuilder::visitInvalidDottedExpression(SlovenCLanguageParser::InvalidDo
     symbol->setObject(expression);
 
     currentState->popCurrentExpression();
-    return symbol;
+    return TypeUtils::cast<Expression>(symbol);
 }
 
 antlrcpp::Any
@@ -128,7 +135,8 @@ ExpressionBuilder::visitMultiplicativeExpression(SlovenCLanguageParser::Multipli
     }
 
     currentState->popCurrentExpression();
-    return symbol;}
+    return TypeUtils::cast<Expression>(symbol);
+}
 
 antlrcpp::Any ExpressionBuilder::visitAdditiveExpression(SlovenCLanguageParser::AdditiveExpressionContext *ctx) {
     auto symbol = std::make_shared<AdditiveExpression>();
@@ -154,7 +162,7 @@ antlrcpp::Any ExpressionBuilder::visitAdditiveExpression(SlovenCLanguageParser::
     }
 
     currentState->popCurrentExpression();
-    return symbol;
+    return TypeUtils::cast<Expression>(symbol);
 }
 
 antlrcpp::Any ExpressionBuilder::visitAssignmentExpression(SlovenCLanguageParser::AssignmentExpressionContext *ctx) {
@@ -176,7 +184,7 @@ antlrcpp::Any ExpressionBuilder::visitAssignmentExpression(SlovenCLanguageParser
     }
 
     currentState->popCurrentExpression();
-    return symbol;
+    return TypeUtils::cast<Expression>(symbol);
 }
 
 antlrcpp::Any ExpressionBuilder::visitNegateExpression(SlovenCLanguageParser::NegateExpressionContext *ctx) {
@@ -189,7 +197,7 @@ antlrcpp::Any ExpressionBuilder::visitNegateExpression(SlovenCLanguageParser::Ne
     symbol->setExpression(expression);
 
     currentState->popCurrentExpression();
-    return symbol;
+    return TypeUtils::cast<Expression>(symbol);
 }
 
 antlrcpp::Any ExpressionBuilder::visitRelationalExpression(SlovenCLanguageParser::RelationalExpressionContext *ctx) {
@@ -220,7 +228,7 @@ antlrcpp::Any ExpressionBuilder::visitRelationalExpression(SlovenCLanguageParser
     }
 
     currentState->popCurrentExpression();
-    return symbol;
+    return TypeUtils::cast<Expression>(symbol);
 }
 
 antlrcpp::Any
@@ -244,7 +252,7 @@ ExpressionBuilder::visitConditionalAndExpression(SlovenCLanguageParser::Conditio
     }
 
     currentState->popCurrentExpression();
-    return symbol;
+    return TypeUtils::cast<Expression>(symbol);
 }
 
 antlrcpp::Any
@@ -268,7 +276,7 @@ ExpressionBuilder::visitConditionalOrExpression(SlovenCLanguageParser::Condition
     }
 
     currentState->popCurrentExpression();
-    return symbol;
+    return TypeUtils::cast<Expression>(symbol);
 }
 
 antlrcpp::Any ExpressionBuilder::visitEqualityExpression(SlovenCLanguageParser::EqualityExpressionContext *ctx) {
@@ -295,7 +303,7 @@ antlrcpp::Any ExpressionBuilder::visitEqualityExpression(SlovenCLanguageParser::
     }
 
     currentState->popCurrentExpression();
-    return symbol;
+    return TypeUtils::cast<Expression>(symbol);
 }
 
 antlrcpp::Any
@@ -309,7 +317,8 @@ ExpressionBuilder::visitParenthesizedExpression(SlovenCLanguageParser::Parenthes
     symbol->setExpression(expression);
 
     currentState->popCurrentExpression();
-    return symbol;}
+    return TypeUtils::cast<Expression>(symbol);
+}
 
 antlrcpp::Any ExpressionBuilder::visitPrimaryExpression(SlovenCLanguageParser::PrimaryExpressionContext *ctx) {
     return visit(ctx->primary());
@@ -325,7 +334,7 @@ antlrcpp::Any ExpressionBuilder::visitDottedExpression(SlovenCLanguageParser::Do
     symbol->setObject(expression);
 
     currentState->popCurrentExpression();
-    return symbol;
+    return TypeUtils::cast<Expression>(symbol);
 }
 
 antlrcpp::Any ExpressionBuilder::visitExpressionList(SlovenCLanguageParser::ExpressionListContext *ctx) {
@@ -334,6 +343,60 @@ antlrcpp::Any ExpressionBuilder::visitExpressionList(SlovenCLanguageParser::Expr
         expressions.push_back(visit(context));
     }
     return expressions;
+}
+
+
+antlrcpp::Any ExpressionBuilder::visitThis(SlovenCLanguageParser::ThisContext *ctx) {
+    auto symbol = std::make_shared<ThisExpression>();
+    defineParents(symbol, ctx);
+    return TypeUtils::cast<Expression>(symbol);
+}
+
+antlrcpp::Any ExpressionBuilder::visitPrimaryIdentifier(SlovenCLanguageParser::PrimaryIdentifierContext *ctx) {
+    auto symbol = std::make_shared<IdentifierExpression>(ctx->Identifier()->getText());
+    defineParents(symbol, ctx);
+    return TypeUtils::cast<Expression>(symbol);
+}
+
+antlrcpp::Any ExpressionBuilder::visitPrimaryLiteral(SlovenCLanguageParser::PrimaryLiteralContext *ctx) {
+    return visit(ctx->literal());
+}
+
+antlrcpp::Any ExpressionBuilder::visitLiteralInteger(SlovenCLanguageParser::LiteralIntegerContext *ctx) {
+    auto symbol = std::make_shared<IntegerLiteral>();
+    int value = std::stoi(ctx->IntegerLiteral()->getText(), nullptr, 0);
+    symbol->setValue(value);
+    defineParents(symbol, ctx);
+    ctx->IntegerLiteral()->getText();
+    return TypeUtils::cast<Expression>(symbol);
+}
+
+antlrcpp::Any ExpressionBuilder::visitLiteralFloatingPoint(SlovenCLanguageParser::LiteralFloatingPointContext *ctx) {
+    auto symbol = std::make_shared<DoubleLiteral>();
+    double value = std::stod(ctx->FloatingPointLiteral()->getText());
+    symbol->setValue(value);
+    defineParents(symbol, ctx);
+    return TypeUtils::cast<Expression>(symbol);
+}
+
+antlrcpp::Any ExpressionBuilder::visitLiteralBoolean(SlovenCLanguageParser::LiteralBooleanContext *ctx) {
+    auto symbol = std::make_shared<BooleanLiteral>();
+    symbol->setValue(ctx->TRUE());
+    defineParents(symbol, ctx);
+    return TypeUtils::cast<Expression>(symbol);
+}
+
+antlrcpp::Any ExpressionBuilder::visitLiteralString(SlovenCLanguageParser::LiteralStringContext *ctx) {
+    auto symbol = std::make_shared<StringLiteral>();
+    symbol->setValue(ctx->StringLiteral()->getText());
+    defineParents(symbol, ctx);
+    return TypeUtils::cast<Expression>(symbol);
+}
+
+antlrcpp::Any ExpressionBuilder::visitLiteralNULLLITERAL(SlovenCLanguageParser::LiteralNULLLITERALContext *ctx) {
+    auto symbol = std::make_shared<NullLiteral>();
+    defineParents(symbol, ctx);
+    return TypeUtils::cast<Expression>(symbol);
 }
 
 void ExpressionBuilder::defineParents(std::shared_ptr<Expression> expression, tree::ParseTree *context) {

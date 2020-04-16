@@ -33,20 +33,20 @@ antlrcpp::Any StatementBuilder::visitLocalVariableDeclarationStatement(
     defineParents(statement, ctx);
     std::shared_ptr<LocalVariableSymbol> variable = symbolBuilder->visit(ctx);
     statement->setVariableSymbol(variable);
-    return statement;
+    return TypeUtils::cast<Statement>(statement);
 }
 
 antlrcpp::Any StatementBuilder::visitIfThenStatement(SlovenCLanguageParser::IfThenStatementContext *ctx) {
     auto statement = std::make_shared<IfStatement>();
     defineParents(statement, ctx);
     statement->setCondition(expressionBuilder->visit(ctx->condition()));
-    return statement;
+    return TypeUtils::cast<Statement>(statement);
 }
 
 antlrcpp::Any StatementBuilder::visitElseStatement(SlovenCLanguageParser::ElseStatementContext *ctx) {
     auto statement = std::make_shared<ElseStatement>();
     defineParents(statement, ctx);
-    return statement;
+    return TypeUtils::cast<Statement>(statement);
 }
 
 antlrcpp::Any StatementBuilder::visitBasicForStatement(SlovenCLanguageParser::BasicForStatementContext *ctx) {
@@ -66,53 +66,53 @@ antlrcpp::Any StatementBuilder::visitBasicForStatement(SlovenCLanguageParser::Ba
         }
     }
 
-    return statement;
+    return TypeUtils::cast<Statement>(statement);
 }
 
 antlrcpp::Any StatementBuilder::visitWhileStatement(SlovenCLanguageParser::WhileStatementContext *ctx) {
     auto statement = std::make_shared<IfStatement>();
     defineParents(statement, ctx);
     statement->setCondition(expressionBuilder->visit(ctx->condition()));
-    return statement;
+    return TypeUtils::cast<Statement>(statement);
 }
 
 antlrcpp::Any StatementBuilder::visitReturnStatement(SlovenCLanguageParser::ReturnStatementContext *ctx) {
     auto statement = std::make_shared<ReturnStatement>();
     defineParents(statement, ctx);
     statement->setExpression(expressionBuilder->visit(ctx->expression()));
-    return statement;
+    return TypeUtils::cast<Statement>(statement);
 }
 
 antlrcpp::Any StatementBuilder::visitThrowStatement(SlovenCLanguageParser::ThrowStatementContext *ctx) {
     auto statement = std::make_shared<ThrowStatement>();
     defineParents(statement, ctx);
     statement->setExpression(expressionBuilder->visit(ctx->expression()));
-    return statement;
+    return TypeUtils::cast<Statement>(statement);
 }
 
 antlrcpp::Any StatementBuilder::visitBreakStatement(SlovenCLanguageParser::BreakStatementContext *ctx) {
     auto statement = std::make_shared<BreakStatement>();
     defineParents(statement, ctx);
-    return statement;
+    return TypeUtils::cast<Statement>(statement);
 }
 
 antlrcpp::Any StatementBuilder::visitContinueStatement(SlovenCLanguageParser::ContinueStatementContext *ctx) {
     auto statement = std::make_shared<ConditionalStatement>();
     defineParents(statement, ctx);
-    return statement;
+    return TypeUtils::cast<Statement>(statement);
 }
 
 antlrcpp::Any StatementBuilder::visitEmptyStatement(SlovenCLanguageParser::EmptyStatementContext *ctx) {
     auto statement = std::make_shared<EmptyStatement>();
     defineParents(statement, ctx);
-    return statement;
+    return TypeUtils::cast<Statement>(statement);
 }
 
 antlrcpp::Any StatementBuilder::visitExpressionStatement(SlovenCLanguageParser::ExpressionStatementContext *ctx) {
     auto statement = std::make_shared<ExpressionStatement>();
     defineParents(statement, ctx);
     statement->setExpression(expressionBuilder->visit(ctx->expression()));
-    return statement;
+    return TypeUtils::cast<Statement>(statement);
 }
 
 

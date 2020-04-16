@@ -21,7 +21,6 @@ namespace TypeUtils {
         return nullptr;
     }
 
-
 }
 
 

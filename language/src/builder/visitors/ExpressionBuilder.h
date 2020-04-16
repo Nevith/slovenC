@@ -59,6 +59,22 @@ public:
     antlrcpp::Any visitParenthesizedExpression(SlovenCLanguageParser::ParenthesizedExpressionContext *ctx) override;
 
     antlrcpp::Any visitExpressionList(SlovenCLanguageParser::ExpressionListContext *ctx) override;
+
+    antlrcpp::Any visitLiteralInteger(SlovenCLanguageParser::LiteralIntegerContext *ctx) override;
+
+    antlrcpp::Any visitLiteralFloatingPoint(SlovenCLanguageParser::LiteralFloatingPointContext *ctx) override;
+
+    antlrcpp::Any visitLiteralBoolean(SlovenCLanguageParser::LiteralBooleanContext *ctx) override;
+
+    antlrcpp::Any visitLiteralString(SlovenCLanguageParser::LiteralStringContext *ctx) override;
+
+    antlrcpp::Any visitLiteralNULLLITERAL(SlovenCLanguageParser::LiteralNULLLITERALContext *ctx) override;
+
+    antlrcpp::Any visitThis(SlovenCLanguageParser::ThisContext *ctx) override;
+
+    antlrcpp::Any visitPrimaryLiteral(SlovenCLanguageParser::PrimaryLiteralContext *ctx) override;
+
+    antlrcpp::Any visitPrimaryIdentifier(SlovenCLanguageParser::PrimaryIdentifierContext *ctx) override;
 };
 
 
