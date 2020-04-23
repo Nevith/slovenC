@@ -12,6 +12,8 @@
 
 class ConstructorCallExpression : public CallExpression {
 public:
+    ConstructorCallExpression(std::string name);
+
     void accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) override;
 };
 

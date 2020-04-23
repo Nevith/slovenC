@@ -381,7 +381,7 @@ antlrcpp::Any ExpressionBuilder::visitDottedExpression(SlovenCLanguageParser::Do
 }
 
 antlrcpp::Any ExpressionBuilder::visitExpressionList(SlovenCLanguageParser::ExpressionListContext *ctx) {
-    std::vector<Expression> expressions;
+    std::vector<std::shared_ptr<Expression>> expressions;
     for (auto context : ctx->expression()) {
         expressions.push_back(visit(context));
     }
