@@ -7,3 +7,7 @@
 void NullLiteral::getValue() {
 
 }
+
+void NullLiteral::accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) {
+    visitor->visitNullLiteral(TypeUtils::cast<NullLiteral>(visitable));
+}

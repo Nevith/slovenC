@@ -16,3 +16,7 @@ std::string MultiplicationExpression::getOperator() {
 void MultiplicationExpression::setOperatorSign(const std::string &operationSign) {
     MultiplicationExpression::operationSign = operationSign;
 }
+
+void MultiplicationExpression::accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) {
+    visitor->visitMultiplicationExpression(TypeUtils::cast<MultiplicationExpression>(visitable));
+}

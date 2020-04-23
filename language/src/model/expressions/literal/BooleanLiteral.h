@@ -7,6 +7,8 @@
 
 
 #include <model/expressions/base/LiteralExpression.h>
+#include "model/visitor/AbstractModelVisitor.h"
+#include "utils/TypeUtils.h"
 
 class BooleanLiteral : public LiteralExpression<bool> {
 private:
@@ -15,6 +17,8 @@ public:
     bool getValue() override;
 
     void setValue(bool value);
+
+    void accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) override;
 };
 
 

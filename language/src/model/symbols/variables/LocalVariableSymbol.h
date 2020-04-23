@@ -36,6 +36,8 @@ public:
     const std::shared_ptr<Scope> &getParenScope() const;
 
     void setParenScope(const std::shared_ptr<Scope> &parenScope);
+
+    void accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) override;
 };
 
 #endif //_LOCALVARIABLESYMBOL_H

@@ -29,3 +29,7 @@ void ClassSymbol::declareConstructor(std::shared_ptr<MethodSymbol> declaredConst
 void ClassSymbol::declareField(std::shared_ptr<FieldSymbol> declaredField) {
     declaredFields.push_back(declaredField);
 }
+
+void ClassSymbol::accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) {
+    visitor->visitClassSymbol(TypeUtils::cast<ClassSymbol>(visitable));
+}

@@ -42,3 +42,7 @@ const std::shared_ptr<Scope> &LocalVariableSymbol::getParenScope() const {
 void LocalVariableSymbol::setParenScope(const std::shared_ptr<Scope> &parenScope) {
     LocalVariableSymbol::parenScope = parenScope;
 }
+
+void LocalVariableSymbol::accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) {
+    visitor->visitLocalVariableSymbol(TypeUtils::cast<LocalVariableSymbol>(visitable));
+}

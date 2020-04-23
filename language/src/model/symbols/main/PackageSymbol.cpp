@@ -39,7 +39,7 @@ std::shared_ptr<std::vector<std::shared_ptr<FullyQualifiedSymbol>>> PackageSymbo
     auto result = std::make_shared<std::vector<std::shared_ptr<FullyQualifiedSymbol>>>();
 
     for (const auto &child : children) {
-        if (TypeUtils::instanceOf<FileSymbol>(child.get())) {
+        if (TypeUtils::isBaseOf<FileSymbol>(child.get())) {
             result->push_back(std::shared_ptr(child));
         }
     }
@@ -51,7 +51,7 @@ std::shared_ptr<std::vector<std::shared_ptr<FullyQualifiedSymbol>>> PackageSymbo
     auto result = std::make_shared<std::vector<std::shared_ptr<FullyQualifiedSymbol>>>();
 
     for (const auto &child : children) {
-        if (TypeUtils::instanceOf<PackageSymbol>(child.get())) {
+        if (TypeUtils::isBaseOf<PackageSymbol>(child.get())) {
             result->push_back(std::shared_ptr(child));
         }
     }
@@ -61,4 +61,8 @@ std::shared_ptr<std::vector<std::shared_ptr<FullyQualifiedSymbol>>> PackageSymbo
 
 void PackageSymbol::addChild(std::shared_ptr<FullyQualifiedSymbol> child) {
     children.push_back(child);
+}
+
+void PackageSymbol::accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) {
+    visitor->visitPackageSymbol(TypeUtils::cast<PackageSymbol>(visitable));
 }

@@ -11,3 +11,7 @@ int IntegerLiteral::getValue() {
 void IntegerLiteral::setValue(int value) {
     IntegerLiteral::value = value;
 }
+
+void IntegerLiteral::accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) {
+    visitor->visitIntegerLiteral(TypeUtils::cast<IntegerLiteral>(visitable));
+}

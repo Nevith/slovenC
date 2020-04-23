@@ -30,3 +30,7 @@ const std::vector<std::shared_ptr<LocalVariableSymbol>> &ForStatement::getVariab
 const void ForStatement::addVariable(std::shared_ptr<LocalVariableSymbol> variable) {
     variables.push_back(variable);
 }
+
+void ForStatement::accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) {
+    visitor->visitForStatement(TypeUtils::cast<ForStatement>(visitable));
+}

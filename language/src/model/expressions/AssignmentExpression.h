@@ -23,6 +23,8 @@ public:
     void setIdentifier(std::shared_ptr<Expression> identifier);
 
     std::string getOperator() override;
+
+    void accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) override;
 };
 
 #endif //_ASSIGNMENTEXPRESSION_H

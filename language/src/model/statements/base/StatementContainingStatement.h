@@ -8,10 +8,11 @@
 #define _STATEMENTCONTAININGSTATEMENT_H
 
 #include "Statement.h"
-#include <utils/TypeUtils.h>
-#include "../../expressions/base/Expression.h"
+#include "utils/TypeUtils.h"
+#include "model/expressions/base/Expression.h"
 #include <vector>
 #include <memory>
+#include "model/visitor/AbstractModelVisitor.h"
 
 
 class StatementContainingStatement : public Statement {

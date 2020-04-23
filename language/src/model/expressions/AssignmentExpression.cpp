@@ -25,3 +25,7 @@ void AssignmentExpression::setIdentifier(std::shared_ptr<Expression> identifier)
 std::string AssignmentExpression::getOperator() {
     return "=";
 }
+
+void AssignmentExpression::accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) {
+    visitor->visitAssignmentExpression(TypeUtils::cast<AssignmentExpression>(visitable));
+}

@@ -20,3 +20,7 @@ void VariableDeclarationStatement::setVariableSymbol(std::shared_ptr<LocalVariab
 void VariableDeclarationStatement::define(std::shared_ptr<Visitable> object) {
 
 }
+
+void VariableDeclarationStatement::accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) {
+    visitor->visitVariableDeclarationStatement(TypeUtils::cast<VariableDeclarationStatement>(visitable));
+}

@@ -11,3 +11,7 @@ double DoubleLiteral::getValue() {
 void DoubleLiteral::setValue(double value) {
     DoubleLiteral::value = value;
 }
+
+void DoubleLiteral::accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) {
+    visitor->visitDoubleLiteral(TypeUtils::cast<DoubleLiteral>(visitable));
+}

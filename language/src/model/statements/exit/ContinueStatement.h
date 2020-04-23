@@ -9,7 +9,8 @@
 #include <model/statements/EmptyStatement.h>
 
 class ContinueStatement : public EmptyStatement {
-
+public:
+    void accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) override;
 };
 
 

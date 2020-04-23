@@ -25,3 +25,7 @@ void ExpressionStatement::setExpression(std::shared_ptr<Expression> expression) 
 void ExpressionStatement::define(std::shared_ptr<Visitable> object) {
 
 }
+
+void ExpressionStatement::accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) {
+    visitor->visitExpressionStatement(TypeUtils::cast<ExpressionStatement>(visitable));
+}

@@ -11,3 +11,7 @@ std::string StringLiteral::getValue() {
 void StringLiteral::setValue(const std::string &value) {
     StringLiteral::value = value;
 }
+
+void StringLiteral::accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) {
+    visitor->visitStringLiteral(TypeUtils::cast<StringLiteral>(visitable));
+}

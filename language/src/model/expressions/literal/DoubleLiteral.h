@@ -7,6 +7,8 @@
 
 
 #include <model/expressions/base/LiteralExpression.h>
+#include "utils/TypeUtils.h"
+#include "model/visitor/AbstractModelVisitor.h"
 
 class DoubleLiteral: public LiteralExpression<double> {
 private:
@@ -14,6 +16,8 @@ private:
 
 public:
     double getValue() override;
+
+    void accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) override;
 
     void setValue(double value);
 };

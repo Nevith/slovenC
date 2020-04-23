@@ -19,6 +19,8 @@ public:
     static const PredefinedSymbol INT;
     static const PredefinedSymbol DOUBLE;
     static const PredefinedSymbol VOID;
+
+    void accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) override;
 };
 
 #endif //_PRIMITIVETYPESYMBOL_H

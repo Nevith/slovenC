@@ -14,6 +14,8 @@
 class ThisExpression : public IdentifierExpression {
 public:
     ThisExpression();
+
+    void accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) override;
 };
 
 #endif //_THISEXPRESSION_H

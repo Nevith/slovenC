@@ -9,7 +9,8 @@
 
 #include "base/MonoExpression.h"
 #include "base/OperationalExpression.h"
-
+#include "utils/TypeUtils.h"
+#include "model/visitor/AbstractModelVisitor.h"
 
 class IncrementDecrementExpression : public MonoExpression, public OperationalExpression, public Expression {
 private:
@@ -18,6 +19,8 @@ public:
     std::string getOperator() override;
 
     void setIncrementDecrementOperator(const std::string &incrementDecrementOperator);
+
+    void accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) override;
 };
 
 #endif //_INCREMENTDECREMENTEXPRESSION_H

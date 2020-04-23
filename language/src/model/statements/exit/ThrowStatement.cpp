@@ -3,3 +3,7 @@
 //
 
 #include "ThrowStatement.h"
+
+void ThrowStatement::accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) {
+    visitor->visitThrowStatement(TypeUtils::cast<ThrowStatement>(visitable));
+}

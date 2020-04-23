@@ -40,6 +40,8 @@ public:
     const std::shared_ptr<BlockStatement> getScope() const;
 
     void setScope(const std::shared_ptr<BlockStatement> &scope);
+
+    void accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) override;
 };
 
 #endif //_METHODSYMBOL_H

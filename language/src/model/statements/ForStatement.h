@@ -28,6 +28,8 @@ public:
     const void addUpdateExpression(std::shared_ptr<Expression> expression);
 
     const void addVariable(std::shared_ptr<LocalVariableSymbol> variable);
+
+    void accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) override;
 /**
  * @param return
  */

@@ -47,3 +47,7 @@ const std::string &FileSymbol::getAbsolutePath() const {
 const std::string &FileSymbol::getRelativePath() const {
     return relativePath;
 }
+
+void FileSymbol::accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) {
+    visitor->visitFileSymbol(TypeUtils::cast<FileSymbol>(visitable));
+}

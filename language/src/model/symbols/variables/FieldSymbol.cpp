@@ -18,3 +18,7 @@ const std::shared_ptr<Expression> &FieldSymbol::getInitialValue() const {
 void FieldSymbol::setInitialValue(const std::shared_ptr<Expression> &initialValue) {
     FieldSymbol::initialValue = initialValue;
 }
+
+void FieldSymbol::accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) {
+    visitor->visitFieldSymbol(TypeUtils::cast<FieldSymbol>(visitable));
+}

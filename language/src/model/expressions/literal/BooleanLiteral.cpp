@@ -11,3 +11,7 @@ bool BooleanLiteral::getValue() {
 void BooleanLiteral::setValue(bool value) {
     BooleanLiteral::value = value;
 }
+
+void BooleanLiteral::accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) {
+    visitor->visitBooleanLiteral(TypeUtils::cast<BooleanLiteral>(visitable));
+}

@@ -38,6 +38,8 @@ public:
     void declareConstructor(std::shared_ptr<MethodSymbol> declaredConstructor);
 
     void declareField(std::shared_ptr<FieldSymbol> declareField);
+
+    void accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) override;
 };
 
 #endif //_CLASSSYMBOL_H

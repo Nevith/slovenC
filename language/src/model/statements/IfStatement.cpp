@@ -22,3 +22,7 @@ void IfStatement::define(std::shared_ptr<Visitable> object) {
     }
     StatementContainingStatement::define(object);
 }
+
+void IfStatement::accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) {
+    visitor->visitIfStatement(TypeUtils::cast<IfStatement>(visitable));
+}

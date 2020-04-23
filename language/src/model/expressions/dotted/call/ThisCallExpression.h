@@ -13,6 +13,8 @@
 class ThisCallExpression : public CallExpression {
 public:
     ThisCallExpression(const std::string &name);
+
+    void accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) override;
 };
 
 #endif //_THISCALLEXPRESSION_H

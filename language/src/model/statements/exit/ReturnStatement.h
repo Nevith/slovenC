@@ -9,7 +9,8 @@
 #include <model/statements/ExpressionStatement.h>
 
 class ReturnStatement : public ExpressionStatement {
-
+public:
+    void accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) override;
 };
 
 

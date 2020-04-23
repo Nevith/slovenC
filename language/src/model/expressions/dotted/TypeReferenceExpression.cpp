@@ -30,6 +30,10 @@ bool TypeReferenceExpression::isResolved() const {
     return false;
 }
 
+void TypeReferenceExpression::accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) {
+    visitor->visitTypeReferenceExpression(TypeUtils::cast<TypeReferenceExpression>(visitable));
+}
+
 const char *TypeReferenceExpression::ReferenceNotResolvedException::what() const {
     // TODO - better exception handling?
     return "Calling on type of unresolved reference";

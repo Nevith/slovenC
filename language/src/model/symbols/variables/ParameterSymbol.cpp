@@ -26,3 +26,7 @@ const std::shared_ptr<MethodSymbol> &ParameterSymbol::getParentMethod() const {
 void ParameterSymbol::setParentMethod(const std::shared_ptr<MethodSymbol> &parentMethod) {
     ParameterSymbol::parentMethod = parentMethod;
 }
+
+void ParameterSymbol::accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) {
+    visitor->visitParameterSymbol(TypeUtils::cast<ParameterSymbol>(visitable));
+}

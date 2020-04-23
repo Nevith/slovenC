@@ -9,6 +9,8 @@
 
 #include "model/expressions/base/OperationalExpression.h"
 #include "model/expressions/base/DuoExpression.h"
+#include "model/visitor/AbstractModelVisitor.h"
+#include <utils/TypeUtils.h>
 
 
 class CompareExpression : public OperationalExpression, public DuoExpression, public Expression {
@@ -19,6 +21,8 @@ public:
     std::string getOperator() override;
 
     void setOperator(const std::string &newOperator);
+
+    void accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) override;
 };
 
 #endif //_EQUALITYEXPRESSION_H

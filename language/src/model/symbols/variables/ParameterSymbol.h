@@ -27,6 +27,8 @@ public:
     const std::shared_ptr<MethodSymbol> &getParentMethod() const;
 
     void setParentMethod(const std::shared_ptr<MethodSymbol> &parentMethod);
+
+    void accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) override;
 };
 
 #endif //_PARAMETERSYMBOL_H

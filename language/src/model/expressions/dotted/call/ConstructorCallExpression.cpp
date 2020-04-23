@@ -9,3 +9,6 @@
 /**
  * ConstructorCallExpression implementation
  */
+void ConstructorCallExpression::accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) {
+    visitor->visitConstructorCallExpression(TypeUtils::cast<ConstructorCallExpression>(visitable));
+}

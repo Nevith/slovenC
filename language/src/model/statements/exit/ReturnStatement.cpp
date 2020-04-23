@@ -3,3 +3,7 @@
 //
 
 #include "ReturnStatement.h"
+
+void ReturnStatement::accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) {
+    visitor->visitReturnStatement(TypeUtils::cast<ReturnStatement>(visitable));
+}

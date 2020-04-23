@@ -13,3 +13,7 @@
 std::string NotExpression::getOperator() {
     return "!";
 }
+
+void NotExpression::accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) {
+    visitor->visitNotExpression(TypeUtils::cast<NotExpression>(visitable));
+}

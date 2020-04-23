@@ -12,3 +12,7 @@
 void BlockStatement::define(std::shared_ptr<Visitable> object) {
 
 }
+
+void BlockStatement::accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) {
+    visitor->visitBlockStatement(TypeUtils::cast<BlockStatement>(visitable));
+}

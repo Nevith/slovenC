@@ -40,6 +40,8 @@ public:
     const std::string &getAbsolutePath() const;
 
     const std::string &getRelativePath() const;
+
+    void accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) override;
 };
 
 #endif //_FILESYMBOL_H

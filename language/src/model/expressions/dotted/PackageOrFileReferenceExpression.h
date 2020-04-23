@@ -25,6 +25,8 @@ public:
 
     const std::shared_ptr<FullyQualifiedSymbol> &getResolve() const;
 
+    void accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) override;
+
     class ReferenceNotResolvedException : public std::exception {
     public:
         const char *what() const override;

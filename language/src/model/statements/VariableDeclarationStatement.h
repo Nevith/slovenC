@@ -23,6 +23,8 @@ public:
     void setVariableSymbol(std::shared_ptr<LocalVariableSymbol> variableSymbol);
 
     void define(std::shared_ptr<Visitable> object) override;
+
+    void accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) override;
 };
 
 #endif //_VARIABLEDECLARATIONSTATEMENT_H

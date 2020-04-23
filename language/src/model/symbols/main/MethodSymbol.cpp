@@ -42,3 +42,7 @@ void MethodSymbol::setScope(const std::shared_ptr<BlockStatement> &scope) {
     }
     MethodSymbol::scope = scope;
 }
+
+void MethodSymbol::accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) {
+    visitor->visitMethodSymbol(TypeUtils::cast<MethodSymbol>(visitable));
+}

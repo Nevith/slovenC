@@ -29,6 +29,10 @@ bool PackageOrFileReferenceExpression::isResolved() const {
     return false;
 }
 
+void PackageOrFileReferenceExpression::accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) {
+    visitor->visitPackageOrFileReferenceExpression(TypeUtils::cast<PackageOrFileReferenceExpression>(visitable));
+}
+
 const char *PackageOrFileReferenceExpression::ReferenceNotResolvedException::what() const {
     // TODO - better exception handling?
     return "Calling on type of unresolved reference";

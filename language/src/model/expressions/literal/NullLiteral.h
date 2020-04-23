@@ -7,9 +7,13 @@
 
 
 #include <model/expressions/base/LiteralExpression.h>
+#include "utils/TypeUtils.h"
+#include "model/visitor/AbstractModelVisitor.h"
 
 class NullLiteral: public LiteralExpression<void> {
 public:
+    void accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) override;
+
     void getValue() override;
 };
 

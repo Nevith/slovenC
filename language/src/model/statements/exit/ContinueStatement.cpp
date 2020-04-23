@@ -3,3 +3,7 @@
 //
 
 #include "ContinueStatement.h"
+
+void ContinueStatement::accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) {
+    visitor->visitContinueStatement(TypeUtils::cast<ContinueStatement>(visitable));
+}

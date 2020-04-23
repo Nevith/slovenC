@@ -21,6 +21,8 @@ public:
     const std::shared_ptr<Expression> &getInitialValue() const;
 
     void setInitialValue(const std::shared_ptr<Expression> &initialValue);
+
+    void accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) override;
 };
 
 #endif //_FIELDSYMBOL_H

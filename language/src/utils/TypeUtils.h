@@ -8,7 +8,7 @@
 namespace TypeUtils {
 
     template<typename Base, typename T>
-    bool instanceOf(const T *object) {
+    bool isBaseOf(const T *object) {
         return std::is_base_of<Base, T>::value;
     }
 

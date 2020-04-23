@@ -21,6 +21,8 @@ public:
     std::shared_ptr<ElseStatement> getElseStatement() const;
 
     void define(std::shared_ptr<Visitable> object) override;
+
+    void accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) override;
 };
 
 #endif //_IFSTATEMENT_H

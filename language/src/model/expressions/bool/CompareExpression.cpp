@@ -4,6 +4,7 @@
  */
 
 
+
 #include "CompareExpression.h"
 
 /**
@@ -18,4 +19,8 @@ std::string CompareExpression::getOperator() {
 
 void CompareExpression::setOperator(const std::string &newOperator) {
     CompareExpression::expressionOperator = newOperator;
+}
+
+void CompareExpression::accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) {
+    visitor->visitCompareExpression(TypeUtils::cast<CompareExpression>(visitable));
 }

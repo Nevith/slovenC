@@ -7,12 +7,16 @@
 
 
 #include <model/expressions/base/LiteralExpression.h>
+#include "utils/TypeUtils.h"
+#include "model/visitor/AbstractModelVisitor.h"
 
 class IntegerLiteral: public LiteralExpression<int> {
 private:
     int value;
 public:
     int getValue() override;
+
+    void accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) override;
 
     void setValue(int value);
 };
