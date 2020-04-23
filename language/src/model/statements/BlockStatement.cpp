@@ -9,7 +9,7 @@
 /**
  * BlockStatement implementation
  */
-void BlockStatement::define(std::shared_ptr<Visitable> object) {
+void BlockStatement::define(std::shared_ptr<Statement> object) {
 
 }
 

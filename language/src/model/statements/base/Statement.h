@@ -34,7 +34,7 @@ public:
 
     void setParentStatement(const std::shared_ptr<Statement> &parentStatement);
 
-    virtual void define(std::shared_ptr<Visitable> object) = 0;
+    virtual void define(std::shared_ptr<Statement> object) = 0;
 };
 
 #endif //_STATEMENT_H

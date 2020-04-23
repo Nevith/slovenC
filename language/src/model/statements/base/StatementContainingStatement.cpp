@@ -19,7 +19,7 @@ void StatementContainingStatement::setNestedStatement(std::shared_ptr<Statement>
     StatementContainingStatement::nestedStatement = nestedStatement;
 }
 
-void StatementContainingStatement::define(std::shared_ptr<Visitable> object) {
+void StatementContainingStatement::define(std::shared_ptr<Statement> object) {
     if (!nestedStatement) {
         auto cast = TypeUtils::cast<Statement>(object);
         if (cast) {

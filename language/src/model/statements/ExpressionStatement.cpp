@@ -22,7 +22,7 @@ void ExpressionStatement::setExpression(std::shared_ptr<Expression> expression) 
     ExpressionStatement::expression = expression;
 }
 
-void ExpressionStatement::define(std::shared_ptr<Visitable> object) {
+void ExpressionStatement::define(std::shared_ptr<Statement> object) {
 
 }
 

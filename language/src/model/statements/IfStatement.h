@@ -20,7 +20,7 @@ private:
 public:
     std::shared_ptr<ElseStatement> getElseStatement() const;
 
-    void define(std::shared_ptr<Visitable> object) override;
+    void define(std::shared_ptr<Statement> object) override;
 
     void accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) override;
 };

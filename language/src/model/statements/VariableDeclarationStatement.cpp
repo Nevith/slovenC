@@ -17,7 +17,7 @@ void VariableDeclarationStatement::setVariableSymbol(std::shared_ptr<LocalVariab
     VariableDeclarationStatement::variableSymbol = variableSymbol;
 }
 
-void VariableDeclarationStatement::define(std::shared_ptr<Visitable> object) {
+void VariableDeclarationStatement::define(std::shared_ptr<Statement> object) {
 
 }
 

@@ -25,7 +25,7 @@ public:
 
     void setNestedStatement(std::shared_ptr<Statement> nestedStatement);
 
-    void define(std::shared_ptr<Visitable> object) override;
+    void define(std::shared_ptr<Statement> object) override;
 
 public:
 };

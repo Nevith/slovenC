@@ -9,7 +9,7 @@
 /**
  * EmptyStatement implementation
  */
-void EmptyStatement::define(std::shared_ptr<Visitable> object) {
+void EmptyStatement::define(std::shared_ptr<Statement> object) {
 
 }
 

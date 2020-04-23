@@ -13,7 +13,7 @@ std::shared_ptr<ElseStatement> IfStatement::getElseStatement() const {
     return elseStatement;
 }
 
-void IfStatement::define(std::shared_ptr<Visitable> object) {
+void IfStatement::define(std::shared_ptr<Statement> object) {
     if (!elseStatement) {
         auto cast = TypeUtils::cast<ElseStatement>(object);
         if (cast) {
