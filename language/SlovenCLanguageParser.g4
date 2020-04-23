@@ -298,6 +298,8 @@ expression
         | expression bop=DOT Identifier                                     #DottedExpression
         | Identifier LPAREN expressionList? RPAREN                          #CallExpression
         | THIS LPAREN expressionList? RPAREN                                #ThisCallExpression
+        | creatorExpression                                                 #ConstructorCallExpression
+        | expression bop=DOT creatorExpression                              #DottedConstructorCallExpression
         | expression postfix=(INC | DEC)                                    #PostIncrementDecrementExpression
         | prefix=BANG expression                                            #NegateExpression
         | expression bop=(MUL|DIV|MOD) expression                           #MultiplicativeExpression
@@ -309,6 +311,10 @@ expression
         | <assoc=right> expression ASSIGN expression #AssignmentExpression
         | primary                                                           #PrimaryExpression
         | expression bop=DOT {notifyErrorListeners("Invalid dotted expression.");}  #InvalidDottedExpression
+        ;
+
+creatorExpression
+        : NEW Identifier (LPAREN expressionList? RPAREN)? { if ($LPAREN == NULL) notifyErrorListeners("Missing '('"); }
         ;
 
 primary

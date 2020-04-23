@@ -199,8 +199,17 @@ public:
   virtual void enterPrimaryExpression(SlovenCLanguageParser::PrimaryExpressionContext *ctx) = 0;
   virtual void exitPrimaryExpression(SlovenCLanguageParser::PrimaryExpressionContext *ctx) = 0;
 
+  virtual void enterConstructorCallExpression(SlovenCLanguageParser::ConstructorCallExpressionContext *ctx) = 0;
+  virtual void exitConstructorCallExpression(SlovenCLanguageParser::ConstructorCallExpressionContext *ctx) = 0;
+
+  virtual void enterCompareExpression(SlovenCLanguageParser::CompareExpressionContext *ctx) = 0;
+  virtual void exitCompareExpression(SlovenCLanguageParser::CompareExpressionContext *ctx) = 0;
+
   virtual void enterNegateExpression(SlovenCLanguageParser::NegateExpressionContext *ctx) = 0;
   virtual void exitNegateExpression(SlovenCLanguageParser::NegateExpressionContext *ctx) = 0;
+
+  virtual void enterDottedConstructorCallExpression(SlovenCLanguageParser::DottedConstructorCallExpressionContext *ctx) = 0;
+  virtual void exitDottedConstructorCallExpression(SlovenCLanguageParser::DottedConstructorCallExpressionContext *ctx) = 0;
 
   virtual void enterAssignmentExpression(SlovenCLanguageParser::AssignmentExpressionContext *ctx) = 0;
   virtual void exitAssignmentExpression(SlovenCLanguageParser::AssignmentExpressionContext *ctx) = 0;
@@ -210,9 +219,6 @@ public:
 
   virtual void enterDottedExpression(SlovenCLanguageParser::DottedExpressionContext *ctx) = 0;
   virtual void exitDottedExpression(SlovenCLanguageParser::DottedExpressionContext *ctx) = 0;
-
-  virtual void enterEqualityExpression(SlovenCLanguageParser::EqualityExpressionContext *ctx) = 0;
-  virtual void exitEqualityExpression(SlovenCLanguageParser::EqualityExpressionContext *ctx) = 0;
 
   virtual void enterCallExpression(SlovenCLanguageParser::CallExpressionContext *ctx) = 0;
   virtual void exitCallExpression(SlovenCLanguageParser::CallExpressionContext *ctx) = 0;
@@ -225,6 +231,9 @@ public:
 
   virtual void enterConditionalOrExpression(SlovenCLanguageParser::ConditionalOrExpressionContext *ctx) = 0;
   virtual void exitConditionalOrExpression(SlovenCLanguageParser::ConditionalOrExpressionContext *ctx) = 0;
+
+  virtual void enterCreatorExpression(SlovenCLanguageParser::CreatorExpressionContext *ctx) = 0;
+  virtual void exitCreatorExpression(SlovenCLanguageParser::CreatorExpressionContext *ctx) = 0;
 
   virtual void enterParenthesizedExpression(SlovenCLanguageParser::ParenthesizedExpressionContext *ctx) = 0;
   virtual void exitParenthesizedExpression(SlovenCLanguageParser::ParenthesizedExpressionContext *ctx) = 0;

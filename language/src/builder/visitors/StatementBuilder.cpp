@@ -9,6 +9,8 @@
 #include <model/statements/exit/ReturnStatement.h>
 #include <model/statements/exit/ThrowStatement.h>
 #include <model/statements/exit/BreakStatement.h>
+#include <model/statements/WhileStatement.h>
+#include <model/statements/exit/ContinueStatement.h>
 #include "StatementBuilder.h"
 
 StatementBuilder::StatementBuilder(const std::shared_ptr<CurrentState> &currentState,
@@ -70,7 +72,7 @@ antlrcpp::Any StatementBuilder::visitBasicForStatement(SlovenCLanguageParser::Ba
 }
 
 antlrcpp::Any StatementBuilder::visitWhileStatement(SlovenCLanguageParser::WhileStatementContext *ctx) {
-    auto statement = std::make_shared<IfStatement>();
+    auto statement = std::make_shared<WhileStatement>();
     defineParents(statement, ctx);
     statement->setCondition(expressionBuilder->visit(ctx->condition()));
     return TypeUtils::cast<Statement>(statement);
@@ -97,7 +99,7 @@ antlrcpp::Any StatementBuilder::visitBreakStatement(SlovenCLanguageParser::Break
 }
 
 antlrcpp::Any StatementBuilder::visitContinueStatement(SlovenCLanguageParser::ContinueStatementContext *ctx) {
-    auto statement = std::make_shared<ConditionalStatement>();
+    auto statement = std::make_shared<ContinueStatement>();
     defineParents(statement, ctx);
     return TypeUtils::cast<Statement>(statement);
 }

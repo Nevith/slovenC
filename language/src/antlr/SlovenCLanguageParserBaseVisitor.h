@@ -261,7 +261,19 @@ public:
     return visitChildren(ctx);
   }
 
+  virtual antlrcpp::Any visitConstructorCallExpression(SlovenCLanguageParser::ConstructorCallExpressionContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitCompareExpression(SlovenCLanguageParser::CompareExpressionContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
   virtual antlrcpp::Any visitNegateExpression(SlovenCLanguageParser::NegateExpressionContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitDottedConstructorCallExpression(SlovenCLanguageParser::DottedConstructorCallExpressionContext *ctx) override {
     return visitChildren(ctx);
   }
 
@@ -274,10 +286,6 @@ public:
   }
 
   virtual antlrcpp::Any visitDottedExpression(SlovenCLanguageParser::DottedExpressionContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
-  virtual antlrcpp::Any visitEqualityExpression(SlovenCLanguageParser::EqualityExpressionContext *ctx) override {
     return visitChildren(ctx);
   }
 
@@ -294,6 +302,10 @@ public:
   }
 
   virtual antlrcpp::Any visitConditionalOrExpression(SlovenCLanguageParser::ConditionalOrExpressionContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitCreatorExpression(SlovenCLanguageParser::CreatorExpressionContext *ctx) override {
     return visitChildren(ctx);
   }
 

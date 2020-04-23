@@ -13,6 +13,8 @@ using namespace antlr4;
 
 class FileSymbol;
 
+class AbstractModelVisitor;
+
 class Visitable {
 private:
     tree::ParseTree *context;
@@ -26,11 +28,12 @@ public:
 
     void setFileSymbol(const std::shared_ptr<FileSymbol> &fileSymbol);
 
-    virtual void visit();
-/**
- * Double dispatch method used to correctly visit the derived symbol.
- * @param visitor
- */
+    /**
+     * Double dispatch method used to correctly visit the derived symbol.
+     * @param visitor
+     */
+    virtual void accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) = 0;
+
 };
 
 #endif //_VISITABLE_H

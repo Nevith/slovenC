@@ -47,7 +47,7 @@ public:
     RuleReturnStatement = 39, RuleThrowStatement = 40, RuleBreakStatement = 41, 
     RuleContinueStatement = 42, RuleEmptyStatement = 43, RuleExpressionStatement = 44, 
     RuleCondition = 45, RuleElseStatement = 46, RuleForUpdate = 47, RuleExpression = 48, 
-    RulePrimary = 49, RuleExpressionList = 50
+    RuleCreatorExpression = 49, RulePrimary = 50, RuleExpressionList = 51
   };
 
   SlovenCLanguageParser(antlr4::TokenStream *input);
@@ -109,6 +109,7 @@ public:
   class ElseStatementContext;
   class ForUpdateContext;
   class ExpressionContext;
+  class CreatorExpressionContext;
   class PrimaryContext;
   class ExpressionListContext; 
 
@@ -1183,6 +1184,32 @@ public:
     virtual antlrcpp::Any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
   };
 
+  class  ConstructorCallExpressionContext : public ExpressionContext {
+  public:
+    ConstructorCallExpressionContext(ExpressionContext *ctx);
+
+    CreatorExpressionContext *creatorExpression();
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+
+    virtual antlrcpp::Any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+  };
+
+  class  CompareExpressionContext : public ExpressionContext {
+  public:
+    CompareExpressionContext(ExpressionContext *ctx);
+
+    antlr4::Token *bop = nullptr;
+    std::vector<ExpressionContext *> expression();
+    ExpressionContext* expression(size_t i);
+    antlr4::tree::TerminalNode *EQUAL();
+    antlr4::tree::TerminalNode *NOTEQUAL();
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+
+    virtual antlrcpp::Any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+  };
+
   class  NegateExpressionContext : public ExpressionContext {
   public:
     NegateExpressionContext(ExpressionContext *ctx);
@@ -1190,6 +1217,20 @@ public:
     antlr4::Token *prefix = nullptr;
     ExpressionContext *expression();
     antlr4::tree::TerminalNode *BANG();
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+
+    virtual antlrcpp::Any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+  };
+
+  class  DottedConstructorCallExpressionContext : public ExpressionContext {
+  public:
+    DottedConstructorCallExpressionContext(ExpressionContext *ctx);
+
+    antlr4::Token *bop = nullptr;
+    ExpressionContext *expression();
+    CreatorExpressionContext *creatorExpression();
+    antlr4::tree::TerminalNode *DOT();
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
 
@@ -1231,21 +1272,6 @@ public:
     ExpressionContext *expression();
     antlr4::tree::TerminalNode *Identifier();
     antlr4::tree::TerminalNode *DOT();
-    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
-    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
-
-    virtual antlrcpp::Any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
-  };
-
-  class  EqualityExpressionContext : public ExpressionContext {
-  public:
-    EqualityExpressionContext(ExpressionContext *ctx);
-
-    antlr4::Token *bop = nullptr;
-    std::vector<ExpressionContext *> expression();
-    ExpressionContext* expression(size_t i);
-    antlr4::tree::TerminalNode *EQUAL();
-    antlr4::tree::TerminalNode *NOTEQUAL();
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
 
@@ -1315,6 +1341,26 @@ public:
 
   ExpressionContext* expression();
   ExpressionContext* expression(int precedence);
+  class  CreatorExpressionContext : public antlr4::ParserRuleContext {
+  public:
+    antlr4::Token *lparenToken = nullptr;;
+    CreatorExpressionContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    antlr4::tree::TerminalNode *NEW();
+    antlr4::tree::TerminalNode *Identifier();
+    antlr4::tree::TerminalNode *LPAREN();
+    antlr4::tree::TerminalNode *RPAREN();
+    ExpressionListContext *expressionList();
+
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+
+    virtual antlrcpp::Any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+   
+  };
+
+  CreatorExpressionContext* creatorExpression();
+
   class  PrimaryContext : public antlr4::ParserRuleContext {
   public:
     PrimaryContext(antlr4::ParserRuleContext *parent, size_t invokingState);

@@ -46,7 +46,7 @@ public:
 
     antlrcpp::Any visitDottedExpression(SlovenCLanguageParser::DottedExpressionContext *ctx) override;
 
-    antlrcpp::Any visitEqualityExpression(SlovenCLanguageParser::EqualityExpressionContext *ctx) override;
+    antlrcpp::Any visitCompareExpression(SlovenCLanguageParser::CompareExpressionContext *ctx) override;
 
     antlrcpp::Any visitCallExpression(SlovenCLanguageParser::CallExpressionContext *ctx) override;
 
@@ -75,6 +75,11 @@ public:
     antlrcpp::Any visitPrimaryLiteral(SlovenCLanguageParser::PrimaryLiteralContext *ctx) override;
 
     antlrcpp::Any visitPrimaryIdentifier(SlovenCLanguageParser::PrimaryIdentifierContext *ctx) override;
+
+    antlrcpp::Any visitConstructorCallExpression(SlovenCLanguageParser::ConstructorCallExpressionContext *ctx) override;
+
+    antlrcpp::Any
+    visitDottedConstructorCallExpression(SlovenCLanguageParser::DottedConstructorCallExpressionContext *ctx) override;
 };
 
 

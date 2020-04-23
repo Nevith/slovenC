@@ -16,6 +16,9 @@
 #include <model/expressions/literal/StringLiteral.h>
 #include <model/expressions/literal/NullLiteral.h>
 #include <utils/TypeUtils.h>
+#include <model/expressions/math/MultiplicationExpression.h>
+#include <model/expressions/dotted/call/MethodCallExpression.h>
+#include <model/expressions/dotted/call/ConstructorCallExpression.h>
 #include "ExpressionBuilder.h"
 
 ExpressionBuilder::ExpressionBuilder(const std::shared_ptr<CurrentState> &currentState,
@@ -41,7 +44,7 @@ antlrcpp::Any ExpressionBuilder::visitThisCallExpression(SlovenCLanguageParser::
 }
 
 antlrcpp::Any ExpressionBuilder::visitCallExpression(SlovenCLanguageParser::CallExpressionContext *ctx) {
-    auto symbol = std::make_shared<CallExpression>(ctx->Identifier()->getText());
+    auto symbol = std::make_shared<MethodCallExpression>(ctx->Identifier()->getText());
 
     defineParents(symbol, ctx);
     currentState->pushCurrentExpression(symbol);
@@ -58,13 +61,53 @@ antlrcpp::Any ExpressionBuilder::visitCallExpression(SlovenCLanguageParser::Call
 }
 
 antlrcpp::Any ExpressionBuilder::visitDottedCallExpression(SlovenCLanguageParser::DottedCallExpressionContext *ctx) {
-    auto symbol = std::make_shared<CallExpression>(ctx->Identifier()->getText());
+    auto symbol = std::make_shared<MethodCallExpression>(ctx->Identifier()->getText());
 
     defineParents(symbol, ctx);
     currentState->pushCurrentExpression(symbol);
 
     if (ctx->expressionList()) {
         for (auto argumentContext : ctx->expressionList()->expression()) {
+            std::shared_ptr<Expression> expression = visit(argumentContext);
+            symbol->addArgument(expression);
+        }
+    }
+
+    std::shared_ptr<DottedExpression> expression = visit(ctx->expression());
+    symbol->setObject(expression);
+
+    currentState->popCurrentExpression();
+    return TypeUtils::cast<Expression>(symbol);
+}
+
+antlrcpp::Any
+ExpressionBuilder::visitConstructorCallExpression(SlovenCLanguageParser::ConstructorCallExpressionContext *ctx) {
+    auto creatorExpression = ctx->creatorExpression();
+    auto symbol = std::make_shared<ConstructorCallExpression>(creatorExpression->Identifier()->getText());
+
+    defineParents(symbol, ctx);
+    currentState->pushCurrentExpression(symbol);
+
+    if (creatorExpression->expressionList()) {
+        for (auto argumentContext : creatorExpression->expressionList()->expression()) {
+            std::shared_ptr<Expression> expression = visit(argumentContext);
+            symbol->addArgument(expression);
+        }
+    }
+
+    currentState->popCurrentExpression();
+    return TypeUtils::cast<Expression>(symbol);}
+
+antlrcpp::Any ExpressionBuilder::visitDottedConstructorCallExpression(
+        SlovenCLanguageParser::DottedConstructorCallExpressionContext *ctx) {
+    auto creatorExpression = ctx->creatorExpression();
+    auto symbol = std::make_shared<ConstructorCallExpression>(creatorExpression->Identifier()->getText());
+
+    defineParents(symbol, ctx);
+    currentState->pushCurrentExpression(symbol);
+
+    if (creatorExpression->expressionList()) {
+        for (auto argumentContext : creatorExpression->expressionList()->expression()) {
             std::shared_ptr<Expression> expression = visit(argumentContext);
             symbol->addArgument(expression);
         }
@@ -112,7 +155,7 @@ ExpressionBuilder::visitInvalidDottedExpression(SlovenCLanguageParser::InvalidDo
 
 antlrcpp::Any
 ExpressionBuilder::visitMultiplicativeExpression(SlovenCLanguageParser::MultiplicativeExpressionContext *ctx) {
-    auto symbol = std::make_shared<AdditiveExpression>();
+    auto symbol = std::make_shared<MultiplicationExpression>();
     if (ctx->MUL()) {
         symbol->setOperatorSign("*");
     } else if (ctx->DIV()) {
@@ -279,7 +322,7 @@ ExpressionBuilder::visitConditionalOrExpression(SlovenCLanguageParser::Condition
     return TypeUtils::cast<Expression>(symbol);
 }
 
-antlrcpp::Any ExpressionBuilder::visitEqualityExpression(SlovenCLanguageParser::EqualityExpressionContext *ctx) {
+antlrcpp::Any ExpressionBuilder::visitCompareExpression(SlovenCLanguageParser::CompareExpressionContext *ctx) {
     auto symbol = std::make_shared<CompareExpression>();
     if (ctx->EQUAL()) {
         symbol->setOperator("==");

@@ -16,7 +16,7 @@ private:
 public:
     std::string getOperator() override;
 
-    void setOperator(const std::string &operationSign);
+    void setOperatorSign(const std::string &operationSign);
 };
 
 #endif //_MULTIPLICATIONEXPRESSION_H

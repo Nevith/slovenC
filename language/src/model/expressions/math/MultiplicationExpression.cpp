@@ -13,6 +13,6 @@ std::string MultiplicationExpression::getOperator() {
     return "*";
 }
 
-void MultiplicationExpression::setOperator(const std::string &operationSign) {
+void MultiplicationExpression::setOperatorSign(const std::string &operationSign) {
     MultiplicationExpression::operationSign = operationSign;
 }

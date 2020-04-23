@@ -201,8 +201,17 @@ public:
   virtual void enterPrimaryExpression(SlovenCLanguageParser::PrimaryExpressionContext * /*ctx*/) override { }
   virtual void exitPrimaryExpression(SlovenCLanguageParser::PrimaryExpressionContext * /*ctx*/) override { }
 
+  virtual void enterConstructorCallExpression(SlovenCLanguageParser::ConstructorCallExpressionContext * /*ctx*/) override { }
+  virtual void exitConstructorCallExpression(SlovenCLanguageParser::ConstructorCallExpressionContext * /*ctx*/) override { }
+
+  virtual void enterCompareExpression(SlovenCLanguageParser::CompareExpressionContext * /*ctx*/) override { }
+  virtual void exitCompareExpression(SlovenCLanguageParser::CompareExpressionContext * /*ctx*/) override { }
+
   virtual void enterNegateExpression(SlovenCLanguageParser::NegateExpressionContext * /*ctx*/) override { }
   virtual void exitNegateExpression(SlovenCLanguageParser::NegateExpressionContext * /*ctx*/) override { }
+
+  virtual void enterDottedConstructorCallExpression(SlovenCLanguageParser::DottedConstructorCallExpressionContext * /*ctx*/) override { }
+  virtual void exitDottedConstructorCallExpression(SlovenCLanguageParser::DottedConstructorCallExpressionContext * /*ctx*/) override { }
 
   virtual void enterAssignmentExpression(SlovenCLanguageParser::AssignmentExpressionContext * /*ctx*/) override { }
   virtual void exitAssignmentExpression(SlovenCLanguageParser::AssignmentExpressionContext * /*ctx*/) override { }
@@ -212,9 +221,6 @@ public:
 
   virtual void enterDottedExpression(SlovenCLanguageParser::DottedExpressionContext * /*ctx*/) override { }
   virtual void exitDottedExpression(SlovenCLanguageParser::DottedExpressionContext * /*ctx*/) override { }
-
-  virtual void enterEqualityExpression(SlovenCLanguageParser::EqualityExpressionContext * /*ctx*/) override { }
-  virtual void exitEqualityExpression(SlovenCLanguageParser::EqualityExpressionContext * /*ctx*/) override { }
 
   virtual void enterCallExpression(SlovenCLanguageParser::CallExpressionContext * /*ctx*/) override { }
   virtual void exitCallExpression(SlovenCLanguageParser::CallExpressionContext * /*ctx*/) override { }
@@ -227,6 +233,9 @@ public:
 
   virtual void enterConditionalOrExpression(SlovenCLanguageParser::ConditionalOrExpressionContext * /*ctx*/) override { }
   virtual void exitConditionalOrExpression(SlovenCLanguageParser::ConditionalOrExpressionContext * /*ctx*/) override { }
+
+  virtual void enterCreatorExpression(SlovenCLanguageParser::CreatorExpressionContext * /*ctx*/) override { }
+  virtual void exitCreatorExpression(SlovenCLanguageParser::CreatorExpressionContext * /*ctx*/) override { }
 
   virtual void enterParenthesizedExpression(SlovenCLanguageParser::ParenthesizedExpressionContext * /*ctx*/) override { }
   virtual void exitParenthesizedExpression(SlovenCLanguageParser::ParenthesizedExpressionContext * /*ctx*/) override { }

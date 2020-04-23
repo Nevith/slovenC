@@ -142,15 +142,19 @@ public:
 
     virtual antlrcpp::Any visitPrimaryExpression(SlovenCLanguageParser::PrimaryExpressionContext *context) = 0;
 
+    virtual antlrcpp::Any visitConstructorCallExpression(SlovenCLanguageParser::ConstructorCallExpressionContext *context) = 0;
+
+    virtual antlrcpp::Any visitCompareExpression(SlovenCLanguageParser::CompareExpressionContext *context) = 0;
+
     virtual antlrcpp::Any visitNegateExpression(SlovenCLanguageParser::NegateExpressionContext *context) = 0;
+
+    virtual antlrcpp::Any visitDottedConstructorCallExpression(SlovenCLanguageParser::DottedConstructorCallExpressionContext *context) = 0;
 
     virtual antlrcpp::Any visitAssignmentExpression(SlovenCLanguageParser::AssignmentExpressionContext *context) = 0;
 
     virtual antlrcpp::Any visitConditionalAndExpression(SlovenCLanguageParser::ConditionalAndExpressionContext *context) = 0;
 
     virtual antlrcpp::Any visitDottedExpression(SlovenCLanguageParser::DottedExpressionContext *context) = 0;
-
-    virtual antlrcpp::Any visitEqualityExpression(SlovenCLanguageParser::EqualityExpressionContext *context) = 0;
 
     virtual antlrcpp::Any visitCallExpression(SlovenCLanguageParser::CallExpressionContext *context) = 0;
 
@@ -159,6 +163,8 @@ public:
     virtual antlrcpp::Any visitDottedCallExpression(SlovenCLanguageParser::DottedCallExpressionContext *context) = 0;
 
     virtual antlrcpp::Any visitConditionalOrExpression(SlovenCLanguageParser::ConditionalOrExpressionContext *context) = 0;
+
+    virtual antlrcpp::Any visitCreatorExpression(SlovenCLanguageParser::CreatorExpressionContext *context) = 0;
 
     virtual antlrcpp::Any visitParenthesizedExpression(SlovenCLanguageParser::ParenthesizedExpressionContext *context) = 0;
 
