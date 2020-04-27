@@ -4,6 +4,7 @@
 
 #include "ProjectJob.h"
 #include "FileSymbolJob.h"
+#include "LinkerManagerJob.h"
 #include <filesystem>
 #include <memory>
 
@@ -69,12 +70,16 @@ void ProjectJob::run() {
 
 std::vector<std::shared_ptr<Job>> ProjectJob::onComplete() {
     auto projectSources = project->getRelativePathMap();
-    auto fileJobs = std::vector<std::shared_ptr<Job>>();
+    auto fileJobs = std::vector<std::shared_ptr<FileSymbol>>();
     for (auto &projectSource : projectSources) {
         auto fileSymbol = TypeUtils::cast<FileSymbol>(projectSource.second);
-        if (fileSymbol != nullptr) {
-            fileJobs.push_back(std::make_shared<FileSymbolJob>(project, fileSymbol));
+        if (fileSymbol) {
+            fileJobs.push_back(fileSymbol);
         }
     }
-    return fileJobs;
+    auto result = std::vector<std::shared_ptr<Job>>();
+    auto managerJob = std::make_shared<LinkerManagerJob>(fileJobs, project);
+    managerJob->setSelf(managerJob);
+    result.push_back(managerJob);
+    return result;
 }

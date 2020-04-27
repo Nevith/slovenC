@@ -4,24 +4,14 @@
 
 #include "FileSymbolJob.h"
 
-#include <utility>
-#include <iostream>
-#include <antlr4-common.h>
-#include <antlr4-runtime.h>
-#include <builder/Builder.h>
-#include "antlr/SlovenCLanguageLexer.h"
-#include "antlr/SlovenCLanguageParser.h"
-#include "antlr/SlovenCLanguageParserBaseListener.h"
-#include "antlr/SlovenCLanguageParserListener.h"
-#include "antlr/SlovenCLanguageParserVisitor.h"
-#include "antlr/SlovenCLanguageParserBaseVisitor.h"
 
 using namespace antlr;
 using namespace antlr4;
 
 
-FileSymbolJob::FileSymbolJob(std::shared_ptr<Project> project, std::shared_ptr<FileSymbol> fileSymbol)
-        : project(project), fileSymbol(fileSymbol) {}
+FileSymbolJob::FileSymbolJob(std::shared_ptr<Project> project, std::shared_ptr<FileSymbol> fileSymbol,
+                             std::shared_ptr<LinkerManagerJob> managerJob)
+        : project(project), fileSymbol(fileSymbol), managerJob(managerJob) {}
 
 void FileSymbolJob::run() {
     std::ifstream stream;
@@ -38,5 +28,7 @@ void FileSymbolJob::run() {
 }
 
 std::vector<std::shared_ptr<Job>> FileSymbolJob::onComplete() {
-    return std::vector<std::shared_ptr<Job>>();
+    auto result = std::vector<std::shared_ptr<Job>>();
+    result.push_back(std::make_shared<LinkerJob>(project, fileSymbol, managerJob));
+    return result;
 }
