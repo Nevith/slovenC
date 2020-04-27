@@ -19,17 +19,20 @@ std::string DottedExpression::getName() const {
 
 std::string DottedExpression::getFullyQualifiedName() const {
     if (object != nullptr) {
-        if (!object->getName().empty()) {
-            return object->getFullyQualifiedName() + "." + getName();
+        std::shared_ptr<DottedExpression> dotted = TypeUtils::cast<DottedExpression>(object);
+        if (dotted) {
+            if (!dotted->getName().empty()) {
+                return dotted->getFullyQualifiedName() + "." + getName();
+            }
         }
     }
     return getName();
 }
 
-const std::shared_ptr<DottedExpression> &DottedExpression::getObject() const {
+const std::shared_ptr<Expression> &DottedExpression::getObject() const {
     return object;
 }
 
-void DottedExpression::setObject(const std::shared_ptr<DottedExpression> &object) {
+void DottedExpression::setObject(const std::shared_ptr<Expression> &object) {
     DottedExpression::object = object;
 }

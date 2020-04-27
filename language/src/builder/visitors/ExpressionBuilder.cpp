@@ -73,7 +73,7 @@ antlrcpp::Any ExpressionBuilder::visitDottedCallExpression(SlovenCLanguageParser
         }
     }
 
-    std::shared_ptr<DottedExpression> expression = visit(ctx->expression());
+    std::shared_ptr<Expression> expression = visit(ctx->expression());
     symbol->setObject(expression);
 
     currentState->popCurrentExpression();
@@ -113,7 +113,7 @@ antlrcpp::Any ExpressionBuilder::visitDottedConstructorCallExpression(
         }
     }
 
-    std::shared_ptr<DottedExpression> expression = visit(ctx->expression());
+    std::shared_ptr<Expression> expression = visit(ctx->expression());
     symbol->setObject(expression);
 
     currentState->popCurrentExpression();
@@ -146,7 +146,7 @@ ExpressionBuilder::visitInvalidDottedExpression(SlovenCLanguageParser::InvalidDo
     defineParents(symbol, ctx);
     currentState->pushCurrentExpression(symbol);
 
-    std::shared_ptr<DottedExpression> expression = visit(ctx->expression());
+    std::shared_ptr<Expression> expression = visit(ctx->expression());
     symbol->setObject(expression);
 
     currentState->popCurrentExpression();
@@ -373,7 +373,7 @@ antlrcpp::Any ExpressionBuilder::visitDottedExpression(SlovenCLanguageParser::Do
     defineParents(symbol, ctx);
     currentState->pushCurrentExpression(symbol);
 
-    std::shared_ptr<DottedExpression> expression = visit(ctx->expression());
+    std::shared_ptr<Expression> expression = visit(ctx->expression());
     symbol->setObject(expression);
 
     currentState->popCurrentExpression();

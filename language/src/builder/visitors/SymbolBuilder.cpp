@@ -143,7 +143,7 @@ SymbolBuilder::visitLocalVariableDeclaration(SlovenCLanguageParser::LocalVariabl
     std::shared_ptr<LocalVariableSymbol> symbol = visit(ctx->variableDeclarator());
 
     symbol->setContext(ctx);
-    symbol->setType(expressionBuilder->visit(ctx->type()));
+    symbol->setType(referenceBuilder->visit(ctx->type()));
 
     // Obtain the parents
     auto parentScope = currentState->getCurrentScope();
@@ -174,7 +174,7 @@ antlrcpp::Any SymbolBuilder::visitVariableDeclarator(SlovenCLanguageParser::Vari
 antlrcpp::Any SymbolBuilder::visitFormalParameter(SlovenCLanguageParser::FormalParameterContext *ctx) {
     std::shared_ptr<ParameterSymbol> symbol = std::make_shared<ParameterSymbol>(ctx->Identifier()->getText());
     symbol->setContext(ctx);
-    symbol->setType(expressionBuilder->visit(ctx->type()));
+    symbol->setType(referenceBuilder->visit(ctx->type()));
 
     // Obtain the parents
     auto parentClass = currentState->getCurrentClass();

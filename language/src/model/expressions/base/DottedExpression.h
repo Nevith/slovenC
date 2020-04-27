@@ -8,12 +8,13 @@
 #define _DOTTEDEXPRESSION_H
 
 #include "MonoExpression.h"
+#include "utils/TypeUtils.h"
 #include <string>
 
 class DottedExpression : public Expression {
 private:
     const std::string name;
-    std::shared_ptr<DottedExpression> object;
+    std::shared_ptr<Expression> object;
 public:
 
     DottedExpression(std::string name);
@@ -22,9 +23,9 @@ public:
 
     virtual std::string getFullyQualifiedName() const;
 
-    const std::shared_ptr<DottedExpression> &getObject() const;
+    const std::shared_ptr<Expression> & getObject() const;
 
-    void setObject(const std::shared_ptr<DottedExpression> &object);
+    void setObject(const std::shared_ptr<Expression> &object);
 };
 
 #endif //_DOTTEDEXPRESSION_H

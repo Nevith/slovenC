@@ -8,7 +8,10 @@
 ReferenceBuilder::ReferenceBuilder(const std::shared_ptr<CurrentState> &currentState) : currentState(currentState) {}
 
 antlrcpp::Any ReferenceBuilder::visitInheritance(SlovenCLanguageParser::InheritanceContext *ctx) {
-    return visit(ctx->superclass());
+    if (ctx->superclass()) {
+        return visit(ctx->superclass());
+    }
+    return std::vector<std::shared_ptr<TypeReferenceExpression>>();
 }
 
 antlrcpp::Any ReferenceBuilder::visitSuperclass(SlovenCLanguageParser::SuperclassContext *ctx) {
@@ -41,11 +44,12 @@ antlrcpp::Any ReferenceBuilder::visitClassTypeUnqual(SlovenCLanguageParser::Clas
 
 antlrcpp::Any ReferenceBuilder::visitFileNameQual(SlovenCLanguageParser::FileNameQualContext *ctx) {
     auto result = std::make_shared<PackageOrFileReferenceExpression>(ctx->Identifier()->getText());
-    std::shared_ptr<TypeReferenceExpression> parent = visit(ctx->fileName());
+    std::shared_ptr<PackageOrFileReferenceExpression> parent = visit(ctx->fileName());
     result->setObject(parent);
     result->setFileSymbol(currentState->getFileSymbol());
     result->setContext(ctx);
-    return result;}
+    return result;
+}
 
 antlrcpp::Any ReferenceBuilder::visitFileNameUnqual(SlovenCLanguageParser::FileNameUnqualContext *ctx) {
     auto result = std::make_shared<PackageOrFileReferenceExpression>(ctx->Identifier()->getText());

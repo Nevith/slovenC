@@ -67,12 +67,11 @@ THROW         : 'javi';
 IMPORT        : 'uporabi';
 PACKAGE       : 'paket';
 NEW           : 'nov';
-INSTANCEOF    : 'jeprimer';
 THIS          : 'to';
 
-PRIVATE       : 'zakrit' | 'zakrito';
-PUBLIC        : 'odkrit' | 'odkrito';
-STATIC        : 'closten' | 'celostno' ;
+PRIVATE       : 'zakrit' | 'zakrito' | 'zakrita';
+PUBLIC        : 'odkrit' | 'odkrito' | 'odkrita';
+STATIC        : 'globalen' | 'globalno' | 'globalna';
 RETURN        : 'vrni';
 
 CONSTRUCTOR   : 'Konstruktor';

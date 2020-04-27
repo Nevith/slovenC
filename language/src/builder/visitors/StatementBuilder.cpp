@@ -33,7 +33,7 @@ antlrcpp::Any StatementBuilder::visitLocalVariableDeclarationStatement(
         SlovenCLanguageParser::LocalVariableDeclarationStatementContext *ctx) {
     auto statement = std::make_shared<VariableDeclarationStatement>();
     defineParents(statement, ctx);
-    std::shared_ptr<LocalVariableSymbol> variable = symbolBuilder->visit(ctx);
+    std::shared_ptr<LocalVariableSymbol> variable = symbolBuilder->visit(ctx->localVariableDeclaration());
     statement->setVariableSymbol(variable);
     return TypeUtils::cast<Statement>(statement);
 }
