@@ -9,8 +9,9 @@
 #include <async/Job.h>
 #include <model/symbols/main/FileSymbol.h>
 #include <project/Project.h>
+#include "ManagerJob.h"
 
-class LinkerManagerJob: public Job {
+class LinkerManagerJob: public ManagerJob {
 private:
     std::vector<std::shared_ptr<FileSymbol>> files;
     std::shared_ptr<Project> project;
@@ -20,15 +21,9 @@ private:
 public:
     LinkerManagerJob(std::vector<std::shared_ptr<FileSymbol>> files, std::shared_ptr<Project> project);
 
-    void run() override;
-
-    std::vector<std::shared_ptr<Job>> JobDone(std::shared_ptr<FileSymbol> fileSymbol);
+    std::vector<std::shared_ptr<Job>> JobDone(std::shared_ptr<FileSymbol> fileSymbol) override;
 
     std::vector<std::shared_ptr<Job>> onComplete() override;
-
-    const std::shared_ptr<LinkerManagerJob> &getSelf() const;
-
-    void setSelf(const std::shared_ptr<LinkerManagerJob> &self);
 };
 
 

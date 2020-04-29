@@ -3,10 +3,7 @@
 //
 
 #include "ProjectJob.h"
-#include "FileSymbolJob.h"
-#include "LinkerManagerJob.h"
-#include <filesystem>
-#include <memory>
+
 
 
 ProjectJob::ProjectJob(std::shared_ptr<Project> project) : project(project) {};
@@ -78,7 +75,7 @@ std::vector<std::shared_ptr<Job>> ProjectJob::onComplete() {
         }
     }
     auto result = std::vector<std::shared_ptr<Job>>();
-    auto managerJob = std::make_shared<LinkerManagerJob>(fileJobs, project);
+    auto managerJob = std::make_shared<BuilderManagerJob>(fileJobs, project);
     managerJob->setSelf(managerJob);
     result.push_back(managerJob);
     return result;

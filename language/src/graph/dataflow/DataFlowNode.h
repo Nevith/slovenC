@@ -13,11 +13,16 @@
 class DataFlowNode: public Node<DataFlowEdge> {
 private:
     const std::shared_ptr<Visitable> visitable;
+    std::shared_ptr<DataFlowEdge> usageEdge;
 
 public:
     DataFlowNode(std::shared_ptr<Visitable> visitable);
 
     const std::shared_ptr<Visitable> getVisitable() const;
+
+    const std::shared_ptr<DataFlowEdge> &getUsageEdge() const;
+
+    void addIncomingEdge(const std::shared_ptr<DataFlowEdge> &incomingEdge) override;
 };
 
 

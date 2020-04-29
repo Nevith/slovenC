@@ -12,23 +12,23 @@
 template<class E>
 class Node : public GraphOrNode {
 private:
-    std::shared_ptr<E> incomingEdge;
-    std::shared_ptr<E> outgoingEdge;
+    std::vector<std::shared_ptr<E>> incomingEdges;
+    std::vector<std::shared_ptr<E>> outgoingEdges;
 public:
-    const std::shared_ptr<E> getIncomingEdge() const {
-        return incomingEdge;
+    virtual const std::vector<std::shared_ptr<E>> getIncomingEdges() const {
+        return incomingEdges;
     }
 
-    void setIncomingEdge(const std::shared_ptr<E> &incomingEdge) {
-        Node::incomingEdge = incomingEdge;
+    virtual void addIncomingEdge(const std::shared_ptr<E> &incomingEdge) {
+        incomingEdges.push_back(incomingEdge);
     }
 
-    const std::shared_ptr<E> getOutgoingEdge() const {
-        return outgoingEdge;
+    virtual const std::vector<std::shared_ptr<E>> getOutgoingEdges() const {
+        return outgoingEdges;
     }
 
-    void setOutgoingEdge(const std::shared_ptr<E> &outgoingEdge) {
-        Node::outgoingEdge = outgoingEdge;
+    virtual void addOutgoingEdge(const std::shared_ptr<E> &outgoingEdge) {
+        outgoingEdges.push_back(outgoingEdge);
     }
 };
 

@@ -18,6 +18,8 @@ std::enable_if<std::is_base_of<Edge<V>, E>::value>::type * = nullptr>
 class Graph : public GraphOrNode {
 public:
     virtual void addNode(std::shared_ptr<V> node) = 0;
+
+    virtual void addEdge(std::shared_ptr<V> first, std::shared_ptr<V> second, std::shared_ptr<E> edge) = 0;
 };
 
 #endif //SLOVENC_GRAPH_H

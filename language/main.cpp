@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <async/JobManager.h>
-#include <pipeline/ProjectJob.h>
+#include <pipeline/single/ProjectJob.h>
 
 
 int main(int, const char **) {

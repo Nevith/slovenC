@@ -2,18 +2,18 @@
 // Created by Andraz on 17/03/2020.
 //
 
-#include "FileSymbolJob.h"
+#include "BuilderJob.h"
 
 
 using namespace antlr;
 using namespace antlr4;
 
 
-FileSymbolJob::FileSymbolJob(std::shared_ptr<Project> project, std::shared_ptr<FileSymbol> fileSymbol,
-                             std::shared_ptr<LinkerManagerJob> managerJob)
+BuilderJob::BuilderJob(std::shared_ptr<Project> project, std::shared_ptr<FileSymbol> fileSymbol,
+                       std::shared_ptr<ManagerJob> managerJob)
         : project(project), fileSymbol(fileSymbol), managerJob(managerJob) {}
 
-void FileSymbolJob::run() {
+void BuilderJob::run() {
     std::ifstream stream;
     stream.open(fileSymbol->getAbsolutePath());
 
@@ -27,8 +27,6 @@ void FileSymbolJob::run() {
     tree::ParseTreeWalker::DEFAULT.walk(&builder, rootContext);
 }
 
-std::vector<std::shared_ptr<Job>> FileSymbolJob::onComplete() {
-    auto result = std::vector<std::shared_ptr<Job>>();
-    result.push_back(std::make_shared<LinkerJob>(project, fileSymbol, managerJob));
-    return result;
+std::vector<std::shared_ptr<Job>> BuilderJob::onComplete() {
+    return managerJob->JobDone(fileSymbol);
 }

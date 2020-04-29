@@ -11,3 +11,14 @@ DataFlowNode::DataFlowNode(std::shared_ptr<Visitable> visitable): visitable(visi
 const std::shared_ptr<Visitable> DataFlowNode::getVisitable() const {
     return visitable;
 }
+
+const std::shared_ptr<DataFlowEdge> &DataFlowNode::getUsageEdge() const {
+    return usageEdge;
+}
+
+void DataFlowNode::addIncomingEdge(const std::shared_ptr<DataFlowEdge> &incomingEdge) {
+    Node::addIncomingEdge(incomingEdge);
+    if (incomingEdge->isUsage()) {
+        usageEdge = incomingEdge;
+    }
+}

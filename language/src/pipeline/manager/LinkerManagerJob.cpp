@@ -3,24 +3,18 @@
 //
 
 #include "LinkerManagerJob.h"
-#include "FileSymbolJob.h"
+#include "pipeline/single/LinkerJob.h"
 
 LinkerManagerJob::LinkerManagerJob(std::vector<std::shared_ptr<FileSymbol>> files, std::shared_ptr<Project> project) :
-        files(files), project(project) {
-}
-
-void LinkerManagerJob::run() {
-    for (auto file : files) {
-        fileResultMap[file] = false;
-    }
+        ManagerJob(files), project(project) {
 }
 
 std::vector<std::shared_ptr<Job>> LinkerManagerJob::onComplete() {
-    std::vector<std::shared_ptr<Job>> fileJobs;
+    std::vector<std::shared_ptr<Job>> linkerJobs;
     for (auto file : files) {
-        fileJobs.push_back(std::make_shared<FileSymbolJob>(project, file, self));
+        linkerJobs.push_back(std::make_shared<LinkerJob>(project, file, self));
     }
-    return fileJobs;
+    return linkerJobs;
 }
 
 std::vector<std::shared_ptr<Job>> LinkerManagerJob::JobDone(std::shared_ptr<FileSymbol> fileSymbol) {
@@ -35,12 +29,4 @@ std::vector<std::shared_ptr<Job>> LinkerManagerJob::JobDone(std::shared_ptr<File
     // TODO - Merge file DFGs into ProjectWide DFG
 
     return std::vector<std::shared_ptr<Job>>(); // TODO - create diagnostic tool jobs
-}
-
-const std::shared_ptr<LinkerManagerJob> &LinkerManagerJob::getSelf() const {
-    return self;
-}
-
-void LinkerManagerJob::setSelf(const std::shared_ptr<LinkerManagerJob> &self) {
-    LinkerManagerJob::self = self;
 }

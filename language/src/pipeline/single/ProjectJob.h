@@ -8,6 +8,10 @@
 
 #include <project/Project.h>
 #include <async/Job.h>
+#include "BuilderJob.h"
+#include <filesystem>
+#include <memory>
+#include <pipeline/manager/BuilderManagerJob.h>
 
 class ProjectJob : public Job {
     std::shared_ptr<Project> project;

@@ -91,7 +91,7 @@ antlrcpp::Any SymbolBuilder::visitConstructorDeclaration(SlovenCLanguageParser::
     // Obtain the object class
     auto parentClass = currentState->getCurrentClass();
     // Declare method in class
-    parentClass->declareMethod(symbol);
+    parentClass->declareConstructor(symbol);
     // Tell method where it belongs!
     symbol->setParentSymbol(parentClass);
 

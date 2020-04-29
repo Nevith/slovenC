@@ -29,6 +29,16 @@ private:
 public:
     ClassSymbol(std::string name);
 
+    const std::vector<std::shared_ptr<TypeReferenceExpression>> &getSuperClasses() const;
+
+    const std::vector<std::shared_ptr<ClassSymbol>> &getDeclaredClasses() const;
+
+    const std::vector<std::shared_ptr<MethodSymbol>> &getDeclaredMethods() const;
+
+    const std::vector<std::shared_ptr<MethodSymbol>> &getConstructors() const;
+
+    const std::vector<std::shared_ptr<FieldSymbol>> &getDeclaredFields() const;
+
     void addSuperClass(std::shared_ptr<TypeReferenceExpression> superClass);
 
     void declareClass(std::shared_ptr<ClassSymbol> declaredClass);

@@ -2,8 +2,8 @@
 // Created by Andraz on 17/03/2020.
 //
 
-#ifndef SLOVENC_FILESYMBOLJOB_H
-#define SLOVENC_FILESYMBOLJOB_H
+#ifndef SLOVENC_BUILDERJOB_H
+#define SLOVENC_BUILDERJOB_H
 
 
 #include <memory>
@@ -14,6 +14,7 @@
 #include <antlr4-common.h>
 #include <antlr4-runtime.h>
 #include <builder/Builder.h>
+#include <pipeline/manager/ManagerJob.h>
 #include "antlr/SlovenCLanguageLexer.h"
 #include "antlr/SlovenCLanguageParser.h"
 #include "antlr/SlovenCLanguageParserBaseListener.h"
@@ -22,17 +23,15 @@
 #include "antlr/SlovenCLanguageParserBaseVisitor.h"
 #include "LinkerJob.h"
 
-class LinkerManagerJob;
-
-class FileSymbolJob : public Job {
+class BuilderJob : public Job {
 private:
     std::shared_ptr<Project> project;
     std::shared_ptr<FileSymbol> fileSymbol;
-    std::shared_ptr<LinkerManagerJob> managerJob;
+    std::shared_ptr<ManagerJob> managerJob;
 public:
 
-    FileSymbolJob(std::shared_ptr<Project> project, std::shared_ptr<FileSymbol> fileSymbol,
-                  std::shared_ptr<LinkerManagerJob> manager);
+    BuilderJob(std::shared_ptr<Project> project, std::shared_ptr<FileSymbol> fileSymbol,
+               std::shared_ptr<ManagerJob> manager);
 
     void run() override;
 
@@ -40,4 +39,4 @@ public:
 };
 
 
-#endif //SLOVENC_FILESYMBOLJOB_H
+#endif //SLOVENC_BUILDERJOB_H

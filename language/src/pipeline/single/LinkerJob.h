@@ -8,14 +8,14 @@
 
 #include <async/Job.h>
 #include <project/Project.h>
-#include "LinkerManagerJob.h"
+#include "pipeline/manager/ManagerJob.h"
 
 class LinkerJob : public Job {
     std::shared_ptr<Project> project;
     std::shared_ptr<FileSymbol> fileSymbol;
-    std::shared_ptr<LinkerManagerJob> managerJob;
+    std::shared_ptr<ManagerJob> managerJob;
 public:
-    LinkerJob(std::shared_ptr<Project> project, std::shared_ptr<FileSymbol> fileSymbol, std::shared_ptr<LinkerManagerJob> manager);
+    LinkerJob(std::shared_ptr<Project> project, std::shared_ptr<FileSymbol> fileSymbol, std::shared_ptr<ManagerJob> manager);
 
     void run() override;
 

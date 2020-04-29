@@ -13,7 +13,11 @@
 
 class InvalidTypeSymbol : public TypeSymbol {
 public:
+    InvalidTypeSymbol(std::string name);
+
     void accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) override;
+
+    const static std::shared_ptr<InvalidTypeSymbol> INVALID_TYPE;
 };
 
 #endif //_INVALIDTYPESYMBOL_H
