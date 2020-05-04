@@ -76,10 +76,6 @@ public:
 
     void exitReturnStatement(SlovenCLanguageParser::ReturnStatementContext *context) override;
 
-    void enterThrowStatement(SlovenCLanguageParser::ThrowStatementContext *context) override;
-
-    void exitThrowStatement(SlovenCLanguageParser::ThrowStatementContext *context) override;
-
     void enterBreakStatement(SlovenCLanguageParser::BreakStatementContext *context) override;
 
     void exitBreakStatement(SlovenCLanguageParser::BreakStatementContext *context) override;

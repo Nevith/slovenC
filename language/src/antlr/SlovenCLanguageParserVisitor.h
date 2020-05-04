@@ -114,8 +114,6 @@ public:
 
     virtual antlrcpp::Any visitReturnStatement(SlovenCLanguageParser::ReturnStatementContext *context) = 0;
 
-    virtual antlrcpp::Any visitThrowStatement(SlovenCLanguageParser::ThrowStatementContext *context) = 0;
-
     virtual antlrcpp::Any visitBreakStatement(SlovenCLanguageParser::BreakStatementContext *context) = 0;
 
     virtual antlrcpp::Any visitContinueStatement(SlovenCLanguageParser::ContinueStatementContext *context) = 0;

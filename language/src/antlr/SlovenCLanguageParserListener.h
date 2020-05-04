@@ -157,9 +157,6 @@ public:
   virtual void enterReturnStatement(SlovenCLanguageParser::ReturnStatementContext *ctx) = 0;
   virtual void exitReturnStatement(SlovenCLanguageParser::ReturnStatementContext *ctx) = 0;
 
-  virtual void enterThrowStatement(SlovenCLanguageParser::ThrowStatementContext *ctx) = 0;
-  virtual void exitThrowStatement(SlovenCLanguageParser::ThrowStatementContext *ctx) = 0;
-
   virtual void enterBreakStatement(SlovenCLanguageParser::BreakStatementContext *ctx) = 0;
   virtual void exitBreakStatement(SlovenCLanguageParser::BreakStatementContext *ctx) = 0;
 

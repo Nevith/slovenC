@@ -12,8 +12,8 @@ LinkerJob::LinkerJob(std::shared_ptr<Project> project, std::shared_ptr<FileSymbo
 
 void LinkerJob::run() {
     // Commence linking
-    TypeLinker builderOne = TypeLinker(project);
-    builderOne.visit(fileSymbol);
+    TypeLinker builderOne = TypeLinker(project, fileSymbol);
+    builderOne.link();
 
     // Build CFG
 

@@ -5,7 +5,6 @@
 #include "ManagerJob.h"
 
 ManagerJob::ManagerJob(std::vector<std::shared_ptr<FileSymbol>> files) : files(files) {
-
 }
 
 const std::shared_ptr<ManagerJob> &ManagerJob::getSelf() const {

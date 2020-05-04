@@ -9,14 +9,14 @@ TypeReferenceExpression::TypeReferenceExpression(std::string name) : IdentifierE
 
 }
 
-void TypeReferenceExpression::setResolve(const std::shared_ptr<TypeSymbol> &resolve) {
+void TypeReferenceExpression::setResolve(const std::shared_ptr<Symbol> &resolve) {
     if (isResolved()) {
         throw referenceAlreadyResolvedException;
     }
     TypeReferenceExpression::resolve = resolve;
 }
 
-const std::shared_ptr<TypeSymbol> &TypeReferenceExpression::getResolve() const {
+const std::shared_ptr<Symbol> &TypeReferenceExpression::getResolve() const {
     if (!isResolved()) {
         throw referenceNotResolvedException;
     }

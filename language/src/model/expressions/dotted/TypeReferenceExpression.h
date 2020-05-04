@@ -14,7 +14,7 @@
 class TypeReferenceExpression : public IdentifierExpression {
 private:
 
-    std::shared_ptr<TypeSymbol> resolve;
+    std::shared_ptr<Symbol> resolve;
 
 public:
 
@@ -22,9 +22,9 @@ public:
 
     bool isResolved() const;
 
-    void setResolve(const std::shared_ptr<TypeSymbol> &resolve);
+    void setResolve(const std::shared_ptr<Symbol> &resolve);
 
-    const std::shared_ptr<TypeSymbol> &getResolve() const;
+    const std::shared_ptr<Symbol> &getResolve() const;
 
     void accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) override;
 

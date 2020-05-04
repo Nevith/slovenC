@@ -10,9 +10,9 @@ LinkerManagerJob::LinkerManagerJob(std::vector<std::shared_ptr<FileSymbol>> file
 }
 
 std::vector<std::shared_ptr<Job>> LinkerManagerJob::onComplete() {
-    std::vector<std::shared_ptr<Job>> linkerJobs;
+   std::vector<std::shared_ptr<Job>> linkerJobs;
     for (auto file : files) {
-        linkerJobs.push_back(std::make_shared<LinkerJob>(project, file, self));
+        linkerJobs.push_back(std::make_shared<LinkerJob>(project, file, getSelf()));
     }
     return linkerJobs;
 }
@@ -24,7 +24,7 @@ std::vector<std::shared_ptr<Job>> LinkerManagerJob::JobDone(std::shared_ptr<File
             return std::vector<std::shared_ptr<Job>>();
         }
     }
-    self = nullptr; // Mem leak cleanup
+    setSelf(nullptr); // Mem leak cleanup
 
     // TODO - Merge file DFGs into ProjectWide DFG
 

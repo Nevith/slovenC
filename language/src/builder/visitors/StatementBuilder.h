@@ -41,8 +41,6 @@ public:
 
     antlrcpp::Any visitReturnStatement(SlovenCLanguageParser::ReturnStatementContext *ctx) override;
 
-    antlrcpp::Any visitThrowStatement(SlovenCLanguageParser::ThrowStatementContext *ctx) override;
-
     antlrcpp::Any visitBreakStatement(SlovenCLanguageParser::BreakStatementContext *ctx) override;
 
     antlrcpp::Any visitContinueStatement(SlovenCLanguageParser::ContinueStatementContext *ctx) override;

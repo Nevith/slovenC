@@ -136,15 +136,6 @@ void Builder::exitReturnStatement(SlovenCLanguageParser::ReturnStatementContext 
     currentState->popCurrentStatement();
 }
 
-void Builder::enterThrowStatement(SlovenCLanguageParser::ThrowStatementContext *context) {
-    std::shared_ptr<Statement> statement = statementBuilder.visit(context);
-    currentState->pushCurrentStatement(statement);
-}
-
-void Builder::exitThrowStatement(SlovenCLanguageParser::ThrowStatementContext *context) {
-    currentState->popCurrentStatement();
-}
-
 void Builder::enterBreakStatement(SlovenCLanguageParser::BreakStatementContext *context) {
     std::shared_ptr<Statement> statement = statementBuilder.visit(context);
     currentState->pushCurrentStatement(statement);

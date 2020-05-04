@@ -4,7 +4,7 @@
 
 #include "FrameStack.h"
 
-std::shared_ptr<Visitable> FrameStack::getSymbol(std::string identifier) {
+std::shared_ptr<Symbol> FrameStack::getSymbol(std::string identifier) {
     // Look up through the frames for the correct symbol
     for (int i = frameStack.size() - 1; i >= 0; --i) {
         auto frame = frameStack[i];
@@ -14,6 +14,7 @@ std::shared_ptr<Visitable> FrameStack::getSymbol(std::string identifier) {
             return symbol;
         }
     }
+    return nullptr;
 }
 
 void FrameStack::createFrame() {

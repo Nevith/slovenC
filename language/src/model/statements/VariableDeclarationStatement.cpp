@@ -9,7 +9,7 @@
 /**
  * VariableDeclarationStatement implementation
  */
-std::shared_ptr<Variable> VariableDeclarationStatement::getVariableSymbol() const {
+std::shared_ptr<LocalVariableSymbol> VariableDeclarationStatement::getVariableSymbol() const {
     return variableSymbol;
 }
 

@@ -112,10 +112,6 @@ public:
 
     }
 
-    void visitThrowStatement(std::shared_ptr<ThrowStatement> visitable) override {
-
-    }
-
     void visitBlockStatement(std::shared_ptr<BlockStatement> visitable) override {
 
     }

@@ -159,9 +159,6 @@ public:
   virtual void enterReturnStatement(SlovenCLanguageParser::ReturnStatementContext * /*ctx*/) override { }
   virtual void exitReturnStatement(SlovenCLanguageParser::ReturnStatementContext * /*ctx*/) override { }
 
-  virtual void enterThrowStatement(SlovenCLanguageParser::ThrowStatementContext * /*ctx*/) override { }
-  virtual void exitThrowStatement(SlovenCLanguageParser::ThrowStatementContext * /*ctx*/) override { }
-
   virtual void enterBreakStatement(SlovenCLanguageParser::BreakStatementContext * /*ctx*/) override { }
   virtual void exitBreakStatement(SlovenCLanguageParser::BreakStatementContext * /*ctx*/) override { }
 

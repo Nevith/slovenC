@@ -15,7 +15,7 @@ private:
 
 public:
 
-    std::shared_ptr<Visitable> getSymbol(std::string identifier);
+    std::shared_ptr<Symbol> getSymbol(std::string identifier);
 
     void pushSymbol(std::shared_ptr<Symbol> symbol, std::string identifier);
 

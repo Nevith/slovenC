@@ -205,10 +205,6 @@ public:
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitThrowStatement(SlovenCLanguageParser::ThrowStatementContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
   virtual antlrcpp::Any visitBreakStatement(SlovenCLanguageParser::BreakStatementContext *ctx) override {
     return visitChildren(ctx);
   }

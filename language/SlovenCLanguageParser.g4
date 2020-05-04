@@ -230,7 +230,6 @@ statement
         | basicForStatement
         | whileStatement
         | returnStatement
-        | throwStatement
         | breakStatement
         | continueStatement
         | emptyStatement
@@ -255,10 +254,6 @@ whileStatement
 
 returnStatement
         : RETURN expression? SEMI
-        ;
-
-throwStatement
-        : THROW expression SEMI
         ;
 
 breakStatement

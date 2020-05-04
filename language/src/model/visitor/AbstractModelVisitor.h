@@ -141,8 +141,6 @@ public:
 
     virtual void visitReturnStatement(std::shared_ptr<ReturnStatement> visitable) = 0;
 
-    virtual void visitThrowStatement(std::shared_ptr<ThrowStatement> visitable) = 0;
-
     virtual void visitBlockStatement(std::shared_ptr<BlockStatement> visitable) = 0;
 
     virtual void visitElseStatement(std::shared_ptr<ElseStatement> visitable) = 0;

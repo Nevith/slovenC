@@ -44,10 +44,10 @@ public:
     RuleConstructorBody = 29, RuleBlock = 30, RuleBlockStatement = 31, RuleLocalVariableDeclarationStatement = 32, 
     RuleLocalVariableDeclaration = 33, RuleStatement = 34, RuleBlock_ = 35, 
     RuleIfThenStatement = 36, RuleBasicForStatement = 37, RuleWhileStatement = 38, 
-    RuleReturnStatement = 39, RuleThrowStatement = 40, RuleBreakStatement = 41, 
-    RuleContinueStatement = 42, RuleEmptyStatement = 43, RuleExpressionStatement = 44, 
-    RuleCondition = 45, RuleElseStatement = 46, RuleForUpdate = 47, RuleExpression = 48, 
-    RuleCreatorExpression = 49, RulePrimary = 50, RuleExpressionList = 51
+    RuleReturnStatement = 39, RuleBreakStatement = 40, RuleContinueStatement = 41, 
+    RuleEmptyStatement = 42, RuleExpressionStatement = 43, RuleCondition = 44, 
+    RuleElseStatement = 45, RuleForUpdate = 46, RuleExpression = 47, RuleCreatorExpression = 48, 
+    RulePrimary = 49, RuleExpressionList = 50
   };
 
   SlovenCLanguageParser(antlr4::TokenStream *input);
@@ -100,7 +100,6 @@ public:
   class BasicForStatementContext;
   class WhileStatementContext;
   class ReturnStatementContext;
-  class ThrowStatementContext;
   class BreakStatementContext;
   class ContinueStatementContext;
   class EmptyStatementContext;
@@ -851,7 +850,6 @@ public:
     BasicForStatementContext *basicForStatement();
     WhileStatementContext *whileStatement();
     ReturnStatementContext *returnStatement();
-    ThrowStatementContext *throwStatement();
     BreakStatementContext *breakStatement();
     ContinueStatementContext *continueStatement();
     EmptyStatementContext *emptyStatement();
@@ -960,23 +958,6 @@ public:
   };
 
   ReturnStatementContext* returnStatement();
-
-  class  ThrowStatementContext : public antlr4::ParserRuleContext {
-  public:
-    ThrowStatementContext(antlr4::ParserRuleContext *parent, size_t invokingState);
-    virtual size_t getRuleIndex() const override;
-    antlr4::tree::TerminalNode *THROW();
-    ExpressionContext *expression();
-    antlr4::tree::TerminalNode *SEMI();
-
-    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
-    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
-
-    virtual antlrcpp::Any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
-   
-  };
-
-  ThrowStatementContext* throwStatement();
 
   class  BreakStatementContext : public antlr4::ParserRuleContext {
   public:

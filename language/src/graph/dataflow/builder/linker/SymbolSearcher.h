@@ -6,26 +6,23 @@
 #define SLOVENC_SYMBOLSEARCHER_H
 
 
-#include <model/visitor/ModelVisitor.h>
-#include <model/symbols/base/Symbol.h>
-#include <model/symbols/main/ClassSymbol.h>
-#include <model/symbols/main/FileSymbol.h>
-#include <model/symbols/main/PackageSymbol.h>
-#include <model/symbols/main/MethodSymbol.h>
-#include <model/symbols/main/PredefinedSymbol.h>
-#include <model/symbols/main/InvalidTypeSymbol.h>
-#include <model/symbols/variables/LocalVariableSymbol.h>
-#include <model/symbols/variables/ParameterSymbol.h>
-#include <model/symbols/variables/FieldSymbol.h>
-#include <model/expressions/dotted/call/CallExpression.h>
+#include "memory"
+#include "model/Model.h"
+#include "model/visitor/ModelVisitor.h"
 
 
 class SymbolSearcher : public ModelVisitor<std::shared_ptr<Symbol>> {
 private:
     std::shared_ptr<IdentifierExpression> searchIdentifier;
+
+    bool staticContext;
+
+    std::shared_ptr<MethodSymbol> findMethodMatch(std::vector<std::shared_ptr<MethodSymbol>> methods);
+
 public:
 
-    std::shared_ptr<Symbol> findSymbol(std::shared_ptr<IdentifierExpression> searchIdentifier, std::shared_ptr<Visitable> visitable);
+    std::shared_ptr<Symbol>
+    findSymbol(std::shared_ptr<IdentifierExpression> searchIdentifier, std::shared_ptr<Visitable> visitable);
 
     void visitFileSymbol(std::shared_ptr<FileSymbol> visitable) override;
 

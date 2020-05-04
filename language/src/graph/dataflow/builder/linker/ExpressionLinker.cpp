@@ -5,23 +5,16 @@
 #include <model/symbols/main/InvalidTypeSymbol.h>
 #include "ExpressionLinker.h"
 
-ExpressionLinker::ExpressionLinker(std::shared_ptr<Project> project, std::shared_ptr<DataFlowGraph> graph) : graph(graph),
-                                                                       project(project) {
+ExpressionLinker::ExpressionLinker(std::shared_ptr<Project> project, std::shared_ptr<DataFlowGraph> graph) : graph(
+        graph),
+                                                                                                             project(project) {
     graph->addNode(std::make_shared<DataFlowNode>(InvalidTypeSymbol::INVALID_TYPE));
 
 }
 
-Symbol ExpressionLinker::getSymbol(DottedExpression expression) {
-    auto object = expression.getObject();
-    if (object) {
-        visit(object);
-        auto node = graph->getNode(object);
-        auto parentSymbol = node->getUsageEdge()->getStartingVertex()->getVisitable();
-
-    }
-
-
-    frameStack.getSymbol(expression.getName());
+std::shared_ptr<Symbol> ExpressionLinker::getSymbol(std::shared_ptr<DottedExpression> expression) {
+    // TODO
+    return nullptr;
 }
 
 void ExpressionLinker::visitFileSymbol(std::shared_ptr<FileSymbol> visitable) {

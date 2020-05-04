@@ -13,10 +13,7 @@
 
 class LinkerManagerJob: public ManagerJob {
 private:
-    std::vector<std::shared_ptr<FileSymbol>> files;
     std::shared_ptr<Project> project;
-    std::map<std::shared_ptr<FileSymbol>, bool> fileResultMap;
-    std::shared_ptr<LinkerManagerJob> self;
 
 public:
     LinkerManagerJob(std::vector<std::shared_ptr<FileSymbol>> files, std::shared_ptr<Project> project);

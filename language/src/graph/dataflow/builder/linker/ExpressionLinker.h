@@ -19,7 +19,7 @@ private:
     const std::shared_ptr<Project> project;
     FrameStack frameStack;
 
-    Symbol getSymbol(DottedExpression expression);
+    std::shared_ptr<Symbol> getSymbol(std::shared_ptr<DottedExpression> expression);
 
 public:
     ExpressionLinker(std::shared_ptr<Project> project, std::shared_ptr<DataFlowGraph> graph);

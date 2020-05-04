@@ -20,11 +20,5 @@ const std::shared_ptr<ControlFlowNode> &ControlFlowGraph::getLastVertex() const 
 }
 
 void ControlFlowGraph::replace(std::shared_ptr<ControlFlowNode> old, std::shared_ptr<ControlFlowNode> correct) {
-    std::shared_ptr<ControlFlowEdge> incomingEdge = old->getIncomingEdge();
-    std::shared_ptr<ControlFlowEdge> outgoingEdge = old->getOutgoingEdge();
-
-    incomingEdge->setEndingVertex(correct);
-    outgoingEdge->setStartingVertex(correct);
-    correct->setIncomingEdge(incomingEdge);
-    correct->setOutgoingEdge(outgoingEdge);
+    // TODO
 }

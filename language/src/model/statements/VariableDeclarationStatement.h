@@ -18,7 +18,7 @@ private:
     std::shared_ptr<LocalVariableSymbol> variableSymbol;
 
 public:
-    std::shared_ptr<Variable> getVariableSymbol() const;
+    std::shared_ptr<LocalVariableSymbol> getVariableSymbol() const;
 
     void setVariableSymbol(std::shared_ptr<LocalVariableSymbol> variableSymbol);
 

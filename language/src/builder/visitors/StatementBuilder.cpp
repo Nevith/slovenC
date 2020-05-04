@@ -7,7 +7,6 @@
 #include <model/statements/IfStatement.h>
 #include <model/statements/ForStatement.h>
 #include <model/statements/exit/ReturnStatement.h>
-#include <model/statements/exit/ThrowStatement.h>
 #include <model/statements/exit/BreakStatement.h>
 #include <model/statements/WhileStatement.h>
 #include <model/statements/exit/ContinueStatement.h>
@@ -80,13 +79,6 @@ antlrcpp::Any StatementBuilder::visitWhileStatement(SlovenCLanguageParser::While
 
 antlrcpp::Any StatementBuilder::visitReturnStatement(SlovenCLanguageParser::ReturnStatementContext *ctx) {
     auto statement = std::make_shared<ReturnStatement>();
-    defineParents(statement, ctx);
-    statement->setExpression(expressionBuilder->visit(ctx->expression()));
-    return TypeUtils::cast<Statement>(statement);
-}
-
-antlrcpp::Any StatementBuilder::visitThrowStatement(SlovenCLanguageParser::ThrowStatementContext *ctx) {
-    auto statement = std::make_shared<ThrowStatement>();
     defineParents(statement, ctx);
     statement->setExpression(expressionBuilder->visit(ctx->expression()));
     return TypeUtils::cast<Statement>(statement);
