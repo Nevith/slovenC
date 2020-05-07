@@ -12,6 +12,7 @@
 #include <string>
 #include <filesystem>
 #include <model/expressions/dotted/PackageOrFileReferenceExpression.h>
+#include <graph/type/TypeGraph.h>
 
 class FileSymbol : public FullyQualifiedSymbol {
 public:
@@ -28,6 +29,8 @@ private:
     std::vector<std::shared_ptr<PackageOrFileReferenceExpression>> imports;
     std::vector<std::shared_ptr<ClassSymbol>> declaredClasses;
 
+    std::shared_ptr<TypeGraph> localTypeGraph;
+
 public:
     const std::vector<std::shared_ptr<PackageOrFileReferenceExpression>> &getImports() const;
 
@@ -40,6 +43,10 @@ public:
     const std::string &getAbsolutePath() const;
 
     const std::string &getRelativePath() const;
+
+    const std::shared_ptr<TypeGraph> &getLocalTypeGraph() const;
+
+    void setLocalTypeGraph(const std::shared_ptr<TypeGraph> &localTypeGraph);
 
     void accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) override;
 };

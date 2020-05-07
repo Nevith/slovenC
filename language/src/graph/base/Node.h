@@ -9,6 +9,7 @@
 #include <memory>
 #include <vector>
 #include "GraphOrNode.h"
+#include "string"
 
 template<class E>
 class Node : public GraphOrNode {
@@ -31,6 +32,8 @@ public:
     virtual void addOutgoingEdge(const std::shared_ptr<E> &outgoingEdge) {
         outgoingEdges.push_back(outgoingEdge);
     }
+
+    virtual std::string getString() = 0;
 };
 
 

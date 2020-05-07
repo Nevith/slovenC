@@ -6,6 +6,7 @@
 #define SLOVENC_EDGE_H
 
 #include <memory>
+#include "string"
 
 template<class V>
 class Edge {
@@ -29,6 +30,8 @@ public:
     void setEndingVertex(const std::shared_ptr<V> &endingVertex) {
         Edge::endingVertex = endingVertex;
     }
+
+    virtual std::string getEdgeTypeString() = 0;
 };
 
 

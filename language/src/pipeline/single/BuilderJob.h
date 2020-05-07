@@ -21,7 +21,7 @@
 #include "antlr/SlovenCLanguageParserListener.h"
 #include "antlr/SlovenCLanguageParserVisitor.h"
 #include "antlr/SlovenCLanguageParserBaseVisitor.h"
-#include "LinkerJob.h"
+#include "TypeLinkerJob.h"
 
 class BuilderJob : public Job {
 private:

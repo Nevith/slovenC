@@ -20,6 +20,8 @@ public:
     virtual void addNode(std::shared_ptr<V> node) = 0;
 
     virtual void addEdge(std::shared_ptr<V> first, std::shared_ptr<V> second, std::shared_ptr<E> edge) = 0;
+
+    virtual const std::vector<std::shared_ptr<V>> getVertices() = 0;
 };
 
 #endif //SLOVENC_GRAPH_H

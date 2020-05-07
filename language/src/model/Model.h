@@ -62,5 +62,7 @@
 #include "model/expressions/dotted/call/ThisCallExpression.h"
 #include "model/expressions/math/AdditiveExpression.h"
 #include "model/expressions/math/MultiplicationExpression.h"
+#include "model/visitor/ModelVisitor.h"
+#include "model/visitor/AbstractModelVisitor.h"
 
 #endif //SLOVENC_MODEL_H

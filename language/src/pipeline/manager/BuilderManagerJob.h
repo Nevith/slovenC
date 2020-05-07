@@ -11,7 +11,7 @@
 #include <project/Project.h>
 #include "pipeline/single/BuilderJob.h"
 #include "ManagerJob.h"
-#include "LinkerManagerJob.h"
+#include "TypeLinkerManagerJob.h"
 
 
 class BuilderManagerJob: public ManagerJob {

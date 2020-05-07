@@ -59,3 +59,11 @@ const std::map<std::string, std::shared_ptr<FullyQualifiedSymbol>> &Project::get
 const std::map<std::string, std::shared_ptr<FullyQualifiedSymbol>> &Project::getFullyQualifiedMap() const {
     return fullyQualifiedMap;
 }
+
+const std::shared_ptr<TypeGraph> &Project::getTypeGraph() const {
+    return typeGraph;
+}
+
+void Project::setTypeGraph(const std::shared_ptr<TypeGraph> &typeGraph) {
+    Project::typeGraph = typeGraph;
+}

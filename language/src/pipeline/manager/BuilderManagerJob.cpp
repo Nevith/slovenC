@@ -29,7 +29,7 @@ std::vector<std::shared_ptr<Job>> BuilderManagerJob::JobDone(std::shared_ptr<Fil
     setSelf(nullptr);
 
     auto result = std::vector<std::shared_ptr<Job>>();
-    auto managerJob = std::make_shared<LinkerManagerJob>(files, project);
+    auto managerJob = std::make_shared<TypeLinkerManagerJob>(files, project);
     managerJob->setSelf(managerJob);
     result.push_back(managerJob);
     return result;

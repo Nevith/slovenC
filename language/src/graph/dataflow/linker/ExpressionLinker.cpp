@@ -5,10 +5,10 @@
 #include <model/symbols/main/InvalidTypeSymbol.h>
 #include "ExpressionLinker.h"
 
-ExpressionLinker::ExpressionLinker(std::shared_ptr<Project> project, std::shared_ptr<DataFlowGraph> graph) : graph(
+ExpressionLinker::ExpressionLinker(std::shared_ptr<Project> project, std::shared_ptr<TypeGraph> graph) : graph(
         graph),
-                                                                                                             project(project) {
-    graph->addNode(std::make_shared<DataFlowNode>(InvalidTypeSymbol::INVALID_TYPE));
+                                                                                                         project(project) {
+    graph->addNode(std::make_shared<TypeNode>(InvalidTypeSymbol::INVALID_TYPE));
 
 }
 

@@ -7,15 +7,15 @@
 
 
 #include <graph/base/GraphOrNode.h>
-#include <graph/dataflow/DataFlowGraph.h>
+#include <graph/type/TypeGraph.h>
 #include "model/Model.h"
 #include <project/Project.h>
-#include "SymbolSearcher.h"
-#include "FrameStack.h"
+#include "graph/SymbolSearcher.h"
+#include "graph/dataflow/linker/utils/FrameStack.h"
 
 class TypeLinker : public ModelVisitor<GraphOrNode> {
 private:
-    std::shared_ptr<DataFlowGraph> graph;
+    std::shared_ptr<TypeGraph> graph;
     const std::shared_ptr<Project> project;
     const std::shared_ptr<FileSymbol> fileSymbol;
 
@@ -26,7 +26,7 @@ private:
 public:
     TypeLinker(std::shared_ptr<Project> project, std::shared_ptr<FileSymbol> fileSymbol);
 
-    void link();
+    std::shared_ptr<TypeGraph> link();
 
     void visitFileSymbol(std::shared_ptr<FileSymbol> visitable) override;
 

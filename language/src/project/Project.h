@@ -22,6 +22,8 @@ private:
     std::map<std::string, std::shared_ptr<FullyQualifiedSymbol>> relativePathMap;
     std::map<std::string, std::shared_ptr<FullyQualifiedSymbol>> fullyQualifiedMap;
 
+    std::shared_ptr<TypeGraph> typeGraph;
+
 public:
     Project(std::string absolutePath);
 
@@ -42,6 +44,10 @@ public:
     const std::map<std::string, std::shared_ptr<FullyQualifiedSymbol>> &getFullyQualifiedMap() const;
 
     const std::string &getAbsolutePath() const;
+
+    const std::shared_ptr<TypeGraph> &getTypeGraph() const;
+
+    void setTypeGraph(const std::shared_ptr<TypeGraph> &typeGraph);
 };
 
 

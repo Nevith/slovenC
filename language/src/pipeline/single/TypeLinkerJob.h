@@ -2,20 +2,22 @@
 // Created by andraz on 24/04/2020.
 //
 
-#ifndef SLOVENC_LINKERJOB_H
-#define SLOVENC_LINKERJOB_H
+#ifndef SLOVENC_TYPELINKERJOB_H
+#define SLOVENC_TYPELINKERJOB_H
 
 
 #include <async/Job.h>
 #include <project/Project.h>
 #include "pipeline/manager/ManagerJob.h"
+#include <graph/type/linker/TypeLinker.h>
 
-class LinkerJob : public Job {
+
+class TypeLinkerJob : public Job {
     std::shared_ptr<Project> project;
     std::shared_ptr<FileSymbol> fileSymbol;
     std::shared_ptr<ManagerJob> managerJob;
 public:
-    LinkerJob(std::shared_ptr<Project> project, std::shared_ptr<FileSymbol> fileSymbol, std::shared_ptr<ManagerJob> manager);
+    TypeLinkerJob(std::shared_ptr<Project> project, std::shared_ptr<FileSymbol> fileSymbol, std::shared_ptr<ManagerJob> manager);
 
     void run() override;
 
@@ -24,4 +26,4 @@ public:
 };
 
 
-#endif //SLOVENC_LINKERJOB_H
+#endif //SLOVENC_TYPELINKERJOB_H

@@ -6,10 +6,11 @@
 #define SLOVENC_CONTROLFLOWEDGE_H
 
 #include <graph/base/Edge.h>
+#include <string>
 
 class ControlFlowNode;
 class ControlFlowEdge : public Edge<ControlFlowNode> {
-
+public:
 };
 
 

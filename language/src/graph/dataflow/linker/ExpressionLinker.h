@@ -8,21 +8,21 @@
 
 #include <model/visitor/ModelVisitor.h>
 #include <graph/base/GraphOrNode.h>
-#include <graph/dataflow/DataFlowGraph.h>
+#include <graph/type/TypeGraph.h>
 #include <model/symbols/main/FileSymbol.h>
 #include <project/Project.h>
-#include "FrameStack.h"
+#include <graph/dataflow/linker/utils/FrameStack.h>
 
 class ExpressionLinker: public ModelVisitor<GraphOrNode> {
 private:
-    const std::shared_ptr<DataFlowGraph> graph;
+    const std::shared_ptr<TypeGraph> graph;
     const std::shared_ptr<Project> project;
     FrameStack frameStack;
 
     std::shared_ptr<Symbol> getSymbol(std::shared_ptr<DottedExpression> expression);
 
 public:
-    ExpressionLinker(std::shared_ptr<Project> project, std::shared_ptr<DataFlowGraph> graph);
+    ExpressionLinker(std::shared_ptr<Project> project, std::shared_ptr<TypeGraph> graph);
 
     void visitFileSymbol(std::shared_ptr<FileSymbol> visitable) override;
 

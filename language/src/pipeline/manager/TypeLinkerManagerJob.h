@@ -2,8 +2,8 @@
 // Created by andraz on 24/04/2020.
 //
 
-#ifndef SLOVENC_LINKERMANAGERJOB_H
-#define SLOVENC_LINKERMANAGERJOB_H
+#ifndef SLOVENC_TYPELINKERMANAGERJOB_H
+#define SLOVENC_TYPELINKERMANAGERJOB_H
 
 
 #include <async/Job.h>
@@ -11,12 +11,16 @@
 #include <project/Project.h>
 #include "ManagerJob.h"
 
-class LinkerManagerJob: public ManagerJob {
+class TypeLinkerManagerJob: public ManagerJob {
 private:
     std::shared_ptr<Project> project;
 
+    std::shared_ptr<TypeGraph> globalTypeGraph;
+
+    void merge(std::shared_ptr<TypeGraph> localTypeGraph);
+
 public:
-    LinkerManagerJob(std::vector<std::shared_ptr<FileSymbol>> files, std::shared_ptr<Project> project);
+    TypeLinkerManagerJob(std::vector<std::shared_ptr<FileSymbol>> files, std::shared_ptr<Project> project);
 
     std::vector<std::shared_ptr<Job>> JobDone(std::shared_ptr<FileSymbol> fileSymbol) override;
 
@@ -24,4 +28,4 @@ public:
 };
 
 
-#endif //SLOVENC_LINKERMANAGERJOB_H
+#endif //SLOVENC_TYPELINKERMANAGERJOB_H

@@ -39,13 +39,14 @@ std::shared_ptr<Symbol> TypeLinker::getSymbol(std::shared_ptr<TypeReferenceExpre
 TypeLinker::TypeLinker(std::shared_ptr<Project> project, std::shared_ptr<FileSymbol> fileSymbol) : project(project),
                                                                                                    fileSymbol(
                                                                                                            fileSymbol) {
-    graph = std::make_shared<DataFlowGraph>();
-    auto node = std::make_shared<DataFlowNode>(InvalidTypeSymbol::INVALID_TYPE);
+    graph = std::make_shared<TypeGraph>();
+    auto node = std::make_shared<TypeNode>(InvalidTypeSymbol::INVALID_TYPE);
     graph->addNode(node);
 }
 
-void TypeLinker::link() {
+std::shared_ptr<TypeGraph> TypeLinker::link() {
     visit(fileSymbol);
+    return graph;
 }
 
 void TypeLinker::visitFileSymbol(std::shared_ptr<FileSymbol> visitable) {
@@ -58,39 +59,44 @@ void TypeLinker::visitFileSymbol(std::shared_ptr<FileSymbol> visitable) {
 }
 
 void TypeLinker::visitPackageOrFileReferenceExpression(std::shared_ptr<PackageOrFileReferenceExpression> visitable) {
-    auto node = std::make_shared<DataFlowNode>(visitable);
+    auto node = std::make_shared<TypeNode>(visitable);
+    graph->addNode(node);
+
     auto symbol = project->getSymbolByFullyQualifiedName(visitable->getFullyQualifiedName());
-    std::shared_ptr<DataFlowNode> parentNode;
+    std::shared_ptr<TypeNode> parentNode;
     if (symbol) {
         visitable->setResolve(symbol);
         // Correct import
         parentNode = graph->getNode(symbol);
         if (!parentNode) {
-            parentNode = std::make_shared<DataFlowNode>(symbol);
+            parentNode = std::make_shared<TypeNode>(symbol);
+            graph->addNode(parentNode);
         }
     } else {
         // Invalid import
         parentNode = graph->getNode(InvalidTypeSymbol::INVALID_TYPE);
     }
 
-    graph->addEdge(parentNode, node, std::make_shared<DataFlowEdge>(false));
+    graph->addEdge(parentNode, node, std::make_shared<TypeEdge>(false));
     if (visitable->getObject()) {
         visit(visitable->getObject());
     }
 }
 
 void TypeLinker::visitTypeReferenceExpression(std::shared_ptr<TypeReferenceExpression> visitable) {
-    auto node = std::make_shared<DataFlowNode>(visitable);
+    auto node = std::make_shared<TypeNode>(visitable);
+    graph->addNode(node);
     auto symbol = getSymbol(visitable);
 
     visitable->setResolve(symbol);
     // Correct import
-    std::shared_ptr<DataFlowNode> parentNode = graph->getNode(symbol);
+    std::shared_ptr<TypeNode> parentNode = graph->getNode(symbol);
     if (!parentNode) {
-        parentNode = std::make_shared<DataFlowNode>(symbol);
+        parentNode = std::make_shared<TypeNode>(symbol);
+        graph->addNode(parentNode);
     }
 
-    graph->addEdge(parentNode, node, std::make_shared<DataFlowEdge>(false));
+    graph->addEdge(parentNode, node, std::make_shared<TypeEdge>(false));
     if (visitable->getObject()) {
         visit(visitable->getObject());
     }
