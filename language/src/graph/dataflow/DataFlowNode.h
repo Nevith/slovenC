@@ -15,7 +15,7 @@
 
 class DataFlowNode: public Node<DataFlowEdge> {
     const std::shared_ptr<Visitable> visitable;
-    std::shared_ptr<TypeEdge> symbolEdge;
+    std::shared_ptr<DataFlowEdge> symbolEdge;
 public:
     DataFlowNode(std::shared_ptr<Visitable> visitable);
 
@@ -23,7 +23,7 @@ public:
 
     const std::shared_ptr<Visitable> &getVisitable() const;
 
-    const std::shared_ptr<TypeEdge> &getSymbolEdge() const;
+    const std::shared_ptr<DataFlowEdge> &getSymbolEdge() const;
 
     std::string getString() override;
 

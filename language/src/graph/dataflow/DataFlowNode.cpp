@@ -24,24 +24,24 @@ std::string DataFlowNode::getString() {
 }
 
 std::string DataFlowNode::getNodeTypeString() {
-    auto symbol = TypeUtils::cast<MethodSymbol>(visitable);
-    if (symbol) {
+    auto methodSymbol = TypeUtils::cast<MethodSymbol>(visitable);
+    if (methodSymbol) {
         return "MethodSymbol";
     }
-    symbol = TypeUtils::cast<LocalVariableSymbol>(visitable);
-    if (symbol) {
+    auto localVariableSymbol = TypeUtils::cast<LocalVariableSymbol>(visitable);
+    if (localVariableSymbol) {
         return "LocalVariableSymbol";
     }
-    symbol = TypeUtils::cast<FieldSymbol>(visitable);
-    if (symbol) {
+    auto fieldSymbol = TypeUtils::cast<FieldSymbol>(visitable);
+    if (fieldSymbol) {
         return "FieldSymbol";
     }
-    symbol = TypeUtils::cast<ParameterSymbol>(visitable);
-    if (symbol) {
+    auto parameterSymbol = TypeUtils::cast<ParameterSymbol>(visitable);
+    if (parameterSymbol) {
         return "ParameterSymbol";
     }
-    symbol = TypeUtils::cast<Expression>(visitable);
-    if (symbol) {
+    auto expression = TypeUtils::cast<Expression>(visitable);
+    if (expression) {
         return "Expression";
     }
     return "None";
@@ -51,6 +51,6 @@ const std::shared_ptr<Visitable> &DataFlowNode::getVisitable() const {
     return visitable;
 }
 
-const std::shared_ptr<TypeEdge> &DataFlowNode::getSymbolEdge() const {
+const std::shared_ptr<DataFlowEdge> &DataFlowNode::getSymbolEdge() const {
     return symbolEdge;
 }
