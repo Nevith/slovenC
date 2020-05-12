@@ -15,9 +15,10 @@
 class TypeLinkerJob : public Job {
     std::shared_ptr<Project> project;
     std::shared_ptr<FileSymbol> fileSymbol;
-    std::shared_ptr<ManagerJob> managerJob;
+    std::shared_ptr<ManagerJob<TypeGraph>> managerJob;
+    std::shared_ptr<TypeGraph> graph;
 public:
-    TypeLinkerJob(std::shared_ptr<Project> project, std::shared_ptr<FileSymbol> fileSymbol, std::shared_ptr<ManagerJob> manager);
+    TypeLinkerJob(std::shared_ptr<Project> project, std::shared_ptr<FileSymbol> fileSymbol, std::shared_ptr<ManagerJob<TypeGraph>> manager);
 
     void run() override;
 

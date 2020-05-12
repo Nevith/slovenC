@@ -9,12 +9,16 @@
 /**
  * Visitable implementation
  */
-tree::ParseTree *Visitable::getContext() const {
+const Context Visitable::getContext() const {
     return context;
 }
 
-void Visitable::setContext(tree::ParseTree *context) {
-    Visitable::context = context;
+void Visitable::setContext(ParserRuleContext *ctx) {
+    context.setText(ctx->getText());
+    context.setOffset(ctx->getStart()->getStartIndex());
+    context.setLength(ctx->getStart()->getStopIndex() - context.getOffset());
+    context.setColumn(ctx->getStart()->getCharPositionInLine());
+    context.setRow(ctx->getStart()->getLine());
 }
 
 const std::shared_ptr<FileSymbol> &Visitable::getFileSymbol() const {

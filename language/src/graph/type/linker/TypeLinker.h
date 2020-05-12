@@ -81,6 +81,8 @@ public:
     void visitIncrementDecrementExpression(std::shared_ptr<IncrementDecrementExpression> visitable) override;
 
     void visitParenthesizedExpression(std::shared_ptr<ParenthesizedExpression> visitable) override;
+
+    void visitPackageSymbol(std::shared_ptr<PackageSymbol> visitable) override;
 };
 
 

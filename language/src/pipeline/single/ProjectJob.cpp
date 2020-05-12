@@ -61,7 +61,7 @@ void ProjectJob::run() {
     auto projectSources = project->getRelativePathMap();
     for (auto projectSource : projectSources) {
         auto symbol = projectSource.second;
-        project->addFullyQualifiedSource(symbol);   // TODO - check if multiple symbols with same key
+        project->addFullyQualifiedSource(symbol);   // TODO - check if multiple symbols with same key?
     }
 }
 

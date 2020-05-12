@@ -34,9 +34,6 @@ public:
                                                                                       graph(graph) {
         for (std::shared_ptr<Node<E>> vertex : graph->getVertices()) {
             vertices.push_back(vertex);
-            for (auto edge : vertex->getOutgoingEdges()) {
-                edges.push_back(edge);
-            }
             for (auto edge : vertex->getIncomingEdges()) {
                 edges.push_back(edge);
             }
@@ -44,23 +41,24 @@ public:
     };
 
     std::string getJSON() {
-        std::string json = "{ vertices:[";
+        std::string json = "{ \"vertices\" :[";
         int i = 0;
         for (std::shared_ptr<Node<E>> vertex : vertices) {
-            json += "'" + vertex->getString() + "'";
+            json += "{\"type\":\"" + vertex->getNodeTypeString() + "\", \"name\":\"" + vertex->getString() + "\"}";
             i++;
             if (i < vertices.size()) {
                 json += ",";
             }
         }
-        json += "], edges:[";
+        json += "], \"edges\":[";
 
         i = 0;
         for (std::shared_ptr<Edge<V>> edge : edges) {
-            json += "{type: '" + edge->getEdgeTypeString() + "', start:" + std::to_string(find(edge->getStartingVertex())) + ", end: " +
+            json += "{\"type\": \"" + edge->getEdgeTypeString() + "\", \"start\":" +
+                    std::to_string(find(edge->getStartingVertex())) + ", \"end\": " +
                     std::to_string(find(edge->getEndingVertex())) + "}";
             i++;
-            if (i < vertices.size()) {
+            if (i < edges.size()) {
                 json += ",";
             }
         }

@@ -51,11 +51,3 @@ const std::string &FileSymbol::getRelativePath() const {
 void FileSymbol::accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) {
     visitor->visitFileSymbol(TypeUtils::cast<FileSymbol>(visitable));
 }
-
-const std::shared_ptr<TypeGraph> &FileSymbol::getLocalTypeGraph() const {
-    return localTypeGraph;
-}
-
-void FileSymbol::setLocalTypeGraph(const std::shared_ptr<TypeGraph> &localTypeGraph) {
-    FileSymbol::localTypeGraph = localTypeGraph;
-}

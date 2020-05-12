@@ -13,7 +13,7 @@ int main(int, const char **) {
     auto project = std::make_shared<Project>(absolutePath);
     jobManager.queueJob(std::make_shared<ProjectJob>(project));
     jobManager.wait();
-    Serializer<TypeNode, TypeEdge> serializer("C:\\Users\\andraz\\Desktop\\fff.txt", project->getTypeGraph());
+    Serializer<TypeNode, TypeEdge> serializer("E:\\Projects\\Faks\\Diplomska naloga\\slovenC\\graphVis\\fff.txt", project->getTypeGraph());
     serializer.serialize();
     return 0;
 }

@@ -60,19 +60,27 @@ antlrcpp::Any ReferenceBuilder::visitFileNameUnqual(SlovenCLanguageParser::FileN
 
 antlrcpp::Any ReferenceBuilder::visitResult(SlovenCLanguageParser::ResultContext *ctx) {
     if (ctx->VOID()) {
-        return std::make_shared<TypeReferenceExpression>(PredefinedSymbol::VOID.getName());
+        auto reference = std::make_shared<TypeReferenceExpression>(PredefinedSymbol::VOID->getName());
+        reference->setFileSymbol(currentState->getFileSymbol());
+        reference->setContext(ctx);
+        return reference;
+    } else {
+        return visit(ctx->type());
     }
-    // TODO - error if both defined
-    return visit(ctx->type());
 }
 
 antlrcpp::Any ReferenceBuilder::visitPrimitiveType(SlovenCLanguageParser::PrimitiveTypeContext *ctx) {
+    std::shared_ptr<TypeReferenceExpression> reference;
     if (ctx->BOOLEAN()) {
-        return std::make_shared<TypeReferenceExpression>(PredefinedSymbol::BOOLEAN.getName());
+        reference = std::make_shared<TypeReferenceExpression>(PredefinedSymbol::BOOLEAN->getName());
     } else if (ctx->DOUBLE()) {
-        return std::make_shared<TypeReferenceExpression>(PredefinedSymbol::DOUBLE.getName());
+        reference = std::make_shared<TypeReferenceExpression>(PredefinedSymbol::DOUBLE->getName());
+    } else {
+        reference = std::make_shared<TypeReferenceExpression>(PredefinedSymbol::INT->getName());
     }
-    return std::make_shared<TypeReferenceExpression>(PredefinedSymbol::INT.getName());
+    reference->setFileSymbol(currentState->getFileSymbol());
+    reference->setContext(ctx);
+    return reference;
 }
 
 antlrcpp::Any ReferenceBuilder::visitReferenceType(SlovenCLanguageParser::ReferenceTypeContext *ctx) {

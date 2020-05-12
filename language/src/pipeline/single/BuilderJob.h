@@ -27,11 +27,11 @@ class BuilderJob : public Job {
 private:
     std::shared_ptr<Project> project;
     std::shared_ptr<FileSymbol> fileSymbol;
-    std::shared_ptr<ManagerJob> managerJob;
+    std::shared_ptr<ManagerJob<FileSymbol>> managerJob;
 public:
 
     BuilderJob(std::shared_ptr<Project> project, std::shared_ptr<FileSymbol> fileSymbol,
-               std::shared_ptr<ManagerJob> manager);
+               std::shared_ptr<ManagerJob<FileSymbol>> manager);
 
     void run() override;
 

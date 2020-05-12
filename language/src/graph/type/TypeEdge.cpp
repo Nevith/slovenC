@@ -16,7 +16,7 @@ bool TypeEdge::isInheritance() const {
 }
 
 std::string TypeEdge::getEdgeTypeString() {
-    if (isUsageEdge) {
+    if (isUsage()) {
         return "usage";
     } else {
         return "inheritance";

@@ -8,6 +8,8 @@
 #define _VISITABLE_H
 
 #include <tree/ParseTree.h>
+#include <antlr/SlovenCLanguageParserVisitor.h>
+#include "Context.h"
 
 using namespace antlr4;
 
@@ -17,12 +19,12 @@ class AbstractModelVisitor;
 
 class Visitable {
 private:
-    tree::ParseTree *context;
+    Context context;
     std::shared_ptr<FileSymbol> fileSymbol;
 public:
-    tree::ParseTree *getContext() const;
+    const Context getContext() const;
 
-    void setContext(tree::ParseTree *context);
+    virtual void setContext(ParserRuleContext *context);
 
     const std::shared_ptr<FileSymbol> &getFileSymbol() const;
 

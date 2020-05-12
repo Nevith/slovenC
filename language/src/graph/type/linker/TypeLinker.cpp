@@ -13,12 +13,17 @@ std::shared_ptr<Symbol> TypeLinker::getSymbol(std::shared_ptr<TypeReferenceExpre
             visit(object);
             // Obtain the resolved type
             auto node = graph->getNode(object);
-            auto parentSymbol = node->getUsageEdge()->getStartingVertex()->getVisitable();
+            auto parentSymbol = node->getSymbolEdge()->getStartingVertex()->getVisitable();
             // Try to find the identifier inside the object
             return searcher.findSymbol(cast, expression);
         } else {
-            // Look inside this file and inside imported files
             std::shared_ptr<Symbol> resolve;
+            // Check if predefinedSymbol
+            resolve = PredefinedSymbol::findPredefinedSymbol(cast->getContext().getText());
+            if (resolve) {
+                return resolve;
+            }
+            // Look inside this file and inside imported files
             resolve = searcher.findSymbol(cast, fileSymbol);
             for (auto import : fileSymbol->getImports()) {
                 // As soon as we find a match, return it
@@ -42,6 +47,16 @@ TypeLinker::TypeLinker(std::shared_ptr<Project> project, std::shared_ptr<FileSym
     graph = std::make_shared<TypeGraph>();
     auto node = std::make_shared<TypeNode>(InvalidTypeSymbol::INVALID_TYPE);
     graph->addNode(node);
+    node = std::make_shared<TypeNode>(PredefinedSymbol::BOOLEAN);
+    graph->addNode(node);
+    node = std::make_shared<TypeNode>(PredefinedSymbol::DOUBLE);
+    graph->addNode(node);
+    node = std::make_shared<TypeNode>(PredefinedSymbol::INT);
+    graph->addNode(node);
+    node = std::make_shared<TypeNode>(PredefinedSymbol::VOID);
+    graph->addNode(node);
+    node = std::make_shared<TypeNode>(PredefinedSymbol::CONSOLE);
+    graph->addNode(node);
 }
 
 std::shared_ptr<TypeGraph> TypeLinker::link() {
@@ -50,12 +65,22 @@ std::shared_ptr<TypeGraph> TypeLinker::link() {
 }
 
 void TypeLinker::visitFileSymbol(std::shared_ptr<FileSymbol> visitable) {
+    auto fileNode = std::make_shared<TypeNode>(visitable);
+    graph->addNode(fileNode);
+    visit(visitable->getParentSymbol());
+
     for (auto import : visitable->getImports()) {
         visit(import);
     }
     for (auto clazz : visitable->getDeclaredClasses()) {
         visit(clazz);
     }
+}
+
+void TypeLinker::visitPackageSymbol(std::shared_ptr<PackageSymbol> visitable) {
+    auto fileNode = std::make_shared<TypeNode>(visitable);
+    graph->addNode(fileNode);
+    visit(visitable->getParentSymbol());
 }
 
 void TypeLinker::visitPackageOrFileReferenceExpression(std::shared_ptr<PackageOrFileReferenceExpression> visitable) {
@@ -77,7 +102,7 @@ void TypeLinker::visitPackageOrFileReferenceExpression(std::shared_ptr<PackageOr
         parentNode = graph->getNode(InvalidTypeSymbol::INVALID_TYPE);
     }
 
-    graph->addEdge(parentNode, node, std::make_shared<TypeEdge>(false));
+    graph->addEdge(parentNode, node, std::make_shared<TypeEdge>(true));
     if (visitable->getObject()) {
         visit(visitable->getObject());
     }
@@ -95,14 +120,16 @@ void TypeLinker::visitTypeReferenceExpression(std::shared_ptr<TypeReferenceExpre
         parentNode = std::make_shared<TypeNode>(symbol);
         graph->addNode(parentNode);
     }
-
-    graph->addEdge(parentNode, node, std::make_shared<TypeEdge>(false));
+    graph->addEdge(parentNode, node, std::make_shared<TypeEdge>(true));
     if (visitable->getObject()) {
         visit(visitable->getObject());
     }
 }
 
 void TypeLinker::visitClassSymbol(std::shared_ptr<ClassSymbol> visitable) {
+    auto classNode = std::make_shared<TypeNode>(visitable);
+    graph->addNode(classNode);
+
     for (auto superClass : visitable->getSuperClasses()) {
         visit(superClass);
     }
@@ -118,7 +145,6 @@ void TypeLinker::visitClassSymbol(std::shared_ptr<ClassSymbol> visitable) {
     for (auto constructor : visitable->getConstructors()) {
         visit(constructor);
     }
-
 
 }
 

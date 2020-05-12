@@ -442,7 +442,7 @@ antlrcpp::Any ExpressionBuilder::visitLiteralNULLLITERAL(SlovenCLanguageParser::
     return TypeUtils::cast<Expression>(symbol);
 }
 
-void ExpressionBuilder::defineParents(std::shared_ptr<Expression> expression, tree::ParseTree *context) {
+void ExpressionBuilder::defineParents(std::shared_ptr<Expression> expression, antlr4::ParserRuleContext *context) {
     auto parentFile = currentState->getFileSymbol();
     auto parentStatement = currentState->getCurrentStatement();
     auto parentMethod = currentState->getCurrentMethod();

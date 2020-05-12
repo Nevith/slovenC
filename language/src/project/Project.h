@@ -12,6 +12,7 @@
 #include <memory>
 #include <model/symbols/base/FullyQualifiedSymbol.h>
 #include <model/symbols/main/PackageSymbol.h>
+#include <graph/type/TypeGraph.h>
 
 class Project {
 private:

@@ -19,7 +19,7 @@ private:
 
     ReferenceBuilder *referenceBuilder;
 
-    void defineParents(std::shared_ptr<Expression> expression, tree::ParseTree *context);
+    void defineParents(std::shared_ptr<Expression> expression, antlr4::ParserRuleContext *context);
 
 public:
 

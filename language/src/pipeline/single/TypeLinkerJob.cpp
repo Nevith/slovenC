@@ -6,18 +6,17 @@
 #include "TypeLinkerJob.h"
 
 TypeLinkerJob::TypeLinkerJob(std::shared_ptr<Project> project, std::shared_ptr<FileSymbol> fileSymbol,
-                             std::shared_ptr<ManagerJob> managerJob)
+                             std::shared_ptr<ManagerJob<TypeGraph>> managerJob)
         : project(project), fileSymbol(fileSymbol), managerJob(managerJob) {}
 
 void TypeLinkerJob::run() {
     // Commence linking
     TypeLinker typeLinker(project, fileSymbol);
-    auto graph = typeLinker.link();
+    graph = typeLinker.link();
     InheritanceLinker inheritanceLinker(graph, project, fileSymbol);
     inheritanceLinker.link();
-    fileSymbol->setLocalTypeGraph(graph);
 }
 
 std::vector<std::shared_ptr<Job>> TypeLinkerJob::onComplete() {
-    return managerJob->JobDone(fileSymbol);
+    return managerJob->JobDone(fileSymbol, graph);
 }

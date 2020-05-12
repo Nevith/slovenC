@@ -10,7 +10,7 @@ using namespace antlr4;
 
 
 BuilderJob::BuilderJob(std::shared_ptr<Project> project, std::shared_ptr<FileSymbol> fileSymbol,
-                       std::shared_ptr<ManagerJob> managerJob)
+                       std::shared_ptr<ManagerJob<FileSymbol>> managerJob)
         : project(project), fileSymbol(fileSymbol), managerJob(managerJob) {}
 
 void BuilderJob::run() {
@@ -28,5 +28,5 @@ void BuilderJob::run() {
 }
 
 std::vector<std::shared_ptr<Job>> BuilderJob::onComplete() {
-    return managerJob->JobDone(fileSymbol);
+    return managerJob->JobDone(fileSymbol, fileSymbol);
 }

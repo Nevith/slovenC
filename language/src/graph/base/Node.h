@@ -34,6 +34,8 @@ public:
     }
 
     virtual std::string getString() = 0;
+
+    virtual std::string getNodeTypeString() = 0;
 };
 
 

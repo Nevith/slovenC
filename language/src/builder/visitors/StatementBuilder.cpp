@@ -110,7 +110,7 @@ antlrcpp::Any StatementBuilder::visitExpressionStatement(SlovenCLanguageParser::
 }
 
 
-void StatementBuilder::defineParents(std::shared_ptr<Statement> statement, tree::ParseTree *context) {
+void StatementBuilder::defineParents(std::shared_ptr<Statement> statement, antlr4::ParserRuleContext *context) {
     auto parentFile = currentState->getFileSymbol();
     auto parentStatement = currentState->getCurrentStatement();
     auto parentMethod = currentState->getCurrentMethod();

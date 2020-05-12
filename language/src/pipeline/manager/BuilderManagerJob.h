@@ -7,14 +7,13 @@
 
 
 #include <async/Job.h>
-#include <model/symbols/main/FileSymbol.h>
+#include "ManagerJob.h"
 #include <project/Project.h>
 #include "pipeline/single/BuilderJob.h"
-#include "ManagerJob.h"
 #include "TypeLinkerManagerJob.h"
 
 
-class BuilderManagerJob: public ManagerJob {
+class BuilderManagerJob: public ManagerJob<FileSymbol> {
 private:
     std::shared_ptr<Project> project;
 
@@ -23,7 +22,7 @@ public:
 
     std::vector<std::shared_ptr<Job>> onComplete() override;
 
-    std::vector<std::shared_ptr<Job>> JobDone(std::shared_ptr<FileSymbol> fileSymbol) override;
+    std::vector<std::shared_ptr<Job>> jobsFinished() override;
 };
 
 

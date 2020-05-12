@@ -22,7 +22,7 @@ private:
     ExpressionBuilder *expressionBuilder;
     SymbolBuilder *symbolBuilder;
 
-    void defineParents(std::shared_ptr<Statement> statement, tree::ParseTree *context);
+    void defineParents(std::shared_ptr<Statement> statement, antlr4::ParserRuleContext *context);
 
 public:
     StatementBuilder(const std::shared_ptr<CurrentState> &currentState, ReferenceBuilder *referenceBuilder,

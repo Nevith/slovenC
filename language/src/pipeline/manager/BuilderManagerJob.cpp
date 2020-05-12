@@ -19,16 +19,8 @@ std::vector<std::shared_ptr<Job>> BuilderManagerJob::onComplete() {
     return fileJobs;
 }
 
-std::vector<std::shared_ptr<Job>> BuilderManagerJob::JobDone(std::shared_ptr<FileSymbol> fileSymbol) {
-    fileResultMap[fileSymbol] = true;
-    for (auto file : files) {
-        if (!fileResultMap[file]) {
-            return std::vector<std::shared_ptr<Job>>();
-        }
-    }
-    setSelf(nullptr);
-
-    auto result = std::vector<std::shared_ptr<Job>>();
+std::vector<std::shared_ptr<Job>> BuilderManagerJob::jobsFinished() {
+    std::vector<std::shared_ptr<Job>> result;
     auto managerJob = std::make_shared<TypeLinkerManagerJob>(files, project);
     managerJob->setSelf(managerJob);
     result.push_back(managerJob);

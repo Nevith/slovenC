@@ -3,7 +3,6 @@
 //
 
 #include "TypeLinkerManagerJob.h"
-#include "pipeline/single/TypeLinkerJob.h"
 
 TypeLinkerManagerJob::TypeLinkerManagerJob(std::vector<std::shared_ptr<FileSymbol>> files,
                                            std::shared_ptr<Project> project) :
@@ -43,17 +42,9 @@ std::vector<std::shared_ptr<Job>> TypeLinkerManagerJob::onComplete() {
     return linkerJobs;
 }
 
-std::vector<std::shared_ptr<Job>> TypeLinkerManagerJob::JobDone(std::shared_ptr<FileSymbol> fileSymbol) {
-    fileResultMap[fileSymbol] = true;
+std::vector<std::shared_ptr<Job>> TypeLinkerManagerJob::jobsFinished() {
     for (auto file : files) {
-        if (!fileResultMap[file]) {
-            return std::vector<std::shared_ptr<Job>>();
-        }
-    }
-    setSelf(nullptr); // Mem leak cleanup
-
-    for (auto file : files) {
-        merge(file->getLocalTypeGraph());
+        merge(fileResultMap[file]);
     }
     project->setTypeGraph(globalTypeGraph);
 
