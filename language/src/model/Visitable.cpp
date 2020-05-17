@@ -14,11 +14,13 @@ const Context Visitable::getContext() const {
 }
 
 void Visitable::setContext(ParserRuleContext *ctx) {
-    context.setText(ctx->getText());
     context.setOffset(ctx->getStart()->getStartIndex());
-    context.setLength(ctx->getStart()->getStopIndex() - context.getOffset());
+    context.setAnEnd(ctx->getStop()->getStopIndex());
+    context.setLength(context.getAnEnd() - context.getOffset());
     context.setColumn(ctx->getStart()->getCharPositionInLine());
     context.setRow(ctx->getStart()->getLine());
+    context.setText(
+            ctx->getStart()->getInputStream()->getText(misc::Interval(context.getOffset(), context.getAnEnd())));
 }
 
 const std::shared_ptr<FileSymbol> &Visitable::getFileSymbol() const {

@@ -11,6 +11,7 @@
 class Context {
 private:
     int offset;
+    int end;
     int length;
     int column;
     int row;
@@ -20,6 +21,10 @@ public:
     int getOffset() const;
 
     void setOffset(int offset);
+
+    int getAnEnd() const;
+
+    void setAnEnd(int anEnd);
 
     int getLength() const;
 

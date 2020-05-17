@@ -43,3 +43,11 @@ const std::string &Context::getText() const {
 void Context::setText(const std::string &text) {
     Context::text = text;
 }
+
+int Context::getAnEnd() const {
+    return end;
+}
+
+void Context::setAnEnd(int anEnd) {
+    end = anEnd;
+}

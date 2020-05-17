@@ -23,14 +23,18 @@ std::shared_ptr<Symbol> TypeLinker::getSymbol(std::shared_ptr<IdentifierExpressi
         }
         // Look inside this file and inside imported files
         resolve = searcher.findSymbol(expression, fileSymbol);
+        // As soon as we find a match, return it
+        if (resolve) {
+            return resolve;
+        }
         for (auto import : fileSymbol->getImports()) {
-            // As soon as we find a match, return it
-            if (resolve) {
-                return resolve;
-            }
             auto importedFile = import->getResolve();
             if (importedFile) {
                 resolve = searcher.findSymbol(expression, importedFile);
+            }
+            // As soon as we find a match, return it
+            if (resolve) {
+                return resolve;
             }
         }
     }
@@ -168,7 +172,6 @@ void TypeLinker::visitParameterSymbol(std::shared_ptr<ParameterSymbol> visitable
 
 void TypeLinker::visitBlockStatement(std::shared_ptr<BlockStatement> visitable) {
     for (auto statement : visitable->getStatements()) {
-        std::cout << statement->getContext().getText() << std::endl;
         visit(statement);
     }
 }

@@ -68,6 +68,7 @@ void SymbolLinker::enterClassSymbol(std::shared_ptr<ClassSymbol> visitable) {
 }
 
 void SymbolLinker::exitClassSymbol(std::shared_ptr<ClassSymbol> visitable) {
+    frameStack.popFrame();
     for (auto super : visitable->getSuperClasses()) {
         auto resolve = super->getResolve();
         if (resolve) {
@@ -77,7 +78,6 @@ void SymbolLinker::exitClassSymbol(std::shared_ptr<ClassSymbol> visitable) {
             }
         }
     }
-    frameStack.popFrame();
 }
 
 void SymbolLinker::enterMethodSymbol(std::shared_ptr<MethodSymbol> visitable) {
