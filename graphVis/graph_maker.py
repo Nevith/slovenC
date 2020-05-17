@@ -1,7 +1,7 @@
 import random
 import igraph
 import plotly.graph_objects as go
-
+import numpy
 
 def create_graph(data: dict):
     edges = []
@@ -51,7 +51,7 @@ def prep_positions(graph, layout, nr_vertices):
 
 def draw_graph(data: dict):
     graph = create_graph(data)
-    vertex_scatters, edge_scatter = prep_scatters([vertex["type"] for vertex in data["vertices"]],
+    vertex_scatters, edge_scatters = prep_scatters([vertex["type"] for vertex in data["vertices"]],
                                                   [edge["type"] for edge in data["edges"]])
     vertex_coordinates, edge_coordinates = prep_positions(graph, graph.layout("rt"), len(data["vertices"]))
 
@@ -66,7 +66,7 @@ def draw_graph(data: dict):
     edges = data["edges"]
     for i in range(0, len(edges)):
         edge = edges[i]
-        scatter = edge_scatter[edge["type"]]
+        scatter = edge_scatters[edge["type"]]
         scatter["x"].append(edge_coordinates[0][i * 3])
         scatter["x"].append(edge_coordinates[0][i * 3 + 1])
         scatter["x"].append(edge_coordinates[0][i * 3 + 2])
@@ -92,14 +92,14 @@ def draw_graph(data: dict):
             hoverinfo="text",
             name=value["name"],
             marker=dict(symbol='circle-dot',
-                        size=18,
+                        size=25,
                         color="rgb(%d,%d,%d)" % value["color"],
                         line=dict(color='rgb(50,50,50)', width=1)
                         )
         )
         )
 
-    for key, value in edge_scatter.items():
+    for key, value in edge_scatters.items():
         fig.add_trace(go.Scatter(
             x=value["x"],
             y=value["y"],
@@ -111,7 +111,38 @@ def draw_graph(data: dict):
         )
         )
 
-    # Note: if you don't use fixed ratio axes, the arrows won't be symmetrical
-    fig.add_annotation()
+    for edge in data["edges"]:
+        fig.add_annotation(dict(
+            x=vertex_coordinates[0][edge["end"]],
+            y=vertex_coordinates[1][edge["end"]],
+            xref="x",
+            yref="y",
+            arrowcolor="rgb(%d,%d,%d)" % edge_scatters[edge["type"]]["color"],
+            showarrow=True,
+            arrowhead=1,
+            arrowsize=1.5,
+            arrowwidth=2,
+            clicktoshow="onoff",
+            ax=vertex_coordinates[0][edge["start"]],
+            ay=vertex_coordinates[1][edge["start"]],
+            axref='x',
+            ayref='y',
+        ))
+
+    for i in range(len(data["vertices"])):
+        vertex = vertices[i]
+        fig.add_annotation(dict(
+            x=vertex_coordinates[0][i],
+            y=vertex_coordinates[1][i],
+            xref="x",
+            yref="y",
+            text=vertex["name"],
+            arrowcolor="rgb(%d,%d,%d)" % tuple(numpy.subtract((255, 255, 255), vertex_scatters[vertex["type"]]["color"])),
+            bgcolor="rgb(%d,%d,%d)" % tuple(numpy.subtract((255, 255, 255), vertex_scatters[vertex["type"]]["color"])),
+            bordercolor="rgb(%d,%d,%d)" % vertex_scatters[vertex["type"]]["color"],
+            font=dict(
+                color="rgb(%d,%d,%d)" % vertex_scatters[vertex["type"]]["color"]
+            )
+        ))
 
     fig.show()
