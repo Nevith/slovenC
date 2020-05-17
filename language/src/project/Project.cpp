@@ -67,3 +67,11 @@ const std::shared_ptr<TypeGraph> &Project::getTypeGraph() const {
 void Project::setTypeGraph(const std::shared_ptr<TypeGraph> &typeGraph) {
     Project::typeGraph = typeGraph;
 }
+
+const std::shared_ptr<DataFlowGraph> &Project::getDataFlowGraph() const {
+    return dataFlowGraph;
+}
+
+void Project::setDataFlowGraph(const std::shared_ptr<DataFlowGraph> &dataFlowGraph) {
+    Project::dataFlowGraph = dataFlowGraph;
+}

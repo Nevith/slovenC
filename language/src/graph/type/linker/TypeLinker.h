@@ -10,7 +10,7 @@
 #include <graph/type/TypeGraph.h>
 #include "model/Model.h"
 #include <project/Project.h>
-#include "graph/SymbolSearcher.h"
+#include <graph/type/linker/utils/TypeSearcher.h>
 #include "graph/dataflow/linker/utils/FrameStack.h"
 
 class TypeLinker : public ModelVisitor<GraphOrNode> {
@@ -19,9 +19,9 @@ private:
     const std::shared_ptr<Project> project;
     const std::shared_ptr<FileSymbol> fileSymbol;
 
-    SymbolSearcher searcher;
+    TypeSearcher searcher;
 
-    std::shared_ptr<Symbol> getSymbol(std::shared_ptr<TypeReferenceExpression> expression);
+    std::shared_ptr<Symbol> getSymbol(std::shared_ptr<IdentifierExpression> expression);
 
 public:
     TypeLinker(std::shared_ptr<Project> project, std::shared_ptr<FileSymbol> fileSymbol);

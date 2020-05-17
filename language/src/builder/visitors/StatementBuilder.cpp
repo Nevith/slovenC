@@ -125,6 +125,7 @@ void StatementBuilder::defineParents(std::shared_ptr<Statement> statement, antlr
     statement->setContext(context);
 
     if (parentScope) {
+        std::cout << "Adding statement: " << context->getText() << std::endl;
         parentScope->addStatement(statement);
     }
     if (parentStatement) {

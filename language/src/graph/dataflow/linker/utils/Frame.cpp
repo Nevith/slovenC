@@ -13,3 +13,11 @@ const std::shared_ptr<Symbol> Frame::getSymbolByIdentifier(std::string identifie
 void Frame::addSymbol(std::shared_ptr<Symbol> symbol, std::string identifier) {
     identifierMap[identifier] = symbol;
 }
+
+const std::vector<std::shared_ptr<MethodSymbol>> Frame::getMethodsByIdentifier(std::string identifier) {
+    return methodMap[identifier];
+}
+
+void Frame::addMethod(std::shared_ptr<MethodSymbol> symbol, std::string identifier) {
+    methodMap[identifier].push_back(symbol);
+}

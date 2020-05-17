@@ -7,7 +7,10 @@ def compare_elements(elem_one: dict, elem_two: dict):
 
 
 def check_duplicate_edges(data: dict):
+
     edges = data["edges"]
+    print("%d vertices" % len(data["vertices"]))
+    print("%d edges" % len(edges))
     duplicates = []
     for i in range(0, len(edges) - 1):
         elem_one = edges[i]

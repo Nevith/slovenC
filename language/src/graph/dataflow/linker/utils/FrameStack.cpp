@@ -17,6 +17,19 @@ std::shared_ptr<Symbol> FrameStack::getSymbol(std::string identifier) {
     return nullptr;
 }
 
+std::vector<std::shared_ptr<MethodSymbol>> FrameStack::getMethods(std::string identifier) {
+    // Look up through the frames for the correct symbol
+    for (int i = frameStack.size() - 1; i >= 0; --i) {
+        auto frame = frameStack[i];
+
+        auto symbols = frame.getMethodsByIdentifier(identifier);
+        if (!symbols.empty()) {
+            return symbols;
+        }
+    }
+    return std::vector<std::shared_ptr<MethodSymbol>>();
+}
+
 void FrameStack::createFrame() {
     frameStack.push_back(Frame());
 }
@@ -26,5 +39,10 @@ void FrameStack::popFrame() {
 }
 
 void FrameStack::pushSymbol(std::shared_ptr<Symbol> symbol, std::string identifier) {
-    frameStack.back().addSymbol(symbol, identifier);
+    auto method = TypeUtils::cast<MethodSymbol>(symbol);
+    if (method) {
+        frameStack.back().addMethod(method, identifier);
+    } else {
+        frameStack.back().addSymbol(symbol, identifier);
+    }
 }

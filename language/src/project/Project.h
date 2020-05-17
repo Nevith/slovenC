@@ -13,6 +13,7 @@
 #include <model/symbols/base/FullyQualifiedSymbol.h>
 #include <model/symbols/main/PackageSymbol.h>
 #include <graph/type/TypeGraph.h>
+#include <graph/dataflow/DataFlowGraph.h>
 
 class Project {
 private:
@@ -24,6 +25,7 @@ private:
     std::map<std::string, std::shared_ptr<FullyQualifiedSymbol>> fullyQualifiedMap;
 
     std::shared_ptr<TypeGraph> typeGraph;
+    std::shared_ptr<DataFlowGraph> dataFlowGraph;
 
 public:
     Project(std::string absolutePath);
@@ -49,6 +51,10 @@ public:
     const std::shared_ptr<TypeGraph> &getTypeGraph() const;
 
     void setTypeGraph(const std::shared_ptr<TypeGraph> &typeGraph);
+
+    const std::shared_ptr<DataFlowGraph> &getDataFlowGraph() const;
+
+    void setDataFlowGraph(const std::shared_ptr<DataFlowGraph> &dataFlowGraph);
 };
 
 

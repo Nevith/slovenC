@@ -1,61 +1,117 @@
 import random
 import igraph
+import plotly.graph_objects as go
 
 
-def count_incoming_edges(i: int, edges):
-    count = 0
-    for edge in edges:
-        if i == edge["start"]:
-            count -= 1
+def create_graph(data: dict):
+    edges = []
 
-    return count
+    for edge in data["edges"]:
+        edges.append((edge["start"], edge["end"]))
 
-
-def create_random_colors(elements: list):
-    color_dict = dict()
-    for element in elements:
-        color_dict[element["type"]] = (random.random(), random.random(), random.random())
-
-    return color_dict
+    graph = igraph.Graph(edges=edges, directed=True)
+    return graph
 
 
-def create_visual_style(data: dict):
-    visual_style = dict()
-    visual_style["edge_arrow_size"] = 100
-    visual_style["edge_arrow_width"] = 100
-    visual_style["edge_curved"] = 0
-    visual_style["vertex_size"] = 50
-    visual_style["vertex_label_dist"] = 1.2
-    color_dict_vertices = create_random_colors(data["vertices"])
-    color_dict_edges = create_random_colors(data["edges"])
+def prep_scatters(v_types: list, e_types: list):
+    vertex_scatters = dict()
+    edge_scatters = dict()
 
-    visual_style["vertex_color"] = [color_dict_vertices[vertex["type"]] for vertex in data["vertices"]]
-    visual_style["edge_color"] = [color_dict_edges[edge["type"]] for edge in data["edges"]]
-    return visual_style
+    for result, types in [(vertex_scatters, v_types), (edge_scatters, e_types)]:
+        for label in types:
+            if label not in result.keys():
+                new_value = dict()
+                new_value["color"] = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
+                new_value["name"] = label
+                new_value["x"] = []
+                new_value["y"] = []
+                new_value["label"] = []
+                result[label] = new_value
+
+    return vertex_scatters, edge_scatters
+
+
+def prep_positions(graph, layout, nr_vertices):
+    position = {k: layout[k] for k in range(nr_vertices)}
+    Y = [layout[k][1] for k in range(nr_vertices)]
+    M = max(Y)
+    E = [e.tuple for e in graph.es]  # list of edges
+
+    L = len(position)
+    Xn = [position[k][0] for k in range(L)]
+    Yn = [2 * M - position[k][1] for k in range(L)]
+    Xe = []
+    Ye = []
+    for edge in E:
+        Xe += [position[edge[0]][0], position[edge[1]][0], None]
+        Ye += [2 * M - position[edge[0]][1], 2 * M - position[edge[1]][1], None]
+
+    return (Xn, Yn), (Xe, Ye)
 
 
 def draw_graph(data: dict):
-    graph = igraph.Graph()
-    layout = igraph.Layout([])
+    graph = create_graph(data)
+    vertex_scatters, edge_scatter = prep_scatters([vertex["type"] for vertex in data["vertices"]],
+                                                  [edge["type"] for edge in data["edges"]])
+    vertex_coordinates, edge_coordinates = prep_positions(graph, graph.layout("rt"), len(data["vertices"]))
 
-    vertex_count = dict()
-    for i in range(0, len(data["edges"])):
-        vertex_count[-i] = 0
+    vertices = data["vertices"]
+    for i in range(0, len(vertices)):
+        vertex = vertices[i]
+        scatter = vertex_scatters[vertex["type"]]
+        scatter["x"].append(vertex_coordinates[0][i])
+        scatter["y"].append(vertex_coordinates[1][i])
+        scatter["label"].append(vertex["name"])
 
-    i = 0
-    for vertex in data["vertices"]:
-        graph.add_vertex(vertex["name"])
-        count = count_incoming_edges(i, data["edges"])
-        vertex_count[count] += 1
-        layout.append((vertex_count[count] * 10, count))
-        i += 1
+    edges = data["edges"]
+    for i in range(0, len(edges)):
+        edge = edges[i]
+        scatter = edge_scatter[edge["type"]]
+        scatter["x"].append(edge_coordinates[0][i * 3])
+        scatter["x"].append(edge_coordinates[0][i * 3 + 1])
+        scatter["x"].append(edge_coordinates[0][i * 3 + 2])
+        scatter["y"].append(edge_coordinates[1][i * 3])
+        scatter["y"].append(edge_coordinates[1][i * 3 + 1])
+        scatter["y"].append(edge_coordinates[1][i * 3 + 2])
+        scatter["label"].append(edge["type"])
 
-    i = 0
-    for edge in data["edges"]:
-        graph.add_edge(edge["start"], edge["end"])
-        graph.es[i]["type"] = edge["type"]
-        i += 1
+    fig = go.Figure(
+        layout=go.Layout(
+            showlegend=True,
+            hovermode='closest',
+            xaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
+            yaxis=dict(showgrid=False, zeroline=False, showticklabels=False))
+    )
 
-    graph.vs["label"] = graph.vs["name"]
+    for key, value in vertex_scatters.items():
+        fig.add_trace(go.Scatter(
+            x=value["x"],
+            y=value["y"],
+            mode="markers",
+            text=value["label"],
+            hoverinfo="text",
+            name=value["name"],
+            marker=dict(symbol='circle-dot',
+                        size=18,
+                        color="rgb(%d,%d,%d)" % value["color"],
+                        line=dict(color='rgb(50,50,50)', width=1)
+                        )
+        )
+        )
 
-    igraph.plot(graph, layout=layout, bbox=(2000, 2000), margin=100, **create_visual_style(data))
+    for key, value in edge_scatter.items():
+        fig.add_trace(go.Scatter(
+            x=value["x"],
+            y=value["y"],
+            mode="lines",
+            text=value["label"],
+            hoverinfo="text",
+            name=value["name"],
+            line=dict(color="rgb(%d,%d,%d)" % value["color"], width=1),
+        )
+        )
+
+    # Note: if you don't use fixed ratio axes, the arrows won't be symmetrical
+    fig.add_annotation()
+
+    fig.show()

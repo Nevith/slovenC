@@ -5,38 +5,16 @@
 #ifndef SLOVENC_TYPEREFERENCEEXPRESSION_H
 #define SLOVENC_TYPEREFERENCEEXPRESSION_H
 
-
-#include <exception>
 #include <model/symbols/base/TypeSymbol.h>
 #include <model/expressions/base/DottedExpression.h>
 #include "IdentifierExpression.h"
 
 class TypeReferenceExpression : public IdentifierExpression {
-private:
-
-    std::shared_ptr<Symbol> resolve;
-
 public:
 
     TypeReferenceExpression(std::string name);
 
-    bool isResolved() const;
-
-    void setResolve(const std::shared_ptr<Symbol> &resolve);
-
-    const std::shared_ptr<Symbol> &getResolve() const;
-
     void accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) override;
-
-    class ReferenceNotResolvedException : public std::exception {
-    public:
-        const char *what() const override;
-    } referenceNotResolvedException;
-
-    class ReferenceAlreadyResolvedException : public std::exception {
-    public:
-        const char *what() const override;
-    } referenceAlreadyResolvedException;
 };
 
 

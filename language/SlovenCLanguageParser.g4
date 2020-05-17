@@ -186,7 +186,7 @@ formalParameter
         ;
 
 methodBody
-        : LBRACE blockStatement* RBRACE
+        : LBRACE blockStatement RBRACE
         | SEMI
         ;
 
@@ -199,7 +199,7 @@ constructorDeclarator
         ;
 
 constructorBody
-        : LBRACE blockStatement* RBRACE
+        : LBRACE blockStatement RBRACE
         ;
 
 /*
@@ -207,12 +207,11 @@ constructorBody
  */
 
 block
-        : LBRACE blockStatement*  RBRACE
+        : LBRACE blockStatement  RBRACE
         ;
 
 blockStatement
-        : localVariableDeclarationStatement
-        | statement
+        : statement*
         ;
 
 localVariableDeclarationStatement
@@ -226,6 +225,7 @@ localVariableDeclaration
 
 statement
         : block_
+        | localVariableDeclarationStatement
         | ifThenStatement
         | basicForStatement
         | whileStatement

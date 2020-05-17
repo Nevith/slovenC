@@ -4,36 +4,33 @@
 
 #include "TypeLinker.h"
 
-std::shared_ptr<Symbol> TypeLinker::getSymbol(std::shared_ptr<TypeReferenceExpression> expression) {
-    auto cast = TypeUtils::cast<IdentifierExpression>(expression);
-    if (cast) {
-        auto object = expression->getObject();
-        if (object) {
-            // Resolve parent object first
-            visit(object);
-            // Obtain the resolved type
-            auto node = graph->getNode(object);
-            auto parentSymbol = node->getSymbolEdge()->getStartingVertex()->getVisitable();
-            // Try to find the identifier inside the object
-            return searcher.findSymbol(cast, expression);
-        } else {
-            std::shared_ptr<Symbol> resolve;
-            // Check if predefinedSymbol
-            resolve = PredefinedSymbol::findPredefinedSymbol(cast->getContext().getText());
+std::shared_ptr<Symbol> TypeLinker::getSymbol(std::shared_ptr<IdentifierExpression> expression) {
+    auto object = expression->getObject();
+    if (object) {
+        // Resolve parent object first
+        visit(object);
+        // Obtain the resolved type
+        auto node = graph->getNode(object);
+        auto parentSymbol = node->getSymbolEdge()->getStartingVertex()->getVisitable();
+        // Try to find the identifier inside the object
+        return searcher.findSymbol(expression, parentSymbol);
+    } else {
+        std::shared_ptr<Symbol> resolve;
+        // Check if predefinedSymbol
+        resolve = PredefinedSymbol::findPredefinedSymbol(expression->getContext().getText());
+        if (resolve) {
+            return resolve;
+        }
+        // Look inside this file and inside imported files
+        resolve = searcher.findSymbol(expression, fileSymbol);
+        for (auto import : fileSymbol->getImports()) {
+            // As soon as we find a match, return it
             if (resolve) {
                 return resolve;
             }
-            // Look inside this file and inside imported files
-            resolve = searcher.findSymbol(cast, fileSymbol);
-            for (auto import : fileSymbol->getImports()) {
-                // As soon as we find a match, return it
-                if (resolve) {
-                    return resolve;
-                }
-                auto importedFile = import->getResolve();
-                if (importedFile) {
-                    resolve = searcher.findSymbol(cast, importedFile);
-                }
+            auto importedFile = import->getResolve();
+            if (importedFile) {
+                resolve = searcher.findSymbol(expression, importedFile);
             }
         }
     }
@@ -121,9 +118,6 @@ void TypeLinker::visitTypeReferenceExpression(std::shared_ptr<TypeReferenceExpre
         graph->addNode(parentNode);
     }
     graph->addEdge(parentNode, node, std::make_shared<TypeEdge>(true));
-    if (visitable->getObject()) {
-        visit(visitable->getObject());
-    }
 }
 
 void TypeLinker::visitClassSymbol(std::shared_ptr<ClassSymbol> visitable) {
@@ -174,6 +168,7 @@ void TypeLinker::visitParameterSymbol(std::shared_ptr<ParameterSymbol> visitable
 
 void TypeLinker::visitBlockStatement(std::shared_ptr<BlockStatement> visitable) {
     for (auto statement : visitable->getStatements()) {
+        std::cout << statement->getContext().getText() << std::endl;
         visit(statement);
     }
 }
@@ -221,7 +216,21 @@ void TypeLinker::visitNotExpression(std::shared_ptr<NotExpression> visitable) {
 }
 
 void TypeLinker::visitIdentifierExpression(std::shared_ptr<IdentifierExpression> visitable) {
-    visit(visitable->getObject());
+    auto symbol = getSymbol(visitable);
+    if (symbol == InvalidTypeSymbol::INVALID_TYPE) {
+        return;
+    }
+
+    auto node = std::make_shared<TypeNode>(visitable);
+    graph->addNode(node);
+    visitable->setResolve(symbol);
+    // Correct import
+    std::shared_ptr<TypeNode> parentNode = graph->getNode(symbol);
+    if (!parentNode) {
+        parentNode = std::make_shared<TypeNode>(symbol);
+        graph->addNode(parentNode);
+    }
+    graph->addEdge(parentNode, node, std::make_shared<TypeEdge>(true));
 }
 
 void TypeLinker::visitThisExpression(std::shared_ptr<ThisExpression> visitable) {

@@ -17,6 +17,8 @@ public:
 
     std::shared_ptr<Symbol> getSymbol(std::string identifier);
 
+    std::vector<std::shared_ptr<MethodSymbol>> getMethods(std::string identifier);
+
     void pushSymbol(std::shared_ptr<Symbol> symbol, std::string identifier);
 
     void createFrame();

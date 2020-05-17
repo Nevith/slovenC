@@ -17,7 +17,7 @@ class CallExpression : public IdentifierExpression {
 
 private:
     std::vector<std::shared_ptr<Expression>> arguments;
-
+    std::vector<std::shared_ptr<MethodSymbol>> possibleMethods;
 public:
 
     CallExpression(const std::string &name);
@@ -25,6 +25,10 @@ public:
     virtual std::vector<std::shared_ptr<Expression>> getArguments();
 
     virtual void addArgument(std::shared_ptr<Expression> expression);
+
+    const std::vector<std::shared_ptr<MethodSymbol>> &getPossibleMethods() const;
+
+    void addPossibleMethod(const std::shared_ptr<MethodSymbol> &possibleMethod);
 };
 
 #endif //_CALLEXPRESSION_H

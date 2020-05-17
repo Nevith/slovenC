@@ -9,37 +9,6 @@ TypeReferenceExpression::TypeReferenceExpression(std::string name) : IdentifierE
 
 }
 
-void TypeReferenceExpression::setResolve(const std::shared_ptr<Symbol> &resolve) {
-    if (isResolved()) {
-        throw referenceAlreadyResolvedException;
-    }
-    TypeReferenceExpression::resolve = resolve;
-}
-
-const std::shared_ptr<Symbol> &TypeReferenceExpression::getResolve() const {
-    if (!isResolved()) {
-        throw referenceNotResolvedException;
-    }
-    return resolve;
-}
-
-bool TypeReferenceExpression::isResolved() const {
-    if (resolve) {
-        return true;
-    }
-    return false;
-}
-
 void TypeReferenceExpression::accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) {
     visitor->visitTypeReferenceExpression(TypeUtils::cast<TypeReferenceExpression>(visitable));
-}
-
-const char *TypeReferenceExpression::ReferenceNotResolvedException::what() const {
-    // TODO - better exception handling?
-    return "Calling on type of unresolved reference";
-}
-
-const char *TypeReferenceExpression::ReferenceAlreadyResolvedException::what() const {
-    // TODO - better exception handling?
-    return "Resolving an already resolved reference";
 }

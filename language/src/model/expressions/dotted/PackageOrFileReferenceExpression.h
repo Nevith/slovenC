@@ -11,31 +11,11 @@
 class FullyQualifiedSymbol;
 
 class PackageOrFileReferenceExpression : public IdentifierExpression {
-private:
-
-    std::shared_ptr<FullyQualifiedSymbol> resolve;
 
 public:
-
     PackageOrFileReferenceExpression(std::string name);
 
-    bool isResolved() const;
-
-    void setResolve(const std::shared_ptr<FullyQualifiedSymbol> &resolve);
-
-    const std::shared_ptr<FullyQualifiedSymbol> &getResolve() const;
-
     void accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) override;
-
-    class ReferenceNotResolvedException : public std::exception {
-    public:
-        const char *what() const override;
-    } referenceNotResolvedException;
-
-    class ReferenceAlreadyResolvedException : public std::exception {
-    public:
-        const char *what() const override;
-    } referenceAlreadyResolvedException;
 };
 
 

@@ -16,9 +16,6 @@ private:
     std::shared_ptr<IdentifierExpression> searchIdentifier;
 
     bool staticContext;
-
-    std::shared_ptr<MethodSymbol> findMethodMatch(std::vector<std::shared_ptr<MethodSymbol>> methods);
-
 public:
 
     std::shared_ptr<Symbol>

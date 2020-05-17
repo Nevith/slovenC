@@ -20,11 +20,16 @@ Builder::Builder(const std::shared_ptr<CurrentState> &currentState) : currentSta
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void Builder::enterBlockStatement(SlovenCLanguageParser::BlockStatementContext *context) {
     std::shared_ptr<BlockStatement> statement = statementBuilder.visit(context);
+
+    std::cout << std::endl << "---------------------" << std::endl << "Scope: " << statement->getContext().getText() << std::endl << "---------------------" << std::endl;
+
     currentState->pushCurrentScope(statement);
     currentState->pushCurrentStatement(statement);
 }
 
 void Builder::exitBlockStatement(SlovenCLanguageParser::BlockStatementContext *context) {
+    std::cout << std::endl << "---------------------" << std::endl << "Exit Scope: " << context->getText() << std::endl << "---------------------" << std::endl;
+
     currentState->popCurrentScope();
     currentState->popCurrentStatement();
 }
@@ -132,7 +137,6 @@ void Builder::enterReturnStatement(SlovenCLanguageParser::ReturnStatementContext
 }
 
 void Builder::exitReturnStatement(SlovenCLanguageParser::ReturnStatementContext *context) {
-    std::shared_ptr<Statement> statement = statementBuilder.visit(context);
     currentState->popCurrentStatement();
 }
 

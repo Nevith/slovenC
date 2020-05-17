@@ -19,3 +19,11 @@ void CallExpression::addArgument(std::shared_ptr<Expression> expression) {
 }
 
 CallExpression::CallExpression(const std::string &name) : IdentifierExpression(name) {}
+
+const std::vector<std::shared_ptr<MethodSymbol>> &CallExpression::getPossibleMethods() const {
+    return possibleMethods;
+}
+
+void CallExpression::addPossibleMethod(const std::shared_ptr<MethodSymbol> &possibleMethod) {
+    possibleMethods.push_back(possibleMethod);
+}

@@ -4,6 +4,7 @@
  */
 
 
+#include <iostream>
 #include "Scope.h"
 
 /**
@@ -15,6 +16,7 @@
  * @return std::vector<Statement>
  */
 const std::vector<std::shared_ptr<Statement>> &Scope::getStatements() const {
+    std::cout << "|Size: " << statements.size() <<std::endl;
     return statements;
 }
 
