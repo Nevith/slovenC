@@ -21,11 +21,14 @@ class BlockStatement;
 class MethodSymbol : public Member, public FullyQualifiedSymbol {
 private:
     const bool isConstructor;
+    const bool isSynthetic;
     std::shared_ptr<TypeReferenceExpression> result;
     std::vector<std::shared_ptr<ParameterSymbol>> parameters;
     std::shared_ptr<BlockStatement> scope;
 public:
     MethodSymbol(std::string name, const bool isConstructor);
+
+    MethodSymbol(std::string name, const bool isConstructor, const bool isSynthetic);
 
     const bool getIsConstructor() const;
 
@@ -40,6 +43,8 @@ public:
     const std::shared_ptr<BlockStatement> getScope() const;
 
     void setScope(const std::shared_ptr<BlockStatement> &scope);
+
+    const bool getIsSynthetic() const;
 
     void accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) override;
 };

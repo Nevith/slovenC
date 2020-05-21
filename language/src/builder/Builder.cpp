@@ -50,6 +50,12 @@ void Builder::enterNormalClassDeclaration(SlovenCLanguageParser::NormalClassDecl
 }
 
 void Builder::exitNormalClassDeclaration(SlovenCLanguageParser::NormalClassDeclarationContext *context) {
+    auto currentClass = currentState->getCurrentClass();
+    if (currentClass->getConstructors().empty()) {
+        auto constructor = std::make_shared<MethodSymbol>("Konstruktor", true, true);
+        constructor->setContext(context);
+        currentClass->declareConstructor(constructor);
+    }
     currentState->popCurrentClass();
 }
 

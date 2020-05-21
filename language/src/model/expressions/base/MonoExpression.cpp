@@ -10,7 +10,7 @@
  * MonoExpression implementation
  */
 std::shared_ptr<Expression> MonoExpression::getExpression() {
-    return nullptr;
+    return expression;
 }
 
 void MonoExpression::setExpression(std::shared_ptr<Expression> expression) {

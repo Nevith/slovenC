@@ -73,7 +73,7 @@ class ClassSymbol;
 
 class FileSymbol;
 
-class InvalidTypeSymbol;
+class InvalidSymbol;
 
 class MethodSymbol;
 
@@ -164,7 +164,7 @@ public:
 
     virtual void visitFileSymbol(std::shared_ptr<FileSymbol> visitable) = 0;
 
-    virtual void visitInvalidTypeSymbol(std::shared_ptr<InvalidTypeSymbol> visitable) = 0;
+    virtual void visitInvalidTypeSymbol(std::shared_ptr<InvalidSymbol> visitable) = 0;
 
     virtual void visitMethodSymbol(std::shared_ptr<MethodSymbol> visitable) = 0;
 

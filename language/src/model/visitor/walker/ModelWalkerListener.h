@@ -75,7 +75,7 @@ public:
 
     virtual void enterFileSymbol(std::shared_ptr<FileSymbol> visitable) {};
 
-    virtual void enterInvalidTypeSymbol(std::shared_ptr<InvalidTypeSymbol> visitable) {};
+    virtual void enterInvalidTypeSymbol(std::shared_ptr<InvalidSymbol> visitable) {};
 
     virtual void enterMethodSymbol(std::shared_ptr<MethodSymbol> visitable) {};
 
@@ -155,7 +155,7 @@ public:
 
     virtual void exitFileSymbol(std::shared_ptr<FileSymbol> visitable) {};
 
-    virtual void exitInvalidTypeSymbol(std::shared_ptr<InvalidTypeSymbol> visitable) {};
+    virtual void exitInvalidTypeSymbol(std::shared_ptr<InvalidSymbol> visitable) {};
 
     virtual void exitMethodSymbol(std::shared_ptr<MethodSymbol> visitable) {};
 

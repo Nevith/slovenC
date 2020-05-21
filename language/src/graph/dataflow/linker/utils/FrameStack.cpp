@@ -14,7 +14,7 @@ std::shared_ptr<Symbol> FrameStack::getSymbol(std::string identifier) {
             return symbol;
         }
     }
-    return nullptr;
+    return InvalidSymbol::INVALID;
 }
 
 std::vector<std::shared_ptr<MethodSymbol>> FrameStack::getMethods(std::string identifier) {

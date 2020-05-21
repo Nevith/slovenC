@@ -10,7 +10,10 @@
  * MethodSymbol implementation
  */
 MethodSymbol::MethodSymbol(std::string name, const bool isConstructor) : isConstructor(isConstructor),
-                                                                         FullyQualifiedSymbol(name) {}
+                                                                         FullyQualifiedSymbol(name), isSynthetic(false) {}
+
+MethodSymbol::MethodSymbol(std::string name, const bool isConstructor, const bool isSynthetic) : isConstructor(isConstructor),
+                                                                                                 FullyQualifiedSymbol(name), isSynthetic(isSynthetic) {}
 
 const std::shared_ptr<TypeReferenceExpression> &MethodSymbol::getResult() const {
     return result;
@@ -45,4 +48,8 @@ void MethodSymbol::setScope(const std::shared_ptr<BlockStatement> &scope) {
 
 void MethodSymbol::accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) {
     visitor->visitMethodSymbol(TypeUtils::cast<MethodSymbol>(visitable));
+}
+
+const bool MethodSymbol::getIsSynthetic() const {
+    return isSynthetic;
 }

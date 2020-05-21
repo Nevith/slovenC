@@ -57,5 +57,4 @@ public:
     void setDataFlowGraph(const std::shared_ptr<DataFlowGraph> &dataFlowGraph);
 };
 
-
 #endif //SLOVENC_PROJECT_H

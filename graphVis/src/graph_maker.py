@@ -3,6 +3,7 @@ import igraph
 import plotly.graph_objects as go
 import numpy
 
+
 def create_graph(data: dict):
     edges = []
 
@@ -122,7 +123,6 @@ def draw_graph(data: dict):
             arrowhead=1,
             arrowsize=1.5,
             arrowwidth=2,
-            clicktoshow="onoff",
             ax=vertex_coordinates[0][edge["start"]],
             ay=vertex_coordinates[1][edge["start"]],
             axref='x',

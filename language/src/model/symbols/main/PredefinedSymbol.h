@@ -19,6 +19,7 @@ public:
     const static std::shared_ptr<PredefinedSymbol> INT;
     const static std::shared_ptr<PredefinedSymbol> DOUBLE;
     const static std::shared_ptr<PredefinedSymbol> VOID;
+    const static std::shared_ptr<PredefinedSymbol> STRING;
     const static std::shared_ptr<PredefinedSymbol> CONSOLE;
 
     void accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) override;

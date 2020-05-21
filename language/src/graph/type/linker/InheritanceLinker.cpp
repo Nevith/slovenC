@@ -30,7 +30,7 @@ void InheritanceLinker::visitClassSymbol(std::shared_ptr<ClassSymbol> visitable)
         if (!resolve) {
             continue;
         }
-        if (resolve != InvalidTypeSymbol::INVALID_TYPE) {
+        if (resolve != InvalidSymbol::INVALID) {
             auto superNode = graph->getNode(resolve);
             graph->addEdge(superNode, mainNode, std::make_shared<TypeEdge>(false));
         }

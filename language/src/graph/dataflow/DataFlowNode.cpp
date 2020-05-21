@@ -4,7 +4,7 @@
 
 #include "DataFlowNode.h"
 
-DataFlowNode::DataFlowNode(std::shared_ptr<Visitable> visitable) {
+DataFlowNode::DataFlowNode(std::shared_ptr<Visitable> visitablef): visitable(visitablef) {
 
 }
 
@@ -20,7 +20,8 @@ std::string DataFlowNode::getString() {
     if (fullyQualifiedSymbol) {
         return fullyQualifiedSymbol->getFullyQualifiedName();
     }
-    return visitable->getContext().getText();
+    auto context = visitable->getContext();
+    return context.getText();
 }
 
 std::string DataFlowNode::getNodeTypeString() {
@@ -44,7 +45,7 @@ std::string DataFlowNode::getNodeTypeString() {
     if (expression) {
         return "Expression";
     }
-    return "None";
+    return "Other";
 }
 
 const std::shared_ptr<Visitable> &DataFlowNode::getVisitable() const {

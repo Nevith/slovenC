@@ -14,8 +14,12 @@
 #include <graph/dataflow/linker/utils/FrameStack.h>
 #include <graph/dataflow/linker/utils/SymbolSearcher.h>
 #include <model/visitor/walker/ModelWalkerListener.h>
+#include <model/symbols/main/InvalidSymbol.h>
+#include <model/utils/TypeResolveUtil.h>
+#include <model/utils/InheritanceUtil.h>
+#include <model/visitor/walker/ModelWalker.h>
 
-class SymbolLinker: public ModelWalkerListener {
+class SymbolLinker : public ModelWalkerListener {
 private:
     const std::shared_ptr<DataFlowGraph> graph;
     const std::shared_ptr<Project> project;
@@ -24,10 +28,19 @@ private:
     FrameStack frameStack;
     SymbolSearcher searcher;
 
+    std::shared_ptr<Symbol> resolveMethods(std::vector<std::shared_ptr<MethodSymbol>> possibleMethods,
+                                           std::shared_ptr<CallExpression> expression);
+
+    std::vector<std::shared_ptr<MethodSymbol>> findPossibleMethods(std::shared_ptr<CallExpression> callExpression);
+
+    std::shared_ptr<Symbol> findSymbol(std::shared_ptr<IdentifierExpression> identifierExpression);
+
     void enterSuperClassSymbol(std::shared_ptr<ClassSymbol> aClass);
+
     void exitSuperClassSymbol(std::shared_ptr<ClassSymbol> aClass);
+
 public:
-    SymbolLinker(std::shared_ptr<Project> project, std::shared_ptr<FileSymbol> fileSymbol);
+    SymbolLinker(std::shared_ptr<Project> project, std::shared_ptr<FileSymbol> fileSymbol, std::shared_ptr<DataFlowGraph> graph);
 
     void enterBlockStatement(std::shared_ptr<BlockStatement> visitable) override;
 
@@ -50,6 +63,14 @@ public:
     void enterLocalVariableSymbol(std::shared_ptr<LocalVariableSymbol> visitable) override;
 
     void enterFieldSymbol(std::shared_ptr<FieldSymbol> visitable) override;
+
+    void exitIdentifierExpression(std::shared_ptr<IdentifierExpression> visitable) override;
+
+    void exitConstructorCallExpression(std::shared_ptr<ConstructorCallExpression> visitable) override;
+
+    void exitMethodCallExpression(std::shared_ptr<MethodCallExpression> visitable) override;
+
+    void exitThisCallExpression(std::shared_ptr<ThisCallExpression> visitable) override;
 };
 
 

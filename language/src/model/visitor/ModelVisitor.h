@@ -152,7 +152,7 @@ public:
 
     }
 
-    void visitInvalidTypeSymbol(std::shared_ptr<InvalidTypeSymbol> visitable) override {
+    void visitInvalidTypeSymbol(std::shared_ptr<InvalidSymbol> visitable) override {
 
     }
 

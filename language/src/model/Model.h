@@ -30,7 +30,7 @@
 #include "model/symbols/variables/FieldSymbol.h"
 #include "model/symbols/variables/LocalVariableSymbol.h"
 #include "model/symbols/main/ClassSymbol.h"
-#include "model/symbols/main/InvalidTypeSymbol.h"
+#include "model/symbols/main/InvalidSymbol.h"
 #include "model/symbols/main/FileSymbol.h"
 #include "model/symbols/main/MethodSymbol.h"
 #include "model/symbols/main/PackageSymbol.h"

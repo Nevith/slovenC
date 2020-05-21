@@ -39,14 +39,14 @@ std::shared_ptr<Symbol> TypeLinker::getSymbol(std::shared_ptr<IdentifierExpressi
         }
     }
     // If nothing is found return invalid type
-    return InvalidTypeSymbol::INVALID_TYPE;
+    return InvalidSymbol::INVALID;
 }
 
 TypeLinker::TypeLinker(std::shared_ptr<Project> project, std::shared_ptr<FileSymbol> fileSymbol) : project(project),
                                                                                                    fileSymbol(
                                                                                                            fileSymbol) {
     graph = std::make_shared<TypeGraph>();
-    auto node = std::make_shared<TypeNode>(InvalidTypeSymbol::INVALID_TYPE);
+    auto node = std::make_shared<TypeNode>(InvalidSymbol::INVALID);
     graph->addNode(node);
     node = std::make_shared<TypeNode>(PredefinedSymbol::BOOLEAN);
     graph->addNode(node);
@@ -100,7 +100,7 @@ void TypeLinker::visitPackageOrFileReferenceExpression(std::shared_ptr<PackageOr
         }
     } else {
         // Invalid import
-        parentNode = graph->getNode(InvalidTypeSymbol::INVALID_TYPE);
+        parentNode = graph->getNode(InvalidSymbol::INVALID);
     }
 
     graph->addEdge(parentNode, node, std::make_shared<TypeEdge>(true));
@@ -220,7 +220,7 @@ void TypeLinker::visitNotExpression(std::shared_ptr<NotExpression> visitable) {
 
 void TypeLinker::visitIdentifierExpression(std::shared_ptr<IdentifierExpression> visitable) {
     auto symbol = getSymbol(visitable);
-    if (symbol == InvalidTypeSymbol::INVALID_TYPE) {
+    if (symbol == InvalidSymbol::INVALID) {
         return;
     }
 
@@ -244,6 +244,13 @@ void TypeLinker::visitConstructorCallExpression(std::shared_ptr<ConstructorCallE
     visit(visitable->getObject());
     for (auto argument : visitable->getArguments()) {
         visit(argument);
+    }
+    auto constructionClass = getSymbol(visitable);
+    if (constructionClass) {
+        auto clazz = TypeUtils::cast<ClassSymbol>(constructionClass);
+        if (clazz) {
+            visitable->setConstructionClass(clazz);
+        }
     }
 }
 

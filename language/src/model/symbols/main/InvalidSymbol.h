@@ -11,13 +11,13 @@
 #include "utils/TypeUtils.h"
 #include "model/visitor/AbstractModelVisitor.h"
 
-class InvalidTypeSymbol : public TypeSymbol {
+class InvalidSymbol : public TypeSymbol {
 public:
-    InvalidTypeSymbol(std::string name);
+    InvalidSymbol(std::string name);
 
     void accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) override;
 
-    const static std::shared_ptr<InvalidTypeSymbol> INVALID_TYPE;
+    const static std::shared_ptr<InvalidSymbol> INVALID;
 };
 
 #endif //_INVALIDTYPESYMBOL_H

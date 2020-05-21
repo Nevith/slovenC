@@ -2,13 +2,14 @@ import json
 
 import sys
 
-from data_analysis import *
-from graph_maker import *
+from src.data_analysis import *
+from src.graph_maker import *
 
 file_path = "fff.txt"
 
 
 def main():
+
     with open(file_path, "r") as read_file:
         print("Started Reading %s...".format(file_path))
         data = json.load(read_file)

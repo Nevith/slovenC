@@ -3,6 +3,7 @@
 //
 
 #include "TypeLinkerManagerJob.h"
+#include "SymbolLinkerManagerJob.h"
 
 TypeLinkerManagerJob::TypeLinkerManagerJob(std::vector<std::shared_ptr<FileSymbol>> files,
                                            std::shared_ptr<Project> project) :
@@ -48,5 +49,10 @@ std::vector<std::shared_ptr<Job>> TypeLinkerManagerJob::jobsFinished() {
     }
     project->setTypeGraph(globalTypeGraph);
 
-    return std::vector<std::shared_ptr<Job>>(); // TODO - create DFG builder job
+    std::vector<std::shared_ptr<Job>> nextJobs;
+    auto nextJob = std::make_shared<SymbolLinkerManagerJob>(files, project);
+    nextJob->setSelf(nextJob);
+    nextJobs.push_back(nextJob);
+
+    return nextJobs;
 }

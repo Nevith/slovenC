@@ -6,7 +6,27 @@
 
 
 void SymbolLinkerManagerJob::merge(std::shared_ptr<DataFlowGraph> localDataFlowGraph) {
+    for (auto const&[key, val] : localDataFlowGraph->getVertexMap()) {
+        // Skip empty values
+        if (!val) {
+            continue;
+        }
+        auto main = globalDataFlowGraph->getNode(key);
+        if (!main) {
+            // Insert
+            main = std::make_shared<DataFlowNode>(key);
+            globalDataFlowGraph->addNode(main);
+        }
 
+        for (auto incomingEdge : val->getIncomingEdges()) {
+            auto node = globalDataFlowGraph->getNode(incomingEdge->getStartingVertex()->getVisitable());
+            if (!node) {
+                node = std::make_shared<DataFlowNode>(incomingEdge->getStartingVertex()->getVisitable());
+                globalDataFlowGraph->addNode(node);
+            }
+            globalDataFlowGraph->addEdge(node, main, incomingEdge);
+        }
+    }
 }
 
 SymbolLinkerManagerJob::SymbolLinkerManagerJob(std::vector<std::shared_ptr<FileSymbol>> files,
@@ -27,8 +47,6 @@ std::vector<std::shared_ptr<Job>> SymbolLinkerManagerJob::jobsFinished() {
     for (auto file : files) {
         merge(fileResultMap[file]);
     }
-
-    // TODO method resolver!
 
     project->setDataFlowGraph(globalDataFlowGraph);
 

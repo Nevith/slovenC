@@ -12,6 +12,8 @@
 
 
 class ThisExpression : public IdentifierExpression {
+private:
+    std::shared_ptr<ClassSymbol> clazz;
 public:
     ThisExpression();
 

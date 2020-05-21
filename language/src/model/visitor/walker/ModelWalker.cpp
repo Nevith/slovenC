@@ -469,7 +469,7 @@ void ModelWalker::visitFileSymbol(std::shared_ptr<FileSymbol> visitable) {
     }
 }
 
-void ModelWalker::visitInvalidTypeSymbol(std::shared_ptr<InvalidTypeSymbol> visitable) {
+void ModelWalker::visitInvalidTypeSymbol(std::shared_ptr<InvalidSymbol> visitable) {
     for (auto listener : listeners) {
         listener->enterInvalidTypeSymbol(visitable);
     }

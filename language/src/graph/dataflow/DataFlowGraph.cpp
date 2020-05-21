@@ -26,3 +26,11 @@ const std::vector<std::shared_ptr<DataFlowNode>> DataFlowGraph::getVertices() {
     }
     return result;
 }
+
+const std::shared_ptr<DataFlowNode> DataFlowGraph::getNode(std::shared_ptr<Visitable> visitable) {
+    return vertexMap[visitable];
+}
+
+const std::map<std::shared_ptr<Visitable>, std::shared_ptr<DataFlowNode>> &DataFlowGraph::getVertexMap() const {
+    return vertexMap;
+}

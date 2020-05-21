@@ -1,22 +1,16 @@
 //
-// Created by andraz on 12/05/2020.
+// Created by andraz on 21/05/2020.
 //
 
-#ifndef SLOVENC_MODELWALKER_H
-#define SLOVENC_MODELWALKER_H
+#ifndef SLOVENC_TYPERESOLVEUTIL_H
+#define SLOVENC_TYPERESOLVEUTIL_H
 
-#include "model/Model.h"
-#include "model/visitor/walker/ModelWalkerListener.h"
-#include "utils/TypeUtils.h"
 
-class ModelWalker: public ModelVisitor<std::shared_ptr<Visitable>> {
-private:
-    std::vector<std::shared_ptr<ModelWalkerListener>> listeners;
+#include <model/Model.h>
 
+class TypeResolveUtil : public ModelVisitor<std::shared_ptr<Symbol>> {
 public:
-    const std::vector<std::shared_ptr<ModelWalkerListener>> &getListeners() const;
-
-    void addListener(const std::shared_ptr<ModelWalkerListener> &listener);
+    static std::shared_ptr<Symbol> getType(std::shared_ptr<Visitable> visitable);
 
     void visitCompareExpression(std::shared_ptr<CompareExpression> visitable) override;
 
@@ -95,9 +89,7 @@ public:
     void visitLocalVariableSymbol(std::shared_ptr<LocalVariableSymbol> visitable) override;
 
     void visitParameterSymbol(std::shared_ptr<ParameterSymbol> visitable) override;
-
-    void visit(std::shared_ptr<Visitable> visitable) override;
 };
 
 
-#endif //SLOVENC_MODELWALKER_H
+#endif //SLOVENC_TYPERESOLVEUTIL_H

@@ -60,6 +60,6 @@ void TypeSearcher::visitPredefinedSymbol(std::shared_ptr<PredefinedSymbol> visit
     ModelVisitor::visitPredefinedSymbol(visitable);
 }
 
-void TypeSearcher::visitInvalidTypeSymbol(std::shared_ptr<InvalidTypeSymbol> visitable) {
+void TypeSearcher::visitInvalidTypeSymbol(std::shared_ptr<InvalidSymbol> visitable) {
     setLastResult(visitable);
 }

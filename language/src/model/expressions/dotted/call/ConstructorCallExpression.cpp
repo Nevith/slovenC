@@ -17,3 +17,11 @@ ConstructorCallExpression::ConstructorCallExpression(std::string name) : CallExp
 void ConstructorCallExpression::accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) {
     visitor->visitConstructorCallExpression(TypeUtils::cast<ConstructorCallExpression>(visitable));
 }
+
+const std::shared_ptr<ClassSymbol> &ConstructorCallExpression::getConstructionClass() const {
+    return constructionClass;
+}
+
+void ConstructorCallExpression::setConstructionClass(const std::shared_ptr<ClassSymbol> &constructionClass) {
+    ConstructorCallExpression::constructionClass = constructionClass;
+}
