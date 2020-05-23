@@ -5,7 +5,7 @@ For my diploma at [FERI](https://feri.um.si/) [UM](https://www.um.si) i decided 
 I set out to build a general purpose programming language and decided to make it with Slovene syntax as a gimmick.<br>
 To force myself to learn modern C++ I decided to use C++17 standard and make my language `compilable` and `runnable` on `Windows and Linux`. <br>
 I wanted to support `class inheritance` and implement some `predefined classes and functions`.
-* Using: [antlr4](https://www.antlr.org/) for my lexet and parser. <br>
+* Using: [antlr4](https://www.antlr.org/) for my lexer and parser. <br>
 * Primarily using the [Visitor](https://en.wikipedia.org/wiki/Visitor_pattern) pattern.
 * Might add more later...
 ---
