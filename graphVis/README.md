@@ -19,8 +19,8 @@ optional arguments:
   --input -i       Path to the root project directory
   --serializer -s  Path to the slovenC serializer.exe
 ```
-#####To run simply build the c++ project using cmake and make before running this tool. Provide the paths to the built serializer.exe and to a slovenC project root.
-#####If called without arguments it will look for the serializer.exe in the cmake-build-debug directory of the c++ project and in the *test* directory in the root of this repo for the slovenC project.
+##### To run simply build the c++ project using cmake and make before running this tool. Provide the paths to the built serializer.exe and to a slovenC project root.
+##### If called without arguments it will look for the serializer.exe in the cmake-build-debug directory of the c++ project and in the *test* directory in the root of this repo for the slovenC project.
 
 ---
 ### Example DataFlowGraph
