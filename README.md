@@ -1,11 +1,11 @@
 # slovenC
 ### A general programming purpose language with slovenian syntax.
 
-*For my diploma at [FERI](https://feri.um.si/) [UM](https://www.um.si) i decided to try and create my own programming language. <br>
-I set out to build a general purpose programming language and decided to make it with Slovene syntax as a gimmick.*
+For my diploma at [FERI](https://feri.um.si/) [UM](https://www.um.si) i decided to try and create my own programming language. <br>
+I set out to build a general purpose programming language and decided to make it with Slovene syntax as a gimmick.
 
-*To force myself to learn modern C++ I decided to use C++17 standard and make my language `compilable` and `runnable` on `Windows and Linux`. <br>
-I wanted to support `class inheritance` and implement some `predefined classes` and functions.*
+To force myself to learn modern C++ I decided to use C++17 standard and make my language `compilable` and `runnable` on `Windows and Linux`. <br>
+I wanted to support `class inheritance` and implement some `predefined classes` and functions.
 ---
 * I decided to use the [antlr4](https://www.antlr.org/) for my lexet and parser. <br>
 * I decided to primarily use the [Visitor](https://en.wikipedia.org/wiki/Visitor_pattern) in my project.
@@ -28,5 +28,5 @@ Missing features or limitations might get implemented later if I decide to conti
 * Unable to override super methods (only hide them)
 * Might add more later...
 ---
-#####Disclaimer:
-`I have not yet worked on any professional C++ project and apologise for possible horrible C++ code.`
+#### Disclaimer:
+`I have not yet worked on any professional C++ project and apologise for possible potential C++ code.`
