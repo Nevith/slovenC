@@ -1,5 +1,5 @@
 # slovenC
-### A general programming purpose language with slovenian syntax.
+### A general purpose programming language with slovenian syntax.
 ---
 For my diploma at [FERI](https://feri.um.si/) [UM](https://www.um.si) i decided to try and create my own programming language. <br>
 I set out to build a general purpose programming language and decided to make it with Slovene syntax as a gimmick.<br>
