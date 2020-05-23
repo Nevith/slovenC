@@ -13,9 +13,13 @@ include_directories(${CMAKE_SOURCE_DIR}/lib/antlr4-runtime/src/)
 add_subdirectory(${CMAKE_SOURCE_DIR}/lib/antlr4-runtime)
 
 # Create executable
-add_executable(main main.cpp ${sourcesc} ${sourcesh})
+add_executable(serializer serializer.cpp ${sourcesc} ${sourcesh})
+add_executable(interpreter interpreter.cpp ${sourcesc} ${sourcesh})
+add_executable(IDE_backend IDE_backend.cpp ${sourcesc} ${sourcesh})
 
 # Link with antlr4_runtime
 add_definitions("-DANTLR4CPP_STATIC")
-target_link_libraries(main antlr4_static)
+target_link_libraries(serializer antlr4_static)
+target_link_libraries(interpreter antlr4_static)
+target_link_libraries(IDE_backend antlr4_static)
 

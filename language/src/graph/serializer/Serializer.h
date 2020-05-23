@@ -14,7 +14,7 @@ std::enable_if<std::is_base_of<Edge<V>, E>::value>::type * = nullptr>
 class Serializer {
 private:
     std::shared_ptr<Graph<V, E>> graph;
-    std::string absolutePath;
+    std::filesystem::path absolutePath;
 
     std::vector<std::shared_ptr<Node<E>>> vertices;
     std::vector<std::shared_ptr<Edge<V>>> edges;
@@ -30,7 +30,7 @@ private:
 
 public:
 
-    Serializer(const std::string &absolutePath, std::shared_ptr<Graph<V, E>> graph) : absolutePath(absolutePath),
+    Serializer(const std::filesystem::path &absolutePath, std::shared_ptr<Graph<V, E>> graph) : absolutePath(absolutePath),
                                                                                       graph(graph) {
         for (std::shared_ptr<Node<E>> vertex : graph->getVertices()) {
             vertices.push_back(vertex);

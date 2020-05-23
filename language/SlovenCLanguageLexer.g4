@@ -47,7 +47,7 @@ BOOLEAN       : 'bit';
 BYTE          : 'zlog';
 DOUBLE        : 'decimalno';
 INT           : 'celo';
-VOID          : 'praznost';
+VOID          : 'praznina';
 
 BREAK         : 'prelom';
 CONTINUE      : 'naslednji';

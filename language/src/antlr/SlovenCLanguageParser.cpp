@@ -5556,7 +5556,7 @@ std::vector<std::string> SlovenCLanguageParser::_ruleNames = {
 };
 
 std::vector<std::string> SlovenCLanguageParser::_literalNames = {
-  "", "'bit'", "'zlog'", "'decimalno'", "'celo'", "'praznost'", "'prelom'", 
+  "", "'bit'", "'zlog'", "'decimalno'", "'celo'", "'praznina'", "'prelom'", 
   "'naslednji'", "'razred'", "'vpelje'", "'ko'", "'sicer'", "'za'", "'dokler'", 
   "'poskusi'", "'ujemi'", "'konec'", "'javi'", "'uporabi'", "'paket'", "'nov'", 
   "'to'", "", "", "", "'vrni'", "'Konstruktor'", "", "", "'prav'", "'narobe'", 

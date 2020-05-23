@@ -18,7 +18,7 @@ PredefinedSymbol::PredefinedSymbol(std::string name) : ClassSymbol(name) {
 const std::shared_ptr<PredefinedSymbol> PredefinedSymbol::BOOLEAN = std::make_shared<PredefinedSymbol>("bit");
 const std::shared_ptr<PredefinedSymbol> PredefinedSymbol::INT = std::make_shared<PredefinedSymbol>("celo");
 const std::shared_ptr<PredefinedSymbol> PredefinedSymbol::DOUBLE = std::make_shared<PredefinedSymbol>("decimalno");
-const std::shared_ptr<PredefinedSymbol> PredefinedSymbol::VOID = std::make_shared<PredefinedSymbol>("praznost");
+const std::shared_ptr<PredefinedSymbol> PredefinedSymbol::VOID = std::make_shared<PredefinedSymbol>("praznina");
 const std::shared_ptr<PredefinedSymbol> PredefinedSymbol::STRING = std::make_shared<PredefinedSymbol>("Niz");
 const std::shared_ptr<PredefinedSymbol> PredefinedSymbol::CONSOLE = std::make_shared<PredefinedSymbol>("Konzola");
 
@@ -33,7 +33,7 @@ std::shared_ptr<PredefinedSymbol> PredefinedSymbol::findPredefinedSymbol(std::st
         return INT;
     } else if (name == "decimalno") {
         return DOUBLE;
-    } else if (name == "praznost") {
+    } else if (name == "praznina") {
         return VOID;
     } else if (name == "Konzola") {
         return CONSOLE;

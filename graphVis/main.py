@@ -1,24 +1,49 @@
+import argparse
+import time
 import json
 
 import sys
+import os
+import subprocess
+
+from os import listdir
 
 from src.data_analysis import *
 from src.graph_maker import *
 
-file_path = "fff.txt"
+parser = argparse.ArgumentParser(description='Run SlovenC serializer and display the built graphs')
+parser.add_argument('--input', metavar='-i', type=str, required=False,
+                    help='Path to the root project directory', default=os.path.join("..", "test"))
+parser.add_argument('--serializer', metavar='-s', type=str, required=False,
+                    help='Path to the slovenC serializer.exe',
+                    default=os.path.join("..", "language", "cmake-build-debug", "serializer.exe"))
 
 
 def main():
+    args = parser.parse_args()
 
-    with open(file_path, "r") as read_file:
-        print("Started Reading %s...".format(file_path))
-        data = json.load(read_file)
-        print("Done reading file: ")
-        print(data)
-        print("Drawing Graph...")
+    project_path = args.input
+    serializer_path = args.serializer
+    output_path = os.path.join("data", time.strftime("%Y%m%d-%H%M%S"))
+    os.mkdir(output_path)
 
-        analyze_data(data)
-        draw_graph(data)
+    command = serializer_path + " " + project_path + " " + output_path
+    process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE)
+    process.wait()
+
+    files = [f for f in listdir(output_path) if os.path.isfile(os.path.join(output_path, f))]
+
+    for file in files:
+        if ".graph" in file:
+            with open(os.path.join(output_path, file), "r") as read_file:
+                print("Started Reading %s..." % file)
+                data = json.load(read_file)
+                print("Done reading file: ")
+                print(data)
+                print("Drawing Graph...")
+
+                analyze_data(data)
+                draw_graph(data)
 
     return 0
 
