@@ -17,11 +17,19 @@ void BuilderJob::run() {
     std::ifstream stream;
     stream.open(fileSymbol->getAbsolutePath());
 
+    if (isCanceled()) {
+        return;
+    }
+
     ANTLRInputStream input(stream);
     SlovenCLanguageLexer lexer(&input);
     CommonTokenStream tokens(&lexer);
     SlovenCLanguageParser parser(&tokens);
     SlovenCLanguageParser::ParseWholeContext *rootContext = parser.parseWhole();
+
+    if (isCanceled()) {
+        return;
+    }
 
     auto builder = Builder(std::make_shared<CurrentState>(fileSymbol));
     tree::ParseTreeWalker::DEFAULT.walk(&builder, rootContext);

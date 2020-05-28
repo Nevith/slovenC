@@ -16,6 +16,9 @@ void printHelp(std::string name) {
 
 int main(int argc, const char **argv) {
     if (argc != 3) {
+        for (int i = 0; i < argc; ++i) {
+            std::cout << argv[i] << std::endl;
+        }
         printHelp(argv[0]);
         return 0;
     }

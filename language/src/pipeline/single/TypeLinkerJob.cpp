@@ -12,8 +12,18 @@ TypeLinkerJob::TypeLinkerJob(std::shared_ptr<Project> project, std::shared_ptr<F
 void TypeLinkerJob::run() {
     // Commence linking
     TypeLinker typeLinker(project, fileSymbol);
+
+    if (isCanceled()) {
+        return;
+    }
+
     graph = typeLinker.link();
     InheritanceLinker inheritanceLinker(graph, project, fileSymbol);
+
+    if (isCanceled()) {
+        return;
+    }
+
     inheritanceLinker.link();
 }
 

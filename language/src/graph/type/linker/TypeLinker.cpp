@@ -46,6 +46,7 @@ TypeLinker::TypeLinker(std::shared_ptr<Project> project, std::shared_ptr<FileSym
                                                                                                    fileSymbol(
                                                                                                            fileSymbol) {
     graph = std::make_shared<TypeGraph>();
+
     auto node = std::make_shared<TypeNode>(InvalidSymbol::INVALID);
     graph->addNode(node);
     node = std::make_shared<TypeNode>(PredefinedSymbol::BOOLEAN);
@@ -57,6 +58,12 @@ TypeLinker::TypeLinker(std::shared_ptr<Project> project, std::shared_ptr<FileSym
     node = std::make_shared<TypeNode>(PredefinedSymbol::VOID);
     graph->addNode(node);
     node = std::make_shared<TypeNode>(PredefinedSymbol::CONSOLE);
+    graph->addNode(node);
+    node = std::make_shared<TypeNode>(PredefinedSymbol::OBJECT);
+    graph->addNode(node);
+    node = std::make_shared<TypeNode>(PredefinedSymbol::STRING);
+    graph->addNode(node);
+    node = std::make_shared<TypeNode>(PredefinedSymbol::LIST);
     graph->addNode(node);
 }
 

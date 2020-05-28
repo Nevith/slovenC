@@ -25,6 +25,7 @@ public:
     const Context getContext() const;
 
     virtual void setContext(ParserRuleContext *context);
+    virtual void setContext(Context context);
 
     const std::shared_ptr<FileSymbol> &getFileSymbol() const;
 

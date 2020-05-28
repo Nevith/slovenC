@@ -14,6 +14,11 @@ void SymbolLinkerJob::run() {
     std::shared_ptr<SymbolLinker> symbolLinker = std::make_shared<SymbolLinker>(project, fileSymbol, graph);
     ModelWalker walker;
     walker.addListener(symbolLinker);
+
+    if (isCanceled()) {
+        return;
+    }
+
     walker.visit(fileSymbol);
 }
 

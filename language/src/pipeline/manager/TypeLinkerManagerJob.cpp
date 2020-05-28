@@ -2,6 +2,7 @@
 // Created by andraz on 24/04/2020.
 //
 
+#include <graph/type/linker/InheritanceLinker.h>
 #include "TypeLinkerManagerJob.h"
 #include "SymbolLinkerManagerJob.h"
 
@@ -32,6 +33,16 @@ void TypeLinkerManagerJob::merge(std::shared_ptr<TypeGraph> localTypeGraph) {
             }
             globalTypeGraph->addEdge(node, main, incomingEdge);
         }
+    }
+    if (!files.empty()) {
+        InheritanceLinker predefinedClassLinker(globalTypeGraph, project, files.back());
+        predefinedClassLinker.visit(PredefinedSymbol::BOOLEAN);
+        predefinedClassLinker.visit(PredefinedSymbol::INT);
+        predefinedClassLinker.visit(PredefinedSymbol::DOUBLE);
+        predefinedClassLinker.visit(PredefinedSymbol::VOID);
+        predefinedClassLinker.visit(PredefinedSymbol::STRING);
+        predefinedClassLinker.visit(PredefinedSymbol::CONSOLE);
+        predefinedClassLinker.visit(PredefinedSymbol::LIST);
     }
 }
 

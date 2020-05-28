@@ -26,6 +26,8 @@ public:
     void visitFileSymbol(std::shared_ptr<FileSymbol> visitable) override;
 
     void visitClassSymbol(std::shared_ptr<ClassSymbol> visitable) override;
+
+    void visitPredefinedSymbol(std::shared_ptr<PredefinedSymbol> visitable) override;
 };
 
 

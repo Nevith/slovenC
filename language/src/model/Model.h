@@ -7,6 +7,7 @@
 
 #include "model/Visitable.h"
 #include "model/Scope.h"
+#include "model/Constants.h"
 #include "model/statements/WhileStatement.h"
 #include "model/statements/IfStatement.h"
 #include "model/statements/ForStatement.h"

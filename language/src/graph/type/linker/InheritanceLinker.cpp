@@ -35,8 +35,24 @@ void InheritanceLinker::visitClassSymbol(std::shared_ptr<ClassSymbol> visitable)
             graph->addEdge(superNode, mainNode, std::make_shared<TypeEdge>(false));
         }
     }
+    if (visitable->getSuperClasses().empty()) {
+        auto resolve = PredefinedSymbol::OBJECT;
+        auto objectReference = std::make_shared<TypeReferenceExpression>(resolve->getName());
+        objectReference->setResolve(resolve);
+        objectReference->setFileSymbol(visitable->getFileSymbol());
+        objectReference->setContext(visitable->getContext());
+        objectReference->setParentClass(visitable);
+        visitable->addSuperClass(objectReference);
+
+        auto superNode = graph->getNode(resolve);
+        graph->addEdge(superNode, mainNode, std::make_shared<TypeEdge>(false));
+    }
 
     for (auto clazz : visitable->getDeclaredClasses()) {
         visit(clazz);
     }
+}
+
+void InheritanceLinker::visitPredefinedSymbol(std::shared_ptr<PredefinedSymbol> visitable) {
+    visitClassSymbol(visitable);
 }

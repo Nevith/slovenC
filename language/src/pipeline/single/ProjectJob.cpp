@@ -63,6 +63,12 @@ void ProjectJob::run() {
         auto symbol = projectSource.second;
         project->addFullyQualifiedSource(symbol);   // TODO - check if multiple symbols with same key?
     }
+
+    if (isCanceled()) {
+        return;
+    }
+
+    PredefinedSymbol::initPredefinedSymbols();  // init predefined symbols
 }
 
 std::vector<std::shared_ptr<Job>> ProjectJob::onComplete() {

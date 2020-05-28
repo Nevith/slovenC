@@ -25,7 +25,10 @@ def main():
     project_path = args.input
     serializer_path = args.serializer
     output_path = os.path.join("data", time.strftime("%Y%m%d-%H%M%S"))
-    os.mkdir(output_path)
+    if not os.path.exists('data'):
+        os.makedirs('data')
+    if not os.path.exists(output_path):
+        os.makedirs(output_path)
 
     command = serializer_path + " " + project_path + " " + output_path
     process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE)

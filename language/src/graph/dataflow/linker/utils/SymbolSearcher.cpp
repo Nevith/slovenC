@@ -61,8 +61,7 @@ void SymbolSearcher::visitClassSymbol(std::shared_ptr<ClassSymbol> visitable) {
 }
 
 void SymbolSearcher::visitPredefinedSymbol(std::shared_ptr<PredefinedSymbol> visitable) {
-    // TODO - lookup table or what?
-    ModelVisitor::visitPredefinedSymbol(visitable);
+    visitClassSymbol(visitable);
 }
 
 void SymbolSearcher::visitFileSymbol(std::shared_ptr<FileSymbol> visitable) {

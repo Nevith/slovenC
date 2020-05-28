@@ -8,7 +8,16 @@ odkrit razred Program vpelje A {
 	Program a;
 	Program b;
 	A c;
+	
+	Konstruktor() {
+	
+	}
 
+	
+	Konstruktor(celo g) {
+	
+	}
+	
     odkrito celo ggg() {
 		vrni 5;
     }
@@ -27,6 +36,8 @@ odkrit razred Program vpelje A {
 	}
 	
 	globalna odkrita praznina zagon() {
+		Program j = nov Program();
+		Program j = nov Program(6);
 		ggg();
 		h = ggg(5);
 		f = 5.1;
@@ -34,6 +45,7 @@ odkrit razred Program vpelje A {
 		a.ins();
 		a.glob();
 		C.glob();
+		Konzola.printaj(c);
 	}
 
 }
