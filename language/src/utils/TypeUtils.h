@@ -14,11 +14,7 @@ namespace TypeUtils {
 
     template<typename Desired, typename Original>
     std::shared_ptr<Desired> cast(const std::shared_ptr<Original> original) {
-        std::shared_ptr<Desired> result = std::dynamic_pointer_cast<Desired>(original);
-        if (result) {
-            return result;
-        }
-        return nullptr;
+        return std::dynamic_pointer_cast<Desired>(original);
     }
 
 }

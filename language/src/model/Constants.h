@@ -6,6 +6,7 @@
 #define SLOVENC_CONSTANTS_H
 
 #include <string>
+#include <interpreter/exits/Exit.h>
 
 namespace constants {
     const static std::string BOOLEAN = "bit";
@@ -44,6 +45,19 @@ namespace constants {
     const static std::string STATIC_FEMALE = "globalna";
     const static std::string RETURN = "vrni";
     const static std::string CONSTRUCTOR = "Konstruktor";
+
+    // TODO - Don't hard-code predefined classes, but write them in slovenC
+    const static std::string TOSTRING = "vNiz";
+    const static std::string PRINT = "printaj";
+    const static std::string READ = "preberi";
+    const static std::string ADD = "dodaj";
+    const static std::string PUT = "vstavi";
+    const static std::string GET = "vzemi";
+    const static std::string REMOVE = "odstrani";
+    const static std::string SIZE = "velikost";
+    const static std::string CONCATENATE = "dolepi";
+    const static std::string PROGRAM = "Program";
+    const static std::string MAIN = "zagon";
 }
 
 #endif //SLOVENC_CONSTANTS_H

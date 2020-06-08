@@ -48,6 +48,7 @@ std::shared_ptr<PredefinedSymbol> PredefinedSymbol::findPredefinedSymbol(std::st
 }
 
 void PredefinedSymbol::initPredefinedSymbols() {
+    // TODO - Don't hard-code predefined classes, but write them in slovenC
     OBJECT->init();
     BOOLEAN->init();
     INT->init();
@@ -59,8 +60,9 @@ void PredefinedSymbol::initPredefinedSymbols() {
 }
 
 void PredefinedSymbol::init() {
+    // TODO - Don't hard-code predefined classes, but write them in slovenC
     if (getName() == constants::OBJECT) {
-        auto toString = std::make_shared<MethodSymbol>("vNiz", false, true);
+        auto toString = std::make_shared<MethodSymbol>(constants::TOSTRING, false, true);
         auto parameter = std::make_shared<ParameterSymbol>("o");
         auto typeReference = std::make_shared<TypeReferenceExpression>(getName());
         auto returnType = std::make_shared<TypeReferenceExpression>(STRING->getName());
@@ -113,12 +115,12 @@ void PredefinedSymbol::init() {
         constructor->setPublic();
         declareConstructor(constructor);
 
-        auto concatenate = std::make_shared<MethodSymbol>("dodaj", false, true);
+        auto concatenate = std::make_shared<MethodSymbol>(constants::CONCATENATE, false, true);
         declareMethod(concatenate);
 
 
     } else if (getName() == constants::CONSOLE) {
-        auto print = std::make_shared<MethodSymbol>("printaj", false, true);
+        auto print = std::make_shared<MethodSymbol>(constants::PRINT, false, true);
         auto parameter = std::make_shared<ParameterSymbol>("o");
         auto typeReference = std::make_shared<TypeReferenceExpression>(getName());
         auto returnType = std::make_shared<TypeReferenceExpression>(STRING->getName());
@@ -137,8 +139,19 @@ void PredefinedSymbol::init() {
         print->setPublic();
         declareMethod(print);
 
+
+        auto read = std::make_shared<MethodSymbol>(constants::READ, false, true);
+        auto readReturnType = std::make_shared<TypeReferenceExpression>(STRING->getName());
+        readReturnType->setResolve(STRING);
+        returnType->setParentClass(CONSOLE);
+        returnType->setParentMethod(read);
+        read->setResult(returnType);
+        read->setStatic();
+        read->setPublic();
+        declareMethod(read);
+
     } else if (getName() == constants::LIST) {
-        auto add = std::make_shared<MethodSymbol>("dodaj", false, true);
+        auto add = std::make_shared<MethodSymbol>(constants::ADD, false, true);
         auto parameter = std::make_shared<ParameterSymbol>("o");
         auto typeReference = std::make_shared<TypeReferenceExpression>(getName());
         auto returnType = std::make_shared<TypeReferenceExpression>(STRING->getName());
@@ -156,7 +169,7 @@ void PredefinedSymbol::init() {
         add->setPublic();
         declareMethod(add);
 
-        auto addWithIndex = std::make_shared<MethodSymbol>("daj", false, true);
+        auto addWithIndex = std::make_shared<MethodSymbol>(constants::PUT, false, true);
         auto addWithIndexParameterOne = std::make_shared<ParameterSymbol>("i");
         auto addWithIndexParameterTwo = std::make_shared<ParameterSymbol>("o");
         auto addWithIndexTypeReferenceOne = std::make_shared<TypeReferenceExpression>(getName());
@@ -183,7 +196,7 @@ void PredefinedSymbol::init() {
         addWithIndex->setPublic();
         declareMethod(addWithIndex);
 
-        auto get = std::make_shared<MethodSymbol>("vzemi", false, true);
+        auto get = std::make_shared<MethodSymbol>(constants::GET, false, true);
         auto getParameter = std::make_shared<ParameterSymbol>("o");
         auto getTypeReference = std::make_shared<TypeReferenceExpression>(getName());
         auto getReturnType = std::make_shared<TypeReferenceExpression>(STRING->getName());
@@ -201,7 +214,7 @@ void PredefinedSymbol::init() {
         get->setPublic();
         declareMethod(get);
 
-        auto remove = std::make_shared<MethodSymbol>("odstrani", false, true);
+        auto remove = std::make_shared<MethodSymbol>(constants::REMOVE, false, true);
         auto removeParameter = std::make_shared<ParameterSymbol>("o");
         auto removeTypeReference = std::make_shared<TypeReferenceExpression>(getName());
         auto removeReturnType = std::make_shared<TypeReferenceExpression>(STRING->getName());
@@ -218,6 +231,15 @@ void PredefinedSymbol::init() {
         remove->setResult(removeReturnType);
         remove->setPublic();
         declareMethod(remove);
+
+        auto length = std::make_shared<MethodSymbol>(constants::SIZE, false, true);
+        auto lengthReturnType = std::make_shared<TypeReferenceExpression>(STRING->getName());
+        lengthReturnType->setResolve(INT);
+        lengthReturnType->setParentClass(LIST);
+        lengthReturnType->setParentMethod(length);
+        length->setResult(lengthReturnType);
+        length->setPublic();
+        declareMethod(length);
 
         auto constructor = std::make_shared<MethodSymbol>(constants::CONSTRUCTOR, true, true);
         constructor->setParentSymbol(LIST);
