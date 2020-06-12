@@ -4,32 +4,62 @@
 
 #include "ClassInstance.h"
 
-ClassInstance::ClassInstance(const std::shared_ptr<ClassSymbol> &classType) : classType(classType), fields(), fieldValues() {
-    // todo - collect fields
-    // todo - init fields
+ClassInstance::ClassInstance(const std::shared_ptr<ClassSymbol> &classType) : classType(classType), fields(),
+                                                                              fieldValues() {
+    initFields(classType);
+}
+
+void ClassInstance::initFields(const std::shared_ptr<ClassSymbol> &classType) {
+    for (auto field : classType->getDeclaredFields()) {
+        fields.push_back(field);
+        auto fieldType = TypeUtils::cast<TypeSymbol>(field->getType()->getResolve());
+        if (fieldType == PredefinedSymbol::BOOLEAN) {
+            auto fieldValue = Value(false);
+            fieldValues[field] = fieldValue;
+        } else if (fieldType == PredefinedSymbol::INT) {
+            auto fieldValue = Value(0);
+            fieldValues[field] = fieldValue;
+        } else if (fieldType == PredefinedSymbol::DOUBLE) {
+            auto fieldValue = Value(0.0);
+            fieldValues[field] = fieldValue;
+        } else if (fieldType == PredefinedSymbol::STRING) {
+            auto fieldValue = Value("");
+            fieldValues[field] = fieldValue;
+        } else if (fieldType == PredefinedSymbol::LIST) {
+            auto fieldValue = Value(std::vector<Value>());
+            fieldValues[field] = fieldValue;
+        } else {
+            auto fieldValue = Value();
+            fieldValue.setValue(std::make_shared<ClassInstance>(TypeUtils::cast<ClassSymbol>(fieldType)), fieldType);
+            fieldValues[field] = fieldValue;
+        }
+    }
+    for (auto superClass : classType->getSuperClasses()) {
+        initFields(TypeUtils::cast<ClassSymbol>(superClass->getResolve()));
+    }
 }
 
 const std::shared_ptr<ClassSymbol> &ClassInstance::getClassType() const {
     return classType;
 }
 
-const std::vector<std::shared_ptr<FileSymbol>> &ClassInstance::getFields() const {
+const std::vector<std::shared_ptr<FieldSymbol>> &ClassInstance::getFields() const {
     return fields;
 }
 
-bool ClassInstance::setFieldValue(std::shared_ptr<FileSymbol> field, Value value) {
+bool ClassInstance::setFieldValue(std::shared_ptr<FieldSymbol> field, Value value) {
     auto it = fieldValues.find(field);
     if (it == fieldValues.end()) {
-        return false; // todo Throw runtime error - class "classType" has no field "field"
+        throw RuntimeException(value.getType()->getFullyQualifiedName() + " nima polja: '" + field->getName() + "'");
     }
     fieldValues[field] = value;
     return false;
 }
 
-Value ClassInstance::getFieldValue(std::shared_ptr<FileSymbol> field) {
+Value ClassInstance::getFieldValue(std::shared_ptr<FieldSymbol> field) {
     auto it = fieldValues.find(field);
     if (it == fieldValues.end()) {
-        return Value(nullptr, InvalidSymbol::INVALID); // todo Throw runtime error - class "classType" has no field "field"
+        throw RuntimeException(classType->getFullyQualifiedName() + " nima polja: '" + field->getName() + "'");
     }
     return it->second;
 }
@@ -42,4 +72,11 @@ bool ClassInstance::operator==(const ClassInstance &rhs) const {
 
 bool ClassInstance::operator!=(const ClassInstance &rhs) const {
     return !(rhs == *this);
+}
+
+bool ClassInstance::compare(std::shared_ptr<AbstractClassInstance> other) {
+    auto rhs = TypeUtils::cast<ClassInstance>(other);
+    if (!rhs) {
+        return false;
+    } else return classType == classType && fields == fields && fieldValues == fieldValues;
 }

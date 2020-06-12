@@ -6,6 +6,7 @@
 #define SLOVENC_VALUE_H
 
 #include "model/Model.h"
+#include "AbstractClassInstance.h"
 
 class Value {
 private:
@@ -24,9 +25,15 @@ public:
 
     Value(std::string string);
 
+    Value(std::vector<Value> vector);
+
     Value(const Value &other);
 
     Value(const std::shared_ptr<void> &value, const std::shared_ptr<TypeSymbol> &type);
+
+    Value(const std::shared_ptr<TypeSymbol> &type);
+
+    void setType(const std::shared_ptr<TypeSymbol> &type);
 
     void setValue(const std::shared_ptr<void> &value, const std::shared_ptr<TypeSymbol> &type);
 
@@ -53,6 +60,8 @@ public:
     Value operator*(const Value &rhs) const;
 
     Value operator/(const Value &rhs) const;
+
+    Value operator%(const Value &rhs) const;
 };
 
 

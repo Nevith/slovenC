@@ -2,6 +2,7 @@
 // Created by andraz on 28/05/2020.
 //
 
+#include <model/utils/InheritanceUtil.h>
 #include "MethodState.h"
 
 MethodState::MethodState(const Value &thisReference, std::shared_ptr<MethodSymbol> method) : thisReference(
@@ -10,13 +11,6 @@ MethodState::MethodState(const Value &thisReference, std::shared_ptr<MethodSymbo
 }
 
 Value MethodState::getValue(std::shared_ptr<Symbol> key) {
-    if (TypeUtils::cast<ThisExpression>(key)) {
-        if (method->isStatic()) {
-            throw RuntimeException("Referenca na '" + key->getName() + "' v statičnem kontekstu.");
-        }
-        return thisReference;
-    }
-
     auto it = activeValues.find(key);
     if (it == activeValues.end()) {
         throw RuntimeException("Spremenljivka '" + key->getName() + "' ni definirana.");
@@ -25,12 +19,18 @@ Value MethodState::getValue(std::shared_ptr<Symbol> key) {
 }
 
 void MethodState::setValue(std::shared_ptr<Symbol> key, Value value) {
-    if (TypeUtils::cast<ThisExpression>(key)) {
-        if (method->isStatic()) {
-            throw RuntimeException("Referenca na '" + key->getName() + "' v statičnem kontekstu.");
-        } else {
-            throw RuntimeException("Nemogoče nastaviti vrednost za '" + key->getName() + "'.");
-        }
+    auto var = TypeUtils::cast<Variable>(key);
+    if (!var) {
+        throw RuntimeException("Vrednost lahko nastavimo le spremenljivkam");
     }
-    activeValues[key] = value;
+    if (InheritanceUtil::isInstanceOf(var->getType()->getResolve(), value.getType())) {
+        activeValues[key] = value;
+    } else {
+        throw RuntimeException("Neveljavno je dodeliti vrednost tipa '" + value.getType()->getFullyQualifiedName() +
+                               "' spremenljivki tipa" + var->getType()->getName());
+    }
+}
+
+const Value &MethodState::getThisReference() const {
+    return thisReference;
 }

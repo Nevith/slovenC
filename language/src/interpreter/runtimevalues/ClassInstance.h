@@ -6,15 +6,18 @@
 #define SLOVENC_CLASSINSTANCE_H
 
 #include "Value.h"
+#include "AbstractClassInstance.h"
 
-class ClassInstance {
+class ClassInstance : public AbstractClassInstance {
 private:
 
     std::shared_ptr<ClassSymbol> classType;
 
-    std::vector<std::shared_ptr<FileSymbol>> fields;
+    std::vector<std::shared_ptr<FieldSymbol>> fields;
 
-    std::map<std::shared_ptr<FileSymbol>, Value> fieldValues;
+    std::map<std::shared_ptr<FieldSymbol>, Value> fieldValues;
+
+    void initFields(const std::shared_ptr<ClassSymbol> &classType);
 
 public:
 
@@ -22,15 +25,17 @@ public:
 
     const std::shared_ptr<ClassSymbol> &getClassType() const;
 
-    const std::vector<std::shared_ptr<FileSymbol>> &getFields() const;
+    const std::vector<std::shared_ptr<FieldSymbol>> &getFields() const;
 
-    bool setFieldValue(std::shared_ptr<FileSymbol> field, Value value);
+    bool setFieldValue(std::shared_ptr<FieldSymbol> field, Value value);
 
-    Value getFieldValue(std::shared_ptr<FileSymbol> field);
+    Value getFieldValue(std::shared_ptr<FieldSymbol> field);
 
     bool operator==(const ClassInstance &rhs) const;
 
     bool operator!=(const ClassInstance &rhs) const;
+
+    bool compare(std::shared_ptr<AbstractClassInstance> other) override;
 };
 
 

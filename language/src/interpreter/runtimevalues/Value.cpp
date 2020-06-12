@@ -25,14 +25,27 @@ Value::Value(std::string string) : value(std::make_shared<std::string>(string)),
 
 }
 
+Value::Value(std::vector<Value> vector) : value(std::make_shared<std::vector<Value>>(vector)),
+                                          type(PredefinedSymbol::LIST) {
+
+}
+
 
 Value::Value(const Value &other) : value(other.value), type(other.type) {
 
 }
 
 
+Value::Value(const std::shared_ptr<TypeSymbol> &type) : value(), type(type) {
+
+}
+
 Value::Value(const std::shared_ptr<void> &value, const std::shared_ptr<TypeSymbol> &type) : value(value), type(type) {
 
+}
+
+void Value::setType(const std::shared_ptr<TypeSymbol> &type) {
+    Value::type = type;
 }
 
 void Value::setValue(const std::shared_ptr<void> &value, const std::shared_ptr<TypeSymbol> &type) {
@@ -49,8 +62,26 @@ const std::shared_ptr<void> &Value::getValue() const {
 }
 
 bool Value::operator==(const Value &rhs) const {
-    return type == rhs.type &&
-           value == rhs.value;
+    if (type != rhs.type) {
+        return false;
+    }
+
+    if (type == PredefinedSymbol::BOOLEAN) {
+        return *(bool *) value.get() == *(bool *) rhs.value.get();
+    } else if (type == PredefinedSymbol::INT) {
+        return *(int *) value.get() == *(int *) rhs.value.get();
+    } else if (type == PredefinedSymbol::DOUBLE) {
+        return *(double *) value.get() == *(double *) rhs.value.get();
+    } else if (type == PredefinedSymbol::STRING) {
+        return *(std::string *) value.get() == *(std::string *) rhs.value.get();
+    } else if (type == PredefinedSymbol::LIST) {
+        return *(std::vector<Value> *) value.get() == *(std::vector<Value> *) rhs.value.get();
+    } else if (type == PredefinedSymbol::VOID) {
+        throw RuntimeException("Nedovoljena operacija!");
+    } else {
+        return std::static_pointer_cast<AbstractClassInstance>(value)->compare(
+                std::static_pointer_cast<AbstractClassInstance>(rhs.value));
+    }
 }
 
 bool Value::operator!=(const Value &rhs) const {
@@ -96,7 +127,7 @@ Value Value::operator+(const Value &rhs) const {
             return Value(newValue, PredefinedSymbol::DOUBLE);
         }
     }
-    return Value(); // todo - throw exception - invalid operation!
+    throw RuntimeException("Nedovoljena operacija!");
 }
 
 Value Value::operator-(const Value &rhs) const {
@@ -118,7 +149,7 @@ Value Value::operator-(const Value &rhs) const {
             return Value(newValue, PredefinedSymbol::DOUBLE);
         }
     }
-    return Value(); // todo - throw exception - invalid operation!
+    throw RuntimeException("Nedovoljena operacija!");
 }
 
 Value Value::operator*(const Value &rhs) const {
@@ -140,7 +171,7 @@ Value Value::operator*(const Value &rhs) const {
             return Value(newValue, PredefinedSymbol::DOUBLE);
         }
     }
-    return Value(); // todo - throw exception - invalid operation!
+    throw RuntimeException("Nedovoljena operacija!");
 }
 
 Value Value::operator/(const Value &rhs) const {
@@ -162,5 +193,15 @@ Value Value::operator/(const Value &rhs) const {
             return Value(newValue, PredefinedSymbol::DOUBLE);
         }
     }
-    return Value(); // todo - throw exception - invalid operation!
+    throw RuntimeException("Nedovoljena operacija!");
+}
+
+Value Value::operator%(const Value &rhs) const {
+    if (type == PredefinedSymbol::INT) {
+        if (rhs.type == PredefinedSymbol::INT) {
+            auto newValue = std::make_shared<int>(*(int *) value.get() % *(int *) rhs.value.get());
+            return Value(newValue, PredefinedSymbol::INT);
+        }
+    }
+    throw RuntimeException("Nedovoljena operacija!");
 }

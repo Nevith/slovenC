@@ -160,6 +160,8 @@ ExpressionBuilder::visitMultiplicativeExpression(SlovenCLanguageParser::Multipli
         symbol->setOperatorSign("*");
     } else if (ctx->DIV()) {
         symbol->setOperatorSign("/");
+    } else {
+        symbol->setOperatorSign("%");
     }
 
     defineParents(symbol, ctx);

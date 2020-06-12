@@ -22,6 +22,8 @@ public:
     Value getValue(std::shared_ptr<Symbol> key);
 
     void setValue(std::shared_ptr<Symbol> key, Value value);
+
+    const Value &getThisReference() const;
 };
 
 

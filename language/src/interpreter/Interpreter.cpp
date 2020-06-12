@@ -6,6 +6,7 @@
 #include <interpreter/exits/BreakExit.h>
 #include <interpreter/exits/ContinueExit.h>
 #include <interpreter/exits/ReturnExit.h>
+#include <interpreter/runtimevalues/ClassInstance.h>
 #include "Interpreter.h"
 
 
@@ -41,9 +42,10 @@ void Interpreter::interpret() {
         // Start interpretation
         interpreterState.enterMethod(main, MethodState(Value(), main));
         visit(main);
+        interpreterState.exitMethod();
 
     } catch (Exit e) {
-        std::cout << "----------------" << std::endl << " neujet izhodni stavek: '" << e.what() << "'" << std::endl
+        std::cout << "----------------" << std::endl << " Neujet izhodni stavek: '" << e.what() << "'" << std::endl
                   << "----------------" << std::endl;
         return;
     } catch (RuntimeException e) {
@@ -51,7 +53,7 @@ void Interpreter::interpret() {
         return;
     } catch (std::exception e) {
         // todo - log... ?
-        std::cout << "----------------" << std::endl << "Nepricakovana napaka:" << std::endl << "----------------"
+        std::cout << "----------------" << std::endl << "Nepričakovana napaka:" << std::endl << "----------------"
                   << std::endl;
         std::cout << "----------------" << e.what() << "----------------" << std::endl;
         return;
@@ -59,7 +61,15 @@ void Interpreter::interpret() {
 }
 
 void Interpreter::visitAssignmentExpression(std::shared_ptr<AssignmentExpression> visitable) {
-    ModelVisitor::visitAssignmentExpression(visitable);
+    auto expr = visitable->getExpression();
+    auto ident = visitable->getIdentifier();
+    auto identifier = TypeUtils::cast<IdentifierExpression>(ident);
+    if (identifier) {
+        visit(expr);
+        setValue(identifier, getLastResult());
+    } else {
+        throw RuntimeException("Vrednost lahko nastavimo le spremenljivkam");
+    }
 }
 
 void Interpreter::visitCompareExpression(std::shared_ptr<CompareExpression> visitable) {
@@ -93,11 +103,7 @@ void Interpreter::visitNotExpression(std::shared_ptr<NotExpression> visitable) {
 }
 
 void Interpreter::visitIdentifierExpression(std::shared_ptr<IdentifierExpression> visitable) {
-    auto object = visitable->getObject();
-    if (object) {
-        visit(visitable->getObject());
-    }
-    setLastResult(interpreterState.getValue(visitable->getResolve()));
+    getValue(visitable);
 }
 
 void Interpreter::visitPackageOrFileReferenceExpression(std::shared_ptr<PackageOrFileReferenceExpression> visitable) {
@@ -111,9 +117,9 @@ void Interpreter::visitPackageOrFileReferenceExpression(std::shared_ptr<PackageO
 void Interpreter::visitThisExpression(std::shared_ptr<ThisExpression> visitable) {
     auto object = visitable->getObject();
     if (object) {
-        visit(visitable->getObject());
+        throw RuntimeException("Gnezdenje '" + visitable->getName() + "' ni podprto.");
     }
-    setLastResult(interpreterState.getValue(visitable->getResolve()));
+    setLastResult(interpreterState.getThisReference());
 }
 
 void Interpreter::visitTypeReferenceExpression(std::shared_ptr<TypeReferenceExpression> visitable) {
@@ -138,26 +144,40 @@ void Interpreter::visitConstructorCallExpression(std::shared_ptr<ConstructorCall
         auto argumentValue = getLastResult();
         state.setValue(parameters[i], argumentValue);
     }
+
     interpreterState.enterMethod(method, state);
     visit(method);
+    interpreterState.exitMethod();
 }
 
 void Interpreter::visitMethodCallExpression(std::shared_ptr<MethodCallExpression> visitable) {
     auto object = visitable->getObject();
+    Value thisReference;
     if (object) {
         visit(visitable->getObject());
+        thisReference = getLastResult();
+    } else {
+        thisReference = interpreterState.getThisReference();
     }
+
     auto method = TypeUtils::cast<MethodSymbol>(visitable->getResolve());
+
+    if (method->isStatic()) {
+        thisReference = Value();
+    }
+
     auto parameters = method->getParameters();
     auto arguments = visitable->getArguments();
-    auto state = MethodState(getLastResult(), method);
+    auto state = MethodState(thisReference, method);
     for (int i = 0; i < parameters.size(); ++i) {
         visit(arguments[i]);
         auto argumentValue = getLastResult();
         state.setValue(parameters[i], argumentValue);
     }
+
     interpreterState.enterMethod(method, state);
     visit(method);
+    interpreterState.exitMethod();
 }
 
 void Interpreter::visitThisCallExpression(std::shared_ptr<ThisCallExpression> visitable) {
@@ -203,23 +223,28 @@ void Interpreter::visitMultiplicationExpression(std::shared_ptr<MultiplicationEx
     auto left = getLastResult();
     if (visitable->getOperator() == "*") {
         setLastResult(left * right);
-    } else {
+    } else if (visitable->getOperator() == "/") {
         setLastResult(left / right);
+    } else {
+        setLastResult(left % right);
     }
 }
 
 void Interpreter::visitIncrementDecrementExpression(std::shared_ptr<IncrementDecrementExpression> visitable) {
     auto expr = visitable->getExpression();
-    visit(expr);
-    auto value = getLastResult();
-    if (visitable->getOperator() == "++") {
-        setLastResult(value + 1);
-    } else {
-        setLastResult(value - 1);
-    }
     auto identifier = TypeUtils::cast<IdentifierExpression>(expr);
     if (identifier) {
-        interpreterState.setValue(identifier->getResolve(), getLastResult());
+        getValue(identifier);
+        auto value = getLastResult();
+        if (visitable->getOperator() == "++") {
+            setLastResult(value + 1);
+        } else {
+            setLastResult(value - 1);
+        }
+
+        setValue(identifier, getLastResult());
+    } else {
+        throw RuntimeException("Vrednost lahko nastavimo le spremenljivkam");
     }
 }
 
@@ -241,37 +266,114 @@ void Interpreter::visitReturnStatement(std::shared_ptr<ReturnStatement> visitabl
 }
 
 void Interpreter::visitBlockStatement(std::shared_ptr<BlockStatement> visitable) {
-    for(auto statement : visitable->getStatements()) {
+    for (auto statement : visitable->getStatements()) {
         visit(statement);
     }
 }
 
 void Interpreter::visitElseStatement(std::shared_ptr<ElseStatement> visitable) {
-    ModelVisitor::visitElseStatement(visitable);
+    visit(visitable->getNestedStatement());
 }
 
 void Interpreter::visitEmptyStatement(std::shared_ptr<EmptyStatement> visitable) {
-    ModelVisitor::visitEmptyStatement(visitable);
+    // empty...
 }
 
 void Interpreter::visitExpressionStatement(std::shared_ptr<ExpressionStatement> visitable) {
-    ModelVisitor::visitExpressionStatement(visitable);
+    visit(visitable->getExpression());
 }
 
 void Interpreter::visitForStatement(std::shared_ptr<ForStatement> visitable) {
-    ModelVisitor::visitForStatement(visitable);
+    auto variables = visitable->getVariables();
+    for (auto var : variables) {
+        visit(var->getInitialValue());
+        interpreterState.setValue(var, getLastResult());
+    }
+
+    while (true) {
+        visit(visitable->getCondition());
+        auto conditionResult = getLastResult();
+        if (conditionResult.getType() == PredefinedSymbol::BOOLEAN) {
+            if (*(bool *) conditionResult.getValue().get()) {
+                try {
+                    visit(visitable->getNestedStatement());
+                } catch (BreakExit e) {
+                    break;
+                } catch (ContinueExit e) {
+                    // do nothing
+                }
+                for (auto expr : visitable->getUpdateExpressions()) {
+                    visit(expr);
+                }
+            } else {
+                break;
+            }
+        } else {
+            throw RuntimeException("Tip pogoja mora biti '" + PredefinedSymbol::BOOLEAN->getName() + "'");
+        }
+    }
 }
 
 void Interpreter::visitIfStatement(std::shared_ptr<IfStatement> visitable) {
-    ModelVisitor::visitIfStatement(visitable);
+    visit(visitable->getCondition());
+    auto conditionResult = getLastResult();
+    if (conditionResult.getType() == PredefinedSymbol::BOOLEAN) {
+        if (*(bool *) conditionResult.getValue().get()) {
+            visit(visitable->getNestedStatement());
+        } else {
+            if (visitable->getElseStatement()) {
+                visit(visitable->getElseStatement());
+            }
+        }
+    } else {
+        throw RuntimeException("Tip pogoja mora biti '" + PredefinedSymbol::BOOLEAN->getName() + "'");
+    }
 }
 
+
 void Interpreter::visitVariableDeclarationStatement(std::shared_ptr<VariableDeclarationStatement> visitable) {
-    ModelVisitor::visitVariableDeclarationStatement(visitable);
+    auto var = visitable->getVariableSymbol();
+    if (var->getInitialValue()) {
+        visit(var->getInitialValue());
+        interpreterState.setValue(var, getLastResult());
+    }
 }
 
 void Interpreter::visitWhileStatement(std::shared_ptr<WhileStatement> visitable) {
-    ModelVisitor::visitWhileStatement(visitable);
+    while (true) {
+        visit(visitable->getCondition());
+        auto conditionResult = getLastResult();
+        if (conditionResult.getType() == PredefinedSymbol::BOOLEAN) {
+            if (*(bool *) conditionResult.getValue().get()) {
+                try {
+                    visit(visitable->getNestedStatement());
+                } catch (BreakExit e) {
+                    break;
+                } catch (ContinueExit e) {
+                    // do nothing
+                }
+            } else {
+                break;
+            }
+        } else {
+            throw RuntimeException("Tip pogoja mora biti '" + PredefinedSymbol::BOOLEAN->getName() + "'");
+        }
+    }
+}
+
+void Interpreter::visitMethodSymbol(std::shared_ptr<MethodSymbol> visitable) {
+    if (visitable->getIsConstructor()) {
+        auto thisReference = interpreterState.getThisReference();
+        auto classType = visitable->getResult()->getParentClass();
+        thisReference.setType(classType);
+        auto newValue = std::make_shared<ClassInstance>(classType);
+        thisReference.setValue(newValue, classType);
+
+    } else if (visitable->getIsSynthetic()) {
+        runPredefinedMethod(visitable);
+        return;
+    }
+    visit(visitable->getScope());
 }
 
 void Interpreter::visitClassSymbol(std::shared_ptr<ClassSymbol> visitable) {
@@ -284,10 +386,6 @@ void Interpreter::visitFileSymbol(std::shared_ptr<FileSymbol> visitable) {
 
 void Interpreter::visitInvalidTypeSymbol(std::shared_ptr<InvalidSymbol> visitable) {
     ModelVisitor::visitInvalidTypeSymbol(visitable);
-}
-
-void Interpreter::visitMethodSymbol(std::shared_ptr<MethodSymbol> visitable) {
-    ModelVisitor::visitMethodSymbol(visitable);
 }
 
 void Interpreter::visitPackageSymbol(std::shared_ptr<PackageSymbol> visitable) {
@@ -309,3 +407,5 @@ void Interpreter::visitLocalVariableSymbol(std::shared_ptr<LocalVariableSymbol> 
 void Interpreter::visitParameterSymbol(std::shared_ptr<ParameterSymbol> visitable) {
     ModelVisitor::visitParameterSymbol(visitable);
 }
+
+

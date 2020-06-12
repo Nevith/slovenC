@@ -50,6 +50,7 @@ namespace constants {
     const static std::string TOSTRING = "vNiz";
     const static std::string PRINT = "printaj";
     const static std::string READ = "preberi";
+    const static std::string RANDOM = "nakljucnoCelo";
     const static std::string ADD = "dodaj";
     const static std::string PUT = "vstavi";
     const static std::string GET = "vzemi";

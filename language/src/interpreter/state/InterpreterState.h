@@ -27,6 +27,8 @@ public:
     void enterMethod(std::shared_ptr<MethodSymbol> method, MethodState state);
 
     void exitMethod();
+
+    Value getThisReference();
 };
 
 

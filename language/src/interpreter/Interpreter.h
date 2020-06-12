@@ -9,12 +9,12 @@
 #include <project/Project.h>
 #include <interpreter/state/InterpreterState.h>
 #include "model/Model.h"
+#include "PredefinedInterpreter.h"
 
-class Interpreter: public ModelVisitor<Value> {
+class Interpreter: public PredefinedInterpreter {
 
 private:
     std::shared_ptr<Project> project;
-    InterpreterState interpreterState;
 
 public:
 

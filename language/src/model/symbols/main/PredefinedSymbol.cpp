@@ -143,12 +143,22 @@ void PredefinedSymbol::init() {
         auto read = std::make_shared<MethodSymbol>(constants::READ, false, true);
         auto readReturnType = std::make_shared<TypeReferenceExpression>(STRING->getName());
         readReturnType->setResolve(STRING);
-        returnType->setParentClass(CONSOLE);
-        returnType->setParentMethod(read);
-        read->setResult(returnType);
+        readReturnType->setParentClass(CONSOLE);
+        readReturnType->setParentMethod(read);
+        read->setResult(readReturnType);
         read->setStatic();
         read->setPublic();
         declareMethod(read);
+
+        auto random = std::make_shared<MethodSymbol>(constants::RANDOM, false, true);
+        auto randomReturnType = std::make_shared<TypeReferenceExpression>(INT->getName());
+        randomReturnType->setResolve(INT);
+        randomReturnType->setParentClass(CONSOLE);
+        randomReturnType->setParentMethod(read);
+        random->setResult(randomReturnType);
+        random->setStatic();
+        random->setPublic();
+        declareMethod(random);
 
     } else if (getName() == constants::LIST) {
         auto add = std::make_shared<MethodSymbol>(constants::ADD, false, true);

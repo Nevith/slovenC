@@ -29,3 +29,7 @@ void InterpreterState::exitMethod() {
     methods.pop_back();
     methodStates.pop_back();
 }
+
+Value InterpreterState::getThisReference() {
+    return methodStates.end()->getThisReference();
+}
