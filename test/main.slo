@@ -2,50 +2,9 @@ uporabi model.a;
 uporabi model.b.c;
 
 odkrit razred Program vpelje A {
-
-    celo h;
-	decimalno f;
-	Program a;
-	Program b;
-	A c;
-	
-	Konstruktor() {
-	
-	}
-
-	
-	Konstruktor(celo g) {
-	
-	}
-	
-    odkrito celo ggg() {
-		vrni 5;
-    }
-	
-	    odkrito celo ggg(celo ff) {
-		vrni ff;
-    }
-	
-	
-	odkrita praznina glob() {
-		
-	}
-	
-	odkrita praznina ins() {
-		
-	}
 	
 	globalna odkrita praznina zagon() {
-		Program j = nov Program();
-		Program j = nov Program(6);
-		ggg();
-		h = ggg(5);
-		f = 5.1;
-		bit j = f > 0;
-		a.ins();
-		a.glob();
-		C.glob();
-		Konzola.printaj(c);
+		Konzola.printaj("Zdravo svet!");
 	}
 
 }

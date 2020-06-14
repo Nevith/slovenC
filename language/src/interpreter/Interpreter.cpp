@@ -13,7 +13,7 @@
 Interpreter::Interpreter(const std::shared_ptr<Project> &project) : project(project) {
 }
 
-void Interpreter::interpret() {
+bool Interpreter::interpret() {
     // Find Program.zagon()
     try {
         std::shared_ptr<MethodSymbol> main;
@@ -27,7 +27,7 @@ void Interpreter::interpret() {
                                 if (!main) {
                                     main = method;
                                 } else {
-                                    throw RuntimeException("Najden drug Program.zagon()");
+                                    throw RuntimeException("Najdenih več instanc 'Program.zagon()'");
                                 }
                             }
                         }
@@ -43,20 +43,21 @@ void Interpreter::interpret() {
         interpreterState.enterMethod(main, MethodState(Value(), main));
         visit(main);
         interpreterState.exitMethod();
+        return true;
 
     } catch (Exit e) {
         std::cout << "----------------" << std::endl << " Neujet izhodni stavek: '" << e.what() << "'" << std::endl
                   << "----------------" << std::endl;
-        return;
+        return false;
     } catch (RuntimeException e) {
         std::cout << "----------------" << std::endl << e.what() << std::endl << "----------------" << std::endl;
-        return;
+        return false;
     } catch (std::exception e) {
         // todo - log... ?
         std::cout << "----------------" << std::endl << "Nepričakovana napaka:" << std::endl << "----------------"
                   << std::endl;
         std::cout << "----------------" << e.what() << "----------------" << std::endl;
-        return;
+        return false;
     }
 }
 
@@ -103,7 +104,16 @@ void Interpreter::visitNotExpression(std::shared_ptr<NotExpression> visitable) {
 }
 
 void Interpreter::visitIdentifierExpression(std::shared_ptr<IdentifierExpression> visitable) {
-    getValue(visitable);
+    auto resolve = visitable->getResolve();
+    if (TypeUtils::cast<TypeSymbol>(resolve)) {
+        auto object = visitable->getObject();
+        if (object) {
+            visit(object);
+        }
+        setLastResult(Value());
+    } else {
+        getValue(visitable);
+    }
 }
 
 void Interpreter::visitPackageOrFileReferenceExpression(std::shared_ptr<PackageOrFileReferenceExpression> visitable) {
@@ -111,7 +121,7 @@ void Interpreter::visitPackageOrFileReferenceExpression(std::shared_ptr<PackageO
     if (object) {
         visit(visitable->getObject());
     }
-    setLastResult(interpreterState.getValue(visitable->getResolve()));
+    setLastResult(Value());
 }
 
 void Interpreter::visitThisExpression(std::shared_ptr<ThisExpression> visitable) {
@@ -127,7 +137,7 @@ void Interpreter::visitTypeReferenceExpression(std::shared_ptr<TypeReferenceExpr
     if (object) {
         visit(visitable->getObject());
     }
-    setLastResult(Value(PredefinedSymbol::OBJECT, TypeUtils::cast<TypeSymbol>(visitable->getResolve())));
+    setLastResult(Value());
 }
 
 void Interpreter::visitConstructorCallExpression(std::shared_ptr<ConstructorCallExpression> visitable) {
@@ -374,6 +384,9 @@ void Interpreter::visitMethodSymbol(std::shared_ptr<MethodSymbol> visitable) {
         return;
     }
     visit(visitable->getScope());
+    if (visitable->getResult()->getResolve() == PredefinedSymbol::VOID) {
+        setLastResult(Value());
+    }
 }
 
 void Interpreter::visitClassSymbol(std::shared_ptr<ClassSymbol> visitable) {

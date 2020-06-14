@@ -45,6 +45,8 @@ namespace constants {
     const static std::string STATIC_FEMALE = "globalna";
     const static std::string RETURN = "vrni";
     const static std::string CONSTRUCTOR = "Konstruktor";
+    const static std::string TRUE = "prav";
+    const static std::string FALSE = "narobe";
 
     // TODO - Don't hard-code predefined classes, but write them in slovenC
     const static std::string TOSTRING = "vNiz";
@@ -54,7 +56,7 @@ namespace constants {
     const static std::string ADD = "dodaj";
     const static std::string PUT = "vstavi";
     const static std::string GET = "vzemi";
-    const static std::string REMOVE = "odstrani";
+    const static std::string REMOVE = "odstraniZadnjo";
     const static std::string SIZE = "velikost";
     const static std::string CONCATENATE = "dolepi";
     const static std::string PROGRAM = "Program";

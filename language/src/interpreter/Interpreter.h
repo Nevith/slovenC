@@ -20,7 +20,7 @@ public:
 
     Interpreter(const std::shared_ptr<Project> &project);
 
-    void interpret();
+    bool interpret();
 
     void visitCompareExpression(std::shared_ptr<CompareExpression> visitable) override;
 

@@ -8,6 +8,10 @@
 #include <ctime>
 #include <iostream>
 
+PredefinedInterpreter::PredefinedInterpreter() {
+    srand((unsigned) time(0));
+}
+
 void PredefinedInterpreter::runPredefinedMethod(std::shared_ptr<MethodSymbol> method) {
     auto methodName = method->getName();
 
@@ -48,6 +52,7 @@ void PredefinedInterpreter::PRINT(std::shared_ptr<MethodSymbol> method) {
     auto parameter = method->getParameters()[0];
     auto value = interpreterState.getValue(parameter);
     std::cout << (getString(value)) << std::endl;
+    setLastResult(Value());
 }
 
 void PredefinedInterpreter::READ(std::shared_ptr<MethodSymbol> method) {
@@ -57,35 +62,69 @@ void PredefinedInterpreter::READ(std::shared_ptr<MethodSymbol> method) {
 }
 
 void PredefinedInterpreter::ADD(std::shared_ptr<MethodSymbol> method) {
-
+    auto thisValue = interpreterState.getThisReference();
+    auto thisInstance = std::static_pointer_cast<std::vector<Value>>(thisValue.getValue());
+    auto object = interpreterState.getValue(method->getParameters()[0]);
+    thisInstance->push_back(object);
+    setLastResult(Value());
 }
 
 void PredefinedInterpreter::PUT(std::shared_ptr<MethodSymbol> method) {
-
+    auto thisValue = interpreterState.getThisReference();
+    auto thisInstance = std::static_pointer_cast<std::vector<Value>>(thisValue.getValue());
+    auto object = interpreterState.getValue(method->getParameters()[0]);
+    auto index = interpreterState.getValue(method->getParameters()[0]);
+    int indexValue = *(int *) index.getValue().get();
+    if (indexValue > thisInstance->size()) {
+        throw RuntimeException("Preveliki index");
+    }
+    thisInstance->insert(thisInstance->begin() + indexValue, object);
+    setLastResult(Value());
 }
 
 void PredefinedInterpreter::GET(std::shared_ptr<MethodSymbol> method) {
-
+    auto thisValue = interpreterState.getThisReference();
+    auto thisInstance = std::static_pointer_cast<std::vector<Value>>(thisValue.getValue());
+    auto object = interpreterState.getValue(method->getParameters()[0]);
+    auto index = interpreterState.getValue(method->getParameters()[0]);
+    int indexValue = *(int *) index.getValue().get();
+    if (indexValue >= thisInstance->size()) {
+        throw RuntimeException("Preveliki index");
+    }
+    setLastResult(thisInstance->at(indexValue));
 }
 
 void PredefinedInterpreter::REMOVE(std::shared_ptr<MethodSymbol> method) {
-
+    auto thisValue = interpreterState.getThisReference();
+    auto thisInstance = std::static_pointer_cast<std::vector<Value>>(thisValue.getValue());
+    if (thisInstance->empty()) {
+        throw RuntimeException("Lista je že prazna");
+    }
+    thisInstance->pop_back();
+    setLastResult(Value());
 }
 
 void PredefinedInterpreter::SIZE(std::shared_ptr<MethodSymbol> method) {
-
+    auto thisValue = interpreterState.getThisReference();
+    auto thisInstance = std::static_pointer_cast<std::vector<Value>>(thisValue.getValue());
+    setLastResult((int) (thisInstance->size()));
 }
 
 void PredefinedInterpreter::CONCATENATE(std::shared_ptr<MethodSymbol> method) {
-
+    auto thisValue = interpreterState.getThisReference();
+    auto thisInstance = std::static_pointer_cast<std::string>(thisValue.getValue());
+    auto object = interpreterState.getValue(method->getParameters()[0]);
+    auto secondInstance = std::static_pointer_cast<std::string>(object.getValue());
+    setLastResult(thisInstance->append(*secondInstance.get()));
 }
 
 void PredefinedInterpreter::MAIN(std::shared_ptr<MethodSymbol> method) {
     visit(method->getScope());
+    setLastResult(Value());
 }
 
 void PredefinedInterpreter::RANDOM(std::shared_ptr<MethodSymbol> method) {
-    int randomNumber = rand() % 100;
+    int randomNumber = rand();
     setLastResult(randomNumber);
 }
 
@@ -100,8 +139,14 @@ void PredefinedInterpreter::setValue(std::shared_ptr<IdentifierExpression> ident
     auto parameter = TypeUtils::cast<ParameterSymbol>(symbol);
     if (field) {
         if (!field->isStatic()) {
-            auto instance = std::static_pointer_cast<ClassInstance>(getLastResult().getValue());
-            instance->setFieldValue(field, value);
+            if (object) {
+                auto instance = std::static_pointer_cast<ClassInstance>(getLastResult().getValue());
+                instance->setFieldValue(field, value);
+            } else {
+                auto instance = interpreterState.getThisReference();
+                auto classInstance = std::static_pointer_cast<ClassInstance>(value.getValue());
+                classInstance->setFieldValue(field, value);
+            }
             return;
         }
     }
@@ -119,9 +164,16 @@ void PredefinedInterpreter::getValue(std::shared_ptr<IdentifierExpression> ident
     auto parameter = TypeUtils::cast<ParameterSymbol>(symbol);
     if (field) {
         if (!field->isStatic()) {
-            auto instance = std::static_pointer_cast<ClassInstance>(getLastResult().getValue());
-            setLastResult(instance->getFieldValue(field));
-            return;
+            if (object) {
+                auto instance = std::static_pointer_cast<ClassInstance>(getLastResult().getValue());
+                setLastResult(instance->getFieldValue(field));
+                return;
+            } else {
+                auto instance = interpreterState.getThisReference();
+                auto classInstance = std::static_pointer_cast<ClassInstance>(instance.getValue());
+                setLastResult(classInstance->getFieldValue(field));
+                return;
+            }
         }
     }
 
@@ -129,15 +181,33 @@ void PredefinedInterpreter::getValue(std::shared_ptr<IdentifierExpression> ident
 }
 
 std::string PredefinedInterpreter::getString(Value value) {
-    // Parse value obj to string
-    return std::string();
+    auto type = value.getType();
+    std::string result;
+
+    if (type == PredefinedSymbol::BOOLEAN) {
+        if (*(bool *) value.getValue().get()) {
+            result = constants::TRUE;
+        } else {
+            result = constants::FALSE;
+        }
+    } else if (type == PredefinedSymbol::INT) {
+        int integer = *(int *) value.getValue().get();
+        result = std::to_string(integer);
+    } else if (type == PredefinedSymbol::DOUBLE) {
+        double floatingPoint = *(double *) value.getValue().get();
+        result = std::to_string(floatingPoint);
+    } else if (type == PredefinedSymbol::STRING) {
+        result = *(std::string *) value.getValue().get();
+    } else if (type == PredefinedSymbol::LIST) {
+        result = "Lista";
+    } else if (type == PredefinedSymbol::VOID) {
+        throw RuntimeException("Nedovoljena operacija!");
+    } else {
+        result = "TODO";
+    }
+
+    return result;
 }
-
-PredefinedInterpreter::PredefinedInterpreter() {
-    srand((unsigned) time(0));
-}
-
-
 
 
 

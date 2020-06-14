@@ -89,11 +89,22 @@ bool Value::operator!=(const Value &rhs) const {
 }
 
 bool Value::operator<(const Value &rhs) const {
-    if (type < rhs.type)
-        return true;
-    if (rhs.type < type)
-        return false;
-    return value < rhs.value;
+    if (type == PredefinedSymbol::INT) {
+        if (rhs.type == PredefinedSymbol::INT) {
+            return (*(int *) value.get() < *(int *) rhs.value.get());
+
+        } else if (rhs.type == PredefinedSymbol::DOUBLE) {
+            return (*(int *) value.get() < *(double *) rhs.value.get());
+        }
+    }
+    if (type == PredefinedSymbol::DOUBLE) {
+        if (rhs.type == PredefinedSymbol::INT) {
+            return (*(double *) value.get() < *(int *) rhs.value.get());
+        } else if (rhs.type == PredefinedSymbol::DOUBLE) {
+            return (*(double *) value.get() < *(double *) rhs.value.get());
+        }
+    }
+    throw RuntimeException("Nedovoljena operacija!");
 }
 
 bool Value::operator>(const Value &rhs) const {

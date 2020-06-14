@@ -23,11 +23,11 @@ void MethodState::setValue(std::shared_ptr<Symbol> key, Value value) {
     if (!var) {
         throw RuntimeException("Vrednost lahko nastavimo le spremenljivkam");
     }
-    if (InheritanceUtil::isInstanceOf(var->getType()->getResolve(), value.getType())) {
+    if (InheritanceUtil::isInstanceOf(value.getType(), var->getType()->getResolve())) {
         activeValues[key] = value;
     } else {
         throw RuntimeException("Neveljavno je dodeliti vrednost tipa '" + value.getType()->getFullyQualifiedName() +
-                               "' spremenljivki tipa" + var->getType()->getName());
+                               "' spremenljivki tipa '" + var->getType()->getName() + "'");
     }
 }
 
