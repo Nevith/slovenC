@@ -31,5 +31,5 @@ void InterpreterState::exitMethod() {
 }
 
 Value InterpreterState::getThisReference() {
-    return methodStates.end()->getThisReference();
+    return methodStates.back().getThisReference();
 }

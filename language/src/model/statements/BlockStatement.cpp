@@ -10,7 +10,7 @@
  * BlockStatement implementation
  */
 void BlockStatement::define(std::shared_ptr<Statement> object) {
-
+    addStatement(object);
 }
 
 void BlockStatement::accept(AbstractModelVisitor *visitor, std::shared_ptr<Visitable> visitable) {

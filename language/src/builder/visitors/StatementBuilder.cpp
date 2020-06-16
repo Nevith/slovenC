@@ -54,7 +54,7 @@ antlrcpp::Any StatementBuilder::visitBasicForStatement(SlovenCLanguageParser::Ba
     auto statement = std::make_shared<ForStatement>();
     defineParents(statement, ctx);
     for (auto variableContext : ctx->localVariableDeclaration()) {
-        std::shared_ptr<LocalVariableSymbol> variable = expressionBuilder->visit(variableContext);
+        std::shared_ptr<LocalVariableSymbol> variable = symbolBuilder->visit(variableContext);
         statement->addVariable(variable);
     }
     statement->setCondition(expressionBuilder->visit(ctx->condition()));
@@ -124,10 +124,9 @@ void StatementBuilder::defineParents(std::shared_ptr<Statement> statement, antlr
     statement->setFileSymbol(parentFile);
     statement->setContext(context);
 
-    if (parentScope) {
-        parentScope->addStatement(statement);
-    }
     if (parentStatement) {
         parentStatement->define(statement);
+    } else if (parentScope) {
+        parentScope->addStatement(statement);
     }
 }

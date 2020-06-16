@@ -10,7 +10,7 @@
  * MultiplicationExpression implementation
  */
 std::string MultiplicationExpression::getOperator() {
-    return "*";
+    return operationSign;
 }
 
 void MultiplicationExpression::setOperatorSign(const std::string &operationSign) {

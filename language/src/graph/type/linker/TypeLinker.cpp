@@ -17,7 +17,7 @@ std::shared_ptr<Symbol> TypeLinker::getSymbol(std::shared_ptr<IdentifierExpressi
     } else {
         std::shared_ptr<Symbol> resolve;
         // Check if predefinedSymbol
-        resolve = PredefinedSymbol::findPredefinedSymbol(expression->getContext().getText());
+        resolve = PredefinedSymbol::findPredefinedSymbol(expression->getName());
         if (resolve) {
             return resolve;
         }
@@ -248,17 +248,17 @@ void TypeLinker::visitThisExpression(std::shared_ptr<ThisExpression> visitable) 
 }
 
 void TypeLinker::visitConstructorCallExpression(std::shared_ptr<ConstructorCallExpression> visitable) {
-    visit(visitable->getObject());
+    auto constructionClass = getSymbol(visitable);
     for (auto argument : visitable->getArguments()) {
         visit(argument);
     }
-    auto constructionClass = getSymbol(visitable);
     if (constructionClass) {
         auto clazz = TypeUtils::cast<ClassSymbol>(constructionClass);
         if (clazz) {
             visitable->setConstructionClass(clazz);
         }
     }
+
 }
 
 void TypeLinker::visitMethodCallExpression(std::shared_ptr<MethodCallExpression> visitable) {

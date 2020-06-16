@@ -2,6 +2,7 @@
 // Created by andraz on 28/05/2020.
 //
 
+#include <interpreter/SlovenCRuntimeException.h>
 #include "Value.h"
 
 
@@ -73,11 +74,11 @@ bool Value::operator==(const Value &rhs) const {
     } else if (type == PredefinedSymbol::DOUBLE) {
         return *(double *) value.get() == *(double *) rhs.value.get();
     } else if (type == PredefinedSymbol::STRING) {
-        return *(std::string *) value.get() == *(std::string *) rhs.value.get();
+        return (*(std::string *) value.get()).compare(*(std::string *) rhs.value.get()) == 0;
     } else if (type == PredefinedSymbol::LIST) {
         return *(std::vector<Value> *) value.get() == *(std::vector<Value> *) rhs.value.get();
     } else if (type == PredefinedSymbol::VOID) {
-        throw RuntimeException("Nedovoljena operacija!");
+        throw SlovenCRuntimeException("Nedovoljena operacija!");
     } else {
         return std::static_pointer_cast<AbstractClassInstance>(value)->compare(
                 std::static_pointer_cast<AbstractClassInstance>(rhs.value));
@@ -104,7 +105,7 @@ bool Value::operator<(const Value &rhs) const {
             return (*(double *) value.get() < *(double *) rhs.value.get());
         }
     }
-    throw RuntimeException("Nedovoljena operacija!");
+    throw SlovenCRuntimeException("Nedovoljena operacija!");
 }
 
 bool Value::operator>(const Value &rhs) const {
@@ -138,7 +139,7 @@ Value Value::operator+(const Value &rhs) const {
             return Value(newValue, PredefinedSymbol::DOUBLE);
         }
     }
-    throw RuntimeException("Nedovoljena operacija!");
+    throw SlovenCRuntimeException("Nedovoljena operacija!");
 }
 
 Value Value::operator-(const Value &rhs) const {
@@ -160,7 +161,7 @@ Value Value::operator-(const Value &rhs) const {
             return Value(newValue, PredefinedSymbol::DOUBLE);
         }
     }
-    throw RuntimeException("Nedovoljena operacija!");
+    throw SlovenCRuntimeException("Nedovoljena operacija!");
 }
 
 Value Value::operator*(const Value &rhs) const {
@@ -182,7 +183,7 @@ Value Value::operator*(const Value &rhs) const {
             return Value(newValue, PredefinedSymbol::DOUBLE);
         }
     }
-    throw RuntimeException("Nedovoljena operacija!");
+    throw SlovenCRuntimeException("Nedovoljena operacija!");
 }
 
 Value Value::operator/(const Value &rhs) const {
@@ -204,7 +205,7 @@ Value Value::operator/(const Value &rhs) const {
             return Value(newValue, PredefinedSymbol::DOUBLE);
         }
     }
-    throw RuntimeException("Nedovoljena operacija!");
+    throw SlovenCRuntimeException("Nedovoljena operacija!");
 }
 
 Value Value::operator%(const Value &rhs) const {
@@ -214,5 +215,5 @@ Value Value::operator%(const Value &rhs) const {
             return Value(newValue, PredefinedSymbol::INT);
         }
     }
-    throw RuntimeException("Nedovoljena operacija!");
+    throw SlovenCRuntimeException("Nedovoljena operacija!");
 }

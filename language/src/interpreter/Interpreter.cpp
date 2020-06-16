@@ -8,6 +8,7 @@
 #include <interpreter/exits/ReturnExit.h>
 #include <interpreter/runtimevalues/ClassInstance.h>
 #include "Interpreter.h"
+#include "SlovenCRuntimeException.h"
 
 
 Interpreter::Interpreter(const std::shared_ptr<Project> &project) : project(project) {
@@ -27,7 +28,7 @@ bool Interpreter::interpret() {
                                 if (!main) {
                                     main = method;
                                 } else {
-                                    throw RuntimeException("Najdenih več instanc 'Program.zagon()'");
+                                    throw SlovenCRuntimeException("Najdenih več instanc 'Program.zagon()'");
                                 }
                             }
                         }
@@ -36,7 +37,7 @@ bool Interpreter::interpret() {
             }
         }
         if (!main) {
-            throw RuntimeException("Program.zagon ni bil najden");
+            throw SlovenCRuntimeException("Program.zagon ni bil najden");
         }
 
         // Start interpretation
@@ -49,14 +50,14 @@ bool Interpreter::interpret() {
         std::cout << "----------------" << std::endl << " Neujet izhodni stavek: '" << e.what() << "'" << std::endl
                   << "----------------" << std::endl;
         return false;
-    } catch (RuntimeException e) {
+    } catch (SlovenCRuntimeException e) {
         std::cout << "----------------" << std::endl << e.what() << std::endl << "----------------" << std::endl;
         return false;
     } catch (std::exception e) {
         // todo - log... ?
-        std::cout << "----------------" << std::endl << "Nepričakovana napaka:" << std::endl << "----------------"
+        std::cout << "----------------" << std::endl << "Nepricakovana napaka:" << std::endl << "----------------"
                   << std::endl;
-        std::cout << "----------------" << e.what() << "----------------" << std::endl;
+        std::cout << e.what() << std::endl;
         return false;
     }
 }
@@ -69,7 +70,7 @@ void Interpreter::visitAssignmentExpression(std::shared_ptr<AssignmentExpression
         visit(expr);
         setValue(identifier, getLastResult());
     } else {
-        throw RuntimeException("Vrednost lahko nastavimo le spremenljivkam");
+        throw SlovenCRuntimeException("Vrednost lahko nastavimo le spremenljivkam");
     }
 }
 
@@ -78,15 +79,15 @@ void Interpreter::visitCompareExpression(std::shared_ptr<CompareExpression> visi
     auto right = getLastResult();
     visit(visitable->getLeftExpression());
     auto left = getLastResult();
-    if (visitable->getOperator() == "==") {
+    if (visitable->getOperator().compare("==") == 0) {
         setLastResult(left == right);
-    } else if (visitable->getOperator() == "!=") {
+    } else if (visitable->getOperator().compare("!=") == 0) {
         setLastResult(left != right);
-    } else if (visitable->getOperator() == "<") {
+    } else if (visitable->getOperator().compare("<") == 0) {
         setLastResult(left < right);
-    } else if (visitable->getOperator() == ">") {
+    } else if (visitable->getOperator().compare(">") == 0) {
         setLastResult(left > right);
-    } else if (visitable->getOperator() == ">=") {
+    } else if (visitable->getOperator().compare(">=") == 0) {
         setLastResult(left >= right);
     } else {
         setLastResult(left <= right);
@@ -97,7 +98,7 @@ void Interpreter::visitNotExpression(std::shared_ptr<NotExpression> visitable) {
     visit(visitable->getExpression());
     auto result = getLastResult();
     if (result.getType() != PredefinedSymbol::BOOLEAN) {
-        throw RuntimeException("Zanikanje podprto le za tip " + PredefinedSymbol::BOOLEAN->getName());
+        throw SlovenCRuntimeException("Zanikanje podprto le za tip " + PredefinedSymbol::BOOLEAN->getName());
     }
     bool boolValue = *((bool *) result.getValue().get());
     setLastResult(!boolValue);
@@ -127,7 +128,7 @@ void Interpreter::visitPackageOrFileReferenceExpression(std::shared_ptr<PackageO
 void Interpreter::visitThisExpression(std::shared_ptr<ThisExpression> visitable) {
     auto object = visitable->getObject();
     if (object) {
-        throw RuntimeException("Gnezdenje '" + visitable->getName() + "' ni podprto.");
+        throw SlovenCRuntimeException("Gnezdenje '" + visitable->getName() + "' ni podprto.");
     }
     setLastResult(interpreterState.getThisReference());
 }
@@ -146,6 +147,11 @@ void Interpreter::visitConstructorCallExpression(std::shared_ptr<ConstructorCall
         visit(visitable->getObject());
     }
     auto method = TypeUtils::cast<MethodSymbol>(visitable->getResolve());
+
+    if (!method) {
+        throw SlovenCRuntimeException("Neveljaven klic metode '" + visitable->getContext().getText() + "'");
+    }
+
     auto parameters = method->getParameters();
     auto arguments = visitable->getArguments();
     auto state = MethodState(Value(), method);
@@ -172,6 +178,10 @@ void Interpreter::visitMethodCallExpression(std::shared_ptr<MethodCallExpression
 
     auto method = TypeUtils::cast<MethodSymbol>(visitable->getResolve());
 
+    if (!method) {
+        throw SlovenCRuntimeException("Neveljaven klic metode '" + visitable->getContext().getText() + "'");
+    }
+
     if (method->isStatic()) {
         thisReference = Value();
     }
@@ -191,7 +201,7 @@ void Interpreter::visitMethodCallExpression(std::shared_ptr<MethodCallExpression
 }
 
 void Interpreter::visitThisCallExpression(std::shared_ptr<ThisCallExpression> visitable) {
-    throw RuntimeException("Klic '" + visitable->getContext().getText() + "' še ni podprt.");
+    throw SlovenCRuntimeException("Klic '" + visitable->getContext().getText() + "' še ni podprt.");
 }
 
 void Interpreter::visitBooleanLiteral(std::shared_ptr<BooleanLiteral> visitable) {
@@ -231,9 +241,9 @@ void Interpreter::visitMultiplicationExpression(std::shared_ptr<MultiplicationEx
     auto right = getLastResult();
     visit(visitable->getLeftExpression());
     auto left = getLastResult();
-    if (visitable->getOperator() == "*") {
+    if (visitable->getOperator().compare("*") == 0) {
         setLastResult(left * right);
-    } else if (visitable->getOperator() == "/") {
+    } else if (visitable->getOperator().compare("/") == 0) {
         setLastResult(left / right);
     } else {
         setLastResult(left % right);
@@ -246,7 +256,7 @@ void Interpreter::visitIncrementDecrementExpression(std::shared_ptr<IncrementDec
     if (identifier) {
         getValue(identifier);
         auto value = getLastResult();
-        if (visitable->getOperator() == "++") {
+        if (visitable->getOperator().compare("++") == 0) {
             setLastResult(value + 1);
         } else {
             setLastResult(value - 1);
@@ -254,7 +264,7 @@ void Interpreter::visitIncrementDecrementExpression(std::shared_ptr<IncrementDec
 
         setValue(identifier, getLastResult());
     } else {
-        throw RuntimeException("Vrednost lahko nastavimo le spremenljivkam");
+        throw SlovenCRuntimeException("Vrednost lahko nastavimo le spremenljivkam");
     }
 }
 
@@ -319,7 +329,7 @@ void Interpreter::visitForStatement(std::shared_ptr<ForStatement> visitable) {
                 break;
             }
         } else {
-            throw RuntimeException("Tip pogoja mora biti '" + PredefinedSymbol::BOOLEAN->getName() + "'");
+            throw SlovenCRuntimeException("Tip pogoja mora biti '" + PredefinedSymbol::BOOLEAN->getName() + "'");
         }
     }
 }
@@ -336,7 +346,7 @@ void Interpreter::visitIfStatement(std::shared_ptr<IfStatement> visitable) {
             }
         }
     } else {
-        throw RuntimeException("Tip pogoja mora biti '" + PredefinedSymbol::BOOLEAN->getName() + "'");
+        throw SlovenCRuntimeException("Tip pogoja mora biti '" + PredefinedSymbol::BOOLEAN->getName() + "'");
     }
 }
 
@@ -366,7 +376,7 @@ void Interpreter::visitWhileStatement(std::shared_ptr<WhileStatement> visitable)
                 break;
             }
         } else {
-            throw RuntimeException("Tip pogoja mora biti '" + PredefinedSymbol::BOOLEAN->getName() + "'");
+            throw SlovenCRuntimeException("Tip pogoja mora biti '" + PredefinedSymbol::BOOLEAN->getName() + "'");
         }
     }
 }
@@ -374,18 +384,35 @@ void Interpreter::visitWhileStatement(std::shared_ptr<WhileStatement> visitable)
 void Interpreter::visitMethodSymbol(std::shared_ptr<MethodSymbol> visitable) {
     if (visitable->getIsConstructor()) {
         auto thisReference = interpreterState.getThisReference();
-        auto classType = visitable->getResult()->getParentClass();
-        thisReference.setType(classType);
-        auto newValue = std::make_shared<ClassInstance>(classType);
-        thisReference.setValue(newValue, classType);
+        auto classType = TypeUtils::cast<ClassSymbol>(visitable->getParentSymbol());
+        if (classType == PredefinedSymbol::BOOLEAN) {
+            thisReference.setValue(std::make_shared<bool>(false), PredefinedSymbol::BOOLEAN);
 
+        } else if (classType == PredefinedSymbol::INT) {
+            thisReference.setValue(std::make_shared<int>(0), PredefinedSymbol::INT);
+
+        } else if (classType == PredefinedSymbol::DOUBLE) {
+            thisReference.setValue(std::make_shared<double>(0.0), PredefinedSymbol::DOUBLE);
+
+        } else if (classType == PredefinedSymbol::STRING) {
+            thisReference.setValue(std::make_shared<std::string>(""), PredefinedSymbol::STRING);
+
+        } else if (classType == PredefinedSymbol::LIST) {
+            thisReference.setValue(std::make_shared<std::vector<Value>>(), PredefinedSymbol::LIST);
+        } else {
+            thisReference.setValue(std::make_shared<ClassInstance>(TypeUtils::cast<ClassSymbol>(classType)), classType);
+        }
+
+        setLastResult(thisReference);
     } else if (visitable->getIsSynthetic()) {
         runPredefinedMethod(visitable);
         return;
     }
     visit(visitable->getScope());
-    if (visitable->getResult()->getResolve() == PredefinedSymbol::VOID) {
-        setLastResult(Value());
+    if (!visitable->getIsConstructor()) {
+        if (visitable->getResult()->getResolve() == PredefinedSymbol::VOID) {
+            setLastResult(Value());
+        }
     }
 }
 

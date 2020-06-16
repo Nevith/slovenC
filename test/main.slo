@@ -4,7 +4,18 @@ uporabi model.b.c;
 odkrit razred Program vpelje A {
 	
 	globalna odkrita praznina zagon() {
-		Konzola.printaj("Zdravo svet!");
+		celo i = 0;
+		Seznam g = nov Seznam(); 
+		g.dodaj("11111");
+		g.dodaj("22222");
+		g.dodaj("33333");
+		g.dodaj("44444");
+		g.dodaj("55555");
+		
+		za (celo j = i; j < g.velikost(); j++) {
+			Konzola.printaj(j);
+			Konzola.printaj(g.vzemi(j));
+		}
 	}
 
 }

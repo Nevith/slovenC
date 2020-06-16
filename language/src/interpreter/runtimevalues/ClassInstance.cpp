@@ -2,6 +2,7 @@
 // Created by andraz on 28/05/2020.
 //
 
+#include <interpreter/SlovenCRuntimeException.h>
 #include "ClassInstance.h"
 
 ClassInstance::ClassInstance(const std::shared_ptr<ClassSymbol> &classType) : classType(classType), fields(),
@@ -50,7 +51,7 @@ const std::vector<std::shared_ptr<FieldSymbol>> &ClassInstance::getFields() cons
 bool ClassInstance::setFieldValue(std::shared_ptr<FieldSymbol> field, Value value) {
     auto it = fieldValues.find(field);
     if (it == fieldValues.end()) {
-        throw RuntimeException(value.getType()->getFullyQualifiedName() + " nima polja: '" + field->getName() + "'");
+        throw SlovenCRuntimeException(value.getType()->getFullyQualifiedName() + " nima polja: '" + field->getName() + "'");
     }
     fieldValues[field] = value;
     return false;
@@ -59,7 +60,7 @@ bool ClassInstance::setFieldValue(std::shared_ptr<FieldSymbol> field, Value valu
 Value ClassInstance::getFieldValue(std::shared_ptr<FieldSymbol> field) {
     auto it = fieldValues.find(field);
     if (it == fieldValues.end()) {
-        throw RuntimeException(classType->getFullyQualifiedName() + " nima polja: '" + field->getName() + "'");
+        throw SlovenCRuntimeException(classType->getFullyQualifiedName() + " nima polja: '" + field->getName() + "'");
     }
     return it->second;
 }

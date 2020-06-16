@@ -4,6 +4,7 @@
 
 #include <interpreter/runtimevalues/ClassInstance.h>
 #include "PredefinedInterpreter.h"
+#include "SlovenCRuntimeException.h"
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
@@ -38,7 +39,7 @@ void PredefinedInterpreter::runPredefinedMethod(std::shared_ptr<MethodSymbol> me
     } else if (methodName == constants::RANDOM) {
         RANDOM(method);
     } else {
-        throw RuntimeException("Nepodprte predefinirana metoda '" + methodName + "'");
+        throw SlovenCRuntimeException("Nepodprte predefinirana metoda '" + methodName + "'");
     }
 }
 
@@ -76,7 +77,7 @@ void PredefinedInterpreter::PUT(std::shared_ptr<MethodSymbol> method) {
     auto index = interpreterState.getValue(method->getParameters()[0]);
     int indexValue = *(int *) index.getValue().get();
     if (indexValue > thisInstance->size()) {
-        throw RuntimeException("Preveliki index");
+        throw SlovenCRuntimeException("Preveliki index");
     }
     thisInstance->insert(thisInstance->begin() + indexValue, object);
     setLastResult(Value());
@@ -89,7 +90,7 @@ void PredefinedInterpreter::GET(std::shared_ptr<MethodSymbol> method) {
     auto index = interpreterState.getValue(method->getParameters()[0]);
     int indexValue = *(int *) index.getValue().get();
     if (indexValue >= thisInstance->size()) {
-        throw RuntimeException("Preveliki index");
+        throw SlovenCRuntimeException("Preveliki index");
     }
     setLastResult(thisInstance->at(indexValue));
 }
@@ -98,7 +99,7 @@ void PredefinedInterpreter::REMOVE(std::shared_ptr<MethodSymbol> method) {
     auto thisValue = interpreterState.getThisReference();
     auto thisInstance = std::static_pointer_cast<std::vector<Value>>(thisValue.getValue());
     if (thisInstance->empty()) {
-        throw RuntimeException("Lista je že prazna");
+        throw SlovenCRuntimeException("Lista je že prazna");
     }
     thisInstance->pop_back();
     setLastResult(Value());
@@ -201,7 +202,7 @@ std::string PredefinedInterpreter::getString(Value value) {
     } else if (type == PredefinedSymbol::LIST) {
         result = "Lista";
     } else if (type == PredefinedSymbol::VOID) {
-        throw RuntimeException("Nedovoljena operacija!");
+        throw SlovenCRuntimeException("Nedovoljena operacija!");
     } else {
         result = "TODO";
     }

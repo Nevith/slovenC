@@ -3,6 +3,7 @@
  * can be found in the LICENSE.txt file in the project root.
  */
 
+#include <interpreter/SlovenCRuntimeException.h>
 #include "Exceptions.h"
 #include "misc/Interval.h"
 #include "Token.h"
@@ -404,7 +405,7 @@ std::unordered_map<size_t, TokenStreamRewriter::RewriteOperation*> TokenStreamRe
       continue;
     }
     if (m.count(op->index) > 0) {
-      throw RuntimeException("should only be one op per index");
+      throw SlovenCRuntimeException("should only be one op per index");
     }
     m[op->index] = op;
   }
