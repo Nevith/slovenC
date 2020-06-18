@@ -43,6 +43,8 @@ private:
 
     void RANDOM(std::shared_ptr<MethodSymbol> method);
 
+    void LENGTH(std::shared_ptr<MethodSymbol> method);
+
 public:
     PredefinedInterpreter();
 

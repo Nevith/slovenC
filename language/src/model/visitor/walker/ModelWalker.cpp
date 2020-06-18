@@ -379,6 +379,10 @@ void ModelWalker::visitIfStatement(std::shared_ptr<IfStatement> visitable) {
     if (statement) {
         visit(statement);
     }
+    auto elseStatement = visitable->getElseStatement();
+    if (elseStatement) {
+        visit(elseStatement);
+    }
 
     for (auto listener : listeners) {
         listener->exitIfStatement(visitable);

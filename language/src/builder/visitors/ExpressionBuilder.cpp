@@ -433,7 +433,8 @@ antlrcpp::Any ExpressionBuilder::visitLiteralBoolean(SlovenCLanguageParser::Lite
 
 antlrcpp::Any ExpressionBuilder::visitLiteralString(SlovenCLanguageParser::LiteralStringContext *ctx) {
     auto symbol = std::make_shared<StringLiteral>();
-    symbol->setValue(ctx->StringLiteral()->getText());
+    std::string stringValue = ctx->StringLiteral()->getText();
+    symbol->setValue(stringValue.substr(1, stringValue.size()-2));
     defineParents(symbol, ctx);
     return TypeUtils::cast<Expression>(symbol);
 }

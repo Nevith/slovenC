@@ -11,6 +11,10 @@ MethodState::MethodState(const Value &thisReference, std::shared_ptr<MethodSymbo
 
 }
 
+MethodState::MethodState() {
+
+}
+
 Value MethodState::getValue(std::shared_ptr<Symbol> key) {
     auto it = activeValues.find(key);
     if (it == activeValues.end()) {

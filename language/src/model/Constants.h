@@ -58,6 +58,7 @@ namespace constants {
     const static std::string GET = "vzemi";
     const static std::string REMOVE = "odstraniZadnjo";
     const static std::string SIZE = "velikost";
+    const static std::string LENGTH = "dolzina";
     const static std::string CONCATENATE = "dolepi";
     const static std::string PROGRAM = "Program";
     const static std::string MAIN = "zagon";

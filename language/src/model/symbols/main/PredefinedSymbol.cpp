@@ -133,6 +133,15 @@ void PredefinedSymbol::init() {
         concatenate->setPublic();
         declareMethod(concatenate);
 
+        auto size = std::make_shared<MethodSymbol>(constants::LENGTH, false, true);
+        auto sizeReturnType = std::make_shared<TypeReferenceExpression>(INT->getName());
+        sizeReturnType->setResolve(INT);
+        sizeReturnType->setParentClass(STRING);
+        sizeReturnType->setParentMethod(concatenate);
+        size->setResult(sizeReturnType);
+        size->setPublic();
+        declareMethod(size);
+
 
     } else if (getName() == constants::CONSOLE) {
         auto print = std::make_shared<MethodSymbol>(constants::PRINT, false, true);

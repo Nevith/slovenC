@@ -33,3 +33,11 @@ void InterpreterState::exitMethod() {
 Value InterpreterState::getThisReference() {
     return methodStates.back().getThisReference();
 }
+
+void InterpreterState::setStaticValue(std::shared_ptr<Symbol> key, Value value) {
+    staticState.setValue(key, value);
+}
+
+Value InterpreterState::getStaticValue(std::shared_ptr<Symbol> key) {
+    return staticState.getValue(key);
+}

@@ -38,6 +38,8 @@ void PredefinedInterpreter::runPredefinedMethod(std::shared_ptr<MethodSymbol> me
         MAIN(method);
     } else if (methodName == constants::RANDOM) {
         RANDOM(method);
+    } else if (methodName == constants::LENGTH) {
+        LENGTH(method);
     } else {
         throw SlovenCRuntimeException("Nepodprte predefinirana metoda '" + methodName + "'");
     }
@@ -129,6 +131,12 @@ void PredefinedInterpreter::RANDOM(std::shared_ptr<MethodSymbol> method) {
     setLastResult(randomNumber);
 }
 
+void PredefinedInterpreter::LENGTH(std::shared_ptr<MethodSymbol> method) {
+    auto thisValue = interpreterState.getThisReference();
+    auto thisInstance = std::static_pointer_cast<std::string>(thisValue.getValue());
+    setLastResult((int) (thisInstance->size()));
+}
+
 void PredefinedInterpreter::setValue(std::shared_ptr<IdentifierExpression> identifier, Value value) {
     auto object = identifier->getObject();
     if (object) {
@@ -148,8 +156,10 @@ void PredefinedInterpreter::setValue(std::shared_ptr<IdentifierExpression> ident
                 auto classInstance = std::static_pointer_cast<ClassInstance>(value.getValue());
                 classInstance->setFieldValue(field, value);
             }
-            return;
+        } else {
+            interpreterState.setStaticValue(symbol, value);
         }
+        return;
     }
     interpreterState.setValue(symbol, value);
 }
@@ -175,6 +185,9 @@ void PredefinedInterpreter::getValue(std::shared_ptr<IdentifierExpression> ident
                 setLastResult(classInstance->getFieldValue(field));
                 return;
             }
+        } else {
+            setLastResult(interpreterState.getStaticValue(symbol));
+            return;
         }
     }
 

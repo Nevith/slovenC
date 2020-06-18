@@ -80,7 +80,9 @@ antlrcpp::Any StatementBuilder::visitWhileStatement(SlovenCLanguageParser::While
 antlrcpp::Any StatementBuilder::visitReturnStatement(SlovenCLanguageParser::ReturnStatementContext *ctx) {
     auto statement = std::make_shared<ReturnStatement>();
     defineParents(statement, ctx);
-    statement->setExpression(expressionBuilder->visit(ctx->expression()));
+    if (ctx->expression()) {
+        statement->setExpression(expressionBuilder->visit(ctx->expression()));
+    }
     return TypeUtils::cast<Statement>(statement);
 }
 

@@ -1,21 +1,65 @@
-uporabi model.a;
-uporabi model.b.c;
+uporabi model.beseda;
 
-odkrit razred Program vpelje A {
+odkrit razred Program {
+	
+	globalen odkrit bit izrisIgre(celo poskusov) {
+		ko(poskusov == 1) {
+			Konzola.printaj("|");
+			Konzola.printaj("|");
+			Konzola.printaj("|");
+			Konzola.printaj("|");
+		} 
+		ko(poskusov == 2) {
+			Konzola.printaj("|-----");
+			Konzola.printaj("|");
+			Konzola.printaj("|");
+			Konzola.printaj("|");
+		}
+		ko(poskusov == 3) {
+			Konzola.printaj("|-----");
+			Konzola.printaj("|    |");
+			Konzola.printaj("|");
+			Konzola.printaj("|");
+		}
+		ko(poskusov == 4) {
+			Konzola.printaj("|-----");
+			Konzola.printaj("|    |");
+			Konzola.printaj("|    O");
+			Konzola.printaj("|");
+		}
+		ko(poskusov >= 5) {
+			Konzola.printaj("|-----");
+			Konzola.printaj("|    |");
+			Konzola.printaj("|    O");
+			Konzola.printaj("|    I");
+			vrni narobe;
+		}
+		vrni prav;
+	}
 	
 	globalna odkrita praznina zagon() {
-		celo i = 0;
-		Seznam g = nov Seznam(); 
-		g.dodaj("11111");
-		g.dodaj("22222");
-		g.dodaj("33333");
-		g.dodaj("44444");
-		g.dodaj("55555");
+		Beseda.pripravi();
 		
-		za (celo j = i; j < g.velikost(); j++) {
-			Konzola.printaj(j);
-			Konzola.printaj(g.vzemi(j));
+		niz beseda = Beseda.dajBesedo();
+		
+		Konzola.printaj("Dolzina beseda: ");
+		Konzola.printaj(beseda.dolzina());
+		
+		celo poskusov = 0;
+			
+			
+		dokler(izrisIgre(poskusov)) {
+			Konzola.printaj("Ugotovi besedo:");
+			niz poskus = Konzola.preberi();
+			ko (poskus == beseda) {
+				Konzola.printaj("Cestitam! Zmagal si!");
+				vrni;
+			} sicer {
+				poskusov++;
+			}
 		}
+		
+		Konzola.printaj("Konec igre! Izgubil si!");
 	}
 
 }

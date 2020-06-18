@@ -408,7 +408,11 @@ void Interpreter::visitMethodSymbol(std::shared_ptr<MethodSymbol> visitable) {
         runPredefinedMethod(visitable);
         return;
     }
-    visit(visitable->getScope());
+    try {
+        visit(visitable->getScope());
+    } catch (ReturnExit e) {
+        // do nothing
+    }
     if (!visitable->getIsConstructor()) {
         if (visitable->getResult()->getResolve() == PredefinedSymbol::VOID) {
             setLastResult(Value());

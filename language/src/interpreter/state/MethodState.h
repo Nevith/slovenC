@@ -19,6 +19,8 @@ private:
 public:
     MethodState(const Value &thisReference, std::shared_ptr<MethodSymbol> method);
 
+    MethodState();
+
     Value getValue(std::shared_ptr<Symbol> key);
 
     void setValue(std::shared_ptr<Symbol> key, Value value);

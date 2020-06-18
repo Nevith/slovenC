@@ -15,10 +15,16 @@ private:
 
     std::vector<std::shared_ptr<MethodSymbol>> methods;
 
+    MethodState staticState;
+
 public:
     Value getValue(std::shared_ptr<Symbol> key);
 
     void setValue(std::shared_ptr<Symbol> key, Value value);
+
+    void setStaticValue(std::shared_ptr<Symbol> key, Value value);
+
+    Value getStaticValue(std::shared_ptr<Symbol> key);
 
     MethodState getCurrentState();
 

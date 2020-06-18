@@ -44,7 +44,9 @@ public:
         std::string json = "{ \"vertices\" :[";
         int i = 0;
         for (std::shared_ptr<Node<E>> vertex : vertices) {
-            json += "{\"type\":\"" + vertex->getNodeTypeString() + "\", \"name\":\"" + vertex->getString() + "\"}";
+            std::stringstream ss;
+            ss << std::quoted(vertex->getString());
+            json += "{\"type\":\"" + vertex->getNodeTypeString() + "\", \"name\":" + ss.str() + "}";
             i++;
             if (i < vertices.size()) {
                 json += ",";

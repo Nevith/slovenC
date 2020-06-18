@@ -1,0 +1,35 @@
+odkrit razred Beseda {
+	
+	odkrit globalen Seznam seznamBesed;
+	
+	globalna odkrita praznina pripravi() {
+		seznamBesed = nov Seznam();
+		
+		seznamBesed.dodaj("zmaj");
+		seznamBesed.dodaj("pismo");
+		seznamBesed.dodaj("mizar");
+		seznamBesed.dodaj("pojmi");
+		seznamBesed.dodaj("dihur");
+		seznamBesed.dodaj("svinja");
+		seznamBesed.dodaj("avtobus");
+		seznamBesed.dodaj("pisarna");
+		seznamBesed.dodaj("kletka");
+		seznamBesed.dodaj("grafika");
+		seznamBesed.dodaj("osnutek");
+		seznamBesed.dodaj("risanje");
+		seznamBesed.dodaj("interes");
+		seznamBesed.dodaj("sredstva");
+		seznamBesed.dodaj("televizor");
+		seznamBesed.dodaj("grafoskop");
+		seznamBesed.dodaj("spoznavanje");
+		seznamBesed.dodaj("prikazovanje");
+		seznamBesed.dodaj("vremenoslovec");
+		seznamBesed.dodaj("demonstracija");
+	}
+	
+	
+	globalen odkrit niz dajBesedo() {
+		seznamBesed.vzemi(Konzola.nakljucnoCelo() % seznamBesed.velikost());
+	}
+	
+}
