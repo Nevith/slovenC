@@ -4,6 +4,6 @@
 
 #include "Exit.h"
 
-Exit::Exit(std::string message) : exception(message.c_str()) {
+Exit::Exit(std::string message) : SlovenCRuntimeException(message.c_str()) {
 
 }

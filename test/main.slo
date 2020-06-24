@@ -59,7 +59,8 @@ odkrit razred Program {
 			}
 		}
 		
-		Konzola.printaj("Konec igre! Izgubil si!");
+		Konzola.printaj("Konec igre! Izgubil si! Beseda je bila: ");
+		Konzola.printaj(beseda);
 	}
 
 }

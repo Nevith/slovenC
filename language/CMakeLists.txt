@@ -19,7 +19,15 @@ add_executable(IDE_backend IDE_backend.cpp ${sourcesc} ${sourcesh})
 
 # Link with antlr4_runtime
 add_definitions("-DANTLR4CPP_STATIC")
-target_link_libraries(serializer antlr4_static)
-target_link_libraries(interpreter antlr4_static)
-target_link_libraries(IDE_backend antlr4_static)
+if(CMAKE_SYSTEM_NAME MATCHES "Linux")
+    set(THREADS_PREFER_PTHREAD_FLAG ON)
+    find_package(Threads REQUIRED)
 
+    target_link_libraries(serializer antlr4_static Threads::Threads)
+    target_link_libraries(interpreter antlr4_static Threads::Threads)
+    target_link_libraries(IDE_backend antlr4_static Threads::Threads)
+else()
+    target_link_libraries(serializer antlr4_static)
+    target_link_libraries(interpreter antlr4_static)
+    target_link_libraries(IDE_backend antlr4_static)
+endif()

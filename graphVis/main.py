@@ -7,16 +7,23 @@ import os
 import subprocess
 
 from os import listdir
+from sys import platform
 
 from src.data_analysis import *
 from src.graph_maker import *
+
+serializer_name = "invalid os!"
+if platform == "linux" or platform == "linux2":
+    serializer_name = "serializer"
+elif platform == "win32":
+    serializer_name = "serializer.exe"
 
 parser = argparse.ArgumentParser(description='Run SlovenC serializer and display the built graphs')
 parser.add_argument('--input', metavar='-i', type=str, required=False,
                     help='Path to the root project directory', default=os.path.join("..", "test"))
 parser.add_argument('--serializer', metavar='-s', type=str, required=False,
                     help='Path to the slovenC serializer.exe',
-                    default=os.path.join("..", "language", "cmake-build-debug", "serializer.exe"))
+                    default=os.path.join("..", "language", "cmake-build-debug", serializer_name))
 
 
 def main():

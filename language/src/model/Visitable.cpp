@@ -20,7 +20,7 @@ void Visitable::setContext(ParserRuleContext *ctx) {
     context.setColumn(ctx->getStart()->getCharPositionInLine());
     context.setRow(ctx->getStart()->getLine());
     context.setText(
-            ctx->getStart()->getInputStream()->getText(misc::Interval(context.getOffset(), context.getAnEnd())));
+            ctx->getStart()->getInputStream()->getText(misc::Interval((ssize_t)context.getOffset(), (ssize_t)context.getAnEnd())));
 }
 
 void Visitable::setContext(Context other) {

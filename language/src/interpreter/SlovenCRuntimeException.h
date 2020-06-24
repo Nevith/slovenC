@@ -10,11 +10,15 @@
 #include <string>
 
 class SlovenCRuntimeException : public std::exception {
+    std::string msg;
 
 public:
     SlovenCRuntimeException(const char *const message);
 
     SlovenCRuntimeException(std::string  message);
+
+    virtual char const*
+    what() const throw();
 
 };
 

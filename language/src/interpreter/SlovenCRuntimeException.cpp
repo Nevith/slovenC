@@ -4,8 +4,15 @@
 
 #include "SlovenCRuntimeException.h"
 
-SlovenCRuntimeException::SlovenCRuntimeException(const char *const message) : exception(message) {}
+#include <utility>
 
-SlovenCRuntimeException::SlovenCRuntimeException(std::string message) : exception(message.c_str()) {
+SlovenCRuntimeException::SlovenCRuntimeException(const char *const message) : std::exception(), msg(message) {
+}
 
+SlovenCRuntimeException::SlovenCRuntimeException(std::string message) : exception(), msg(std::move(message)) {
+
+}
+
+const char *SlovenCRuntimeException::what() const throw() {
+    return msg.c_str();
 }

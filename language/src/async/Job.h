@@ -6,7 +6,7 @@
 #define SLOVENC_JOB_H
 
 #include <future>
-
+#include "vector"
 
 class Job {
 private:

@@ -60,15 +60,15 @@ void JobManager::runNextJob() {
         jobQueue.pop();
 
         runningJobs.push_back(nextJob);
-        std::future result = std::async(std::launch::async, [](std::shared_ptr<Job> a, JobManager *jobManager) {
+        std::future result = std::async(std::launch::async, [](const std::shared_ptr<Job> &a, JobManager *jobManager) {
             try {
                 a->run();
                 if (!a->isCanceled()) {
-                    for (std::shared_ptr<Job> newJob : a->onComplete()) {
+                    for (const std::shared_ptr<Job> &newJob : a->onComplete()) {
                         jobManager->queueJob(newJob);
                     }
                 }
-            } catch (std::exception e) {
+            } catch (std::exception &e) {
                 a->cancel();
                 std::cout << e.what() << std::endl;
             }
@@ -89,7 +89,7 @@ void JobManager::jobFinished(std::shared_ptr<Job> job) {
 
 void JobManager::cleanFutures() {
     for (auto it = futures.begin(); it < futures.end();) {
-        if ((*it)._Is_ready()) {
+        if (is_ready(*it)) {
             it = futures.erase(it);
         } else {
             ++it;

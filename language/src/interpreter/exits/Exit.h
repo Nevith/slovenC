@@ -7,10 +7,11 @@
 
 
 #include <exception>
+#include <interpreter/SlovenCRuntimeException.h>
 #include "model/Constants.h"
 #include "string"
 
-class Exit : public std::exception {
+class Exit : public SlovenCRuntimeException {
 public:
     Exit(std::string message);
 };
