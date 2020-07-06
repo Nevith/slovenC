@@ -3,6 +3,7 @@
 //
 
 #include <model/statements/BlockStatement.h>
+#include <model/Constants.h>
 #include "Builder.h"
 
 Builder::Builder(const std::shared_ptr<CurrentState> &currentState) : currentState(currentState),
@@ -52,7 +53,7 @@ void Builder::enterNormalClassDeclaration(SlovenCLanguageParser::NormalClassDecl
 void Builder::exitNormalClassDeclaration(SlovenCLanguageParser::NormalClassDeclarationContext *context) {
     auto currentClass = currentState->getCurrentClass();
     if (currentClass->getConstructors().empty()) {
-        auto constructor = std::make_shared<MethodSymbol>("Konstruktor", true, true);
+        auto constructor = std::make_shared<MethodSymbol>(constants::CONSTRUCTOR, true, true);
         constructor->setContext(context);
         currentClass->declareConstructor(constructor);
     }
