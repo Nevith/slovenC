@@ -87,14 +87,25 @@ void PredefinedInterpreter::PUT(std::shared_ptr<MethodSymbol> method) {
 
 void PredefinedInterpreter::GET(std::shared_ptr<MethodSymbol> method) {
     auto thisValue = interpreterState.getThisReference();
-    auto thisInstance = std::static_pointer_cast<std::vector<Value>>(thisValue.getValue());
-    auto object = interpreterState.getValue(method->getParameters()[0]);
-    auto index = interpreterState.getValue(method->getParameters()[0]);
-    int indexValue = *(int *) index.getValue().get();
-    if (indexValue >= thisInstance->size()) {
-        throw SlovenCRuntimeException("Preveliki index");
+    if (thisValue.getType() == PredefinedSymbol::LIST ) {
+        auto thisInstance = std::static_pointer_cast<std::vector<Value>>(thisValue.getValue());
+        auto object = interpreterState.getValue(method->getParameters()[0]);
+        auto index = interpreterState.getValue(method->getParameters()[0]);
+        int indexValue = *(int *) index.getValue().get();
+        if (indexValue >= thisInstance->size()) {
+            throw SlovenCRuntimeException("Preveliki index");
+        }
+        setLastResult(thisInstance->at(indexValue));
+    } else {
+        auto stringInstance = std::static_pointer_cast<std::string>(thisValue.getValue());
+        auto object = interpreterState.getValue(method->getParameters()[0]);
+        auto index = interpreterState.getValue(method->getParameters()[0]);
+        int indexValue = *(int *) index.getValue().get();
+        if (indexValue >= stringInstance->size()) {
+            throw SlovenCRuntimeException("Preveliki index");
+        }
+        setLastResult(stringInstance->substr(indexValue, 1));
     }
-    setLastResult(thisInstance->at(indexValue));
 }
 
 void PredefinedInterpreter::REMOVE(std::shared_ptr<MethodSymbol> method) {

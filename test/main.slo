@@ -45,8 +45,7 @@ odkrit razred Program {
 		Konzola.printaj("Dolzina beseda: ");
 		Konzola.printaj(beseda.dolzina());
 		
-		celo poskusov = 0;
-			
+		celo poskusov = 0;	
 			
 		dokler(izrisIgre(poskusov)) {
 			Konzola.printaj("Ugotovi besedo:");
