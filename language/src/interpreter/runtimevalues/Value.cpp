@@ -217,3 +217,24 @@ Value Value::operator%(const Value &rhs) const {
     }
     throw SlovenCRuntimeException("Nedovoljena operacija!");
 }
+
+Value Value::operator||(const Value &rhs) const {
+    if (type == PredefinedSymbol::BOOLEAN) {
+        if (rhs.type == PredefinedSymbol::BOOLEAN) {
+            auto newValue = std::make_shared<bool>(*(bool *) value.get() || *(bool *) rhs.value.get());
+            return Value(newValue, PredefinedSymbol::BOOLEAN);
+        }
+    }
+    throw SlovenCRuntimeException("Nedovoljena operacija!");
+}
+
+
+Value Value::operator&&(const Value &rhs) const {
+    if (type == PredefinedSymbol::BOOLEAN) {
+        if (rhs.type == PredefinedSymbol::BOOLEAN) {
+            auto newValue = std::make_shared<bool>(*(bool *) value.get() && *(bool *) rhs.value.get());
+            return Value(newValue, PredefinedSymbol::BOOLEAN);
+        }
+    }
+    throw SlovenCRuntimeException("Nedovoljena operacija!");
+}

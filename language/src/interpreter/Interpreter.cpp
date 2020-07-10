@@ -89,8 +89,12 @@ void Interpreter::visitCompareExpression(std::shared_ptr<CompareExpression> visi
         setLastResult(left > right);
     } else if (visitable->getOperator().compare(">=") == 0) {
         setLastResult(left >= right);
-    } else {
+    } else if (visitable->getOperator().compare("<=") == 0) {
         setLastResult(left <= right);
+    } else if (visitable->getOperator().compare("&&") == 0) {
+        setLastResult(left && right);
+    } else {
+        setLastResult(left || right);
     }
 }
 
@@ -304,12 +308,19 @@ void Interpreter::visitExpressionStatement(std::shared_ptr<ExpressionStatement> 
 }
 
 void Interpreter::visitForStatement(std::shared_ptr<ForStatement> visitable) {
+    // Initialize values for all variables declared in the for statement
     auto variables = visitable->getVariables();
     for (auto var : variables) {
-        visit(var->getInitialValue());
+        auto initialValue = var->getInitialValue();
+        if (initialValue) {
+            visit(var->getInitialValue());
+        } else {
+            setLastResult(Value());
+        }
         interpreterState.setValue(var, getLastResult());
     }
 
+    // Loop until condition evaluates to false or a break statement is reached
     while (true) {
         visit(visitable->getCondition());
         auto conditionResult = getLastResult();
@@ -326,9 +337,10 @@ void Interpreter::visitForStatement(std::shared_ptr<ForStatement> visitable) {
                     visit(expr);
                 }
             } else {
-                break;
+                break;  // Condition is false => BREAK
             }
         } else {
+            // Throw runtime error
             throw SlovenCRuntimeException("Tip pogoja mora biti '" + PredefinedSymbol::BOOLEAN->getName() + "'");
         }
     }

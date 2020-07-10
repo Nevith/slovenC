@@ -62,6 +62,10 @@ public:
     Value operator/(const Value &rhs) const;
 
     Value operator%(const Value &rhs) const;
+
+    Value operator||(const Value &rhs) const;
+
+    Value operator&&(const Value &rhs) const;
 };
 
 
