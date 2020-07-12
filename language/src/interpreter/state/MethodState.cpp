@@ -36,6 +36,10 @@ void MethodState::setValue(std::shared_ptr<Symbol> key, Value value) {
     }
 }
 
-const Value &MethodState::getThisReference() const {
+Value &MethodState::getThisReference() {
     return thisReference;
+}
+
+void MethodState::setThisReference(const Value &value) {
+    thisReference = value;
 }

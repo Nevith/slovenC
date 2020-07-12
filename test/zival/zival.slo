@@ -1,0 +1,8 @@
+odkrit razred Zival {
+	
+	niz glas;
+	
+	globalen odkrit niz glas() {
+		vrni glas;
+	}
+}

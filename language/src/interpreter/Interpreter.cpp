@@ -415,7 +415,7 @@ void Interpreter::visitMethodSymbol(std::shared_ptr<MethodSymbol> visitable) {
             thisReference.setValue(std::make_shared<ClassInstance>(TypeUtils::cast<ClassSymbol>(classType)), classType);
         }
 
-        setLastResult(thisReference);
+        interpreterState.setThisReference(thisReference);
     } else if (visitable->getIsSynthetic()) {
         runPredefinedMethod(visitable);
         return;
@@ -429,6 +429,8 @@ void Interpreter::visitMethodSymbol(std::shared_ptr<MethodSymbol> visitable) {
         if (visitable->getResult()->getResolve() == PredefinedSymbol::VOID) {
             setLastResult(Value());
         }
+    } else {
+        setLastResult(interpreterState.getThisReference());
     }
 }
 

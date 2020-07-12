@@ -164,7 +164,7 @@ void PredefinedInterpreter::setValue(std::shared_ptr<IdentifierExpression> ident
                 instance->setFieldValue(field, value);
             } else {
                 auto instance = interpreterState.getThisReference();
-                auto classInstance = std::static_pointer_cast<ClassInstance>(value.getValue());
+                auto classInstance = std::static_pointer_cast<ClassInstance>(instance.getValue());
                 classInstance->setFieldValue(field, value);
             }
         } else {

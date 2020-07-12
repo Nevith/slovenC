@@ -1,0 +1,8 @@
+uporabi zival.zival;
+
+odkrit razred Lev vpelje Zival {
+	
+	Konstruktor() {
+		glas = "rawr";
+	}
+}

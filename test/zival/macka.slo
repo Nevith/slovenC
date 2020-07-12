@@ -1,0 +1,8 @@
+uporabi zival.zival;
+
+odkrit razred Macka vpelje Zival {
+	
+	Konstruktor() {
+		glas = "mjav";
+	}
+}

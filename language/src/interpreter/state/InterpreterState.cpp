@@ -30,8 +30,12 @@ void InterpreterState::exitMethod() {
     methodStates.pop_back();
 }
 
-Value InterpreterState::getThisReference() {
+Value &InterpreterState::getThisReference() {
     return methodStates.back().getThisReference();
+}
+
+void InterpreterState::setThisReference(const Value &thisReference) {
+    methodStates.back().setThisReference(thisReference);
 }
 
 void InterpreterState::setStaticValue(std::shared_ptr<Symbol> key, Value value) {

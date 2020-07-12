@@ -438,6 +438,11 @@ void ModelWalker::visitClassSymbol(std::shared_ptr<ClassSymbol> visitable) {
         visit(elem);
     }
 
+    auto declaredConstructors = visitable->getConstructors();
+    for (auto elem : declaredConstructors) {
+        visit(elem);
+    }
+
     auto declaredMethods = visitable->getDeclaredMethods();
     for (auto elem : declaredMethods) {
         visit(elem);

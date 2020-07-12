@@ -1,0 +1,18 @@
+uporabi zival.lev;
+uporabi zival.macka;
+uporabi zival.pes;
+uporabi zival.zival;
+
+
+odkrit razred Program {
+	
+	globalna odkrita praznina zagon() {
+		Zival pes = nov Pes();
+		Zival macka = nov Macka();
+		Zival lev = nov Lev();
+		
+		Konzola.printaj(pes.glas());
+		Konzola.printaj(macka.glas());
+		Konzola.printaj(lev.glas());
+	}
+}

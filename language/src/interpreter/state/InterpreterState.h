@@ -34,7 +34,9 @@ public:
 
     void exitMethod();
 
-    Value getThisReference();
+    Value &getThisReference();
+
+    void setThisReference(const Value &thisReference);
 };
 
 
